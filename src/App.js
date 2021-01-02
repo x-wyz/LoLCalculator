@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import ChampionCard from './components/championcard/championcard';
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -48,7 +50,8 @@ class App extends Component {
           scale: 'ap',
           type: 'damage',
           ratio: 1.5
-        }
+        },
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg'
       },
       mainEnemy: {
         name: 'Lux',
@@ -92,18 +95,23 @@ class App extends Component {
           scale: 'ap',
           type: 'damage',
           ratio: 1
-        }
+        },
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg'
       }
     }
   }
 
   render(){
+    const { mainAlly, mainEnemy } = this.state;
+    console.log(mainAlly)
     return (
       <div className="App">
         <header className="champion-select">
           <div className="allies">
+            <ChampionCard champion={mainAlly} />
           </div>
           <div className="enemy">
+            <ChampionCard champion={mainEnemy} />
           </div>
         </header>
       </div>
