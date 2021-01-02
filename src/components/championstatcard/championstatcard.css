@@ -1,0 +1,20 @@
+.stat-container {
+	display: flex;
+	flex-direction:  column;
+	flex-wrap: nowrap;
+	margin: 1em 0.1em;
+	text-align: center;
+	padding: 5px;
+	background: rgba(2,2,2, 0.42);
+}
+
+.stat-name {
+	text-transform: uppercase;
+	margin-bottom: 0.3em;
+	font-size: 0.8em;
+	letter-spacing: 0.1em;
+}
+
+.stat-amount {
+	font-weight: bold;
+}

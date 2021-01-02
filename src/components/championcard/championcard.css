@@ -9,10 +9,11 @@
 	width: 800px;
 	min-width: 300px;
 	max-width: 50vw;
-	height: 400px;
+	height: 450px;
 	margin: 0.5em 1em;
 	border: 5px solid #444444;
 	overflow-x: hidden;
+	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.4);
 }
 
 .champion {
@@ -35,21 +36,24 @@
 	opacity: 0.1;
 }
 
-.champion-stats {
+.champion-stats, .champion-skills, .champion-items {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.champion-stats {
 	height: 45%;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.6);
 }
 
 .champion-skills {
-	background: rgba(0,0,0,0.3);
-	width: 100%;
+	background: rgba(0,0,0,0.4);
 	height: 30%;
 }
 
 .champion-items {
-	background: rgba(0,0,0,0.1);
-	width: 100%;
+	background: rgba(0,0,0,0.2);
 	height: 25%;
 }
 
@@ -62,4 +66,28 @@
 	width: 100%;
 	height: 100%;
 	background: rgba(255,255,255,0.1);
+}
+
+/* Sections */
+
+.champion-section-heading {
+	text-transform: uppercase;
+	padding: 5px;
+	font-size: 0.9em;
+	height: 10%;
+}
+
+.champion-section-content {
+	display: flex;
+	justify-content: center;
+	height: 90%;
+}
+
+.champion-stat-section{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	width: 30%;
+	justify-content: center;
+	height: 90%;
 }

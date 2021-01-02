@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './championcard.css';
+import ChampionStatCard from '../championstatcard/championstatcard';
 
 /*
 
@@ -52,19 +53,40 @@ mainAlly: {
 
 const ChampionCard = ({ champion, className }) => {
 	return (
-		<div className="champion-card">
+		<section className="champion-card">
 			<div className={`champion ${className}`} style={{backgroundImage: `url(${champion.image})`}}>
 				<div className="dark-glass"></div>
 			</div>
 			<div className="champion-data-container">
-				<div className="champion-stats">
-				</div>
-				<div className="champion-skills">
-				</div>
-				<div className="champion-items">
-				</div>
+				<section className="champion-stats">
+					<h6 className="champion-section-heading">Stats</h6>
+					<div className="champion-section-content">
+						<div className="champion-stat-section">
+							<ChampionStatCard name="health" amount={champion.hp} lvup={champion.lvHp} />
+							<ChampionStatCard name="mana" amount={champion.mana} lvup={champion.lvMana} />
+						</div>
+						<div className="champion-stat-section">
+							<ChampionStatCard name="attack damage" amount={champion.attack} lvup={champion.lvAttack} />
+							<ChampionStatCard name="ability power" amount={champion.ap} />
+						</div>
+						<div className="champion-stat-section">
+							<ChampionStatCard name="armor" amount={champion.armor} lvup={champion.lvArmor} />
+							<ChampionStatCard name="magic resist" amount={champion.resist} lvup={champion.lvResist} />
+						</div>
+					</div>
+				</section>
+				<section className="champion-skills">
+					<h6 className="champion-section-heading">Skills</h6>
+					<div className="champion-section-content">
+					</div>
+				</section>
+				<section className="champion-items">
+					<h6 className="champion-section-heading">Items</h6>
+					<div className="champion-section-content">
+					</div>
+				</section>
 			</div>
-		</div>
+		</section>
 	)
 }
 
