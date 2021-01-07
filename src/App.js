@@ -27,30 +27,37 @@ class App extends Component {
         abilitylv2: 0,
         abilitylv3: 0,
         abilitylv4: 0,
-        ability1: {
-          base: [75,115,155,195,235],
-          scale: 'ap',
-          type: 'damage',
-          ratio: 0.75
-        },
-        ability2: {
-          base: [60,85,110,135,160],
-          scale: 'ap',
-          type: 'damage',
-          ratio: 0.75
-        },
-        ability3: {
-          base: [80,120,160,200,240],
-          scale: 'ap',
-          type: 'damage',
-          ratio: 0.8
-        },
-        ability4: {
-          base: [300,562.5,825],
-          scale: 'ap',
-          type: 'damage',
-          ratio: 1.5
-        },
+        abilities: [
+          {
+            base: [75,115,155,195,235],
+            scale: 'ap',
+            type: 'damage',
+            ratio: 0.75,
+            rname: 'KennenShurikenHurlMissile1'
+          },
+          {
+            base: [60,85,110,135,160],
+            scale: 'ap',
+            type: 'damage',
+            ratio: 0.75,
+            rname: 'KennenBringTheLight'
+          },
+          {
+            base: [80,120,160,200,240],
+            scale: 'ap',
+            type: 'damage',
+            ratio: 0.8,
+            rname: 'KennenLightningRush'
+          },
+          {
+            base: [300,562.5,825],
+            scale: 'ap',
+            type: 'damage',
+            ratio: 1.5,
+            rname: 'KennenShurikenStorm',
+            ultimate: true
+          }
+        ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg'
       },
       mainEnemy: {
@@ -72,30 +79,36 @@ class App extends Component {
         abilitylv2: 0,
         abilitylv3: 0,
         abilitylv4: 0,
-        ability1: {
-          base: [80,125,170,215,260],
-          scale: 'ap',
-          type: 'damage',
-          ratio: 0.6
-        },
-        ability2: {
-          base: [90,130,170,210,250],
-          scale: 'ap',
-          type: 'shield',
-          ratio: 0.7
-        },
-        ability3: {
-          base: [60,105,150,195,240],
-          scale: 'ap',
-          type: 'damage',
-          ratio: 0.6
-        },
-        ability4: {
-          base: [300,400,500],
-          scale: 'ap',
-          type: 'damage',
-          ratio: 1
-        },
+        abilities: [
+          {
+            base: [80,125,170,215,260],
+            scale: 'ap',
+            type: 'damage',
+            ratio: 0.6,
+            rname: 'LuxLightBinding'
+          },
+          {
+            base: [90,130,170,210,250],
+            scale: 'ap',
+            type: 'shield',
+            ratio: 0.7,
+            rname: 'LuxPrismaticWave'
+          },
+          {
+            base: [60,105,150,195,240],
+            scale: 'ap',
+            type: 'damage',
+            ratio: 0.6,
+            rname: 'LuxLightStrikeKugel'
+          },
+          {
+            base: [300,400,500],
+            scale: 'ap',
+            type: 'damage',
+            ratio: 1,
+            rname: 'LuxMaliceCannon'
+          }
+        ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg'
       }
     }

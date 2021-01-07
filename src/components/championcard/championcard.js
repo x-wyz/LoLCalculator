@@ -2,6 +2,7 @@ import React from 'react';
 
 import './championcard.css';
 import ChampionStatCard from '../championstatcard/championstatcard';
+import ChampionSkillCard from '../championskillcard/championskillcard';
 
 /*
 
@@ -52,6 +53,7 @@ mainAlly: {
 */
 
 const ChampionCard = ({ champion, className }) => {
+	console.log(champion.abilities)
 	return (
 		<section className="champion-card">
 			<div className={`champion ${className}`} style={{backgroundImage: `url(${champion.image})`}}>
@@ -78,6 +80,9 @@ const ChampionCard = ({ champion, className }) => {
 				<section className="champion-skills">
 					<h6 className="champion-section-heading">Skills</h6>
 					<div className="champion-section-content">
+						{
+							champion.abilities.map(ability => <ChampionSkillCard currentLv={1} skill={ability} />)
+						}
 					</div>
 				</section>
 				<section className="champion-items">

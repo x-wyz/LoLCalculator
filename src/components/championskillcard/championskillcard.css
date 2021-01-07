@@ -1,0 +1,58 @@
+.champion-skill-container {
+	width: 40%;
+	min-width: 100px;
+}
+
+.champion-skill {
+	display: flex;
+	margin: 0.7em 0.6em;
+	justify-content: center;
+	padding: 0 0.1em;
+	background: rgba(2,2,2, 0.42);
+}
+
+.champion-skill-icon {
+	width: 38px;
+	height: 38px;
+	background-size: cover;
+}
+
+.skill-adjustment {
+	display: flex;
+	flex-direction: column;
+}
+
+.skill-increase, .skill-decrease {
+	width: 40px;
+	text-align: center;
+	height: 19px;
+	margin-left: 0.1em;
+	transition: background 0.2s;
+	cursor: pointer;
+}
+
+.skill-increase {
+	background: #349e34a8;
+}
+
+.skill-increase:hover {
+	background: #248d24a8;
+}
+
+.skill-decrease {
+	background: #a25252;
+}
+
+.skill-decrease:hover {
+	background: #9e4343;
+}
+
+.skill-current-lv {
+	min-width: 38px;
+	text-align: center;
+	background: rgba(2,2,2, 0.42);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 0.1em;
+}
