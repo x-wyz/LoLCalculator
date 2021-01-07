@@ -119,6 +119,7 @@ class App extends Component {
     console.log(mainAlly)
     return (
       <div className="App">
+        <div className="app-background"></div>
         <header className="champion-select">
           <div className="allies">
             <ChampionCard champion={mainAlly} />

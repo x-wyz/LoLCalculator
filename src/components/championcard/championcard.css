@@ -23,7 +23,7 @@
 	height: 100%;
 	background-position: center;
 	background-size: cover;
-	opacity: 0.8;
+	opacity: 1;
 	z-index: -500;
 	box-sizing: border-box;
 	overflow-x: hidden;
@@ -33,7 +33,7 @@
 	background: #2c2c2c;
 	width: 100%;
 	height: 100%;
-	opacity: 0.1;
+	opacity: 0.2;
 }
 
 .champion-stats, .champion-skills, .champion-items {

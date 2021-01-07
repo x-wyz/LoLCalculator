@@ -1,6 +1,20 @@
 .champion-select {
   display: flex;
   justify-content: center;
-  margin-top: 2em;
+  padding-top: 2em;
   flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.app-background {
+  position: fixed;
+  background-image: url('./assets/bg.png');
+  background-size: cover;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
 }
