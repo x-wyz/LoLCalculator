@@ -3,6 +3,7 @@ import React from 'react';
 import './championcard.css';
 import ChampionStatCard from '../championstatcard/championstatcard';
 import ChampionSkillCard from '../championskillcard/championskillcard';
+import ChampionItemCard from '../championitemcard/championitemcard';
 
 /*
 
@@ -53,7 +54,6 @@ mainAlly: {
 */
 
 const ChampionCard = ({ champion, className }) => {
-	console.log(champion.abilities)
 	return (
 		<section className="champion-card">
 			<div className={`champion ${className}`} style={{backgroundImage: `url(${champion.image})`}}>
@@ -87,7 +87,10 @@ const ChampionCard = ({ champion, className }) => {
 				</section>
 				<section className="champion-items">
 					<h6 className="champion-section-heading">Items</h6>
-					<div className="champion-section-content">
+					<div className="champion-section-content champion-section-items">
+            {
+              champion.items.map((item, idx) => <ChampionItemCard name={item.name} stats={item.stats} ico={item.icon} slot={idx + 1} />)
+            }
 					</div>
 				</section>
 			</div>

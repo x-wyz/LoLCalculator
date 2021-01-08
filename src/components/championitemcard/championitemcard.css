@@ -1,0 +1,43 @@
+.champion-item-icon {
+	position: relative;
+	left: 4%;
+	width: 40px;
+	height: 40px;
+	max-width: 100%;
+	background-size: cover;
+	margin: 0 auto;
+	background-color: black;
+	border: black 2px solid;
+	cursor: pointer;
+}
+
+.champion-item {
+	width: 11%;
+	margin: 0 5px;
+	padding: 0.5em;
+	background: rgba(2,2,2, 0.42);
+}
+
+.item-stat {
+	display: flex;
+	font-size: 0.7em;
+	justify-content: space-around;
+	margin-top: 0.2em;
+}
+
+.item-stat-amount {
+	width: 45%;
+	text-align: right;
+}
+
+.item-stat-type {
+	width: 45%;
+	text-align: left;
+}
+
+.item-slot-number {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 0.8em;
+}

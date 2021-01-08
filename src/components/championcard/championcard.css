@@ -11,9 +11,9 @@
 	max-width: 50vw;
 	height: 450px;
 	margin: 0.5em 1em;
-	border: 5px solid #444444;
+	border: 5px solid #efefef;
 	overflow-x: hidden;
-	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.4);
+	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.6);
 }
 
 .champion {
@@ -91,4 +91,9 @@
 	width: 30%;
 	justify-content: center;
 	height: 90%;
+}
+
+.champion-section-items {
+	justify-content: flex-end;
+	margin-right: 10.6%;
 }

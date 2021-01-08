@@ -58,6 +58,59 @@ class App extends Component {
             ultimate: true
           }
         ],
+        items: [
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ],
+            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ],
+            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ],
+            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+        ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg'
       },
       mainEnemy: {
@@ -108,6 +161,56 @@ class App extends Component {
             ratio: 1,
             rname: 'LuxMaliceCannon'
           }
+        ],
+        items: [
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
+          {
+            name: 'Bloodthirster',
+            stats: [
+              '50 ad',
+              '200 hp',
+              '400 mp'
+            ]
+          },
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg'
       }
