@@ -87,7 +87,7 @@ const ChampionCard = ({ champion, className }) => {
 				</section>
 				<section className="champion-items">
 					<h6 className="champion-section-heading">Items</h6>
-					<div className="champion-section-content champion-section-items">
+					<div className="champion-section-content">
             {
               champion.items.map((item, idx) => <ChampionItemCard name={item.name} stats={item.stats} ico={item.icon} slot={idx + 1} />)
             }
