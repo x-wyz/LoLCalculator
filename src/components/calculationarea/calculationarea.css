@@ -26,10 +26,27 @@
 
 .calculation-body {
 	background: var(--calculation-base-color);
-	height: 300px;
+	min-height: 200px;
 	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.6);
 }
 
 .not-current-tab {
 	background: #5c5c5c;
+}
+
+.calculation-heading {
+	font-size: 1.4em;
+	color: white;
+	border-bottom: 3px solid white;
+	min-width: max-content;
+	width: 10%;
+	margin-left: 1.2em;
+	padding: 0.8em;
+}
+
+/* Calc sections */
+
+.calculation-skills {
+	display: flex;
+	justify-content: start;
 }
