@@ -32,6 +32,7 @@ class App extends Component {
           {
             base: [75,115,155,195,235],
             scale: 'ap',
+            damage: 'magical',
             type: 'damage',
             ratio: 0.75,
             rname: 'KennenShurikenHurlMissile1'
@@ -39,6 +40,7 @@ class App extends Component {
           {
             base: [60,85,110,135,160],
             scale: 'ap',
+            damage: 'magical',
             type: 'damage',
             ratio: 0.75,
             rname: 'KennenBringTheLight'
@@ -46,6 +48,7 @@ class App extends Component {
           {
             base: [80,120,160,200,240],
             scale: 'ap',
+            damage: 'magical',
             type: 'damage',
             ratio: 0.8,
             rname: 'KennenLightningRush'
@@ -53,6 +56,7 @@ class App extends Component {
           {
             base: [300,562.5,825],
             scale: 'ap',
+            damage: 'magical',
             type: 'damage',
             ratio: 1.5,
             rname: 'KennenShurikenStorm',
@@ -137,6 +141,7 @@ class App extends Component {
           {
             base: [80,125,170,215,260],
             scale: 'ap',
+            damage: 'magical',
             type: 'damage',
             ratio: 0.6,
             rname: 'LuxLightBinding'
@@ -144,6 +149,7 @@ class App extends Component {
           {
             base: [90,130,170,210,250],
             scale: 'ap',
+            damage: 'magical',
             type: 'shield',
             ratio: 0.7,
             rname: 'LuxPrismaticWave'
@@ -151,6 +157,7 @@ class App extends Component {
           {
             base: [60,105,150,195,240],
             scale: 'ap',
+            damage: 'magical',
             type: 'damage',
             ratio: 0.6,
             rname: 'LuxLightStrikeKugel'
@@ -158,6 +165,7 @@ class App extends Component {
           {
             base: [300,400,500],
             scale: 'ap',
+            damage: 'magical',
             type: 'damage',
             ratio: 1,
             rname: 'LuxMaliceCannon'
