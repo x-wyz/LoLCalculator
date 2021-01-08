@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import ChampionCard from './components/championcard/championcard';
+import CalculationArea from './components/calculationarea/calculationarea';
 
 class App extends Component {
   constructor(props){
@@ -231,6 +232,7 @@ class App extends Component {
             <ChampionCard champion={mainEnemy} />
           </div>
         </header>
+        <CalculationArea />
       </div>
     );
   }
