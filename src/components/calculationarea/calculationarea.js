@@ -15,11 +15,20 @@ class CalculationArea extends Component {
 	}
 
 	switchTab(bool){
-		this.setState({
-			enemyTab: bool,
-			ally: this.state.enemy,
-			enemy: this.state.ally
-		})
+		if (bool === true) {
+			this.setState({
+				enemyTab: bool,
+				ally: this.props.enemy,
+				enemy: this.state.ally
+			})
+		}
+		else {
+			this.setState({
+				enemyTab: bool,
+				ally: this.props.ally,
+				enemy: this.props.enemy
+			})
+		}
 	}
 
 	render(){
