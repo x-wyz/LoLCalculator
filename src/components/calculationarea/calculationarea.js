@@ -41,6 +41,7 @@ class CalculationArea extends Component {
 					<h3 onClick={() => this.switchTab(true)} className={`enemy-tab ${!enemyTab ? 'not-current-tab' : null}`}>Enemy</h3>
 				</header>
 				<div className="calculation-body">
+					<h3 className="calculation-heading">Basic</h3>
 					<h3 className="calculation-heading">Skills</h3>
 					<div className="calculation-skills">
 						{
@@ -55,6 +56,9 @@ class CalculationArea extends Component {
 								/>)
 						}
 					</div>
+					<h3 className="calculation-heading">Runes</h3>
+					<h3 className="calculation-heading">Items</h3>
+					<div className="calculation-end"></div>
 				</div>
 			</div>
 		)

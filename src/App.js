@@ -24,10 +24,10 @@ class App extends Component {
         attack: 48,
         lvAttack: 3.75,
         ap: 0,
-        abilitylv1: 4,
-        abilitylv2: 1,
-        abilitylv3: 1,
-        abilitylv4: 1,
+        abilitylv1: 0,
+        abilitylv2: 0,
+        abilitylv3: 0,
+        abilitylv4: 0,
         abilities: [
           {
             base: [75,115,155,195,235],
