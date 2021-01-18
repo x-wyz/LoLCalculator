@@ -1,0 +1,16 @@
+.calc-basic-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.calc-basic {
+	background: var(--color-basic-calc);
+	width: 50%;
+	margin: 1em auto 0 auto;
+	min-width: max-content;
+	padding: 0.6em;
+	color: white;
+	text-align: center;
+	box-shadow: var(--shadow-basic);
+	font-size: 1.1em;
+}

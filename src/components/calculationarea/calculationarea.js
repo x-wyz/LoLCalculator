@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CalcSkill from '../calcskill/calcskill';
+import CalcBasic from '../calcbasic/calcbasic';
 
 import './calculationarea.css';
 
@@ -42,6 +43,7 @@ class CalculationArea extends Component {
 				</header>
 				<div className="calculation-body">
 					<h3 className="calculation-heading">Basic</h3>
+					<CalcBasic ally={ally} enemy={enemy} />
 					<h3 className="calculation-heading">Skills</h3>
 					<div className="calculation-skills">
 						{
