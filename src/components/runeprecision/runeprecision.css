@@ -1,0 +1,52 @@
+.rune-tree-header {
+	text-align: center;
+	padding: 0.4em;
+}
+
+.rune-section {
+	position: absolute;
+	top: 0;
+	width: 45%;
+	background: rgba(0,0,0,0.6);
+	padding: 0.6em;
+	color: white;
+	height: 100%;
+	overflow: hidden;
+}
+
+.rune-keystones-row, .minor-runes-row {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	text-align: center;
+	margin-bottom: 0.9em;
+}
+
+.keystone {
+	width: 25%;
+	cursor: pointer;
+}
+
+.keystone-image {
+	width: 60px;
+	height: 60px;
+}
+
+.keystone-name {
+	font-size: 0.7em;
+}
+
+.minor-image {
+	width: 40px;
+	height: 40px;
+}
+
+.minor-name {
+	font-size: 0.7em;
+}
+
+.minor {
+	width: 30%;
+	cursor: pointer;
+	padding: 0.4em;
+}
