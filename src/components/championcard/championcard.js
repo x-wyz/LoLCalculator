@@ -8,6 +8,7 @@ import ChampionItemCard from '../championitemcard/championitemcard';
 //  Rune pages
 
 import Precision from '../runeprecision/runeprecision';
+import Domination from '../runedomination/runedomination';
 
 class ChampionCard extends Component {
   constructor(props){
@@ -22,7 +23,7 @@ class ChampionCard extends Component {
   nextPage(){
     const { page } = this.state;
 
-    if (page == 1){
+    if (page == 2){
       this.setState({
         page: 0
       })
@@ -84,6 +85,18 @@ class ChampionCard extends Component {
     return (
       <div className="rune-pages">
         <Precision currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
+        <Domination currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
+      </div>
+    )
+  }
+
+  page2(){
+    const { champion } = this.props;
+
+    return (
+      <div className="rune-pages">
+        <Precision currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
+        <Domination currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
       </div>
     )
   }
@@ -102,7 +115,11 @@ class ChampionCard extends Component {
           ?
           this.page0()
           :
+          page === 1
+          ?
           this.page1()
+          :
+          this.page2()
         }
         <div className="next-page" onClick={this.nextPage} >&nbsp;&nbsp;&nbsp;→</div>
       </div>

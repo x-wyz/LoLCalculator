@@ -4,9 +4,7 @@
 }
 
 .rune-section {
-	position: absolute;
-	top: 0;
-	width: 45%;
+	width: 48%;
 	background: rgba(0,0,0,0.6);
 	padding: 0.6em;
 	color: white;
