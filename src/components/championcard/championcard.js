@@ -79,7 +79,13 @@ class ChampionCard extends Component {
   }
 
   page1(){
-    return <Precision />
+    const { champion } = this.props;
+
+    return (
+      <div className="rune-pages">
+        <Precision currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
+      </div>
+    )
   }
 
   render(){

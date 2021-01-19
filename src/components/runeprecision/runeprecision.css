@@ -25,6 +25,7 @@
 .keystone {
 	width: 25%;
 	cursor: pointer;
+	padding: 0.2em;
 }
 
 .keystone-image {
@@ -49,4 +50,8 @@
 	width: 30%;
 	cursor: pointer;
 	padding: 0.4em;
+}
+
+.rune-active {
+	background: #acacac52;
 }
