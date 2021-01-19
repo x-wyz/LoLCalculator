@@ -13,11 +13,11 @@ const CalcBasic = ({ ally, enemy }) => {
 
 	return (
 		<div className="calc-basic-container">
-			<p className="calc-basic">Normal basic attacks deal: {basicDamage} [<span className="percentage">{(basicDamage/enemy.hp * 100).toFixed(1)}%</span>] </p>
+			<p className="calc-basic">Normal basic attacks: {basicDamage} [<span className="percentage">{(basicDamage/enemy.hp * 100).toFixed(1)}%</span>] </p>
 
-			<p className="calc-basic">Critical basic attacks deal: {basicCritical} [<span className="percentage">{(basicCritical/enemy.hp * 100).toFixed(1)}%</span>]</p>
+			<p className="calc-basic">Critical basic attacks: {basicCritical} [<span className="percentage">{(basicCritical/enemy.hp * 100).toFixed(1)}%</span>]</p>
 
-			<p className="calc-basic">It takes an average of {average} basic attack to deal {enemy.hp} damage.</p>
+			<p className="calc-basic">It takes an average of {average} basic attack{average === 1 ? null : 's'} to deal {enemy.hp} damage.</p>
 		</div>
 	)
 }

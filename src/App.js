@@ -118,7 +118,82 @@ class App extends Component {
             ]
           },
         ],
-        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg'
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg',
+        runes: {
+          precision: {
+            key1: false,
+            key2: false,
+            key3: false,
+            key4: false,
+            node1: false,
+            node2: false,
+            node3: false,
+            node4: false,
+            node5: false,
+            node6: false,
+            node7: false,
+            node8: false,
+            node9: false
+          },
+          domination: {
+            key1: false,
+            key2: false,
+            key3: false,
+            key4: false,
+            node1: false,
+            node2: false,
+            node3: false,
+            node4: false,
+            node5: false,
+            node6: false,
+            node7: false,
+            node8: false,
+            node9: false,
+            node10: false
+          },
+          sorcery: {
+            key1: false,
+            key2: false,
+            key3: false,
+            node1: false,
+            node2: false,
+            node3: false,
+            node4: false,
+            node5: false,
+            node6: false,
+            node7: false,
+            node8: false,
+            node9: false
+          },
+          resolve: {
+            key1: false,
+            key2: false,
+            key3: false,
+            node1: false,
+            node2: false,
+            node3: false,
+            node4: false,
+            node5: false,
+            node6: false,
+            node7: false,
+            node8: false,
+            node9: false
+          },
+          inspiration: {
+            key1: false,
+            key2: false,
+            key3: false,
+            node1: false,
+            node2: false,
+            node3: false,
+            node4: false,
+            node5: false,
+            node6: false,
+            node7: false,
+            node8: false,
+            node9: false
+          },
+        }
       },
       mainEnemy: {
         name: 'Lux',
