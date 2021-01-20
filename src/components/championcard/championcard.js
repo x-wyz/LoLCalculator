@@ -10,6 +10,7 @@ import ChampionItemCard from '../championitemcard/championitemcard';
 import Precision from '../runeprecision/runeprecision';
 import Domination from '../runedomination/runedomination';
 import Sorcery from '../runesorcery/runesorcery';
+import Resolve from '../runeresolve/runeresolve';
 
 class ChampionCard extends Component {
   constructor(props){
@@ -97,7 +98,7 @@ class ChampionCard extends Component {
     return (
       <div className="rune-pages">
         <Sorcery currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
-        <Domination currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
+        <Resolve currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
       </div>
     )
   }
