@@ -22,10 +22,11 @@ class App extends Component {
         mana: 200,
         lvMana: 0,
         attack: 48,
+        baseAttack: 48,
         lvAttack: 3.75,
         critDamage: 175,
         critChance: 0,
-        ap: 0,
+        ap: 20,
         abilitylv1: 0,
         abilitylv2: 0,
         abilitylv3: 0,
@@ -219,6 +220,7 @@ class App extends Component {
         mana: 480,
         lvMana: 23.5,
         attack: 53.54,
+        baseAttack: 53.54,
         lvAttack: 3.3,
         critDamage: 175,
         critChance: 0,
@@ -386,6 +388,17 @@ class App extends Component {
             node8: false,
             node9: false
           },
+          minor: {
+            node1: false,
+            node2: false,
+            node3: false,
+            node4: false,
+            node5: false,
+            node6: false,
+            node7: false,
+            node8: false,
+            node9: false
+          }
         }
       }
     }

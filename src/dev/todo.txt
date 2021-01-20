@@ -1,0 +1,2 @@
+- Clean up code repetition for runes
+ 
