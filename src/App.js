@@ -193,6 +193,17 @@ class App extends Component {
             node8: false,
             node9: false
           },
+          minor: {
+            node1: false,
+            node2: false,
+            node3: false,
+            node4: false,
+            node5: false,
+            node6: false,
+            node7: false,
+            node8: false,
+            node9: false
+          }
         }
       },
       mainEnemy: {

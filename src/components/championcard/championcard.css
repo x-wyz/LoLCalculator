@@ -99,12 +99,11 @@
 	position: relative;
 }
 
-.next-page {
+.previous-page, .next-page {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
 	position: absolute;
-	right: 0;
 	bottom: 0;
 	width: 50px;
 	height: 50px;
@@ -113,9 +112,18 @@
 	cursor: pointer;
 	z-index: 5;
 	font-weight: 1000;
-
-	background: linear-gradient(-45deg, #efefef 50%, transparent 50%);
+	user-select: none;
 	box-sizing: border-box;
+}
+
+.previous-page {
+	left: 0;
+	background: linear-gradient(45deg, #efefef 50%, transparent 50%);
+}
+
+.next-page {
+	right: 0;
+	background: linear-gradient(-45deg, #efefef 50%, transparent 50%);
 }
 
 .rune-pages {

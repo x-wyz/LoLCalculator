@@ -12,6 +12,7 @@ import Domination from '../runedomination/runedomination';
 import Sorcery from '../runesorcery/runesorcery';
 import Resolve from '../runeresolve/runeresolve';
 import Inspiration from '../runeinspiration/runeinspiration';
+import Minor from '../runeminor/runeminor';
 
 class ChampionCard extends Component {
   constructor(props){
@@ -21,6 +22,7 @@ class ChampionCard extends Component {
     }
 
     this.nextPage = this.nextPage.bind(this);
+    this.previousPage = this.previousPage.bind(this);
   }
 
   nextPage(){
@@ -34,6 +36,21 @@ class ChampionCard extends Component {
     else {
       this.setState({
         page: page + 1
+      })
+    }
+  }
+
+  previousPage(){
+    const { page } = this.state;
+
+    if (page === 0){
+      this.setState({
+        page: 3
+      })
+    }
+    else {
+      this.setState({
+        page: page - 1
       })
     }
   }
@@ -110,6 +127,7 @@ class ChampionCard extends Component {
     return (
       <div className="rune-pages">
         <Inspiration currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
+        <Minor currentrunes={champion.runes} updateRuneStatus={this.props.modifyRune} />
       </div>
     )
   }
@@ -138,6 +156,7 @@ class ChampionCard extends Component {
           :
           this.page3()
         }
+        <div className="previous-page" onClick={this.previousPage} >←&nbsp;&nbsp;&nbsp;</div>
         <div className="next-page" onClick={this.nextPage} >&nbsp;&nbsp;&nbsp;→</div>
       </div>
     )
