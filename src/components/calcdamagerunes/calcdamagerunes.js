@@ -23,7 +23,7 @@ const CalcRunes = ({ ally, enemy }) => {
 	const adaptiveDef = ap > bonusAd ? enemy.resist : enemy.armor;
 	const adaptiveDamageType = ap > bonusAd ? "Magical" : "Physical";
 
-	console.log(bonusAd)
+	console.log(((30 + 8.823 * (ally.lv - 1)) + (.4 * bonusAd) + (.25 * ap)) * (100/(100 + adaptiveDef)) / enemy.hp * 100)
 
 	return (
 		<div className="runes-damage-calc">
@@ -71,7 +71,7 @@ const CalcRunes = ({ ally, enemy }) => {
 							<p className="rune-calc-percentage">
 								[
 								{
-									(((30 + 8.823 * (ally.lv - 1)) + (.4 * bonusAd) + (.25 * ap) * (100/(100 + adaptiveDef))) / enemy.hp * 100).toFixed(1)
+									(((30 + 8.823 * (ally.lv - 1)) + (.4 * bonusAd) + (.25 * ap)) * (100/(100 + adaptiveDef)) / enemy.hp * 100).toFixed(1)
 								}
 								%]
 							</p>
@@ -98,7 +98,7 @@ const CalcRunes = ({ ally, enemy }) => {
 							<p className="rune-calc-percentage">
 								[
 								{
-									(((40 + 4.705 * (ally.lv - 1)) + (.2 * bonusAd) + (.1 * ap) * (100/(100 + adaptiveDef))) / enemy.hp * 100).toFixed(1)
+									(((40 + 4.705 * (ally.lv - 1)) + (.2 * bonusAd) + (.1 * ap)) * (100/(100 + adaptiveDef)) / enemy.hp * 100).toFixed(1)
 								}
 								%]
 							</p>
@@ -152,7 +152,7 @@ const CalcRunes = ({ ally, enemy }) => {
 							<p className="rune-calc-percentage">
 								[
 								{
-									(((10 + 1.764 * (ally.lv - 1)) + (.15 * bonusAd) + (.10 * ap) * (100/(100 + adaptiveDef))) / enemy.hp * 100).toFixed(1)
+									((((10 + 1.764 * (ally.lv - 1)) + (.15 * bonusAd) + (.10 * ap)) * (100/(100 + adaptiveDef))) / enemy.hp * 100).toFixed(1)
 								}
 								%]
 							</p>
@@ -179,7 +179,7 @@ const CalcRunes = ({ ally, enemy }) => {
 							<p className="rune-calc-percentage">
 								[
 								{
-									(((30 + 4.117 * (ally.lv - 1)) + (.35 * bonusAd) + (.20 * ap) * (100/(100 + adaptiveDef))) / enemy.hp * 100).toFixed(1)
+									(((30 + 4.117 * (ally.lv - 1)) + (.35 * bonusAd) + (.20 * ap)) * (100/(100 + adaptiveDef)) / enemy.hp * 100).toFixed(1)
 								}
 								%]
 							</p>
