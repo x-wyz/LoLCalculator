@@ -307,6 +307,9 @@ export const itemsData = {
 		stats: {
 			attack: 20,
 			resist: 35
+		},
+		effect: {
+			passive: "lifeline1"
 		}
 	},
 	hextechAlternator: {
@@ -546,6 +549,337 @@ export const itemsData = {
 		stats: {
 			attackspeed: 18,
 			critChance: 15
+		}
+	},
+	abyssalMask: {
+		img: 3001,
+		tier: "legendary",
+		stats: {
+			resist: 60,
+			hp: 350
+		}
+	},
+	archangelsStaff: {
+		img: 3003,
+		tier: "legendary",
+		stats: {
+			ap: 65,
+			mana: 500
+		},
+		effect: {
+			type: 'stats',
+			stats: {
+				mana: 360,
+				unique: "3 mana"
+			}
+		}
+	},
+	ardentCenser: {
+		img: 3504,
+		tier: "legendary",
+		stats: {
+			ap: 60
+		}
+	},
+	bansheesVeil: {
+		img: 3102,
+		tier: "legendary",
+		stats: {
+			ap: 65,
+			abilityHaste: 10,
+			resist: 45
+		}
+	},
+	blackCleaver: {
+		img: 3071,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 25,
+			attack: 40,
+			hp: 300
+		}
+	},
+	blackMistScythe: {
+		img: 3864,
+		tier: "legendary",
+		stats: {
+			attack: 20,
+			hp: 75
+		}
+	},
+	bladeOfTheRuinedKing: {
+		img: 3153,
+		tier: "legendary",
+		stats: {
+			attack: 40,
+			attackspeed: 25,
+			lifesteal: 12
+		},
+		effect: {
+			basic: "ruinedking"
+		}
+	},
+	bloodthirster: {
+		img: 3072,
+		tier: "legendary",
+		stats: {
+			attack: 55,
+			lifesteal: 20,
+			critChance: 20
+		}
+	},
+	bulwarkOfTheMountain: {
+		img: 3860,
+		tier: "legendary",
+		stats: {
+			ap: 20,
+			health: 250
+		}
+	},
+	chempunkChainsword: {
+		img: 6609,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 15,
+			attack: 45,
+			hp: 150
+		}
+	},
+	chemtechPutrifier: {
+		img: 3011,
+		tier: "legendary",
+		stats: {
+			ap: 50,
+			abilityHaste: 15
+		}
+	},
+	cosmicDrive: {
+		img: 4629,
+		tier: "legendary",
+		stats: {
+			ap: 75,
+			abilityHaste: 30,
+			hp: 200
+		}
+	},
+	deadMansPlate: {
+		img: 3742,
+		tier: "legendary",
+		stats: {
+			armor: 40,
+			hp: 475
+		}
+	},
+	deathsDance: {
+		img: 6333,
+		tier: "legendary",
+		stats: {
+			armor: 40,
+			abilityHaste: 15,
+			attack: 50
+		}
+	},
+	demonicEmbrace: {
+		img: 4637,
+		tier: "legendary",
+		stats: {
+			ap: 70,
+			hp: 350
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 0,
+			scale: "4.8 eMaxHp"
+		}
+	},
+	edgeOfNight: {
+		img: 3814,
+		tier: "legendary",
+		stats: {
+			attack: 50,
+			hp: 325,
+			lethality: 10
+		}
+	},
+	essenceReaver: {
+		img: 3508,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 20,
+			attack: 55,
+			critChance: 20
+		},
+		effect: {
+			type: 'damage',
+			base: 0,
+			max: 0,
+			scale: "100 baseAd 40 bonusAd"
+		}
+	},
+	forceOfNature: {
+		img: 4401,
+		tier: "legendary",
+		stats: {
+			hp: 350,
+			resist: 60
+		},
+		effect: {
+			type: "stats",
+			stats: {
+				resist: 20
+			}
+		}
+	},
+	frozenHeart: {
+		img: 3110,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 20,
+			armor: 80,
+			mana: 400
+		}
+	},
+	gargoyleStoneplate: {
+		img: 3193,
+		tier: "legendary",
+		stats: {
+			armor: 60,
+			resist: 60,
+			abilityHaste: 26
+		}
+	},
+	guardianAngel: {
+		img: 3026,
+		tier: "legendary",
+		stats: {
+			armor: 40,
+			attack: 40
+		}
+	},
+	guinsoosRageblade: {
+		img: 3124,
+		tier: "legendary",
+		stats: {
+			attackspeed: 40,
+			critChance: 20
+		},
+		effect: {
+			basic: "rageblade"
+		}
+	},
+	horizonFocus: {
+		img: 4628,
+		tier: "legendary",
+		stats: {
+			ap: 100
+		},
+		effect: {
+			conditional: "hypershot"
+		}
+	},
+	infinityEdge: {
+		img: 3031,
+		tier: "legendary",
+		stats: {
+			attack: 70,
+			critChance: 20
+		},
+		effect: {
+			basic: "infinityEdge"
+		}
+	},
+	knightsVow: {
+		img: 3109,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 10,
+			hp: 400
+		},
+		effect: {
+			conditional: "sacrifice"
+		}
+	},
+	lichBane: {
+		img: 3100,
+		tier: "legendary",
+		stats: {
+			ap: 80
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 0,
+			scale: "150 baseAd 40 ap"
+		}
+	},
+	lordDominiksRegards: {
+		img: 3036,
+		tier: "legendary",
+		stats: {
+			arpen: 25,
+			attack: 35,
+			critChance: 20
+		},
+		effect: {
+			conditional: "giantSlayer"
+		}
+	},
+	mawOfMalmortius: {
+		img: 3156,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 15,
+			attack: 50,
+			resist: 50
+		},
+		effect: {
+			passive: "lifeline2"
+		}
+	},
+	mercurialScimitar: {
+		img: 3139,
+		tier: "legendary",
+		stats: {
+			attack: 40,
+			critChance: 20,
+			resist: 30
+		}
+	},
+	mikaelsBlessing: {
+		img: 3222,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 15,
+			resist: 50
+		}
+	},
+	morellonomicon: {
+		img: 3165,
+		tier: "legendary",
+		stats: {
+			ap: 70,
+			hp: 250
+		}
+	},
+	mortalReminder: {
+		img: 3033,
+		tier: "legendary",
+		stats: {
+			attack: 20,
+			attackspeed: 25,
+			critChance: 20
+		}
+	},
+	nashorsTooth: {
+		img: 3115,
+		tier: "legendary",
+		stats: {
+			attackspeed: 50,
+			ap: 100
+		},
+		effect: {
+			basic: "nashors"
 		}
 	},
 }
