@@ -1,0 +1,38 @@
+.calc-summoners-container {
+	display: flex;
+	width: 40%;
+	justify-content: space-between;
+	margin: 0 auto;
+	margin-top: 1em;
+}
+
+.summoner-spell-container {
+	display: flex;
+	background: var(--color-basic-calc);
+	padding: 1.2em;
+	color: white;
+	box-shadow: var(--shadow-basic);
+	align-items: center;
+}
+
+.summoner-image {
+	margin-right: 0.4em;
+	width: 50px;
+	height: 50px;
+	display: flex;
+}
+
+.summoner-spell-information {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.summoner-name {
+	font-size: 1.2em;
+}
+
+.summoner-damage, .summoner-percentage {
+	font-size: 0.9em;
+	margin-top: 0.2em;
+}

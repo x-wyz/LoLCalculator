@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import CalcSkill from '../calcskill/calcskill';
 import CalcBasic from '../calcbasic/calcbasic';
+import CalcSummoners from '../calcsummoners/calcsummoners';
 
 import CalcDamageRunes from '../calcdamagerunes/calcdamagerunes';
 
@@ -62,6 +63,8 @@ class CalculationArea extends Component {
 					</div>
 					<h3 className="calculation-heading">Runes</h3>
 					<CalcDamageRunes ally={ally} enemy={enemy} />
+					<h3 className="calculation-heading">Summoners</h3>
+					<CalcSummoners ally={ally} enemy={enemy} />
 					<h3 className="calculation-heading">Items</h3>
 					<div className="calculation-end"></div>
 				</div>
