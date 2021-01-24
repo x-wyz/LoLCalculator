@@ -1134,12 +1134,61 @@ export const itemsData = {
 		}
 	},
 	zhonyasHourglass: {
-		img: 3075,
+		img: 3157,
 		tier: "legendary",
 		stats: {
 			ap: 65,
 			abilityHaste: 10,
 			armor: 45
+		}
+	},
+	berserkersGreaves: {
+		img: 3006,
+		tier: "legendary",
+		stats: {
+			attackspeed: 35
+		}
+	},
+	mobilityBoots: {
+		img: 3117,
+		tier: "legendary",
+		stats: {
+			
+		}
+	},
+	bootsOfSwiftness: {
+		img: 3009,
+		tier: "legendary",
+		stats: {
+			
+		}
+	},
+	ionianBootsOfLucidity: {
+		img: 3158,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 20
+		}
+	},
+	mercuryTreads: {
+		img: 3075,
+		tier: "legendary",
+		stats: {
+			resist: 25
+		}
+	},
+	platedSteelcaps: {
+		img: 3047,
+		tier: "legendary",
+		stats: {
+			armor: 20
+		}
+	},
+	sorcerersShoes: {
+		img: 3020,
+		tier: "legendary",
+		stats: {
+			flatMPen: 18
 		}
 	},
 }
