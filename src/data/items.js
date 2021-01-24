@@ -882,4 +882,264 @@ export const itemsData = {
 			basic: "nashors"
 		}
 	},
+	navoriQuickblades: {
+		img: 6675,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 30,
+			attack: 60,
+			critChance: 20
+		}
+	},
+	pauldronsOfWhiterock: {
+		img: 3857,
+		tier: "legendary",
+		stats: {
+			attack: 15,
+			hp: 250
+		}
+	},
+	phantomDancer: {
+		img: 3046,
+		tier: "legendary",
+		stats: {
+			attackspeed: 45,
+			critChance: 20
+		}
+	},
+	rabadonsDeathcap: {
+		img: 3089,
+		tier: "legendary",
+		stats: {
+			ap: 120
+		},
+		effect: {
+			boost: "deathcap"
+		}
+	},
+	randuinsOmen: {
+		img: 3143,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 10,
+			armor: 80,
+			hp: 250
+		}
+	},
+	rapidFirecannon: {
+		img: 3094,
+		tier: "legendary",
+		stats: {
+			type: "damage",
+			base: 120,
+			max: 120
+		}
+	},
+	ravenousHydra: {
+		img: 3074,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 20,
+			attack: 65,
+			omnivamp: 15
+		}
+	},
+	redemption: {
+		img: 3107,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 15,
+			hp: 200
+		}
+	},
+	runaansHurricane: {
+		img: 3085,
+		tier: "legendary",
+		stats: {
+			attackspeed: 45,
+			critChance: 20
+		}
+	},
+	rylaisCrystalScepter: {
+		img: 3116,
+		tier: "legendary",
+		stats: {
+			ap: 90,
+			hp: 350
+		}
+	},
+	sanguineBlade: {
+		img: 3181,
+		tier: "legendary",
+		stats: {
+			attack: 50,
+			lethality: 10
+		}
+	},
+	serpentsFang: {
+		img: 6695,
+		tier: "legendary",
+		stats: {
+			attack: 55,
+			lethality: 18
+		}
+	},
+	seryldasGrudge: {
+		img: 6694,
+		tier: "legendary",
+		stats: {
+			arpen: 30,
+			attack: 45,
+			abilityHaste: 20
+		}
+	},
+	shardOfTrueIce: {
+		img: 3853,
+		tier: "legendary",
+		stats: {
+			ap: 40,
+			hp: 75
+		}
+	},
+	silvermereDawn: {
+		img: 6035,
+		tier: "legendary",
+		stats: {
+			attack: 35,
+			hp: 200,
+			resist: 35
+		}
+	},
+	spiritVisage: {
+		img: 3065,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 10,
+			hp: 450,
+			resist: 40
+		}
+	},
+	staffOfFlowingWater: {
+		img: 6616,
+		tier: "legendary",
+		stats: {
+			ap: 60
+		}
+	},
+	steraksGage: {
+		img: 3053,
+		tier: "legendary",
+		stats: {
+			attack: 50,
+			hp: 400
+		}
+	},
+	stormrazor: {
+		img: 3095,
+		tier: "legendary",
+		stats: {
+			attack: 40,
+			attackspeed: 15,
+			critChance: 20
+		}
+	},
+	theCollector: {
+		img: 6676,
+		tier: "legendary",
+		stats: {
+			attack: 55,
+			critChance: 20,
+			lethality: 12
+		}
+	},
+	thornmail: {
+		img: 3075,
+		tier: "legendary",
+		stats: {
+			armor: 60,
+			hp: 350
+		}
+	},
+	thornmail: {
+		img: 3748,
+		tier: "legendary",
+		stats: {
+			attack: 30,
+			hp: 500
+		},
+		effect: {
+			boost: 'titanic'
+		}
+	},
+	umbralGlaive: {
+		img: 3179,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 15,
+			attack: 50,
+			lethality: 12
+		}
+	},
+	vigilantWardstone: {
+		img: 4643,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 40
+		}
+	},
+	voidStaff: {
+		img: 3135,
+		tier: "legendary",
+		stats: {
+			ap: 65,
+			mpen: 40
+		}
+	},
+	warmogsArmor: {
+		img: 3083,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 10,
+			hp: 800
+		}
+	},
+	witsEnd: {
+		img: 3075,
+		tier: "legendary",
+		stats: {
+			attack: 30,
+			attackspeed: 40,
+			resist: 50
+		},
+		effect: {
+			basic: "witsEnd"
+		}
+	},
+	youmuusGhostblade: {
+		img: 3142,
+		tier: "legendary",
+		stats: {
+			attack: 60,
+			lethality: 18
+		}
+	},
+	zekesConvergence: {
+		img: 3050,
+		tier: "legendary",
+		stats: {
+			abilityHaste: 20,
+			armor: 25,
+			hp: 250,
+			mana: 250
+		}
+	},
+	zhonyasHourglass: {
+		img: 3075,
+		tier: "legendary",
+		stats: {
+			ap: 65,
+			abilityHaste: 10,
+			armor: 45
+		}
+	},
 }
