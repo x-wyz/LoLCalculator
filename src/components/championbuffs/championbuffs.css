@@ -1,0 +1,41 @@
+.temp-buff-container {
+	background: rgba(0,0,0,0.4);
+	width: 100%;
+}
+
+.buff-header {
+	color: white;
+	margin: 0.2em 0.6em;
+}
+
+.elixir-buffs, .baron-buff, .infernal-buffs, .mountain-buffs {
+	display: flex;
+	justify-content: space-around;
+}
+
+.elixir, .baron, .infernal, .mountain {
+	background: rgba(0,0,0,0.6);
+	display: flex;
+	color: white;
+	align-items: center;
+	padding: 0.8em;
+	cursor: pointer;
+}
+
+.elixir-image {
+	width: 60px;
+}
+
+.buff-text {
+	text-indent: 1em;
+}
+
+.elixir {
+	width: 25%;
+	min-width: max-content;
+}
+
+.infernal, .mountain {
+	width: 35%;
+	margin: 0.2em;
+}

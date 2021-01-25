@@ -205,6 +205,16 @@ class App extends Component {
             node8: false,
             node9: false
           }
+        },
+        buffs: {
+          elixIron: false,
+          elixWrath: false,
+          elixSorc: false,
+          baron: false,
+          inf1: false,
+          inf2: false,
+          mount1: false,
+          mount2: false
         }
       },
       mainEnemy: {
@@ -399,6 +409,16 @@ class App extends Component {
             node8: false,
             node9: false
           }
+        },
+        buffs: {
+          elixIron: false,
+          elixWrath: false,
+          elixSorc: false,
+          baron: false,
+          inf1: false,
+          inf2: false,
+          mount1: false,
+          mount2: false
         }
       }
     }
