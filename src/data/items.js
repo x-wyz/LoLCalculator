@@ -1144,51 +1144,494 @@ export const itemsData = {
 	},
 	berserkersGreaves: {
 		img: 3006,
-		tier: "legendary",
+		tier: "shoes",
 		stats: {
 			attackspeed: 35
 		}
 	},
 	mobilityBoots: {
 		img: 3117,
-		tier: "legendary",
+		tier: "shoes",
 		stats: {
 			
 		}
 	},
 	bootsOfSwiftness: {
 		img: 3009,
-		tier: "legendary",
+		tier: "shoes",
 		stats: {
 			
 		}
 	},
 	ionianBootsOfLucidity: {
 		img: 3158,
-		tier: "legendary",
+		tier: "shoes",
 		stats: {
 			abilityHaste: 20
 		}
 	},
 	mercuryTreads: {
 		img: 3075,
-		tier: "legendary",
+		tier: "shoes",
 		stats: {
 			resist: 25
 		}
 	},
 	platedSteelcaps: {
 		img: 3047,
-		tier: "legendary",
+		tier: "shoes",
 		stats: {
 			armor: 20
 		}
 	},
 	sorcerersShoes: {
 		img: 3020,
-		tier: "legendary",
+		tier: "shoes",
 		stats: {
 			flatMPen: 18
+		}
+	},
+	divineSunderer: {
+		img: 6632,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			attack: 40,
+			hp: 400
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 0,
+			scale: "10 eMaxHp"
+		},
+		mythic: {
+			stats: {
+				arpen: 5,
+				mpen: 5
+			}
+		}
+	},
+	duskbladeOfDraktharr: {
+		img: 6691,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			attack: 60,
+			lethality: 18
+		},
+		effect: {
+			type: "damage",
+			base: 65,
+			max: 65,
+			scale: "25 bonusAd"
+		},
+		mythic: {
+			stats: {
+				abilityHaste: 5
+			}
+		}
+	},
+	eclipse: {
+		img: 6692,
+		tier: "mythic",
+		stats: {
+			attack: 55,
+			omnivamp: 10,
+			lethality: 18
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 0,
+			scale: "6 eMaxHp"
+		},
+		mythic: {
+			stats: {
+				arpen: 4
+			}
+		}
+	},
+	everfrost: {
+		img: 6656,
+		tier: "mythic",
+		stats: {
+			ap: 80,
+			abilityHaste: 20,
+			hp: 200,
+			mana: 600
+		},
+		effect: {
+			type: "damage",
+			base: 100,
+			max: 100,
+			scale: "30 ap"
+		},
+		mythic: {
+			stats: {
+				ap: 15
+			}
+		}
+	},
+	frostfireGauntlet: {
+		img: 6662,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			armor: 25,
+			hp: 350,
+			resist: 25
+		},
+		effect: {
+			type: "damage",
+			base: 12,
+			max: 30,
+			scale: "1 bHp"
+		},
+		mythic: {
+			stats: {
+				hp: 100
+			}
+		}
+	},
+	galeforce: {
+		img: 6671,
+		tier: "mythic",
+		stats: {
+			attack: 60,
+			attackspeed: 20,
+			critChance: 20
+		},
+		mythic: {
+			stats: {
+				attack: 0
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 180,
+			max: 315,
+			scale: "15 bonusAd"
+		}
+	},
+	goredrinker: {
+		img: 6630,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			attack: 45,
+			hp: 400
+		},
+		mythic: {
+			stats: {
+				abilityHaste: 5
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 100,
+			scale: "100 tAd"
+		}
+	},
+	hextechRocketbelt: {
+		img: 3152,
+		tier: "mythic",
+		stats: {
+			ap: 90,
+			abilityHaste: 15,
+			hp: 350
+		},
+		mythic: {
+			stats: {
+				flatMPen: 5
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 125,
+			max: 125,
+			scale: "15 ap"
+		}
+	},
+	immortalShieldbow: {
+		img: 6673,
+		tier: "mythic",
+		stats: {
+			attack: 50,
+			attackspeed: 15,
+			critChance: 20,
+			lifesteal: 12
+		},
+		mythic: {
+			stats: {
+				attack: 5,
+				hp: 50
+			}
+		}
+	},
+	krakenSlayer: {
+		img: 6672,
+		tier: "mythic",
+		stats: {
+			attack: 65,
+			attackspeed: 25,
+			critChance: 20
+		},
+		mythic: {
+			stats: {
+				attackspeed: 10
+			}
+		}
+	},
+	imperialMandate: {
+		img: 4005,
+		tier: "mythic",
+		stats: {
+			ap: 40,
+			abilityHaste: 20,
+			hp: 200
+		},
+		effect: {
+			type: "damage",
+			base: 36,
+			max: 60,
+			scale: "0 ap"
+		},
+		mythic: {
+			stats: {
+				ap: 15
+			}
+		}
+	},
+	liandrysAnguish: {
+		img: 6691,
+		tier: "mythic",
+		stats: {
+			ap: 80,
+			abilityHaste: 20,
+			mana: 600
+		},
+		effect: {
+			type: "damage",
+			base: 60,
+			max: 60,
+			scale: "6 ap 4 eMaxHp"
+		},
+		mythic: {
+			stats: {
+				abilityHaste: 5
+			}
+		}
+	},
+	locketOfTheIronSolari: {
+		img: 3190,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			armor: 30,
+			resist: 30.
+			hp: 300
+		},
+		mythic: {
+			stats: {
+				armor: 5,
+				resist: 5
+			}
+		}
+	},
+	ludensTempest: {
+		img: 6655,
+		tier: "mythic",
+		stats: {
+			ap: 80,
+			abilityHaste: 20,
+			mana: 600,
+			flatMPen: 6
+		},
+		mythic: {
+			stats: {
+				flatMPen: 5
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 100,
+			max: 100,
+			scale: "10 ap"
+		}
+	},
+	moonstoneRenewer: {
+		img: 6617,
+		tier: "mythic",
+		stats: {
+			ap: 40,
+			abilityHaste: 20,
+			hp: 200
+		},
+		mythic: {
+			stats: {
+				abilityHaste: 5
+			}
+		}
+	},
+	nightHarvester: {
+		img: 4636,
+		tier: "mythic",
+		stats: {
+			ap: 90,
+			abilityHaste: 15,
+			hp: 300
+		},
+		effect: {
+			type: "damage",
+			base: 125,
+			max: 125,
+			scale: "15 ap"
+		},
+		mythic: {
+			stats: {
+				abilityHaste: 5
+			}
+		}
+	},
+	prowlersClaw: {
+		img: 6693,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			attack: 60,
+			lethality: 21
+		},
+		mythic: {
+			stats: {
+				lethality: 21
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 65,
+			max: 65,
+			scale: "25 bonusAd"
+		}
+	},
+	riftmaker: {
+		img: 4633,
+		tier: "mythic",
+		stats: {
+			ap: 50,
+			abilityHaste: 15,
+			hp: 150,
+			omnivamp: 15
+		},
+		mythic: {
+			stats: {
+				mpen: 5
+			}
+		}
+	},
+	shurelyasBattlesong: {
+		img: 2065,
+		tier: "mythic",
+		stats: {
+			ap: 40,
+			abilityHaste: 20,
+			hp: 200
+		},
+		effect: {
+			type: "damage",
+			base: 35,
+			max: 55,
+			scale: "0 ap"
+		}
+		mythic: {
+			stats: {
+				attack: 0
+			}
+		}
+	},
+	stridebreaker: {
+		img: 6631,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			attack: 45,
+			attackspeed: 20,
+			hp: 300
+		},
+		mythic: {
+			stats: {
+				attack: 0
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 0,
+			scale: "100 tAd"
+		}
+	},
+	sunfireAegis: {
+		img: 3068,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 15,
+			armor: 30,
+			hp: 350,
+			resist: 30
+		},
+		effect: {
+			type: "damage",
+			base: 12,
+			max: 30,
+			scale: "1 bHp"
+		},
+		mythic: {
+			stats: {
+				attack: 0
+			}
+		}
+	},
+	trinityForce: {
+		img: 3078,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			attack: 25,
+			attackspeed: 35,
+			hp: 200
+		},
+		mythic: {
+			stats: {
+				attackspeed: 10
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 0,
+			sccale: "200 baseAd"
+		}
+	},
+	turboChemtank: {
+		img: 6664,
+		tier: "mythic",
+		stats: {
+			abilityHaste: 20,
+			armor: 25,
+			resist: 25,
+			hp: 350
+		},
+		mythic: {
+			stats: {
+				abilityHaste: 5
+			}
+		},
+		effect: {
+			type: "damage",
+			base: 12,
+			max: 30,
+			scale: "1 bHp"
 		}
 	},
 }
