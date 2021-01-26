@@ -442,6 +442,47 @@ class App extends Component {
     }
   }
 
+  modifyBuff(name, type, target){
+    if (target === "mainAlly"){
+      const { champion:mainAlly } = this.state;
+    }
+    else {
+      const { champion:mainEnemy } = this.state;
+    }
+
+    champion.buffs[name] = !champion.buffs[name];
+
+    if (type === "elixir"){
+       if (name === "elixSorc"){
+        champion.buffs.elixWrath = false;
+        champion.buffs.elixIron = false;
+       }
+       else if (name === "elixWrath"){
+        champion.buffs.elixIron = false;
+        champion.buffs.elixSorc = false;
+       }
+       else {
+        champion.buffs.elixWrath = false;
+        champion.buffs.elixSorc = false;
+       }
+    }
+    else if (type === "infernal") {
+      if (name === "inf1"){
+        champion.buffs.inf2 = false;
+      } else {
+        champion.buffs.inf1 = false;
+      }
+    }
+    else if (type === "mountain") {
+      if (name === "mount1"){
+        champion.buffs.mount2 = false;
+      }
+      else {
+        champion.buffs.mount1 = false;
+      }
+    }
+  }
+
   render(){
     const { mainAlly, mainEnemy } = this.state;
     console.log(mainAlly)
