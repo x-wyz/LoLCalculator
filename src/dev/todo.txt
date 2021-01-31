@@ -4,3 +4,7 @@
 
 - akali mixed damage r
 - amumu w
+- Aphelios
+- ashe q
+- aurelion sol
+- azir-w
