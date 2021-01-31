@@ -97,117 +97,219 @@ export let Buffs = {
 }
 
 export let ChampionData = {
-	mainAlly: {
-        name: 'Kennen',
+	aatrox: {
+        name: 'aatrox',
         lv: 1,
-        hp: 541,
-        lvHp: 84,
-        armor: 29,
-        lvArmor: 3.75,
-        resist: 30,
-        lvResist: 0.5,
-        movement: 335,
-        mana: 200,
+        baseHp: 580,
+        hp: 580,
+        lvHp: 90,
+        armor: 38,
+        lvArmor: 3.25,
+        resist: 32,
+        lvResist: 1.25,
+        movement: 345,
+        mana: 0,
         lvMana: 0,
-        attack: 48,
-        baseAttack: 48,
-        lvAttack: 3.75,
+        attack: 60,
+        baseAttack: 60,
+        lvAttack: 5,
         critDamage: 175,
         critChance: 0,
-        ap: 20,
+        omnivamp: 0,
+        lethality: 0,
+        arpen: 0,
+        mpen: 0,
+        flatMPen: 0,
+        ap: 0,
         abilitylv1: 0,
         abilitylv2: 0,
         abilitylv3: 0,
         abilitylv4: 0,
         abilities: [
           {
-            base: [75,115,155,195,235],
-            scale: 'ap',
-            damage: 'magical',
-            type: 'damage',
-            ratio: 0.75,
-            rname: 'KennenShurikenHurlMissile1'
+            base: [56.25,168.75,281.25,393.75,506.25],
+            type: "damage",
+            damage: "physical",
+            ad: [337.5, 365.625, 393.75, 421.875, 450],
+            ap: 0,
+            bAd: 0,
+            rname: 'AatroxQ',
+            note: "All 3 hits."
           },
           {
-            base: [60,85,110,135,160],
-            scale: 'ap',
-            damage: 'magical',
+            base: [60, 80, 100, 120, 140],
+            damage: 'physical',
             type: 'damage',
-            ratio: 0.75,
-            rname: 'KennenBringTheLight'
+            ad: 80,
+            ap: 0,
+            bAd: 0,
+            rname: 'AatroxW',
+            note: "Both hits. 1/2 if they leave the area."
           },
           {
-            base: [80,120,160,200,240],
-            scale: 'ap',
-            damage: 'magical',
-            type: 'damage',
-            ratio: 0.8,
-            rname: 'KennenLightningRush'
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'AatroxE'
           },
           {
-            base: [300,562.5,825],
-            scale: 'ap',
-            damage: 'magical',
-            type: 'damage',
-            ratio: 1.5,
-            rname: 'KennenShurikenStorm',
-            ultimate: true
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'AatroxR'
           }
         ],
-        items: [
+        items: [{},{},{},{},{},{}],
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg',
+    },
+    ahri: {
+        name: 'ahri',
+        lv: 1,
+        baseHp: 526,
+        hp: 526,
+        lvHp: 92,
+        armor: 21,
+        lvArmor: 3.5,
+        resist: 30,
+        lvResist: 0.5,
+        movement: 330,
+        mana: 418,
+        lvMana: 25,
+        attack: 53,
+        baseAttack: 53,
+        lvAttack: 3,
+        critDamage: 175,
+        critChance: 0,
+        omnivamp: 0,
+        lethality: 0,
+        arpen: 0,
+        mpen: 0,
+        flatMPen: 0,
+        ap: 0,
+        abilitylv1: 0,
+        abilitylv2: 0,
+        abilitylv3: 0,
+        abilitylv4: 0,
+        abilities: [
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ],
-            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+            base: [40, 65, 90, 115, 140],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 35,
+            bAd: 0,
+            rname: 'AhriOrbofDeception',
+            note: "non-true damage hit"
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ],
-            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+            base: [64, 104, 148, 184, 224],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 48,
+            bAd: 0,
+            rname: 'AhriFoxFire'
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ],
-            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+            base: [60,90,120,150,180],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 40,
+            bAd: 0,
+            rname: 'AhriSeduce',
+       		note: "Does not include 20% increased damage on other abilities."
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
-          },
-          {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
-          },
-          {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
-          },
+            base: [180,270,360],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 105,
+            bAd: 0,
+            rname: 'AhriTumble'
+          }
         ],
-        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg',
-      }
+        items: [{},{},{},{},{},{}],
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg',
+    },
+    akali: {
+        name: 'akali',
+        lv: 1,
+        baseHp: 575,
+        hp: 575,
+        lvHp: 95,
+        armor: 23,
+        lvArmor: 3.5,
+        resist: 37,
+        lvResist: 1.25,
+        movement: 345,
+        mana: 200,
+        lvMana: 0,
+        attack: 62,
+        baseAttack: 62,
+        lvAttack: 3.3,
+        critDamage: 175,
+        critChance: 0,
+        omnivamp: 0,
+        lethality: 0,
+        arpen: 0,
+        mpen: 0,
+        flatMPen: 0,
+        ap: 0,
+        abilitylv1: 0,
+        abilitylv2: 0,
+        abilitylv3: 0,
+        abilitylv4: 0,
+        abilities: [
+          {
+            base: [30, 55, 80, 105, 130],
+            type: "damage",
+            damage: "magical",
+            ad: 65,
+            ap: 60,
+            bAd: 0,
+            rname: 'AkaliQ'
+          },
+          {
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'AkaliW'
+          },
+          {
+            base: [100, 170, 240, 310, 380],
+            damage: 'magical',
+            type: 'damage',
+            ad: 70,
+            ap: 100,
+            bAd: 0,
+            rname: 'AkaliE',
+       		note: "Both hits. 1/2 damage if only first part."
+          },
+          {
+            base: [200, 370, 540],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 30,
+            bAd: 50,
+            rname: 'AkaliR',
+            note: "inaccurate. calculated using magical damage both parts with no missing health increase."
+          }
+        ],
+        items: [{},{},{},{},{},{}],
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg',
+    },
+    
 }
 
