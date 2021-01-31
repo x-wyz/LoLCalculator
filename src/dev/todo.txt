@@ -8,3 +8,6 @@
 - ashe q
 - aurelion sol
 - azir-w
+
+- cam q, w
+- cass e base dmg
