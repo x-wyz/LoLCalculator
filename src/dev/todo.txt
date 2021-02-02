@@ -11,3 +11,7 @@
 
 - cam q, w
 - cass e base dmg
+
+- elise
+
+- eve e scale
