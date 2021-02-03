@@ -2521,22 +2521,22 @@ export let ChampionData = {
         items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg',
     },
-    hecarim: {
-        name: 'hecarim',
+    irelia: {
+        name: 'irelia',
         lv: 1,
         baseHp: 580,
         hp: 580,
-        lvHp: 90,
+        lvHp: 95,
         armor: 36,
-        lvArmor: 4,
+        lvArmor: 3,
         resist: 32,
         lvResist: 1.25,
-        movement: 345,
-        mana: 277,
-        lvMana: 60,
-        attack: 66,
-        baseAttack: 66,
-        lvAttack: 3.2,
+        movement: 335,
+        mana: 350,
+        lvMana: 50,
+        attack: 65,
+        baseAttack: 65,
+        lvAttack: 4,
         critDamage: 175,
         critChance: 0,
         omnivamp: 0,
@@ -2551,47 +2551,118 @@ export let ChampionData = {
         abilitylv4: 0,
         abilities: [
           {
-            base: [66,112.2,158.4,204.6,250.8],
+            base: [5,25,45,65,85],
             type: "damage",
             damage: "physical",
-            ad: 0,
+            ad: 60,
             ap: 0,
-            bAd: 77,
-            rname: 'HecarimRapidSlash',
-            note: "max stacks"
+            bAd: 0,
+            rname: 'IreliaQ',
+            note: "ability damage | does not calc on hit affects"
           },
           {
-            base: [20,30,40,50,60],
+            base: [10,25,40,55,70],
+            damage: 'physical',
+            type: 'damage',
+            ad: 50,
+            ap: 40,
+            bAd: 0
+            rname: 'IreliaW',
+            note: "min damage | max damage 2.0x"
+          },
+          {
+            base: [80,125,170,215,260],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 20,
-            bAd: 0
-            rname: 'HecarimW',
-            note: "per tick | 1 tick per second | 1.0s intervals"
-          },
-          {
-            base: [35,65,95,125,155],
-            damage: 'physical',
-            type: 'damage',
-            ad: 0,
-            ap: 0,
-            bAd: 50,
-            rname: "HecarimRamp",
-            note: "minimum damage | max damage 2.0x | non critical | bonus damage"
-          },
-          {
-            base: [150,250,350],
-            damage: 'physical',
-            type: 'damage',
-            ad: 0,
-            ap: 100,
+            ap: 80,
             bAd: 0,
-            rname: 'HecarimUlt'
+            rname: "IreliaE"
+          },
+          {
+            base: [125,250,375],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 70,
+            bAd: 0,
+            rname: 'IreliaR',
+            note: "barrage damage | perimeter deals the same amount"
           }
         ],
         items: [{},{},{},{},{},{}],
-        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg',
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg',
+    },
+    ivern: {
+        name: 'ivern',
+        lv: 1,
+        baseHp: 585,
+        hp: 585,
+        lvHp: 95,
+        armor: 27,
+        lvArmor: 3.5,
+        resist: 32,
+        lvResist: 1.25,
+        movement: 335,
+        mana: 450,
+        lvMana: 60,
+        attack: 50,
+        baseAttack: 50,
+        lvAttack: 3,
+        critDamage: 175,
+        critChance: 0,
+        omnivamp: 0,
+        lethality: 0,
+        arpen: 0,
+        mpen: 0,
+        flatMPen: 0,
+        ap: 0,
+        abilitylv1: 0,
+        abilitylv2: 0,
+        abilitylv3: 0,
+        abilitylv4: 0,
+        abilities: [
+          {
+            base: [80,125,170,215,260],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 70,
+            bAd: 0,
+            rname: 'IvernQ'
+          },
+          {
+            base: [30,37.5,45,52.5,60],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 30,
+            bAd: 0
+            rname: 'IvernW',
+            note: "bonus damage on ivern auto when in bush"
+          },
+          {
+            base: [80,115,150,185,220],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 80,
+            bAd: 0,
+            rname: "IvernE"
+          },
+          {
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'IvernR',
+            note: "no calc for daisy yet"
+          }
+        ],
+        items: [{},{},{},{},{},{}],
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg',
     },
 }
 
