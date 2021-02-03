@@ -39,3 +39,7 @@
 	width: 35%;
 	margin: 0.2em;
 }
+
+.active-buff {
+	background: #04890494;
+}

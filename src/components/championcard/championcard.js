@@ -137,7 +137,7 @@ class ChampionCard extends Component {
   page4(){
     return (
       <div className="rune-pages">
-        <ChampionBuffs />
+        <ChampionBuffs currentBuffs={this.props.champion.buffs} modifyBuff={this.props.modifyBuff}/>
       </div>
     )
   }

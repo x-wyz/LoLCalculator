@@ -443,12 +443,7 @@ class App extends Component {
   }
 
   modifyBuff(name, type, target){
-    if (target === "mainAlly"){
-      const { champion:mainAlly } = this.state;
-    }
-    else {
-      const { champion:mainEnemy } = this.state;
-    }
+    const champion = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
 
     champion.buffs[name] = !champion.buffs[name];
 
@@ -481,6 +476,17 @@ class App extends Component {
         champion.buffs.mount1 = false;
       }
     }
+
+    if (target === "mainAlly"){
+      this.setState({
+        mainAlly: champion
+      })
+    }
+    else {
+      this.setState({
+        mainEnemy: champion
+      })
+    }
   }
 
   render(){
@@ -491,10 +497,10 @@ class App extends Component {
         <div className="app-background"></div>
         <header className="champion-select">
           <div className="allies">
-            <ChampionCard champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} />
+            <ChampionCard champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainAlly")} />
           </div>
           <div className="enemy">
-            <ChampionCard champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} />
+            <ChampionCard champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
           </div>
         </header>
         <CalculationArea ally={mainAlly} enemy={mainEnemy} />
