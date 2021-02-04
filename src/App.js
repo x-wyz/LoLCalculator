@@ -14,6 +14,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      championChanged: false,
       mainAlly: {
         name: 'Kennen',
         lv: 1,
@@ -605,14 +606,18 @@ class App extends Component {
 
     if (target === "mainAlly"){
       this.setState({
-        mainAlly: clonedChampion
+        mainAlly: clonedChampion,
+        championChanged: true
       })
     }
     else {
       this.setState({
-        mainEnemy: clonedChampion
+        mainEnemy: clonedChampion,
+        championChanged: true
       })
     }
+
+    this.forceUpdate()
   }
 
   render(){
@@ -631,7 +636,12 @@ class App extends Component {
             <ChampionCard champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
           </div>
         </header>
-        <CalculationArea ally={mainAlly} enemy={mainEnemy} />
+        {
+          this.state.championChanged === true ?
+          <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
+          :
+          <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={false} />
+        }
       </div>
     );
   }

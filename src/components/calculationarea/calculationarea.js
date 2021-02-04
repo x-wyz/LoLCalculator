@@ -12,32 +12,19 @@ class CalculationArea extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			enemyTab: false,
-			ally: this.props.ally,
-			enemy: this.props.enemy
+			enemyTab: false
 		}
 	}
 
 	switchTab(bool){
-		if (bool === true) {
-			this.setState({
-				enemyTab: bool,
-				ally: this.props.enemy,
-				enemy: this.state.ally
-			})
-		}
-		else {
-			this.setState({
-				enemyTab: bool,
-				ally: this.props.ally,
-				enemy: this.props.enemy
-			})
-		}
+		this.setState({
+			enemyTab: bool
+		})
 	}
 
 	render(){
-		const { enemyTab, ally, enemy } = this.state;
-		console.log(ally, enemy)
+		const { ally, enemy } = this.props;
+		const { enemyTab } = this.state;
 
 		return (
 			<div className="calculation-area">
@@ -47,14 +34,18 @@ class CalculationArea extends Component {
 				</header>
 				<div className="calculation-body">
 					<h3 className="calculation-heading">Basic</h3>
-					<CalcBasic ally={ally} enemy={enemy} />
+					<CalcBasic ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
 					<h3 className="calculation-heading">Skills</h3>
 					<div className="calculation-skills">
 						{
-							// Reminder: put ally and enemy stats as one argument instead of splitting between potentially 10s ** 
-							// have CalcSkill component worry about which stats it needs.
-						}
-						{
+							enemyTab === true
+							?
+							enemy.abilities.map((ability, idx) => <CalcSkill 
+								icon={ability.rname} ratio={ability.ratio} enemyHp={enemy.hp} enemyAr={enemy.armor} enemyRes={enemy.resist} 
+								scale={ability.scale} damageType={ability.damage} ad={enemy.attack} ap={enemy.ap}
+								base={ability.base[enemy[`abilitylv${idx+1}`]]}
+								/>)
+							:
 							ally.abilities.map((ability, idx) => <CalcSkill 
 								icon={ability.rname} ratio={ability.ratio} enemyHp={enemy.hp} enemyAr={enemy.armor} enemyRes={enemy.resist} 
 								scale={ability.scale} damageType={ability.damage} ad={ally.attack} ap={ally.ap}
