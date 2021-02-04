@@ -7,7 +7,7 @@ import CharacterSelect from './components/characterselect/characterselect';
 
 // Data
 
-import { Runes, Buffs, ChampionData } from './data/champion';
+import { ChampionData } from './data/champion';
 
 class App extends Component {
   constructor(props){
@@ -429,6 +429,8 @@ class App extends Component {
     }
 
     this.modifyRune = this.modifyRune.bind(this);
+    this.modifyBuff = this.modifyBuff.bind(this);
+    this.updateChampion = this.updateChampion.bind(this);
   }
 
   modifyRune(type, rune, target){
@@ -494,6 +496,125 @@ class App extends Component {
     }
   }
 
+  updateChampion(champion, target){
+    const selectedChampion = ChampionData[champion.toLowerCase()];
+    const championKeys = Object.keys(selectedChampion);
+    const clonedChampion = {};
+
+    championKeys.map(key => {
+      clonedChampion[key] = selectedChampion[key]
+    })
+
+    clonedChampion.buffs = {
+        elixIron: false,
+        elixWrath: false,
+        elixSorc: false,
+        baron: false,
+        inf1: false,
+        inf2: false,
+        mount1: false,
+        mount2: false
+    };
+
+    clonedChampion.runes = {
+        precision: {
+          key1: false,
+          key2: false,
+          key3: false,
+          key4: false,
+          node1: false,
+          node2: false,
+          node3: false,
+          node4: false,
+          node5: false,
+          node6: false,
+          node7: false,
+          node8: false,
+          node9: false
+        },
+        domination: {
+          key1: false,
+          key2: false,
+          key3: false,
+          key4: false,
+          node1: false,
+          node2: false,
+          node3: false,
+          node4: false,
+          node5: false,
+          node6: false,
+          node7: false,
+          node8: false,
+          node9: false,
+          node10: false
+        },
+        sorcery: {
+          key1: false,
+          key2: false,
+          key3: false,
+          node1: false,
+          node2: false,
+          node3: false,
+          node4: false,
+          node5: false,
+          node6: false,
+          node7: false,
+          node8: false,
+          node9: false
+        },
+        resolve: {
+          key1: false,
+          key2: false,
+          key3: false,
+          node1: false,
+          node2: false,
+          node3: false,
+          node4: false,
+          node5: false,
+          node6: false,
+          node7: false,
+          node8: false,
+          node9: false
+        },
+        inspiration: {
+          key1: false,
+          key2: false,
+          key3: false,
+          node1: false,
+          node2: false,
+          node3: false,
+          node4: false,
+          node5: false,
+          node6: false,
+          node7: false,
+          node8: false,
+          node9: false
+        },
+        minor: {
+          node1: false,
+          node2: false,
+          node3: false,
+          node4: false,
+          node5: false,
+          node6: false,
+          node7: false,
+          node8: false,
+          node9: false
+        }
+    }
+
+    if (target === "mainAlly"){
+      this.setState({
+        mainAlly: clonedChampion
+      })
+    }
+    else {
+      this.setState({
+        mainEnemy: clonedChampion
+      })
+    }
+  }
+
   render(){
     const { mainAlly, mainEnemy } = this.state;
 
@@ -502,11 +623,11 @@ class App extends Component {
         <div className="app-background"></div>
         <header className="champion-select">
           <div className="allies">
-            <CharacterSelect championlist={ChampionData} />
+            <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainAlly")} />
             <ChampionCard champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainAlly")} />
           </div>
           <div className="enemy">
-            <CharacterSelect championlist={ChampionData} />
+            <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainEnemy")} />
             <ChampionCard champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
           </div>
         </header>

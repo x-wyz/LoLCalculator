@@ -37,6 +37,7 @@ class CalculationArea extends Component {
 
 	render(){
 		const { enemyTab, ally, enemy } = this.state;
+		console.log(ally, enemy)
 
 		return (
 			<div className="calculation-area">

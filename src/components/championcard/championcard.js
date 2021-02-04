@@ -92,7 +92,7 @@ class ChampionCard extends Component {
             <h6 className="champion-section-heading">Items</h6>
             <div className="champion-section-content">
               {
-                champion.items.map((item, idx) => <ChampionItemCard name={item.name} stats={item.stats} ico={item.icon} slot={idx + 1} />)
+                // champion.items.map((item, idx) => <ChampionItemCard name={item.name} stats={item.stats} ico={item.icon} slot={idx + 1} />)
               }
             </div>
           </section>

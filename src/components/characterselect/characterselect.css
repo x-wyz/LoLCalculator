@@ -3,7 +3,7 @@
 	justify-content: center;
 }
 
-#champion-options {
+.champion-options {
 	width: 50%;
 	outline: 0;
 	padding: 0.5em;
@@ -22,7 +22,7 @@
 	border: 0;
 	outline: 0;
 	border: 1px solid white;
-	margin-left: 10px;
+	margin-left: 5px;
 	font-weight: bold;
 	color: white;
 	cursor: pointer;
