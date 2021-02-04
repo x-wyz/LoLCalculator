@@ -3,6 +3,11 @@ import './App.css';
 
 import ChampionCard from './components/championcard/championcard';
 import CalculationArea from './components/calculationarea/calculationarea';
+import CharacterSelect from './components/characterselect/characterselect';
+
+// Data
+
+import { Runes, Buffs, ChampionData } from './data/champion';
 
 class App extends Component {
   constructor(props){
@@ -491,15 +496,17 @@ class App extends Component {
 
   render(){
     const { mainAlly, mainEnemy } = this.state;
-    console.log(mainAlly)
+
     return (
       <div className="App">
         <div className="app-background"></div>
         <header className="champion-select">
           <div className="allies">
+            <CharacterSelect championlist={ChampionData} />
             <ChampionCard champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainAlly")} />
           </div>
           <div className="enemy">
+            <CharacterSelect championlist={ChampionData} />
             <ChampionCard champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
           </div>
         </header>

@@ -2423,7 +2423,7 @@ export let ChampionData = {
             type: 'damage',
             ad: 0,
             ap: 60,
-            bAd: 0
+            bAd: 0,
             rname: 'GravesSmokeGrenade'
           },
           {
@@ -2494,7 +2494,7 @@ export let ChampionData = {
             type: 'damage',
             ad: 0,
             ap: 20,
-            bAd: 0
+            bAd: 0,
             rname: 'HecarimW',
             note: "per tick | 1 tick per second | 1.0s intervals"
           },
@@ -2566,7 +2566,7 @@ export let ChampionData = {
             type: 'damage',
             ad: 50,
             ap: 40,
-            bAd: 0
+            bAd: 0,
             rname: 'IreliaW',
             note: "min damage | max damage 2.0x"
           },
@@ -2637,7 +2637,7 @@ export let ChampionData = {
             type: 'damage',
             ad: 0,
             ap: 30,
-            bAd: 0
+            bAd: 0,
             rname: 'IvernW',
             note: "bonus damage on ivern auto when in bush"
           },

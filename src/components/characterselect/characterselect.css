@@ -1,0 +1,35 @@
+.character-select {
+	display: flex;
+	justify-content: center;
+}
+
+#champion-options {
+	width: 50%;
+	outline: 0;
+	padding: 0.5em;
+	text-align: center;
+	background: #476f74;
+	border: 1px solid white;
+	color: white;
+	letter-spacing: 0.05em;
+}
+
+.update-champ-btn {
+	width: 10%;
+	min-width: 100px;
+	background: #325c61;
+	text-transform: uppercase;
+	border: 0;
+	outline: 0;
+	border: 1px solid white;
+	margin-left: 10px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+	letter-spacing: 0.05em;
+}
+
+option {
+	background: #476f74;
+	font-size: 0.1em;
+}
