@@ -74,55 +74,52 @@ class App extends Component {
         ],
         items: [
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ],
-            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+            img: 1055,
+            tier: 'basic',
+            stats: {
+              ad: 8,
+              hp: 80
+            }
+          },
+                  {
+            img: 1055,
+            tier: 'basic',
+            stats: {
+              ad: 8,
+              hp: 80
+            }
+          },
+                  {
+            img: 1055,
+            tier: 'basic',
+            stats: {
+              ad: 8,
+              hp: 80
+            }
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ],
-            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+            img: 1056,
+            tier: 'basic',
+            stats: {
+              hp: 70,
+              ap: 15
+            }
           },
-          {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ],
-            icon: 'https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/3072.png'
+                  {
+            img: 1056,
+            tier: 'basic',
+            stats: {
+              hp: 70,
+              ap: 15
+            }
           },
-          {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
-          },
-          {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
-          },
-          {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
+                  {
+            img: 1056,
+            tier: 'basic',
+            stats: {
+              hp: 70,
+              ap: 15
+            }
           },
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg',
@@ -281,52 +278,46 @@ class App extends Component {
         ],
         items: [
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
+            img: 1083,
+            tier: 'basic',
+            stats: {
+              ad: 7
+            }
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
+            img: 1083,
+            tier: 'basic',
+            stats: {
+              ad: 7
+            }
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
+            img: 1083,
+            tier: 'basic',
+            stats: {
+              ad: 7
+            }
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
+            img: 1083,
+            tier: 'basic',
+            stats: {
+              ad: 7
+            }
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
+            img: 1083,
+            tier: 'basic',
+            stats: {
+              ad: 7
+            }
           },
           {
-            name: 'Bloodthirster',
-            stats: [
-              '50 ad',
-              '200 hp',
-              '400 mp'
-            ]
+            img: 1083,
+            tier: 'basic',
+            stats: {
+              ad: 7
+            }
           },
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg',

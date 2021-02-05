@@ -3,29 +3,20 @@ import React from 'react';
 import './championitemcard.css';
 
 const ChampionItemCard = ({ item, slot }) => {
-	if (item.name === undefined) {
-		return (
-			<div className="item-stat">
-				<p className="item-stat-amount">{0}</p>
-				<p className="item-stat-type">{0}</p>
-			</div>
-		)
-	}
 
-	const updatedStats = stats.map(stat => {
-		const cur = stat.split(" ");
-		cur[1] = cur[1].toUpperCase();
-		return cur;
-	});
+	const statKeys = Object.keys(item.stats);
+	const statsArray = statKeys.map(key => {
+		return [item.stats[key], key];
+	})
 
 	return (
 		<section className="champion-item">
-			<div className="champion-item-icon" style={{backgroundImage: `url(${ico})`}}>
+			<div className="champion-item-icon" style={item.img === undefined ? {} : {backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/${item.img}.png)`}}>
 				<span className="item-slot-number">{slot}</span>
 			</div>
 			<div className="item-stats-container">
 				{
-					updatedStats.map(stat => (
+					statsArray.map(stat => (
 						<div className="item-stat">
 							<p className="item-stat-amount">{stat[0]}</p>
 							<p className="item-stat-type">{stat[1]}</p>

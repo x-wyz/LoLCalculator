@@ -22,7 +22,7 @@
 	display: flex;
 	font-size: 0.7em;
 	justify-content: space-around;
-	margin-top: 0.2em;
+	margin-top: 0.3em;
 }
 
 .item-stat-amount {
@@ -31,8 +31,9 @@
 }
 
 .item-stat-type {
-	width: 45%;
+	width: 40%;
 	text-align: left;
+	text-transform: uppercase;
 }
 
 .item-slot-number {
@@ -40,4 +41,8 @@
 	bottom: 0;
 	right: 0;
 	font-size: 0.8em;
+}
+
+.item-stats-container {
+	overflow-y: hidden;
 }
