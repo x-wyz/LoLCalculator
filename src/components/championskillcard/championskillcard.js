@@ -2,15 +2,13 @@ import React from 'react';
 
 import './championskillcard.css';
 
-const ChampionSkillCard = ({ skill, currentLv, maxLv, increaseLv, decreaseLv, ultimate }) => (
+const ChampionSkillCard = ({ update, currentLv, skillPosition, skill, ultimate}) => (
 	<div className="champion-skill-container">
-		<section className={`champion-skill ${ultimate ? 'ult' : null}`}>
+		<section className={`champion-skill`}>
+			<p type="button" className="skill-increase" onClick={() => update(skillPosition, "add")} >⬆</p>
 			<div className="champion-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${skill.rname}.png)`}}></div>
-			<div className="skill-adjustment">
-				<p type="button" className="skill-increase" >⬆</p>
-				<p type="button" className="skill-decrease">⬇</p>
-			</div>
-			<p className="skill-current-lv">{currentLv}/{maxLv ? maxLv : 5}</p>
+			<p type="button" className="skill-decrease" onClick={() => update(skillPosition, "reduce")}>⬇</p>
+			<p className="skill-current-lv">{currentLv+1}/{ultimate === true ? 3 : 5}</p>
 		</section>
 	</div>
 )

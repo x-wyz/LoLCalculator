@@ -84,7 +84,7 @@ class ChampionCard extends Component {
             <h6 className="champion-section-heading">Skills</h6>
             <div className="champion-section-content">
               {
-                champion.abilities.map(ability => <ChampionSkillCard currentLv={1} skill={ability} />)
+                champion.abilities.map((ability, idx) => <ChampionSkillCard update={this.props.skillUpdate} currentLv={champion[`abilitylv${idx+1}`]} skillPosition={idx+1} skill={ability} ultimate={idx === 3 ? true : false} />)
               }
             </div>
           </section>

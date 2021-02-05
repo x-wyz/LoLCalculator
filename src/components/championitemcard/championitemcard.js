@@ -4,10 +4,15 @@ import './championitemcard.css';
 
 const ChampionItemCard = ({ item, slot }) => {
 
-	const statKeys = Object.keys(item.stats);
-	const statsArray = statKeys.map(key => {
-		return [item.stats[key], key];
-	})
+	try {
+		var statKeys = Object.keys(item.stats);
+		var statsArray = statKeys.map(key => {
+			return [item.stats[key], key];
+		})
+	}
+	catch {
+		return <div />
+	}
 
 	return (
 		<section className="champion-item">
