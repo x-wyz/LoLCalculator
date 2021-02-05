@@ -3,14 +3,14 @@ export const itemsData = {
 		img: 1083,
 		tier: 'basic',
 		stats: {
-			attack: 7
+			ad: 7
 		}
 	},
 	doransBlade: {
 		img: 1055,
 		tier: 'basic',
 		stats: {
-			attack: 8,
+			ad: 8,
 			hp: 80
 		}
 	},
@@ -40,7 +40,7 @@ export const itemsData = {
 		img: 1038,
 		tier: 'basic',
 		stats: {
-			attack: 40
+			ad: 40
 		}
 	},
 	blastingWand: {
@@ -83,7 +83,7 @@ export const itemsData = {
 		img: 1036,
 		tier: 'basic',
 		stats: {
-			attack: 10
+			ad: 10
 		}
 	},
 	needlesslyLargeRod: {
@@ -127,7 +127,7 @@ export const itemsData = {
 		img: 3854,
 		tier: 'basic',
 		stats: {
-			attack: 3,
+			ad: 3,
 			hp: 30
 		}
 	},
@@ -135,7 +135,7 @@ export const itemsData = {
 		img: 3862,
 		tier: 'basic',
 		stats: {
-			attack: 5,
+			ad: 5,
 			hp: 10
 		}
 	},
@@ -228,7 +228,7 @@ export const itemsData = {
 		img: 3133,
 		tier: "advance",
 		stats: {
-			attack: 25,
+			ad: 25,
 			abilityHaste: 10
 		}
 	},
@@ -250,7 +250,7 @@ export const itemsData = {
 		img: 3123,
 		tier: "advance",
 		stats: {
-			attack: 15
+			ad: 15
 		}
 	},
 	fiendishCodex: {
@@ -290,14 +290,14 @@ export const itemsData = {
 		tier: "advance",
 		stats: {
 			hp: 60,
-			attack: 10
+			ad: 10
 		}
 	},
 	hearthboundAxe: {
 		img: 3051,
 		tier: "advance",
 		stats: {
-			attack: 15,
+			ad: 15,
 			attackspeed: 15
 		}
 	},
@@ -305,7 +305,7 @@ export const itemsData = {
 		img: 3155,
 		tier: "advance",
 		stats: {
-			attack: 20,
+			ad: 20,
 			resist: 35
 		},
 		effect: {
@@ -329,7 +329,7 @@ export const itemsData = {
 		img: 6029,
 		tier: "advance",
 		stats: {
-			attack: 30
+			ad: 30
 		},
 		effect: {
 			type: 'damage',
@@ -363,7 +363,7 @@ export const itemsData = {
 		img: 3035,
 		tier: "advance",
 		stats: {
-			attack: 20,
+			ad: 20,
 			arpen: 20
 		}
 	},
@@ -395,7 +395,7 @@ export const itemsData = {
 		img: 6670,
 		tier: "advance",
 		stats: {
-			attack: 30,
+			ad: 30,
 			attackspeed: 15
 		}
 	},
@@ -411,7 +411,7 @@ export const itemsData = {
 		tier: "advance",
 		stats: {
 			hp: 200,
-			attack: 15
+			ad: 15
 		}
 	},
 	quicksilverSash: {
@@ -446,7 +446,7 @@ export const itemsData = {
 		tier: "advance",
 		stats: {
 			hp: 100,
-			attack: 6
+			ad: 6
 		}
 	},
 	seekersArmguard: {
@@ -467,7 +467,7 @@ export const itemsData = {
 		img: 3134,
 		tier: "advance",
 		stats: {
-			attack: 30,
+			ad: 30,
 			lethality: 10
 		}
 	},
@@ -503,14 +503,14 @@ export const itemsData = {
 		img: 3077,
 		tier: "advance",
 		stats: {
-			attack: 25
+			ad: 25
 		}
 	},
 	vampiricScepter: {
 		img: 1053,
 		tier: "advance",
 		stats: {
-			attack: 15,
+			ad: 15,
 			lifesteal: 10
 		}
 	},
@@ -595,7 +595,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			abilityHaste: 25,
-			attack: 40,
+			ad: 40,
 			hp: 300
 		}
 	},
@@ -603,7 +603,7 @@ export const itemsData = {
 		img: 3864,
 		tier: "legendary",
 		stats: {
-			attack: 20,
+			ad: 20,
 			hp: 75
 		}
 	},
@@ -611,7 +611,7 @@ export const itemsData = {
 		img: 3153,
 		tier: "legendary",
 		stats: {
-			attack: 40,
+			ad: 40,
 			attackspeed: 25,
 			lifesteal: 12
 		},
@@ -623,7 +623,7 @@ export const itemsData = {
 		img: 3072,
 		tier: "legendary",
 		stats: {
-			attack: 55,
+			ad: 55,
 			lifesteal: 20,
 			critChance: 20
 		}
@@ -641,7 +641,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			abilityHaste: 15,
-			attack: 45,
+			ad: 45,
 			hp: 150
 		}
 	},
@@ -676,7 +676,7 @@ export const itemsData = {
 		stats: {
 			armor: 40,
 			abilityHaste: 15,
-			attack: 50
+			ad: 50
 		}
 	},
 	demonicEmbrace: {
@@ -697,7 +697,7 @@ export const itemsData = {
 		img: 3814,
 		tier: "legendary",
 		stats: {
-			attack: 50,
+			ad: 50,
 			hp: 325,
 			lethality: 10
 		}
@@ -707,7 +707,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			abilityHaste: 20,
-			attack: 55,
+			ad: 55,
 			critChance: 20
 		},
 		effect: {
@@ -754,7 +754,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			armor: 40,
-			attack: 40
+			ad: 40
 		}
 	},
 	guinsoosRageblade: {
@@ -782,7 +782,7 @@ export const itemsData = {
 		img: 3031,
 		tier: "legendary",
 		stats: {
-			attack: 70,
+			ad: 70,
 			critChance: 20
 		},
 		effect: {
@@ -818,7 +818,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			arpen: 25,
-			attack: 35,
+			ad: 35,
 			critChance: 20
 		},
 		effect: {
@@ -830,7 +830,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			abilityHaste: 15,
-			attack: 50,
+			ad: 50,
 			resist: 50
 		},
 		effect: {
@@ -841,7 +841,7 @@ export const itemsData = {
 		img: 3139,
 		tier: "legendary",
 		stats: {
-			attack: 40,
+			ad: 40,
 			critChance: 20,
 			resist: 30
 		}
@@ -866,7 +866,7 @@ export const itemsData = {
 		img: 3033,
 		tier: "legendary",
 		stats: {
-			attack: 20,
+			ad: 20,
 			attackspeed: 25,
 			critChance: 20
 		}
@@ -887,7 +887,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			abilityHaste: 30,
-			attack: 60,
+			ad: 60,
 			critChance: 20
 		}
 	},
@@ -895,7 +895,7 @@ export const itemsData = {
 		img: 3857,
 		tier: "legendary",
 		stats: {
-			attack: 15,
+			ad: 15,
 			hp: 250
 		}
 	},
@@ -940,7 +940,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			abilityHaste: 20,
-			attack: 65,
+			ad: 65,
 			omnivamp: 15
 		}
 	},
@@ -972,7 +972,7 @@ export const itemsData = {
 		img: 3181,
 		tier: "legendary",
 		stats: {
-			attack: 50,
+			ad: 50,
 			lethality: 10
 		}
 	},
@@ -980,7 +980,7 @@ export const itemsData = {
 		img: 6695,
 		tier: "legendary",
 		stats: {
-			attack: 55,
+			ad: 55,
 			lethality: 18
 		}
 	},
@@ -989,7 +989,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			arpen: 30,
-			attack: 45,
+			ad: 45,
 			abilityHaste: 20
 		}
 	},
@@ -1005,7 +1005,7 @@ export const itemsData = {
 		img: 6035,
 		tier: "legendary",
 		stats: {
-			attack: 35,
+			ad: 35,
 			hp: 200,
 			resist: 35
 		}
@@ -1030,7 +1030,7 @@ export const itemsData = {
 		img: 3053,
 		tier: "legendary",
 		stats: {
-			attack: 50,
+			ad: 50,
 			hp: 400
 		}
 	},
@@ -1038,7 +1038,7 @@ export const itemsData = {
 		img: 3095,
 		tier: "legendary",
 		stats: {
-			attack: 40,
+			ad: 40,
 			attackspeed: 15,
 			critChance: 20
 		}
@@ -1047,7 +1047,7 @@ export const itemsData = {
 		img: 6676,
 		tier: "legendary",
 		stats: {
-			attack: 55,
+			ad: 55,
 			critChance: 20,
 			lethality: 12
 		}
@@ -1064,7 +1064,7 @@ export const itemsData = {
 		img: 3748,
 		tier: "legendary",
 		stats: {
-			attack: 30,
+			ad: 30,
 			hp: 500
 		},
 		effect: {
@@ -1076,7 +1076,7 @@ export const itemsData = {
 		tier: "legendary",
 		stats: {
 			abilityHaste: 15,
-			attack: 50,
+			ad: 50,
 			lethality: 12
 		}
 	},
@@ -1107,7 +1107,7 @@ export const itemsData = {
 		img: 3075,
 		tier: "legendary",
 		stats: {
-			attack: 30,
+			ad: 30,
 			attackspeed: 40,
 			resist: 50
 		},
@@ -1119,7 +1119,7 @@ export const itemsData = {
 		img: 3142,
 		tier: "legendary",
 		stats: {
-			attack: 60,
+			ad: 60,
 			lethality: 18
 		}
 	},
@@ -1196,7 +1196,7 @@ export const itemsData = {
 		tier: "mythic",
 		stats: {
 			abilityHaste: 20,
-			attack: 40,
+			ad: 40,
 			hp: 400
 		},
 		effect: {
@@ -1217,7 +1217,7 @@ export const itemsData = {
 		tier: "mythic",
 		stats: {
 			abilityHaste: 20,
-			attack: 60,
+			ad: 60,
 			lethality: 18
 		},
 		effect: {
@@ -1236,7 +1236,7 @@ export const itemsData = {
 		img: 6692,
 		tier: "mythic",
 		stats: {
-			attack: 55,
+			ad: 55,
 			omnivamp: 10,
 			lethality: 18
 		},
@@ -1298,13 +1298,13 @@ export const itemsData = {
 		img: 6671,
 		tier: "mythic",
 		stats: {
-			attack: 60,
+			ad: 60,
 			attackspeed: 20,
 			critChance: 20
 		},
 		mythic: {
 			stats: {
-				attack: 0
+				ad: 0
 			}
 		},
 		effect: {
@@ -1319,7 +1319,7 @@ export const itemsData = {
 		tier: "mythic",
 		stats: {
 			abilityHaste: 20,
-			attack: 45,
+			ad: 45,
 			hp: 400
 		},
 		mythic: {
@@ -1358,14 +1358,14 @@ export const itemsData = {
 		img: 6673,
 		tier: "mythic",
 		stats: {
-			attack: 50,
+			ad: 50,
 			attackspeed: 15,
 			critChance: 20,
 			lifesteal: 12
 		},
 		mythic: {
 			stats: {
-				attack: 5,
+				ad: 5,
 				hp: 50
 			}
 		}
@@ -1374,7 +1374,7 @@ export const itemsData = {
 		img: 6672,
 		tier: "mythic",
 		stats: {
-			attack: 65,
+			ad: 65,
 			attackspeed: 25,
 			critChance: 20
 		},
@@ -1500,7 +1500,7 @@ export const itemsData = {
 		tier: "mythic",
 		stats: {
 			abilityHaste: 20,
-			attack: 60,
+			ad: 60,
 			lethality: 21
 		},
 		mythic: {
@@ -1546,7 +1546,7 @@ export const itemsData = {
 		}
 		mythic: {
 			stats: {
-				attack: 0
+				ad: 0
 			}
 		}
 	},
@@ -1555,13 +1555,13 @@ export const itemsData = {
 		tier: "mythic",
 		stats: {
 			abilityHaste: 20,
-			attack: 45,
+			ad: 45,
 			attackspeed: 20,
 			hp: 300
 		},
 		mythic: {
 			stats: {
-				attack: 0
+				ad: 0
 			}
 		},
 		effect: {
@@ -1588,7 +1588,7 @@ export const itemsData = {
 		},
 		mythic: {
 			stats: {
-				attack: 0
+				ad: 0
 			}
 		}
 	},
@@ -1597,7 +1597,7 @@ export const itemsData = {
 		tier: "mythic",
 		stats: {
 			abilityHaste: 20,
-			attack: 25,
+			ad: 25,
 			attackspeed: 35,
 			hp: 200
 		},

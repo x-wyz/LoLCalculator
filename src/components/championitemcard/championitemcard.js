@@ -2,7 +2,16 @@ import React from 'react';
 
 import './championitemcard.css';
 
-const ChampionItemCard = ({ name, stats, changeItem, ico, slot }) => {
+const ChampionItemCard = ({ item, slot }) => {
+	if (item.name === undefined) {
+		return (
+			<div className="item-stat">
+				<p className="item-stat-amount">{0}</p>
+				<p className="item-stat-type">{0}</p>
+			</div>
+		)
+	}
+
 	const updatedStats = stats.map(stat => {
 		const cur = stat.split(" ");
 		cur[1] = cur[1].toUpperCase();
