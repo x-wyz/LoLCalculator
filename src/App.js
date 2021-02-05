@@ -634,12 +634,7 @@ class App extends Component {
             <ChampionCard skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
           </div>
         </header>
-        {
-          this.state.championChanged === true ?
-          <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
-          :
-          <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={false} />
-        }
+        <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
       </div>
     );
   }
