@@ -1,4 +1,4 @@
-export const itemsData = {
+export const ItemsData = {
 	cull: {
 		img: 1083,
 		tier: 'basic',
@@ -455,7 +455,7 @@ export const itemsData = {
 		stats: {
 			ap: 20,
 			armor: 15
-		}
+		},
 		effect: {
 			type: 'stats',
 			stats: {
@@ -1430,7 +1430,7 @@ export const itemsData = {
 		stats: {
 			abilityHaste: 20,
 			armor: 30,
-			resist: 30.
+			resist: 30,
 			hp: 300
 		},
 		mythic: {
@@ -1543,7 +1543,7 @@ export const itemsData = {
 			base: 35,
 			max: 55,
 			scale: "0 ap"
-		}
+		},
 		mythic: {
 			stats: {
 				ad: 0

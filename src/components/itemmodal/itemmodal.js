@@ -1,0 +1,56 @@
+import React, { Component } from 'react';
+import "./itemmodal.css";
+
+import { ItemsData } from '../../data/items';
+
+const itemsKeys = Object.keys(ItemsData);
+const itemsArray = itemsKeys.map(item => [item, ItemsData[item]]);
+
+class ItemModal extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			search: ""
+		}
+		this.update = this.update.bind(this);
+	}
+
+	update(event){
+		this.setState({search: event.target.value})
+	}
+
+	render(){
+		const { search } = this.state;
+
+		return (
+			<div className="items-modal">
+				<div className="modal-content">
+					<div className="items-search-form">
+						<h3 className="items-selector-title">Item Selector</h3>
+						<input className="items-search-field" onChange={this.update} value={search} />
+					</div>
+					<div className="items-search-results">
+						{
+							itemsArray.map(item => {
+								if (item[0].toLowerCase().includes(search)){
+									return (
+										<div className="search-item">
+											{item[0].split(/(?=[A-Z])/).map(part => {
+												return part[0].toUpperCase() + part.slice(1)
+											}).join(" ")}
+										</div>
+									)
+								}
+							})
+						}
+					</div>
+				</div>
+				<div className="modal-footer">
+					<button type="button" className="close-modal-btn">Close</button>
+				</div>
+			</div>
+		)
+	}
+}
+
+export default ItemModal;

@@ -7,6 +7,8 @@ import ChampionItemCard from '../championitemcard/championitemcard';
 
 import ChampionBuffs from '../championbuffs/championbuffs';
 
+import ItemModal from '../itemmodal/itemmodal';
+
 //  Rune pages
 
 import Precision from '../runeprecision/runeprecision';
@@ -20,11 +22,13 @@ class ChampionCard extends Component {
   constructor(props){
     super(props);
     this.state = {
-      page: 0
+      page: 0,
+      itemsModal: this.props.champion.name === "test" ? 1 : false
     }
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
 
   nextPage(){
@@ -142,37 +146,50 @@ class ChampionCard extends Component {
     )
   }
 
+  showModal(){
+    return <ItemModal />
+  }
+
   render(){
-    const { page } = this.state;
+    const { page, itemsModal } = this.state;
     const { champion, className } = this.props;
 
     return (
-      <div className="champion-card">
-        <div className={`champion ${className}`} style={{backgroundImage: `url(${champion.image})`}}>
-          <div className="dark-glass"></div>
-        </div>
+      <React.Fragment>
         {
-          page === 0 
+          itemsModal === false
           ?
-          this.page0()
+          null
           :
-          page === 1
-          ?
-          this.page1()
-          :
-          page === 2 
-          ? 
-          this.page2()
-          :
-          page === 3
-          ?
-          this.page3()
-          :
-          this.page4()
+          this.showModal(itemsModal)
         }
-        <div className="previous-page" onClick={this.previousPage} >←&nbsp;&nbsp;&nbsp;</div>
-        <div className="next-page" onClick={this.nextPage} >&nbsp;&nbsp;&nbsp;→</div>
-      </div>
+        <div className="champion-card">
+          <div className={`champion ${className}`} style={{backgroundImage: `url(${champion.image})`}}>
+            <div className="dark-glass"></div>
+          </div>
+          {
+            page === 0 
+            ?
+            this.page0()
+            :
+            page === 1
+            ?
+            this.page1()
+            :
+            page === 2 
+            ? 
+            this.page2()
+            :
+            page === 3
+            ?
+            this.page3()
+            :
+            this.page4()
+          }
+          <div className="previous-page" onClick={this.previousPage} >←&nbsp;&nbsp;&nbsp;</div>
+          <div className="next-page" onClick={this.nextPage} >&nbsp;&nbsp;&nbsp;→</div>
+        </div>
+      </React.Fragment>
     )
   }
 }
