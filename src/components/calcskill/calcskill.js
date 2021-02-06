@@ -31,9 +31,9 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	if (skill.bAd !== 0 && skill.bAd !== undefined){
 		if (Array.isArray(skill.bAd)) {
-			scaleAd = ally.bonusAd * (skill.bAd[skillLv] / 100);
+			scaleBAD = bonusAd * (skill.bAd[skillLv] / 100);
 		} else {
-			scaleAd = ally.bonusAd * (skill.bAd / 100)
+			scaleBAD = bonusAd * (skill.bAd / 100)
 		}
 	}
 
@@ -61,6 +61,8 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 	const damage = totalDamage * multiplier;
 
 	const damagePercentage = damage / enemy.hp * 100;
+
+	console.log(ally.bonusAd)
 
 	return (
 		<section className="skill-calculations-container">

@@ -2054,7 +2054,7 @@ export let ChampionData = {
           {
             base: [150,250,350],
             damage: 'none',
-            type: 'utility',
+            type: 'damage',
             ad: 0,
             ap: 70,
             bAd: 0,
