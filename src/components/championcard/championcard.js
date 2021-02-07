@@ -23,12 +23,22 @@ class ChampionCard extends Component {
     super(props);
     this.state = {
       page: 0,
-      itemsModal: this.props.champion.name === "test" ? 1 : false
+      itemsModal: false
     }
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.exitModal = this.exitModal.bind(this);
+    this.useModal = this.useModal.bind(this);
+  }
+
+  exitModal(){
+    this.setState({itemsModal: false})
+  }
+
+  useModal(slot){
+    this.setState({itemsModal: slot})
   }
 
   nextPage(){
@@ -96,7 +106,7 @@ class ChampionCard extends Component {
             <h6 className="champion-section-heading">Items</h6>
             <div className="champion-section-content">
               {
-                champion.items.map((item, idx) => <ChampionItemCard item={item} slot={idx + 1} />)
+                champion.items.map((item, idx) => <ChampionItemCard showModal={() => this.useModal(idx)} item={item} slot={idx + 1} />)
               }
             </div>
           </section>
@@ -146,8 +156,8 @@ class ChampionCard extends Component {
     )
   }
 
-  showModal(){
-    return <ItemModal />
+  showModal(slot){
+    return <ItemModal exit={this.exitModal} update={(item) => this.props.updateItem(item, slot)} />
   }
 
   render(){

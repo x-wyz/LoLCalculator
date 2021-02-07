@@ -34,7 +34,7 @@ class ItemModal extends Component {
 							itemsArray.map(item => {
 								if (item[0].toLowerCase().includes(search)){
 									return (
-										<div className="search-item">
+										<div className="search-item" onClick={() => {this.props.update(item[1]); this.props.exit()}}>
 											{item[0].split(/(?=[A-Z])/).map(part => {
 												return part[0].toUpperCase() + part.slice(1)
 											}).join(" ")}
@@ -46,7 +46,7 @@ class ItemModal extends Component {
 					</div>
 				</div>
 				<div className="modal-footer">
-					<button type="button" className="close-modal-btn">Close</button>
+					<button onClick={this.props.exit} type="button" className="close-modal-btn">Close</button>
 				</div>
 			</div>
 		)
