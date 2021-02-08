@@ -9,7 +9,7 @@ const CalcBasic = ({ ally, enemy }) => {
 
 	let basicCritical = basicDamage * (ally.critDamage / 100);
 
-	let average = Math.ceil(enemy.hp / (basicDamage * (1 + (ally.critDamage / 100) * ally.critChance)));
+	let average = Math.ceil(enemy.hp / (basicDamage * (1 + (ally.critDamage / 100) * (ally.critChance / 100))));
 
 	return (
 		<div className="calc-basic-container">

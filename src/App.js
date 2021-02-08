@@ -39,37 +39,42 @@ class App extends Component {
         abilitylv4: 0,
         abilities: [
           {
-            base: [75,115,155,195,235],
-            scale: 'ap',
-            damage: 'magical',
-            type: 'damage',
-            ratio: 0.75,
-            rname: 'KennenShurikenHurlMissile1'
+            base: [40, 65, 90, 115, 140],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 35,
+            bAd: 0,
+            rname: 'AhriOrbofDeception',
+            note: "non-true damage hit"
           },
           {
-            base: [60,85,110,135,160],
-            scale: 'ap',
+            base: [64, 104, 148, 184, 224],
             damage: 'magical',
             type: 'damage',
-            ratio: 0.75,
-            rname: 'KennenBringTheLight'
+            ad: 0,
+            ap: 48,
+            bAd: 0,
+            rname: 'AhriFoxFire'
           },
           {
-            base: [80,120,160,200,240],
-            scale: 'ap',
+            base: [60,90,120,150,180],
             damage: 'magical',
             type: 'damage',
-            ratio: 0.8,
-            rname: 'KennenLightningRush'
+            ad: 0,
+            ap: 40,
+            bAd: 0,
+            rname: 'AhriSeduce',
+          note: "Does not include 20% increased damage on other abilities."
           },
           {
-            base: [300,562.5,825],
-            scale: 'ap',
+            base: [180,270,360],
             damage: 'magical',
             type: 'damage',
-            ratio: 1.5,
-            rname: 'KennenShurikenStorm',
-            ultimate: true
+            ad: 0,
+            ap: 105,
+            bAd: 0,
+            rname: 'AhriTumble'
           }
         ],
         items: [
@@ -232,8 +237,8 @@ class App extends Component {
         movement: 330,
         mana: 480,
         lvMana: 23.5,
-        attack: 53.54,
-        baseAttack: 53.54,
+        attack: 53,
+        baseAttack: 53,
         lvAttack: 3.3,
         critDamage: 175,
         critChance: 0,
@@ -632,12 +637,14 @@ class App extends Component {
     if (previousItem.stats !== undefined) {
       const previousItemKey = Object.keys(previousItem.stats);
       previousItemKey.map(stat => {
+        let championStat = stat === "ad" ? "attack" : stat
         champion[stat] = champion[stat] - previousItem.stats[stat];
       })
     }
 
     newItemKey.map(stat => {
-      champion[stat] = champion[stat] + newItem.stats[stat]
+      let championStat = stat === "ad" ? "attack" : stat
+      champion[championStat] = champion[championStat] + newItem.stats[stat]
     })
 
     this.setState({

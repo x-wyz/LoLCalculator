@@ -104,7 +104,7 @@ export const ItemsData = {
 		img: 1037,
 		tier: 'basic',
 		stats: {
-			ap: 25
+			ad: 25
 		}
 	},
 	relicShield: {
@@ -804,7 +804,7 @@ export const ItemsData = {
 		img: 3100,
 		tier: "legendary",
 		stats: {
-			ap: 80
+			ap: 70
 		},
 		effect: {
 			type: "damage",

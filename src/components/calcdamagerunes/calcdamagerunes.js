@@ -23,8 +23,6 @@ const CalcRunes = ({ ally, enemy }) => {
 	const adaptiveDef = ap > bonusAd ? enemy.resist : enemy.armor;
 	const adaptiveDamageType = ap > bonusAd ? "Magical" : "Physical";
 
-	console.log(((30 + 8.823 * (ally.lv - 1)) + (.4 * bonusAd) + (.25 * ap)) * (100/(100 + adaptiveDef)) / enemy.hp * 100)
-
 	return (
 		<div className="runes-damage-calc">
 			{

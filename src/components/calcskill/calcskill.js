@@ -62,6 +62,8 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	const damagePercentage = damage / enemy.hp * 100;
 
+	console.log(skill.ap)
+
 	return (
 		<section className="skill-calculations-container">
 			<div className="calc-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${skill.rname}.png)`}}></div>
