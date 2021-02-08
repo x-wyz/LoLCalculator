@@ -11,7 +11,13 @@ const ChampionItemCard = ({ item, slot, showModal }) => {
 		})
 	}
 	catch {
-		return <div />
+		return (
+			<section className="champion-item">
+				<div className="champion-item-icon" onClick={showModal}>
+					<span className="item-slot-number">{slot}</span>
+				</div>
+			</section>
+		)
 	}
 
 	return (

@@ -78,54 +78,12 @@ class App extends Component {
           }
         ],
         items: [
-          {
-            img: 1055,
-            tier: 'basic',
-            stats: {
-              ad: 8,
-              hp: 80
-            }
-          },
-                  {
-            img: 1055,
-            tier: 'basic',
-            stats: {
-              ad: 8,
-              hp: 80
-            }
-          },
-                  {
-            img: 1055,
-            tier: 'basic',
-            stats: {
-              ad: 8,
-              hp: 80
-            }
-          },
-          {
-            img: 1056,
-            tier: 'basic',
-            stats: {
-              hp: 70,
-              ap: 15
-            }
-          },
-                  {
-            img: 1056,
-            tier: 'basic',
-            stats: {
-              hp: 70,
-              ap: 15
-            }
-          },
-                  {
-            img: 1056,
-            tier: 'basic',
-            stats: {
-              hp: 70,
-              ap: 15
-            }
-          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg',
         runes: {
@@ -281,50 +239,7 @@ class App extends Component {
             rname: 'LuxMaliceCannon'
           }
         ],
-        items: [
-          {
-            img: 1083,
-            tier: 'basic',
-            stats: {
-              ad: 7
-            }
-          },
-          {
-            img: 1083,
-            tier: 'basic',
-            stats: {
-              ad: 7
-            }
-          },
-          {
-            img: 1083,
-            tier: 'basic',
-            stats: {
-              ad: 7
-            }
-          },
-          {
-            img: 1083,
-            tier: 'basic',
-            stats: {
-              ad: 7
-            }
-          },
-          {
-            img: 1083,
-            tier: 'basic',
-            stats: {
-              ad: 7
-            }
-          },
-          {
-            img: 1083,
-            tier: 'basic',
-            stats: {
-              ad: 7
-            }
-          },
-        ],
+        items: [{},{},{},{},{},{},],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg',
         runes: {
           precision: {
