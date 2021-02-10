@@ -189,10 +189,12 @@ export const ItemsData = {
 			hp: 300
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 12,
 			max: 12,
-			scale: "1 bHp"
+
+			bHp: 1
 		}
 	},
 	bandleglassMirror: {
@@ -218,10 +220,11 @@ export const ItemsData = {
 			armor: 35
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 3,
 			max: 3,
-			scale: "10 bAr"
+			bAr: 10
 		}
 	},
 	caulfieldsWarhammer: {
@@ -319,10 +322,10 @@ export const ItemsData = {
 			ap: 40
 		},
 		effect: {
+			damage: "magical",
 			type: 'damage',
 			base: 50,
-			max: 125,
-			scale: "0 ap"
+			max: 125
 		}
 	},
 	ironspikeWhip: {
@@ -332,10 +335,11 @@ export const ItemsData = {
 			ad: 30
 		},
 		effect: {
+			damage: "physical",
 			type: 'damage',
 			base: 0,
 			max: 0,
-			scale: "75 tAd"
+			tAd: 75
 		}
 	},
 	kindleGem: {
@@ -355,8 +359,7 @@ export const ItemsData = {
 		effect: {
 			type: 'damage',
 			base: 80,
-			max: 80,
-			scale: "0 ap"
+			max: 80
 		}
 	},
 	lastWhisper: {
@@ -480,7 +483,7 @@ export const ItemsData = {
 			type: 'damage',
 			base: 0,
 			max: 0,
-			scale: "100 baseAd"
+			baseAd: 100
 		}
 	},
 	spectresCowl: {
@@ -687,10 +690,11 @@ export const ItemsData = {
 			hp: 350
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 0,
 			max: 0,
-			scale: "4.8 eMaxHp"
+			eMHP: 4.8
 		}
 	},
 	edgeOfNight: {
@@ -711,10 +715,12 @@ export const ItemsData = {
 			critChance: 20
 		},
 		effect: {
+			damage: "physical",
 			type: 'damage',
 			base: 0,
 			max: 0,
-			scale: "100 baseAd 40 bonusAd"
+			baseAd: 100,
+			bAd: 40
 		}
 	},
 	forceOfNature: {
@@ -807,10 +813,12 @@ export const ItemsData = {
 			ap: 70
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 0,
 			max: 0,
-			scale: "150 baseAd 40 ap"
+			baseAd: 150,
+			ap: 40
 		}
 	},
 	lordDominiksRegards: {
@@ -1200,10 +1208,11 @@ export const ItemsData = {
 			hp: 400
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 0,
 			max: 0,
-			scale: "10 eMaxHp"
+			eMHP: 10
 		},
 		mythic: {
 			stats: {
@@ -1221,10 +1230,11 @@ export const ItemsData = {
 			lethality: 18
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 65,
 			max: 65,
-			scale: "25 bonusAd"
+			bAd: 25
 		},
 		mythic: {
 			stats: {
@@ -1241,10 +1251,11 @@ export const ItemsData = {
 			lethality: 18
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 0,
 			max: 0,
-			scale: "6 eMaxHp"
+			eMHP: 6
 		},
 		mythic: {
 			stats: {
@@ -1262,10 +1273,11 @@ export const ItemsData = {
 			mana: 600
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 100,
 			max: 100,
-			scale: "30 ap"
+			ap: 30
 		},
 		mythic: {
 			stats: {
@@ -1283,10 +1295,11 @@ export const ItemsData = {
 			resist: 25
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 12,
 			max: 30,
-			scale: "1 bHp"
+			bHp: 1
 		},
 		mythic: {
 			stats: {
@@ -1308,10 +1321,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 180,
 			max: 315,
-			scale: "15 bonusAd"
+			bAd: 15
 		}
 	},
 	goredrinker: {
@@ -1328,10 +1342,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 0,
 			max: 100,
-			scale: "100 tAd"
+			tAd: 100
 		}
 	},
 	hextechRocketbelt: {
@@ -1348,10 +1363,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 125,
 			max: 125,
-			scale: "15 ap"
+			ap: 15
 		}
 	},
 	immortalShieldbow: {
@@ -1393,10 +1409,10 @@ export const ItemsData = {
 			hp: 200
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 36,
-			max: 60,
-			scale: "0 ap"
+			max: 60
 		},
 		mythic: {
 			stats: {
@@ -1413,10 +1429,12 @@ export const ItemsData = {
 			mana: 600
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 60,
 			max: 60,
-			scale: "6 ap 4 eMaxHp"
+			ap: 6,
+			eMHP: 4
 		},
 		mythic: {
 			stats: {
@@ -1455,10 +1473,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 100,
 			max: 100,
-			scale: "10 ap"
+			ap: 10
 		}
 	},
 	moonstoneRenewer: {
@@ -1484,10 +1503,11 @@ export const ItemsData = {
 			hp: 300
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 125,
 			max: 125,
-			scale: "15 ap"
+			ap: 15
 		},
 		mythic: {
 			stats: {
@@ -1509,10 +1529,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 65,
 			max: 65,
-			scale: "25 bonusAd"
+			bAd: 25
 		}
 	},
 	riftmaker: {
@@ -1565,10 +1586,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 0,
 			max: 0,
-			scale: "100 tAd"
+			tAd: 100
 		}
 	},
 	sunfireAegis: {
@@ -1581,10 +1603,11 @@ export const ItemsData = {
 			resist: 30
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 12,
 			max: 30,
-			scale: "1 bHp"
+			bHp: 1
 		},
 		mythic: {
 			stats: {
@@ -1607,10 +1630,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "physical",
 			type: "damage",
 			base: 0,
 			max: 0,
-			sccale: "200 baseAd"
+			baseAd: 200
 		}
 	},
 	turboChemtank: {
@@ -1628,10 +1652,11 @@ export const ItemsData = {
 			}
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 12,
 			max: 30,
-			scale: "1 bHp"
+			bHp: 1
 		}
 	},
 }
