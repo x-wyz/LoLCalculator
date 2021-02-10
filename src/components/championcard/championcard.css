@@ -135,3 +135,41 @@
 	top: 0;
 	width: 100%;
 }
+
+.champion-lv-control {
+	width: 70%;
+	border: 0;
+	margin-bottom: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	min-width: max-content;
+	color: white;
+	font-size: 1em;
+	background: #3d3d3d;
+	cursor: pointer;
+	transition: 0.2s background;
+	outline: 0;
+}
+
+.champion-lv-control:hover {
+	background: #686868;
+}
+
+.lv-controls {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	width: 100%;
+}
+
+.champion-current-lv {
+	background: #4f4c4cad;
+	padding: 0.7em 2.8em;
+	margin-bottom: 1em;
+	color: white;
+	font-size: 1.3em;
+}

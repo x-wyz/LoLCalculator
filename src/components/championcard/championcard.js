@@ -44,7 +44,7 @@ class ChampionCard extends Component {
   nextPage(){
     const { page } = this.state;
 
-    if (page == 4){
+    if (page == 5){
       this.setState({
         page: 0
       })
@@ -61,7 +61,7 @@ class ChampionCard extends Component {
 
     if (page === 0){
       this.setState({
-        page: 4
+        page: 5
       })
     }
     else {
@@ -156,6 +156,18 @@ class ChampionCard extends Component {
     )
   }
 
+  page5(){
+    const { champion } = this.props;
+
+    return (
+      <div className="lv-controls">
+        <p className="champion-current-lv">{champion.lv}</p>
+        <button className="champion-lv-control" onClick={() => this.props.level("levelup")}>Level UP</button>
+        <button className="champion-lv-control" onClick={() => this.props.level("leveldown")}>Level DOWN</button>
+      </div>
+    )
+  }
+
   showModal(slot){
     return <ItemModal exit={this.exitModal} update={(item) => this.props.updateItem(item, slot)} />
   }
@@ -194,7 +206,11 @@ class ChampionCard extends Component {
             ?
             this.page3()
             :
+            page === 4
+            ?
             this.page4()
+            :
+            this.page5()
           }
           <div className="previous-page" onClick={this.previousPage} >←&nbsp;&nbsp;&nbsp;</div>
           <div className="next-page" onClick={this.nextPage} >&nbsp;&nbsp;&nbsp;→</div>
