@@ -601,6 +601,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="app-background"></div>
+        <h1 className="damage-calc-header">League of Legends Damage Calculator</h1>
         <header className="champion-select">
           <div className="allies">
             <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainAlly")} />
