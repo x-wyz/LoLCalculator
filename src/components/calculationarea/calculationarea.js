@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import CalcSkill from '../calcskill/calcskill';
 import CalcBasic from '../calcbasic/calcbasic';
 import CalcSummoners from '../calcsummoners/calcsummoners';
+import CalcItem from '../calcitem/calcitem';
 
 import CalcDamageRunes from '../calcdamagerunes/calcdamagerunes';
 
@@ -50,6 +51,26 @@ class CalculationArea extends Component {
 					<h3 className="calculation-heading">Summoners</h3>
 					<CalcSummoners ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
 					<h3 className="calculation-heading">Items</h3>
+						{
+							enemyTab === true
+							?
+							enemy.items.map((item) => {
+								if (item.img !== undefined){
+									if (item.effect.type === "damage"){
+										return <CalcItem item={item} ally={enemy} enemy={ally}/>
+									}
+								}
+							})
+							:
+							ally.items.map((item) => {
+								if (item.img !== undefined){
+									if (item.effect.type === "damage"){
+										return <CalcItem item={item} ally={ally} enemy={enemy} />
+									}
+								}
+								
+							})
+						}
 					<div className="calculation-end"></div>
 				</div>
 			</div>

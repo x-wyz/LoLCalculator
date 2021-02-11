@@ -9,9 +9,6 @@ const CalcItem = ({ ally, enemy, item }) => {
 
 	let bonusAd = ally.attack - ally.baseAttack - (ally.lvAttack * (ally.lv - 1));
 
-	let scaleBAD = 0;
-	let scaleMHP =  0;
-
 	let scalebAr = 0;
 	let scalebHp = 0;
 	let scaleAd = 0;
@@ -54,20 +51,17 @@ const CalcItem = ({ ally, enemy, item }) => {
 		scalebAr = ally.ap * (item.effect.ap / 100);
 	}
 
-	const skillDamage = skill.type === "damage" ? skill.base[skillLv] : 0;
-	const totalDamage = skillDamage + scaleAp + scaleAd + scaleBAD + scaleEMHP + scaleMHP;
+	const totalDamage = base + scalebAr + scalebHp + scaleAd + scalebAd + scaleEMHP + scaleBonusAd + scaleAp;
 
-	const multiplier = skill.damage === "physical" ? (100 / (100 + enemy.armor)) : skill.damage === "magical" ? (100 / (100 + enemy.resist)) : 0;
+	const multiplier = item.effect.damage === "physical" ? (100 / (100 + enemy.armor)) : item.effect.damage === "magical" ? (100 / (100 + enemy.resist)) : 0;
 
 	const damage = totalDamage * multiplier;
 
 	const damagePercentage = damage / enemy.hp * 100;
 
-	console.log(skill.ap)
-
 	return (
 		<section className="skill-calculations-container">
-			<div className="calc-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${skill.rname}.png)`}}></div>
+			<div className="calc-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/${item.img}.png)`}}></div>
 			<div className="skill-calculations">
 				<div className="skill-information-container">
 					<p className="calculation-description">Total Damage</p>
