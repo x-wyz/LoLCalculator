@@ -22,7 +22,7 @@ const CalcItem = ({ ally, enemy, item }) => {
 	}
 
 	if (item.effect.bHp !== 0 && item.effect.bHp !== undefined){
-		scalebHp = ally.hp - ally.baseHp - (ally.lvHp * (ally.lv - 1)) * (item.effect.bHp / 100);
+		scalebHp = (ally.hp - ally.baseHp - (ally.lvHp * (ally.lv - 1))) * (item.effect.bHp / 100);
 	}
 
 	// total
@@ -58,6 +58,9 @@ const CalcItem = ({ ally, enemy, item }) => {
 	const damage = totalDamage * multiplier;
 
 	const damagePercentage = damage / enemy.hp * 100;
+
+	console.log(ally)
+	console.log((ally.hp - ally.baseHp - (ally.lvHp * (ally.lv - 1))) * (item.effect.bHp / 100))
 
 	return (
 		<section className="skill-calculations-container">

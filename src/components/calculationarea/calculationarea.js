@@ -51,26 +51,38 @@ class CalculationArea extends Component {
 					<h3 className="calculation-heading">Summoners</h3>
 					<CalcSummoners ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
 					<h3 className="calculation-heading">Items</h3>
+					<div className="calculation-skills">
 						{
 							enemyTab === true
 							?
 							enemy.items.map((item) => {
 								if (item.img !== undefined){
-									if (item.effect.type === "damage"){
-										return <CalcItem item={item} ally={enemy} enemy={ally}/>
+									try{
+										if (item.effect.type === "damage"){
+											return <CalcItem item={item} ally={enemy} enemy={ally}/>
+										}
+									}
+									catch {
+										return;
 									}
 								}
 							})
 							:
 							ally.items.map((item) => {
 								if (item.img !== undefined){
-									if (item.effect.type === "damage"){
-										return <CalcItem item={item} ally={ally} enemy={enemy} />
+									try {
+										if (item.effect.type === "damage"){
+											return <CalcItem item={item} ally={ally} enemy={enemy} />
+										}
+									}
+									catch {
+										return;
 									}
 								}
 								
 							})
 						}
+					</div>
 					<div className="calculation-end"></div>
 				</div>
 			</div>
