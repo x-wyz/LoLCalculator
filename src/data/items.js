@@ -437,7 +437,7 @@ export const ItemsData = {
 		stats: {
 			attackspeed: 25
 		},
-		stats: {
+		effect: {
 			type: 'onhit',
 			damage: 15,
 			max: 0,
@@ -1068,7 +1068,7 @@ export const ItemsData = {
 			hp: 350
 		}
 	},
-	thornmail: {
+	titanicHydra: {
 		img: 3748,
 		tier: "legendary",
 		stats: {
