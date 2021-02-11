@@ -1,9 +1,9 @@
 .calc-summoners-container {
 	display: flex;
-	width: 40%;
-	justify-content: space-between;
+	justify-content: center;
 	margin: 0 auto;
 	margin-top: 1em;
+	flex-wrap: wrap;
 }
 
 .summoner-spell-container {
@@ -13,6 +13,8 @@
 	color: white;
 	box-shadow: var(--shadow-basic);
 	align-items: center;
+	width: 200px;
+	margin: 0.3em;
 }
 
 .summoner-image {
