@@ -15,6 +15,10 @@
 	overflow-x: hidden;
 	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.6);
 	overflow-y: hidden;
+	-webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .champion {
@@ -148,7 +152,7 @@
 	background: #3d3d3d;
 	cursor: pointer;
 	transition: 0.2s background;
-	outline: 0nxyrdiana;
+	outline: 0;
 }
 
 .champion-lv-control:hover {
@@ -164,6 +168,7 @@
 	align-items: center;
 	top: 0;
 	width: 100%;
+	background: #26262661;
 }
 
 .champion-current-lv {
@@ -172,6 +177,10 @@
 	margin-bottom: 1em;
 	color: white;
 	font-size: 1.3em;
+	-webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @media only screen and (max-width: 1200px) {

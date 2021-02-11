@@ -162,8 +162,8 @@ class ChampionCard extends Component {
     return (
       <div className="lv-controls">
         <p className="champion-current-lv">{champion.lv}</p>
-        <button className="champion-lv-control" onClick={() => this.props.level("levelup")}>Level UP</button>
-        <button className="champion-lv-control" onClick={() => this.props.level("leveldown")}>Level DOWN</button>
+        <button className="champion-lv-control" onClick={() => this.props.level("levelup")}>Level up</button>
+        <button className="champion-lv-control" onClick={() => this.props.level("leveldown")}>Level down</button>
       </div>
     )
   }

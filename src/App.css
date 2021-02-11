@@ -31,4 +31,8 @@
   color: #B58D4D;
   -webkit-text-stroke: 0.2px #FFEABE;
   letter-spacing: -0.4px;
+  -webkit-user-select: none;      
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

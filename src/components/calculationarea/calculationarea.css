@@ -12,6 +12,10 @@
 	color: white;
 	font-weight: bold;
 	text-transform: uppercase;
+	-webkit-user-select: none;      
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .allied-tab, .enemy-tab {
@@ -42,6 +46,10 @@
 	margin: 0 auto;
 	padding: 0.8em;
 	text-align: center;
+	-webkit-user-select: none;      
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .calculation-end {
@@ -64,5 +72,9 @@
 
 	.calculation-skills {
 		flex-wrap: wrap;
+	}
+
+	.calculation-header {
+		width: 100%;
 	}
 }
