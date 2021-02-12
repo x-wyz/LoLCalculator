@@ -27,6 +27,10 @@
 	color: white;
 	cursor: pointer;
 	letter-spacing: 0.05em;
+	-webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 option {
