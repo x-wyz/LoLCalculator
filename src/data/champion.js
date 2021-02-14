@@ -4795,7 +4795,7 @@ export let ChampionData = {
             ad: 100,
             ap: 35,
             bAd: 0,
-            rname: 'LuxLightBinding',
+            rname: 'MissFortuneRicochetShot',
             note: "if first target is killed second deals 1.75x damage | 2.10x damage if user has infinity edge | can critical strike"
           },
           {
@@ -4805,7 +4805,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 0,
-            rname: 'LuxPrismaticWave'
+            rname: 'MissFortuneViciousStrikes'
           },
           {
             base: [10,14.375,18.75,23.125,27.5],
@@ -4814,7 +4814,7 @@ export let ChampionData = {
             ad: 0,
             ap: 10,
             bAd: 0,
-            rname: "LuxLightStrikeKuge1",
+            rname: "MissFortuneScattershot",
             note: "per tick | 0.25s per tick | 8.0x damage for full duration"
           },
           {
@@ -4824,7 +4824,7 @@ export let ChampionData = {
             ad: 75,
             ap: 20,
             bAd: 0,
-            rname: 'LuxMaliceCannon',
+            rname: 'MissFortuneBulletTime',
             note: "per wave | can critical strike for 1.2x damage | 12/14/16 waves"
           }
         ],
@@ -5811,7 +5811,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 60,
-            rname: 'LuxLightBinding'
+            rname: 'PykeQ'
           },
           {
             base: [0],
@@ -5820,7 +5820,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 0,
-            rname: 'LuxPrismaticWave'
+            rname: 'PykeW'
           },
           {
             base: [105,135,165,195,225],
@@ -5829,7 +5829,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 100,
-            rname: "LuxLightStrikeKuge1"
+            rname: "PykeE"
           },
           {
             base: [0],
@@ -5838,12 +5838,155 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 0,
-            rname: 'LuxMaliceCannon',
+            rname: 'PykeR',
             note: "no calc yet"
           }
         ],
         items: [{},{},{},{},{},{}],
-        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg',
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg',
+    },
+    qiyana: {
+        name: 'qiyana',
+        lv: 1,
+        baseHp: 590,
+        hp: 590,
+        lvHp: 90,
+        armor: 28,
+        lvArmor: 3.5,
+        resist: 32,
+        lvResist: 1.25,
+        movement: 335,
+        mana: 320,
+        lvMana: 50,
+        attack: 66,
+        baseAttack: 66,
+        lvAttack: 3.1,
+        critDamage: 175,
+        critChance: 0,
+        omnivamp: 0,
+        abilityHaste: 0,
+        lethality: 0,
+        arpen: 0,
+        mpen: 0,
+        flatMPen: 0,
+        ap: 0,
+        abilitylv1: 0,
+        abilitylv2: 0,
+        abilitylv3: 0,
+        abilitylv4: 0,
+        abilities: [
+          {
+            base: [60,85,110,135,160],
+            type: "damage",
+            damage: "physical",
+            ad: 0,
+            ap: 0,
+            bAd: 90,
+            rname: 'LuxLightBinding',
+            note: "base damage"
+          },
+          {
+            base: [8,16,24,32,40],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 30,
+            bAd: 10,
+            rname: 'LuxPrismaticWave',
+            note: "bonus damage"
+          },
+          {
+            base: [60,90,120,150,180],
+            damage: 'physical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 70,
+            rname: "LuxLightStrikeKuge1"
+          },
+          {
+            base: [100,170,240],
+            damage: 'physical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 170,
+            emhp: 10,
+            rname: 'LuxMaliceCannon'
+          }
+        ],
+        items: [{},{},{},{},{},{}],
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg',
+    },
+    quinn: {
+        name: 'quinn',
+        lv: 1,
+        baseHp: 533,
+        hp: 533,
+        lvHp: 85,
+        armor: 28,
+        lvArmor: 3.5,
+        resist: 30,
+        lvResist: 0.5,
+        movement: 335,
+        mana: 268,
+        lvMana: 35,
+        attack: 59,
+        baseAttack: 59,
+        lvAttack: 2.4,
+        critDamage: 175,
+        critChance: 0,
+        omnivamp: 0,
+        abilityHaste: 0,
+        lethality: 0,
+        arpen: 0,
+        mpen: 0,
+        flatMPen: 0,
+        ap: 0,
+        abilitylv1: 0,
+        abilitylv2: 0,
+        abilitylv3: 0,
+        abilitylv4: 0,
+        abilities: [
+          {
+            base: [20,45,70,95,120],
+            type: "damage",
+            damage: "physical",
+            ad: [80,90,100,110,120],
+            ap: 50,
+            bAd: 0,
+            rname: 'QuinnQ'
+          },
+          {
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'QuinnW'
+          },
+          {
+            base: [40,70,100,130,160],
+            damage: 'physical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 20,
+            rname: "QuinnE"
+          },
+          {
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'QuinnR'
+          }
+        ],
+        items: [{},{},{},{},{},{}],
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg',
     },
 }
 
