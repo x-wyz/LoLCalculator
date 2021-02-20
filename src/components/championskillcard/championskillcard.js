@@ -8,6 +8,9 @@ const ChampionSkillCard = ({ update, currentLv, skillPosition, skill, ultimate})
 			<p type="button" className="skill-increase" onClick={() => update(skillPosition, "add")} >⬆</p>
 			<div className="champion-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${skill.rname}.png)`}}></div>
 			<p type="button" className="skill-decrease" onClick={() => update(skillPosition, "reduce")}>⬇</p>
+			{
+				console.log(currentLv)
+			}
 			<p className="skill-current-lv">{currentLv+1}/{ultimate === true ? 3 : 5}</p>
 		</section>
 	</div>

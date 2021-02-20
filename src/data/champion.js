@@ -5902,7 +5902,7 @@ export let ChampionData = {
             ap: 70,
             bAd: 0,
             rname: 'MorganaR',
-            skill: 4
+            skill: 4,
             note: "deals 2.0x damage if target is stunned by this ability"
           }
         ],
@@ -6934,7 +6934,7 @@ export let ChampionData = {
             lvScale: [15,83],
             bAd: 55,
             ap: 30,
-            damage: "physical"
+            damage: "physical",
             rname: "Qiyana_Passive",
             note: "Passive",
             skill: 0
@@ -7480,7 +7480,7 @@ export let ChampionData = {
             skill: 2
           },
           {
-            lvScale: [50,220]
+            lvScale: [50,220],
             base: [0,0,0,0,0],
             damage: 'magical',
             type: 'damage',
@@ -8316,7 +8316,7 @@ export let ChampionData = {
             skill: 0
           },
           {
-            lvScale: [10,40]
+            lvScale: [10,40],
             base: [0,0,0,0,0],
             type: "damage",
             damage: "magical",
@@ -8330,7 +8330,7 @@ export let ChampionData = {
             note: "base"
           },
           {
-            lvScale: [10,40]
+            lvScale: [10,40],
             base: [0,0,0,0,0],
             type: "damage",
             damage: "magical",
@@ -9870,7 +9870,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: [20,27.5,35],
-            emhpScale: [2,100,"ap"]
+            emhpScale: [2,100,"ap"],
             rname: 'TrundlePain',
             note: "total damage",
             skill: 4

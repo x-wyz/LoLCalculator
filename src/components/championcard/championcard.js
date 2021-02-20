@@ -73,6 +73,7 @@ class ChampionCard extends Component {
 
   page0(){
     const { champion, className } = this.props;
+    let skillsCount = 0; 
 
     return (
       <section>
@@ -98,7 +99,17 @@ class ChampionCard extends Component {
             <h6 className="champion-section-heading">Skills</h6>
             <div className="champion-section-content">
               {
-                champion.abilities.map((ability, idx) => <ChampionSkillCard update={this.props.skillUpdate} currentLv={champion[`abilitylv${idx+1}`]} skillPosition={idx+1} skill={ability} ultimate={idx === 3 ? true : false} />)
+                champion.abilities.map((ability, idx) => {
+                  if (ability.skill === 0){
+                    return;
+                  }
+                  else {
+                    if (ability.skill > skillsCount) {
+                      skillsCount += 1;
+                      return <ChampionSkillCard update={this.props.skillUpdate} currentLv={champion[`abilitylv${skillsCount}`]} skillPosition={skillsCount} skill={ability} ultimate={skillsCount === 4 ? true : false} />;
+                    }
+                  }
+                })
               }
             </div>
           </section>
