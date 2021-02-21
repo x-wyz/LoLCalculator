@@ -34,7 +34,7 @@ export let ChampionData = {
             rname: "Aatrox_Passive",
             damage: "physical",
             scaleemhp: [5, 12],
-            note: "passive",
+            note: "Passive",
             skill: 0
           },
           {
@@ -376,7 +376,7 @@ export let ChampionData = {
           {
             lvScale: [0,0],
             rname: "Amumu_Passive",
-            note: "passive | (uncalc) cursed targets takes 10% bonus true damage on magical attacks (pre-mitigation)",
+            note: "Passive | (uncalc) cursed targets takes 10% bonus true damage on magical attacks (pre-mitigation)",
             skill: 0
           },
           {
@@ -3728,8 +3728,8 @@ export let ChampionData = {
           },
           {
             base: [20,85,150,215,280],
-            type: "physical",
-            damage: "damage",
+            type: "damage",
+            damage: "physical",
             ad: 100,
             ap: 0,
             bAd: 0,
@@ -4262,8 +4262,8 @@ export let ChampionData = {
           },
           {
             base: [75,115,155,195,235],
-            type: "magical",
-            damage: "damage",
+            type: "damage",
+            damage: "magical",
             ad: 0,
             ap: 75,
             bAd: 0,
@@ -4344,8 +4344,8 @@ export let ChampionData = {
           },
           {
             base: [60,85,110,135,160],
-            type: "physical",
-            damage: "damage",
+            type: "damage",
+            damage: "physical",
             ad: 0,
             ap: 0,
             bAd: 130,
@@ -4594,8 +4594,8 @@ export let ChampionData = {
           },
           {
             base: [90,140,190,240,290],
-            type: "magical",
-            damage: "damage",
+            type: "damage",
+            damage: "magical",
             ad: 0,
             ap: 70,
             bAd: 0,
@@ -9863,7 +9863,7 @@ export let ChampionData = {
             skill: 3
           },
           {
-            base: [300,400,500],
+            base: [0,0,0],
             damage: 'magical',
             type: 'damage',
             ad: 0,

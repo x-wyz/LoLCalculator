@@ -62,6 +62,9 @@
 .calculation-skills {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 60%;
 }
 
 @media only screen and (max-width: 960px) {
@@ -71,7 +74,7 @@
 	}
 
 	.calculation-skills {
-		flex-wrap: wrap;
+		width: 90%;
 	}
 
 	.calculation-header {
