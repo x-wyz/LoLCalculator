@@ -45,7 +45,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'AatroxQ',
-            note: "All 3 hits.",
+            note: "3 hits",
             skill: 1
           },
           {
@@ -56,7 +56,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'AatroxW',
-            note: "Both hits. 1/2 if they leave the area.",
+            note: "0.5x damage if target leaves the area",
             skill: 2
           },
           {
@@ -127,7 +127,18 @@ export let ChampionData = {
             ap: 35,
             bAd: 0,
             rname: 'AhriOrbofDeception',
-            note: "non-true damage hit",
+            note: "outgoing",
+            skill: 1
+          },
+          {
+            base: [40, 65, 90, 115, 140],
+            type: "damage",
+            damage: "true",
+            ad: 0,
+            ap: 35,
+            bAd: 0,
+            rname: 'AhriOrbofDeception',
+            note: "ingoing",
             skill: 1
           },
           {
@@ -138,6 +149,7 @@ export let ChampionData = {
             ap: 48,
             bAd: 0,
             rname: 'AhriFoxFire',
+            note: "max single target damage",
             skill: 2
           },
           {
@@ -226,14 +238,14 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [100, 170, 240, 310, 380],
+            base: [50,85,120,155,190],
             damage: 'magical',
             type: 'damage',
-            ad: 70,
-            ap: 100,
+            ad: 35,
+            ap: 50,
             bAd: 0,
             rname: 'AkaliE',
-       		note: "Both hits. 1/2 damage if only first part.",
+       		note: "Deals 2.0x damage if recasted",
             skill: 3
           },
           {
@@ -255,7 +267,7 @@ export let ChampionData = {
             ap: 30,
             bAd: 0,
             rname: 'AkaliR',
-            note: "Second cast | min damage | deals upto 3.0x damage based on missing hp",
+            note: "Second cast | min damage | deals 20% more per 7% target missing health (200% cap)",
             skill: 4
           },
         ],
@@ -327,6 +339,18 @@ export let ChampionData = {
             bAd: 0,
             rname: 'AlistarE',
             note: "per tick | 10 ticks total",
+            skill: 3
+          },
+          {
+            lvScale: [35,290],
+            base: [0,0,0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'AlistarE',
+            note: "bonus auto damage on max stacks",
             skill: 3
           },
           {
@@ -407,7 +431,7 @@ export let ChampionData = {
             ap: 50,
             bAd: 0,
             rname: 'Tantrum',
-            note: "per tick | 10 ticks total",
+            note: "per tick | 0.5s per tick",
             skill: 3 
           },
           {
@@ -481,14 +505,14 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [100,160,220,280,340],
+            base: [50,80,110,140,170],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 100,
+            ap: 50,
             bAd: 0,
             rname: 'Frostbite',
-            note: "enchanted damage | half damage otherwise",
+            note: "deals 2.0x damage if target was hit by anivia's max sized ultimate or flash frost",
             skill: 3
           },
           {
@@ -499,7 +523,7 @@ export let ChampionData = {
             ap: 12.5,
             bAd: 0,
             rname: 'GlacialStorm',
-            note: "damage per tick | max size deals 3x damage",
+            note: "damage per tick, 0.5s per tick, max size deals 3x damage",
             skill: 4
           }
         ],
@@ -643,7 +667,7 @@ export let ChampionData = {
           {
             lvScale: [0,0],
             rname: "Ashe_P",
-            note: "passive | basic data is incorrect as ashe cannot crit - instead 1.1x damage + crit chance damage on frosted targets",
+            note: "passive",
             skill: 0
           },
           {
@@ -684,7 +708,7 @@ export let ChampionData = {
             ap: 100,
             bAd: 0,
             rname: 'EnchantedCrystalArrow',
-            note: "damage is halved if target is secondary",
+            note: "damage is halved if enemy is not directly hit by this ability",
             skill: 4
           }
         ],
@@ -727,7 +751,7 @@ export let ChampionData = {
             rname: "Azir_Passive",
             ap: 15,
             damage: "magical",
-            note: "passive | deals more damage the longer the game is (4 per min) calc assumes 0 minutes.",
+            note: "passive | deals more damage the longer the game is ((4 * multiplier) per min) calc assumes 0 minutes.",
             skill: 0
           },
           {
@@ -922,7 +946,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'PowerFist',
-            note: "bonus damage, does not calculate base",
+            note: "only bonus damage",
             skill: 3
           },
           {
@@ -986,7 +1010,14 @@ export let ChampionData = {
             emhpScale: [2, 100, "ap"],
             rname: "BrandP",
             damage: "magical",
-            note: "passive | 3 stacks damage | burn deals 3% enemy hp multiplied by this damage multiplier",
+            note: "passive | 3 stacks damage",
+            skill: 0
+          },
+          {
+            emhp: 3,
+            rname: "BrandP",
+            damage: "magical",
+            note: "passive | burn",
             skill: 0
           },
           {
@@ -1007,7 +1038,7 @@ export let ChampionData = {
             ap: 60,
             bAd: 0,
             rname: 'BrandW',
-            note: "deals 25% more damage if target is ablaze",
+            note: "deals 1.25x damage if target is ablaze",
             skill: 2
           },
           {
@@ -1069,14 +1100,14 @@ export let ChampionData = {
             lvScale: [26,196],
             rname: "Braum_Passive",
             damage: "magical",
-            note: "passive | 4 proc damage",
+            note: "passive | 4th proc damage",
             skill: 0
           },
           {
             lvScale: [5.2, 39.2],
             rname: "Braum_Passive",
             damage: "magical",
-            note: "passive | enhanced braum autos",
+            note: "passive | post 4th proc braum auto bonus damage",
             skill: 0
           },
           {
@@ -1168,7 +1199,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'CaitlynPiltoverPeacemaker',
-            note: "max damage | 60% if secondary",
+            note: "max damage | 0.6x damage if target is secondary",
             skill: 1
           },
           {
@@ -1194,12 +1225,12 @@ export let ChampionData = {
             skill: 3
           },
           {
-            base: [150,300,450],
-            damage: 'magical',
+            base: [300,525,750],
+            damage: 'physical',
             type: 'damage',
             ad: 0,
-            ap: 60,
-            bAd: 0,
+            ap: 0,
+            bAd: 200,
             rname: 'CaitlynAceintheHole',
             skill: 4
           }
@@ -1251,7 +1282,7 @@ export let ChampionData = {
             ap: 0,
             bAd: [20,25,30,35,40],
             rname: 'CamilleQ',
-            note: "first active bonus damage | second cast deals 2.0x damage 40-100%(based on cam's level) is dealt as true damage",
+            note: "first active bonus damage | second cast deals 2.0x damage and 40+3.5%(cam level - 1) is dealt as true damage",
             skill: 1
           },
           {
@@ -1295,9 +1326,9 @@ export let ChampionData = {
             ad: 0,
             ap: 60,
             bAd: 0,
-            emhp: [4,6,8],
+            echp: [4,6,8],
             rname: 'CamilleR',
-            note: "bonus damage per hit, assumes target is at full health",
+            note: "bonus damage per hit",
             skill: 4
           }
         ],
@@ -1348,6 +1379,7 @@ export let ChampionData = {
             ap: 90,
             bAd: 0,
             rname: 'CassiopeiaQ',
+            note: "damage over time",
             skill: 1
           },
           {
@@ -1358,7 +1390,7 @@ export let ChampionData = {
             ap: 15,
             bAd: 0,
             rname: 'CassiopeiaW',
-            note: "per second",
+            note: "per tick | 1.0s per tick",
             skill: 2
           },
           {
@@ -1464,7 +1496,19 @@ export let ChampionData = {
             bAd: 0,
             emhp: 3,
             rname: 'VorpalSpikes',
-            note: "no feast stacks | per hit",
+            note: "per hit | see next skill for feast scaling",
+            skill: 3
+          },
+          {
+            base: [0,0,0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            emhp: 0.5,
+            rname: 'VorpalSpikes',
+            note: "bonus damage for each feast stack",
             skill: 3
           },
           {
@@ -1536,7 +1580,19 @@ export let ChampionData = {
             ap: 10,
             bAd: 0,
             rname: 'CarpetBomb',
-            note: "regular | per tick",
+            note: "regular | per tick | 0.25s per tick",
+            skill: 2
+          },
+          {
+            lvScale: [7.5,25],
+            base: [0,0,0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 6,
+            bAd: 50,
+            rname: 'CarpetBomb',
+            note: "enhanced | per tick | 0.25s per tick",
             skill: 2
           },
           {
@@ -1596,10 +1652,10 @@ export let ChampionData = {
         abilitylv4: 0,
         abilities: [
           {
-            lvScale: [16.25,37.5],
+            lvScale: [3.5,7.5],
             rname: "Darius_Icon_Hemorrhage",
-            note: "passive | max sacks | per tick | 1.25s per tick",
-            bAd: 37.5,
+            note: "passive | 1 stack | per tick | 1.25s per tick | max 5 stacks",
+            bAd: 7.5,
             damage: "physical",
             skill: 0
           },
@@ -1699,14 +1755,14 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [54, 90, 126, 162, 198],
+            base: [18,30,42,54,66],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 45,
+            ap: 15,
             bAd: 0,
             rname: 'DianaOrbs',
-            note: "3 hits | 1/3 damage per orb",
+            note: "per orb | max damage 3.0x",
             skill: 2
           },
           {
@@ -1801,7 +1857,7 @@ export let ChampionData = {
             ap: 5,
             bAd: 0,
             rname: 'BurningAgony',
-            note: "per tick | 4 ticks per second | 0.25s intervals",
+            note: "per tick | 0.25s tick",
             skill: 2
           },
           {
@@ -1812,7 +1868,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: "Masochism",
-            note: "tbd",
+            note: "TODO",
             skill: 3
           },
           {
@@ -1950,14 +2006,25 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [100, 140, 180, 220, 260],
+            base: [60,75,90,105,120],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 30,
+            bAd: 0,
+            rname: 'EkkoQ',
+            note: "outgoing",
+            skill: 1
+          },
+          {
+            base: [40,65,90,115,140],
             type: "damage",
             damage: "magical",
             ad: 0,
             ap: 90,
             bAd: 0,
             rname: 'EkkoQ',
-            note: "both hits",
+            note: "return",
             skill: 1
           },
           {
@@ -2073,7 +2140,7 @@ export let ChampionData = {
             ap: 75,
             bAd: 0,
             rname: 'EvelynnR',
-            note: "240% damage to targets below 30%",
+            note: "2.4x damage to targets below 30%",
             skill: 4
           }
         ],
@@ -2208,6 +2275,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: [6,7,8,9,10],
+            emhpScale: [4,100, "ap"],
             rname: 'FiddleSticksQ',
             note: "2.0x damage if target has been feared | does not calc ap scale right now",
             skill: 1
@@ -2220,7 +2288,7 @@ export let ChampionData = {
             ap: 8.75,
             bAd: 60,
             rname: 'FiddleSticksW',
-            note: "per tick | 4 ticks per second | 0.25s intervals",
+            note: "per tick | 0.25s intervals",
             skill: 2
           },
           {
@@ -2241,7 +2309,7 @@ export let ChampionData = {
             ap: 11.25,
             bAd: 0,
             rname: 'FiddleSticksR',
-            note: "per tick | 4 ticks per second | 0.25s intervals",
+            note: "per tick | 0.25s intervals",
             skill: 4
           }
         ],
@@ -2326,6 +2394,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'FioraR',
+            note: "this skill can provide upto x4 passive damage",
             skill: 4
           }
         ],
@@ -2376,7 +2445,7 @@ export let ChampionData = {
             ap: 55,
             bAd: 0,
             rname: 'FizzQ',
-            note: "skill damage | calc does not apply on hit",
+            note: "skill damage, no on hit calc",
             skill: 1
           },
           {
@@ -2408,7 +2477,7 @@ export let ChampionData = {
             ap: 120,
             bAd: 0,
             rname: 'FizzR',
-            note: "max shark size",
+            note: "large shark size",
             skill: 4
           },
           {
@@ -2484,18 +2553,31 @@ export let ChampionData = {
             ap: 75,
             bAd: 0,
             rname: 'GalioQ',
-            note: "active damage | does not calc tornado damage",
+            note: "winds",
             skill: 1
           },
           {
-            base: [60, 105, 150, 195, 240],
+            base: [0,0,0,0,0],
+            emhp: [2,2,2,2,2],
+            type: "damage",
+            damage: "magical",
+            emhpScale: [0.66,100,"ap"],
+            ad: 0,
+            ap: 5,
+            bAd: 0,
+            rname: 'GalioQ',
+            note: "tornado, per tick, 0.5s intervals",
+            skill: 1
+          },
+          {
+            base: [20,35,50,65,80],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 90,
+            ap: 30,
             bAd: 0,
             rname: 'GalioW',
-            note: "max charge",
+            note: "min damage, max damage 3.0x",
             skill: 2
           },
           {
@@ -2568,7 +2650,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'GangplankQWrapper',
-            note: "non crit | no on hit",
+            note: "non crit, no on hit",
             skill: 1
           },
           {
@@ -2589,7 +2671,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: "GangplankE",
-            note: "bonus damage | this attack applies basic damage",
+            note: "bonus damage, does not calc damage from skill/attack used to proc",
             skill: 3
           },
           {
@@ -2651,7 +2733,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'GarenQ',
-            note: "bonus damage | does not calc damage frfom basic attack",
+            note: "bonus damage, does not calc damage frfom basic attack",
             skill: 1
           },
           {
@@ -2665,6 +2747,7 @@ export let ChampionData = {
             skill: 2
           },
           {
+            lvScale: [0,8.2],
             base: [4,8,12,16,20],
             damage: 'physical',
             type: 'damage',
@@ -2672,18 +2755,18 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: "GarenE",
-            note: "no lvl scale | closest enemy takes 1.25x damage | base spins: 7",
+            note: "1.25x damage if target is the nearest enemy",
             skill: 3
           },
           {
             base: [150,300,450],
-            damage: 'none',
-            type: 'utility',
+            damage: 'true',
+            type: 'damage',
             ad: 0,
             ap: 0,
             bAd: 0,
             rname: 'GarenR',
-         	name: "no missing hp damage",
+         	name: "does not include missing health damage",
             skill: 4
           }
         ],
@@ -2734,7 +2817,7 @@ export let ChampionData = {
             ap: 70,
             bAd: 0,
             rname: 'GragasQ',
-            note: "no charge",
+            note: "no charge, max 1.5x damage",
             skill: 1
           },
           {
@@ -2746,7 +2829,7 @@ export let ChampionData = {
             bAd: 0,
             emhp: 7,
             rname: 'GragasW',
-            note: "bonus damage | does not include damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 2
           },
           {
@@ -2810,14 +2893,25 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [130,180,230,280,330],
+            base: [45,60,75,90,105],
             type: "damage",
             damage: "physical",
             ad: 0,
             ap: 0,
-            bAd: [120,150,180,210,240],
+            bAd: 80,
             rname: 'GravesQLineSpell',
-            note: "both hits",
+            note: "outgoing",
+            skill: 1
+          },
+          {
+            base: [85,120,155,190,225],
+            type: "damage",
+            damage: "physical",
+            ad: 0,
+            ap: 0,
+            bAd: [40,70,100,130,160],
+            rname: 'GravesQLineSpell',
+            note: "return",
             skill: 1
           },
           {
@@ -2848,7 +2942,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 150,
             rname: 'GravesChargeShot',
-            note: "initial hit | explosion 0.8x damage",
+            note: "initial, explosion 0.8x damage",
             skill: 4
           }
         ],
@@ -2910,7 +3004,7 @@ export let ChampionData = {
             ap: 20,
             bAd: 0,
             rname: 'HecarimW',
-            note: "per tick | 1 tick per second | 1.0s intervals",
+            note: "per tick | 1.0s intervals",
             skill: 2
           },
           {
@@ -2922,7 +3016,7 @@ export let ChampionData = {
             bAd: 50,
             rname: "HecarimRamp",
             skill: 3,
-            note: "minimum damage | max damage 2.0x | non critical | bonus damage"
+            note: "minimum damage, max damage 2.0x, non critical, bonus damage"
           },
           {
             base: [150,250,350],
@@ -2984,7 +3078,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'IreliaQ',
-            note: "ability damage | does not calc on hit affects",
+            note: "ability damage, does not calc on hit affects",
             skill: 1
           },
           {
@@ -2995,7 +3089,7 @@ export let ChampionData = {
             ap: 40,
             bAd: 0,
             rname: 'IreliaW',
-            note: "min damage | max damage 2.0x",
+            note: "min damage, max damage 2.0x",
             skill: 2
           },
           {
@@ -3016,7 +3110,7 @@ export let ChampionData = {
             ap: 70,
             bAd: 0,
             rname: 'IreliaR',
-            note: "barrage damage | perimeter deals the same amount",
+            note: "barrage damage, perimeter deals the same amount",
             skill: 4
           }
         ],
@@ -3108,7 +3202,7 @@ export let ChampionData = {
             ap: 30,
             bAd: 0,
             rname: 'IvernR',
-            note: "Daisy basic attack | shockwave",
+            note: "Daisy basic attack & shockwave damage",
             skill: 4
           }
         ],
@@ -3160,6 +3254,17 @@ export let ChampionData = {
             bAd: 0,
             rname: 'HowlingGale',
             note: "minimum damage",
+            skill: 1
+          },
+          {
+            base: [15,20,25,30,35],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 10,
+            bAd: 0,
+            rname: 'HowlingGale',
+            note: "damage for every second of charge(max 3s)",
             skill: 1
           },
           {
@@ -3230,7 +3335,7 @@ export let ChampionData = {
           {
             lvScale: [0,0],
             rname: "JarvanIV_MartialCadence",
-            note: "passive",
+            note: "passive | deals 20 total damage if damage this would deal is less than 20",
             damage: "physical",
             echp: 6,
             skill: 0
@@ -3334,7 +3439,7 @@ export let ChampionData = {
             ap: 60,
             bAd: 0,
             rname: 'JaxEmpowerTwo',
-            note: "bonus damage does not include basic attack damage",
+            note: "bonus damage, does not include basic attack damage",
             skill:2 
           },
           {
@@ -3345,7 +3450,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 50,
             rname: "JaxCounterStrike",
-            note: "minimum damage | max damage 2.0x",
+            note: "minimum damage, max damage 2.0x",
             skill: 3
           },
           {
@@ -3356,7 +3461,7 @@ export let ChampionData = {
             ap: 70,
             bAd: 0,
             rname: 'JaxRelentlessAssault',
-            note: "every 3rd auto",
+            note: "bonus damage every 3rd auto",
             skill: 4
           }
         ],
@@ -3400,33 +3505,34 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [0],
+            base: [55,95,135,175,215,255],
+            type: "damage",
+            damage: "physical",
+            ad: 0,
+            ap: 0,
+            bAd: 120,
+            rname: 'JayceToTheSkies',
+            note: "Melee Q"
+          },
+          {
+            base: [55,110,165,220,275,330],
             type: "damage",
             damage: "magical",
             ad: 0,
-            ap: 70,
-            bAd: 0,
-            rname: 'IvernQ',
-            note: "no calc"
+            ap: 0,
+            bAd: 120,
+            rname: 'JayceShockBlast',
+            note: "Ranged Q, deals 1.4x damage if this skill goes through acceleration gate"
           },
           {
-            base: [30,37.5,45,52.5,60],
+            base: [25,40,55,70,85,100],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 30,
+            ap: 25,
             bAd: 0,
-            rname: 'IvernW',
-            note: "bonus damage on ivern auto when in bush"
-          },
-          {
-            base: [80,115,150,185,220],
-            damage: 'magical',
-            type: 'damage',
-            ad: 0,
-            ap: 80,
-            bAd: 0,
-            rname: "IvernE"
+            rname: 'JayceStaticField',
+            note: "Melee W, per tick, 1.0s intervals"
           },
           {
             base: [0],
@@ -3435,8 +3541,36 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 0,
-            rname: 'IvernR',
-            note: "no calc for daisy yet"
+            rname: 'JayceHyperCharge',
+            note: "Ranged W"
+          },
+          {
+            base: [0,0,0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            emhp: [8,10.4,12.8,15.2,17.6,20],
+            rname: "JayceThunderingBlow"
+          },
+          {
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: "JayceAccelerationGate"
+          },
+          {
+            base: [0],
+            damage: 'none',
+            type: 'utility',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            rname: 'JayceStanceHtG'
           }
         ],
         items: [{},{},{},{},{},{}],
@@ -3517,7 +3651,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'JhinR',
-            note: "minimum damage | 4th = 2.0-2.35x damage | does not include missing health - upto 3x extra damage",
+            note: "minimum damage | 4th always crits for 2.0-2.35x damage | 4th deals 30% more damage per 10% target missing hp",
             skill: 4
           }
         ],
@@ -3568,12 +3702,12 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'JinxQ',
-            note: "attacks with fishbones deal 1.1x damage affects crits",
+            note: "attacks with fishbones deal 1.1x damage affects crits, see basic",
             skill: 1
           },
           {
             base: [10,60,110,160,210],
-            damage: 'magical',
+            damage: 'physical',
             type: 'damage',
             ad: 160,
             ap: 0,
@@ -3755,7 +3889,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: "KalistaExpungeWrapper",
-            rname: "first spear",
+            note: "first spear",
             skill: 3
           },
           {
@@ -3810,24 +3944,24 @@ export let ChampionData = {
           },
           {
             base: [90,135,180,225,270],
-            type: "magical",
-            damage: "damage",
+            type: "damage",
+            damage: "magical",
             ad: 0,
             ap: 40,
             bAd: 0,
             rname: 'KarmaQ',
-            note: "unenhanced",
+            note: "base",
             skill: 1
           },
           {
-            base: [80,130,180,230,280],
+            base: [40,65,90,115,140],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 90,
+            ap: 45,
             bAd: 0,
             rname: 'KarmaSpiritBind',
-            note: "includes damage from root | 0.5x without root",
+            note: "deals 2.0x damage if target is rooted from this ability",
             skill: 2
           },
           {
@@ -3849,7 +3983,29 @@ export let ChampionData = {
             bAd: 0,
             rname: 'KarmaMantra',
             skill: 4
-          }
+          },
+          {
+            base: [25,75,125,175],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 30,
+            bAd: 0,
+            rname: 'KarmaQ',
+            note: "enhanced q bonus damage, added on top of base",
+            skill: 4
+          },
+          {
+            base: [35,140,245,350],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 40,
+            bAd: 0,
+            rname: 'KarmaQ',
+            note: "enhanced q detonation damage",
+            skill: 4
+          },
         ],
         items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg',
@@ -3919,7 +4075,7 @@ export let ChampionData = {
             ap: 5,
             bAd: 0,
             rname: "KarthusDefile",
-            note: "per tick | 0.25s per tick",
+            note: "per tick, 0.25s intervals",
             skill: 3
           },
           {
@@ -3990,7 +4146,7 @@ export let ChampionData = {
             ap: 80,
             bAd: 0,
             rname: 'NetherBlade',
-            note: "bonus damage | does not include damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 2
           },
           {
@@ -4024,7 +4180,7 @@ export let ChampionData = {
             bAd: 0,
             mana: 1,
             rname: 'RiftWalk',
-            note: "per stack damage | max 4 stacks",
+            note: "damage per stack - max 4 stacks",
             skill: 4
           },
         ],
@@ -4158,12 +4314,9 @@ export let ChampionData = {
         abilitylv4: 0,
         abilities: [
           {
-            lvScale: [35,35],
+            lvScale: [0,0],
             rname: "Kayle_P",
-            bAd: 10,
-            ap: 20,
-            damage: "magical",
-            note: "Passive | max starfire spellblade",
+            note: "Passive",
             skill: 0
           },
           {
@@ -4194,7 +4347,7 @@ export let ChampionData = {
             ap: 20,
             bAd: 10,
             rname: "KayleE",
-            note: "bonus damage does not include damage from basic attack | does not include missing health damage",
+            note: "bonus damage does not include damage from basic attack, does not include missing health damage, this is also exalted damage",
             skill: 3
           },
           {
@@ -4299,7 +4452,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 150,
             rname: 'KennenShurikenStorm',
-            note: "max damage",
+            note: "total damage",
             skill: 4
           }
         ],
@@ -4337,9 +4490,11 @@ export let ChampionData = {
         abilitylv4: 0,
         abilities: [
           {
-            lvScale: [0,0],
+            lvScale: [14,116],
             rname: "Khazix_P",
             note: "Passive",
+            bAd: 40,
+            damage: "physical",
             skill: 0
           },
           {
@@ -4440,9 +4595,22 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 20,
+            echp: 1.5,
             rname: 'KindredW',
             skill: 2,
-            note: "deals 1.5 + 1% current hp damage per stack | calc 0 stacks"
+            note: "0 stacks"
+          },
+          {
+            base: [0,0,0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            echp: 1,
+            rname: 'KindredW',
+            skill: 2,
+            note: "w bonus damage per stack"
           },
           {
             base: [80,100,120,140,160],
@@ -4506,14 +4674,25 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [60,110,160,210,260],
+            base: [30,55,80,105,130],
             type: "physical",
             damage: "damage",
             ad: 0,
             ap: 0,
-            bAd: 120,
+            bAd: 60,
             rname: 'KledQ',
-            note: "0.5x damage if no pull",
+            note: "deals 2.0x damage if this ability pulls the target",
+            skill: 1
+          },
+          {
+            base: [35,50,65,80,95],
+            type: "physical",
+            damage: "damage",
+            ad: 0,
+            ap: 0,
+            bAd: 80,
+            rname: 'KledQ',
+            note: "unmounted",
             skill: 1
           },
           {
@@ -4524,9 +4703,9 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: [4.5,5,5.5,6,6.5],
+            emhpScale: [5,100,"bAd"],
             skill: 2,
-            rname: 'KledW',
-            note: "does not calculate bonus max hp damage per bonus ad"
+            rname: 'KledW'
           },
           {
             base: [35,60,85,110,135],
@@ -4547,9 +4726,9 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: [4,5,6],
+            emhpScale: [4,100,"bAd"],
             rname: 'KledR',
-            skill: 4,
-            note: "does not calculate bonus max hp damage per bonus ad"
+            skill: 4
           }
         ],
         items: [{},{},{},{},{},{}],
@@ -4610,9 +4789,10 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: [3,3.75,4.5,5.25,6],
+            emhpScale: [1,100,"ap"],
             rname: 'KogMawBioArcaneBarrage',
             skill: 2,
-            note: "bonus damage | does not include damage from basic attack | does not calc ap scale"
+            note: "bonus damage, does not include damage from basic attack"
           },
           {
             base: [75,120,165,210,255],
@@ -4697,14 +4877,25 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [130,190,250,310,370],
+            base: [50,70,90,110,130],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 100,
+            ap: 30,
             bAd: 0,
             rname: "LeblancE",
-            note: "with delayed damage",
+            note: "initial damage",
+            skill: 3
+          },
+          {
+            base: [80,120,160,200,240],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 70,
+            bAd: 0,
+            rname: "LeblancE",
+            note: "damage if target is rooted by this ability",
             skill: 3
           },
           {
@@ -4715,7 +4906,7 @@ export let ChampionData = {
             ap: 40,
             bAd: 0,
             rname: 'LeblancR',
-            note: "Q",
+            note: "2.0x damage if the mark is proc'd | Q",
             skill: 4
           },
           {
@@ -4737,7 +4928,7 @@ export let ChampionData = {
             ap: 40,
             bAd: 0,
             rname: 'LeblancR',
-            note: "2.0x damage if target is binded from this ability | E",
+            note: "2.0x damage if target is bound from this ability | E",
             skill: 4
           }
         ],
@@ -4789,7 +4980,7 @@ export let ChampionData = {
             bAd: 100,
             skill: 1,
             rname: 'BlindMonkQOne',
-            note: "initial q 2.0x damage on reactivation | deals up to 100% more damage for enemy missing hp on reactivation"
+            note: "initial q 2.0x damage on reactivation | reactivation deals 1% more for every 1% target missing hp (max 100%)"
           },
           {
             base: [0],
@@ -4871,7 +5062,7 @@ export let ChampionData = {
             ap: 30,
             bAd: 0,
             rname: 'LeonaShieldOfDaybreak',
-            note: "bonus damage | does not calc damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 1
           },
           {
@@ -4954,7 +5145,7 @@ export let ChampionData = {
             ap: 40,
             bAd: 0,
             rname: 'LilliaQ',
-            note: "deals total damage as true damage for outer edge",
+            note: "deals this damage as bonus true damage for outer edge(uncalculated) 2x calculated damage",
             skill: 1
           },
           {
@@ -5313,6 +5504,7 @@ export let ChampionData = {
             ap: 100,
             bAd: 0,
             rname: 'LuxMaliceCannon',
+            note: "this ability can apply damage from passive",
             skill: 4
           }
         ],
@@ -5372,9 +5564,10 @@ export let ChampionData = {
             ad: 0,
             ap: 20,
             bAd: 0,
+            ar: 10,
             skill: 2,
             rname: 'Obduracy',
-            note: "bonus damage first hit | does not calculate damge from armor"
+            note: "bonus damage first hit"
           },
           {
             base: [60,95,130,165,200],
@@ -5383,9 +5576,9 @@ export let ChampionData = {
             ad: 0,
             ap: 60,
             bAd: 0,
+            ar: 10,
             rname: "Landslide",
-            skill: 3,
-            note: "does not calculate damage from armor"
+            skill: 3
           },
           {
             base: [200,300,400],
@@ -5445,7 +5638,7 @@ export let ChampionData = {
             ap: 65,
             bAd: 0,
             rname: 'MalzaharQ',
-            spell: 1
+            skill: 1
           },
           {
             base: [12,14,16,18,20],
@@ -5455,9 +5648,9 @@ export let ChampionData = {
             ad: 0,
             ap: 20,
             bAd: 40,
-            note: "voidlings",
+            note: "voidlings basic attack",
             rname: 'MalzaharW',
-            spell: 2
+            skill: 2
           },
           {
             base: [80,115,150,185,220],
@@ -5467,7 +5660,8 @@ export let ChampionData = {
             ap: 80,
             bAd: 0,
             rname: "MalzaharE",
-            spell: 3
+            note: "damage over time",
+            skill: 3
           },
           {
             base: [125,200,275],
@@ -5477,9 +5671,22 @@ export let ChampionData = {
             ap: 80,
             bAd: 0,
             rname: 'MalzaharR',
-            spell: 4,
-            note: "damage from skill itself | does not include damage from void zone"
-          }
+            skill: 4,
+            note: "damage from skill itself, damage over time"
+          },
+          {
+            base: [0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            emhp: [1,1.5,2],
+            emhpScale: [0.25,100,"ap"],
+            rname: 'MalzaharR',
+            skill: 4,
+            note: "null zone, per tick, 0.5s intervals"
+          },
         ],
         items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg',
@@ -5551,7 +5758,7 @@ export let ChampionData = {
             emhpScale: [0.8,100,"ap"],
             rname: "MaokaiE",
             skill: 3,
-            note: "deals 2.0x damage if sappling was in brush | no calc for ap scale on %hp damage"
+            note: "deals 2.0x damage if sappling was in a brush | no calc for ap scale on %hp damage"
           },
           {
             base: [150,225,300],
@@ -5611,7 +5818,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'AlphaStrike',
-            note: "all hits on single target | deals approx. 0.67x damage if only 1 hit",
+            note: "all hits on a single target, deals approx. 0.67x damage if only 1 hit",
             skill: 1
           },
           {
@@ -5632,7 +5839,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 35,
             rname: "WujuStyle",
-            note: "bonus damage | does not include damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 3
           },
           {
@@ -5694,7 +5901,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'MissFortuneRicochetShot',
             skill: 1,
-            note: "if first target is killed second deals 1.75x damage | 2.10x damage if user has infinity edge | can critical strike"
+            note: "if first target is killed second deals 1.75x damage, 2.10x damage if user has infinity edge"
           },
           {
             base: [0],
@@ -5715,7 +5922,7 @@ export let ChampionData = {
             skill: 3,
             bAd: 0,
             rname: "MissFortuneScattershot",
-            note: "per tick | 0.25s per tick | 8.0x damage for full duration"
+            note: "per tick | 0.25s intervals"
           },
           {
             base: [0,0,0],
@@ -5776,7 +5983,7 @@ export let ChampionData = {
             emhp: 3,
             rname: "MordekaiserPassive",
             damage: "magical",
-            note: "Passive | darkness rise | per tick | 1.0s per tick | max hp based on lv 9 mordekaiser",
+            note: "Passive | darkness rise | per tick | 1.0s intervals | max hp based on lv 9 mordekaiser",
             skill: 0
           },
           {
@@ -5789,7 +5996,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'MordekaiserQ',
             skill: 1,
-            note: "unisolated damage | does not calculate lv scaling damage"
+            note: "unisolated damage | damage increase by 30/35/40/45/50% for isolated targets"
           },
           {
             base: [0],
@@ -5882,7 +6089,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'MorganaW',
             skill: 2,
-            note: "minimum damage per tick | 0.5s per tick | max 10 ticks | upto 2.7x damage per tick based on missing hp"
+            note: "minimum damage per tick | 0.5s intervals | 1.7% increase per 1% enemy missing hp max damage 2.7x"
           },
           {
             base: [0],
@@ -5974,7 +6181,7 @@ export let ChampionData = {
             ap: 20,
             bAd: 0,
             rname: "NamiE",
-            note: "bonus damage | does not calculate damage from auto attack",
+            note: "bonus damage, does not include damage from auto attack",
             skill: 3
           },
           {
@@ -6036,7 +6243,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'NasusQ',
             skill: 1,
-            note: "bonus damage, does not count damage from stacks or basic attack| stacks damage = stacks * multiplier"
+            note: "bonus damage, does not include damage from stacks or basic attack | stacks damage = stacks * multiplier"
           },
           {
             base: [0],
@@ -6056,7 +6263,7 @@ export let ChampionData = {
             ap: 60,
             bAd: 0,
             rname: "NasusE",
-            note: "cast damage | tick damage is 0.2x",
+            note: "cast damage | tick damage is 0.2x cast damage",
             skill: 3
           },
           {
@@ -6067,8 +6274,8 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: [3,4,5],
+            emhpScale: [1,100,"ap"],
             rname: 'NasusR',
-            note: "does not calculate ap scale",
             skill: 4
           }
         ],
@@ -6208,13 +6415,13 @@ export let ChampionData = {
           },
           {
             base: [50,70,90,110,130],
-            damage: 'none',
-            type: 'utility',
+            damage: 'magical',
+            type: 'damage',
             ad: 0,
             ap: 60,
             bAd: 0,
             rname: 'NeekoW',
-            note: "bonus damage from third hit auto",
+            note: "bonus damage every third hit auto",
             skill: 2
           },
           {
@@ -6308,6 +6515,7 @@ export let ChampionData = {
             ap: 100,
             bAd: 0,
             rname: "NocturneUnspeakableHorror",
+            note: "full duration",
             skill: 3
           },
           {
@@ -6551,8 +6759,7 @@ export let ChampionData = {
             ad: 0,
             ap: 30,
             bAd: 0,
-            rname: "OrianaRedactCommand",
-            note: "passthrough damage"
+            rname: "OrianaRedactCommand"
           },
           {
             base: [200,275,350],
@@ -6644,7 +6851,7 @@ export let ChampionData = {
             ap: 20,
             bAd: 0,
             rname: 'OrnnR',
-            note: "if hit by both parts deals 2.0x damage",
+            note: "deals 2.0x damage if target is hit with both parts",
             skill: 4
           }
         ],
@@ -6696,6 +6903,18 @@ export let ChampionData = {
             bAd: 115,
             rname: 'PantheonQ',
             note: "base | non mortal will",
+            skill: 1
+          },
+          {
+            lvScale: [20,240],
+            base: [70,100,130,160,190],
+            type: "damage",
+            damage: "physical",
+            ad: 0,
+            ap: 0,
+            bAd: 230,
+            rname: 'PantheonQ',
+            note: "enhanced | mortal will",
             skill: 1
           },
           {
@@ -6780,7 +6999,7 @@ export let ChampionData = {
             bAd: 90,
             emhp: 8,
             rname: 'PoppyQ',
-            note: "deals 2.0x damage if hit by both parts",
+            note: "deals 2.0x damage if target is hit by both parts",
             skill: 1
           },
           {
@@ -6886,14 +7105,16 @@ export let ChampionData = {
             skill: 3
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            lvScale: [250,550],
+            base: [0,0,0],
+            damage: 'true',
+            type: 'damage',
             ad: 0,
             ap: 0,
-            bAd: 0,
+            bAd: 80,
+            leth: 1.5,
             rname: 'PykeR',
-            note: "no calc yet",
+            note: "exectute range",
             skill: 4
           }
         ],
@@ -6946,7 +7167,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 90,
-            rname: 'LuxLightBinding',
+            rname: 'QiyanaQ',
             note: "base damage",
             skill: 1
           },
@@ -6957,7 +7178,7 @@ export let ChampionData = {
             ad: 0,
             ap: 30,
             bAd: 10,
-            rname: 'LuxPrismaticWave',
+            rname: 'QiyanaW',
             note: "bonus damage",
             skill: 2
           },
@@ -6968,7 +7189,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 70,
-            rname: "LuxLightStrikeKuge1",
+            rname: "QiyanaE",
             skill: 3
           },
           {
@@ -6979,7 +7200,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 170,
             emhp: 10,
-            rname: 'LuxMaliceCannon',
+            rname: 'QiyanaR',
             skill: 4
           }
         ],
@@ -7203,7 +7424,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'DefensiveBallCurl',
-            note: "Deals passive damage to enemies who basic attack rammus",
+            note: "Deals 1.5x passive damage to enemies who basic attack rammus",
             skill: 2
           },
           {
@@ -7224,7 +7445,7 @@ export let ChampionData = {
             ap: 20,
             bAd: 0,
             rname: 'Tremors2',
-            note: "per tick | 1.0s per tick",
+            note: "per tick | 1.0s intervals",
             skill: 4
           }
         ],
@@ -7307,7 +7528,7 @@ export let ChampionData = {
             ap: 13.75,
             bAd: 0,
             rname: 'RellR',
-            note: "per tick | 0.25s per tick",
+            note: "per tick | 0.25s interval",
             skill: 4
           }
         ],
@@ -7381,7 +7602,7 @@ export let ChampionData = {
             bAd: 90,
             rname: "RenektonSliceAndDice",
             skill: 3,
-            note: "first/second cast"
+            note: "first/recast cast"
           },
           {
             base: [70,115,160,205,250],
@@ -7402,7 +7623,7 @@ export let ChampionData = {
             ap: 10,
             bAd: 0,
             rname: 'RenektonReignOfTheTyrant',
-            note: "per tick | 0.5s per tick",
+            note: "per tick | 0.5s interval",
             skill: 4
           }
         ],
@@ -7606,7 +7827,7 @@ export let ChampionData = {
             bAd: 60,
             rname: 'RivenFengShuiEngine',
             skill: 4,
-            note: "min damage | does not calculate bonus ad riven gets from this ability"
+            note: "min damage, does not calculate bonus ad riven gets from this ability"
           }
         ],
         items: [{},{},{},{},{},{}],
@@ -7647,7 +7868,7 @@ export let ChampionData = {
             ap: 30,
             damage: "magical",
             rname: "Rumble_JunkyardTitan1",
-            note: "Passive | overheat",
+            note: "Passive | overheat bonus damage",
             skill: 0
           },
           {
@@ -7690,7 +7911,7 @@ export let ChampionData = {
             ap: 17.5,
             bAd: 0,
             rname: 'RumbleCarpetBomb',
-            note: "per tick | 0.5s per tick",
+            note: "per tick | 0.5s intervals",
             skill: 4
           }
         ],
@@ -7740,6 +7961,7 @@ export let ChampionData = {
             ad: 0,
             ap: 45,
             bAd: 0,
+            bmana: 3,
             rname: 'RyzeQWrapper',
             skill: 1,
             note: "does not calc mana scale | deals 10/40/70/100% increased damage if target has spell flux based on realm warp rank"
@@ -7751,6 +7973,7 @@ export let ChampionData = {
             ad: 0,
             ap: 60,
             bAd: 0,
+            bmana: 4,
             rname: 'RyzeW',
             note: "does not calc mana scale",
             skill: 2
@@ -7762,6 +7985,7 @@ export let ChampionData = {
             ad: 0,
             ap: 30,
             bAd: 0,
+            bmana: 2,
             rname: "RyzeE",
             note: "does not calc mana scale",
             skill: 3
@@ -7911,15 +8135,27 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [50,95,140,185,230],
+            base: [20,25,30,35,40],
             damage: 'physical',
             type: 'damage',
             ad: 0,
-            ap: 0,
+            ap: 20,
             bAd: 0,
-            emhp: 7.25,
+            mhp: 2,
             rname: 'SejuaniW',
-            note: "both hits",
+            note: "first hit",
+            skill: 2
+          },
+          {
+            base: [30,70,110,150,190],
+            damage: 'physical',
+            type: 'damage',
+            ad: 0,
+            ap: 60,
+            bAd: 0,
+            mhp: 5.25,
+            rname: 'SejuaniW',
+            note: "second hit",
             skill: 2
           },
           {
@@ -8166,7 +8402,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'SettW',
-            base: "TODO",
+            note: "TODO",
             skill: 2
           },
           {
@@ -8242,7 +8478,7 @@ export let ChampionData = {
             bAd: 25,
             rname: 'Deceive',
             skill: 1,
-            note: "bonus damage | does not calc crit but this ability can crit | does not calc damage from basic"
+            note: "bonus damage | can crit but calculates assuming no crit | does not calc damage from basic"
           },
           {
             base: [15,20,25,30,35],
@@ -8272,7 +8508,7 @@ export let ChampionData = {
             ap: 70,
             bAd: 0,
             rname: 'HallucinateFull',
-            note: "explosion damage | box deals ~lv 1-3 w damage x 1-3",
+            note: "explosion damage | box deals lv 1/2/3*(1-3) w damage",
             skill: 4
         }
         ],
@@ -8433,7 +8669,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 5,
             rname: 'ShyvanaImmolationAura',
-            note: "per tick | 0.25s per tick",
+            note: "per tick | 0.25s intervals",
             skill: 2
           },
           {
@@ -8445,6 +8681,31 @@ export let ChampionData = {
             bAd: 0,
             rname: "ShyvanaFireball",
             note: "human form",
+            skill: 3
+          },
+          {
+            // starts off at 75 because 100 is the min damage this ability can be obtained gaining 5 damage per level
+            lvScale: [75, 160],
+            base: [60,100,140,180,220],
+            damage: 'magical',
+            type: 'damage',
+            ad: 60,
+            ap: 100,
+            bAd: 0,
+            rname: "ShyvanaFireball",
+            note: "dragon form",
+            skill: 3
+          },
+          {
+            lvScale: [17.5,60],
+            base: [0,0,0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 5,
+            ap: 10,
+            bAd: 0,
+            rname: "ShyvanaFireball",
+            note: "dragon form | scorched earth | per tick | 0.5s intervals",
             skill: 3
           },
           {
@@ -8505,7 +8766,7 @@ export let ChampionData = {
             ap: 11.25,
             bAd: 0,
             rname: 'PoisonTrail',
-            note: "per tick | 0.25s per tick",
+            note: "per tick | 0.25s intervals",
             skill: 1
           },
           {
@@ -8786,7 +9047,18 @@ export let ChampionData = {
             rname: 'SkarnerImpale',
             skill: 4,
             note: "bonus magic damage | this ability also deals 60% of skarners ad as physical"
-          }
+          },
+          {
+            base: [0,0,0],
+            damage: 'physical',
+            type: 'damage',
+            ad: 60,
+            ap: 0,
+            bAd: 0,
+            rname: 'SkarnerImpale',
+            skill: 4,
+            note: "this damage is added on top of the previous skill"
+          },
         ],
         items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Skarner_0.jpg',
@@ -9005,8 +9277,8 @@ export let ChampionData = {
           },
           {
             base: [80,120,160,200,240],
-            damage: 'none',
-            type: 'utility',
+            damage: 'magical',
+            type: 'damage',
             ad: 0,
             ap: 70,
             bAd: 0,
@@ -9014,14 +9286,25 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [70,115,160,205,250],
+            base: [35,70,105,140,175],
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 50,
+            ap: 25,
             bAd: 0,
             rname: "SwainE",
-            note: "both parts",
+            note: "outgoing",
+            skill: 3
+          },
+          {
+            base: [35,45,55,65,75],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 25,
+            bAd: 0,
+            rname: "SwainE",
+            note: "return",
             skill: 3
           },
           {
@@ -9032,7 +9315,18 @@ export let ChampionData = {
             ap: 14.167,
             bAd: 0,
             rname: 'SwainR',
-            note: "per tick | 1.0s per tick | detonation damage >3x per tick damage",
+            note: "per tick | 1.0s intervals",
+            skill: 4
+          },
+          {
+            base: [100,150,200],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 50,
+            bAd: 0,
+            rname: 'SwainR',
+            note: "detonation | min damage | deals more based on hp drained",
             skill: 4
           }
         ],
@@ -9190,8 +9484,18 @@ export let ChampionData = {
             ap: 70,
             bAd: 0,
             rname: 'SyndraW',
+            skill: 2
+          },
+          {
+            base: [14,22,30,38,46],
+            damage: 'true',
+            type: 'damage',
+            ad: 0,
+            ap: 14,
+            bAd: 0,
+            rname: 'SyndraW',
             skill: 2,
-            note: "20% of total damage is dealt as true damage (no calc) at level 5"
+            note: "only applies to level 5 w, this damage is added on top of base w damage"
           },
           {
             base: [85,130,175,220,265],
@@ -9274,8 +9578,8 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: 11,
+            emhpScale: [2,100,"ap"],
             rname: 'TahmKenchW',
-            note: "does not calc ap scaling on %hp damage",
             skill: 2
           },
           {
@@ -9434,14 +9738,25 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [90,130,170,210,250],
+            base: [45,60,75,90,105],
             damage: 'physical',
             type: 'damage',
             ad: 0,
             ap: 0,
-            bAd: 110,
+            bAd: 55,
             rname: 'TalonW',
-            note: "both hits",
+            note: "outgoing",
+            skill: 2
+          },
+          {
+            base: [45,70,95,120,145],
+            damage: 'physical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 70,
+            rname: 'TalonW',
+            note: "return",
             skill: 2
           },
           {
@@ -9533,6 +9848,7 @@ export let ChampionData = {
             ad: 0,
             ap: 50,
             bAd: 0,
+            ar: 50,
             rname: "TaricE",
             note: "does not calc bonus armor scaling",
             skill: 3
@@ -9616,6 +9932,17 @@ export let ChampionData = {
             bAd: 0,
             rname: "ToxicShot",
             note: "on hit damage",
+            skill: 3
+          },
+          {
+            base: [6,12,18,24,30],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 10,
+            bAd: 0,
+            rname: "ToxicShot",
+            note: "per tick | 1.0s intervals",
             skill: 3
           },
           {
@@ -9839,7 +10166,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'TrundleTrollSmash',
-            note: "bonus damage | does not calc damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 1
           },
           {
@@ -9872,7 +10199,7 @@ export let ChampionData = {
             emhp: [20,27.5,35],
             emhpScale: [2,100,"ap"],
             rname: 'TrundlePain',
-            note: "total damage",
+            note: "total damage, damage over time",
             skill: 4
           }
         ],
@@ -9917,8 +10244,8 @@ export let ChampionData = {
           },
           {
             base: [0],
-            type: "none",
-            damage: "utility",
+            type: "utility",
+            damage: "none",
             ad: 0,
             ap: 0,
             bAd: 0,
@@ -9937,7 +10264,7 @@ export let ChampionData = {
           },
           {
             base: [80,110,140,170,200],
-            damage: 'magical',
+            damage: 'physical',
             type: 'damage',
             ad: 0,
             ap: 80,
@@ -10007,13 +10334,35 @@ export let ChampionData = {
           },
           {
             base: [15,22.5,30,37.5,45],
-            damage: 'none',
-            type: 'utility',
+            damage: 'magical',
+            type: 'damage',
             ad: 100,
             ap: 50,
             bAd: 0,
             rname: 'PickACard',
-            note: "gold card | this is the lowest damaging card",
+            note: "gold card",
+            skill: 2
+          },
+          {
+            base: [30,45,60,75,90],
+            damage: 'magical',
+            type: 'damage',
+            ad: 100,
+            ap: 60,
+            bAd: 0,
+            rname: 'PickACard',
+            note: "red card",
+            skill: 2
+          },
+          {
+            base: [40,60,80,100,120],
+            damage: 'magical',
+            type: 'damage',
+            ad: 100,
+            ap: 90,
+            bAd: 0,
+            rname: 'PickACard',
+            note: "blue card",
             skill: 2
           },
           {
@@ -10178,7 +10527,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'UdyrTigerStance',
-            note: "bonus damage| does not calc damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 1
           },
           {
@@ -10210,6 +10559,7 @@ export let ChampionData = {
             ap: 100,
             bAd: 0,
             rname: 'UdyrPhoenixStance',
+            note: "bonus damage, does not include damage from basic attack",
             skill: 4
           }
         ],
@@ -10270,7 +10620,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'UrgotW',
-            note: "per hit",
+            note: "per hit, replaces auto attack",
             skill: 2
           },
           {
@@ -10291,6 +10641,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 50,
             rname: 'UrgotR',
+            note: "urgot can recast this spell to execute the target if they are below 25% health",
             skill: 4
           }
         ],
@@ -10353,7 +10704,20 @@ export let ChampionData = {
             bAd: 0,
             rname: 'VarusW',
             skill: 2,
-            note: "on hit damage | this skill deals uncalculated % max hp damage per stack"
+            note: "on hit damage"
+          },
+          {
+            base: [0,0,0,0,0],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            emhp: [3,3.5,4,4.5,5],
+            emhpScale: [2,100,"ap"],
+            rname: 'VarusW',
+            skill: 2,
+            note: "damage per stack"
           },
           {
             base: [60,100,140,180,220],
@@ -10423,7 +10787,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'VayneTumble',
-            note: "bonus damage | does not calc damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 1
           },
           {
@@ -10536,7 +10900,7 @@ export let ChampionData = {
             ap: 75,
             bAd: 0,
             rname: 'VeigarR',
-            note: "deals up to 2.0x damage based on enemy missing hp",
+            note: "deals up to 2.0x(at 66.67% hp missing) damage based on enemy missing hp",
             skill: 4
           }
         ],
@@ -10600,7 +10964,18 @@ export let ChampionData = {
             bAd: 0,
             skill: 2,
             rname: 'VelkozW',
-            note: "cast damage | detonate deals roughly 1.5x damage"
+            note: "cast damage"
+          },
+          {
+            base: [45,75,105,135,165],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 25,
+            bAd: 0,
+            skill: 2,
+            rname: 'VelkozW',
+            note: "detonate damage"
           },
           {
             base: [70,100,130,160,190],
@@ -10671,7 +11046,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 70,
             rname: 'ViQ',
-            note: "min damage | max damage - 2.0x",
+            note: "min damage, max damage - 2.0x",
             skill: 1
           },
           {
@@ -10682,8 +11057,8 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             emhp: [4,5.5,7,8.5,10],
+            emhpScale: [1,35,"bAd"],
             rname: 'ViW',
-            note: "currently no scaling",
             skill: 2
           },
           {
@@ -10695,7 +11070,7 @@ export let ChampionData = {
             bAd: 0,
             rname: "ViE",
             skill: 3,
-            note: "this ability can crit | calc assuming no crit"
+            note: "this ability can crit, calc'd assuming no crit"
           },
           {
             base: [150,325,500],
@@ -10848,7 +11223,7 @@ export let ChampionData = {
             ap: 60,
             bAd: 0,
             rname: 'ViktorPowerTransfer',
-            note: "enhanced basic attack",
+            note: "replaces the next auto attack",
             skill: 1
           },
           {
@@ -10965,7 +11340,7 @@ export let ChampionData = {
             bAd: 0,
             bhp: 2.5,
             rname: 'VladimirSanguinePool',
-            note: "per tick | 0.5s per tick",
+            note: "per tick | 0.5s intervals",
             skill: 2
           },
           {
@@ -11040,7 +11415,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 120,
             rname: 'VolibearQ',
-            note: "bonus damage | does not calc damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 1
           },
           {
@@ -11210,7 +11585,7 @@ export let ChampionData = {
             bAd: 50,
             rname: 'MonkeyKingDoubleAttack',
             skill: 1,
-            note: "bonus damage | does not calc damage from basic attack"
+            note: "bonus damage, does not include damage from basic attack"
           },
           {
             base: [0],
@@ -11220,7 +11595,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'MonkeyKingDecoy',
-            note: "clone deals uncalculated damage",
+            note: "clone deals the same damage as wu",
             skill: 2
           },
           {
@@ -11242,7 +11617,7 @@ export let ChampionData = {
             bAd: 0,
             emhp: [1,1.5,2],
             rname: 'MonkeyKingSpinToWin',
-            note: "per tick | 0.25s per tick",
+            note: "per tick | 0.25s intervals",
             skill: 4
           }
         ],
@@ -11458,7 +11833,7 @@ export let ChampionData = {
             bAd: 40,
             rname: 'XinZhaoQ',
             skill: 1,
-            note: "bonus attack | does not include damage from basic attack"
+            note: "bonus attack, does not include damage from basic attack"
           },
           {
             base: [30,40,50,60,70],
@@ -11637,14 +12012,27 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [10,20,30,40,50],
-            damage: 'mixed',
+            base: [5,10,15,20,25],
+            damage: 'physical',
             type: 'damage',
             ad: 0,
             ap: 0,
             bAd: 0,
-            emhp: [11,12,13,14,15],
+            emhp: [5.5,6,6.5,7,7.5],
             rname: 'YoneW',
+            note: "physical portion",
+            skill: 2
+          },
+          {
+            base: [5,10,15,20,25],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            emhp: [5.5,6,6.5,7,7.5],
+            rname: 'YoneW',
+            note: "magical portion",
             skill: 2
           },
           {
@@ -11677,7 +12065,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'YoneR',
             skill:4,
-            note: "physical portion"
+            note: "magical portion"
           },
         ],
         items: [{},{},{},{},{},{}],
@@ -11727,7 +12115,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'YorickQ',
-            note: "bonus damage | does not calc damage from basic attack",
+            note: "bonus damage, does not include damage from basic attack",
             skill: 1
           },
           {
@@ -11835,7 +12223,6 @@ export let ChampionData = {
             bAd: 0,
             echp: [2,3.2,4.4,5.6,6.8,8],
             rname: 'YuumiQ',
-            note: "current hp damage calc as max hp",
             skill: 1
           },
           {
@@ -11871,7 +12258,7 @@ export let ChampionData = {
           }
         ],
         items: [{},{},{},{},{},{}],
-        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg',
+        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg',
     },
     zac: {
         name: 'zac',
@@ -11951,7 +12338,7 @@ export let ChampionData = {
             ap: 100,
             bAd: 0,
             rname: 'ZacR',
-            note: "first bounce | bounces after first deals 0.5x damage",
+            note: "first bounce, subsequent bounces deals 0.5x damage",
             skill: 4
           }
         ],
@@ -12034,7 +12421,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'ZedR',
             skill: 4,
-            note: "base damage | this ability deals an additional 36/40/55 of damage dealt by zed to marked target after the mark expires"
+            note: "base damage, this ability deals an additional 36/40/55% of the damage zed dealt to the target while they were marked after the mark expires"
           }
         ],
         items: [{},{},{},{},{},{}],
@@ -12107,7 +12494,7 @@ export let ChampionData = {
             bAd: 0,
             rname: "ZiggsE",
             skill: 3,
-            note: "first mine | additional mines deal 0.3x damage"
+            note: "first mine, additional mines deal 0.3x damage"
           },
           {
             base: [200,300,400],
@@ -12118,7 +12505,7 @@ export let ChampionData = {
             skill: 4,
             bAd: 0,
             rname: 'ZiggsR',
-            note: "deals 1.5x damage to enemies in the center"
+            note: "deals 1.5x damage to enemies in the center of the explosion"
           }
         ],
         items: [{},{},{},{},{},{}],
@@ -12243,6 +12630,7 @@ export let ChampionData = {
             skill: 0
           },
           {
+            lvScale: [7,50],
             base: [50,80,110,140,170],
             type: "damage",
             damage: "magical",
@@ -12250,7 +12638,7 @@ export let ChampionData = {
             ap: 60,
             bAd: 0,
             rname: 'ZoeQ',
-            note: "excludes level scaling | min damage",
+            note: "min damage, max damage 2.50x",
             skill: 1
           },
           {
@@ -12261,7 +12649,7 @@ export let ChampionData = {
             ap: 13.3,
             bAd: 0,
             rname: 'ZoeW',
-            note: "damage per orb | 3 orbs per cast",
+            note: "damage per orb, 3 orbs per cast",
             skill: 2
           },
           {
@@ -12273,7 +12661,7 @@ export let ChampionData = {
             bAd: 0,
             rname: "ZoeE",
             skill: 3,
-            note: "bubble damage | popping bubble deals up to this skills damage as true damage based on the post mitigation damage of the skill/attack used to wake the target up"
+            note: "bubble damage, popping bubble deals up to this skills damage as true damage based on the post mitigation damage of the skill/attack used to wake the target up"
           },
           {
             base: [0],

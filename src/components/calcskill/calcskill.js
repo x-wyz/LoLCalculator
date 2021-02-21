@@ -5,6 +5,13 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	let scaleLv = skill.lvScale !== undefined ? skill.lvScale[0] + ((skill.lvScale[1] - skill.lvScale[0]) / 17) * (ally.lv - 1) : 0
 
+	try {
+		if (skill.lvScale[2] === "emhp"){
+			scaleLv = enemy.hp * (scaleLv / 100);
+		}
+	}
+	catch{}
+
 	// New
 
 	let bonusAd = ally.attack - ally.baseAttack - (ally.lvAttack * (ally.lv - 1))
@@ -73,7 +80,7 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 	const skillDamage = skill.type === "damage" ? skill.base[skillLv] : 0;
 	const totalDamage = scaleLv + skillDamage + scaleAp + scaleAd + scaleBAD + scaleEMHP + scaleEMHPs + scaleMHP;
 
-	const multiplier = skill.damage === "physical" ? (100 / (100 + enemy.armor)) : skill.damage === "magical" ? (100 / (100 + enemy.resist)) : 0;
+	const multiplier = skill.damage === "physical" ? (100 / (100 + enemy.armor)) : skill.damage === "magical" ? (100 / (100 + enemy.resist)) : skill.damage === "true" ? 1 : 0;
 
 	const damage = totalDamage * multiplier;
 
