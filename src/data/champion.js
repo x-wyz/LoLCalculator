@@ -8424,7 +8424,6 @@ export let ChampionData = {
             bAd: 100,
             rname: 'SettR',
             ebhp: [40,50,60],
-            note: "does not calc enemy bonus hp damage",
             skill: 4
           }
         ],

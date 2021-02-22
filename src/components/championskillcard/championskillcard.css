@@ -23,31 +23,26 @@
 }
 
 .skill-increase, .skill-decrease {
-	width: 40px;
+	min-width: 40px;
+	width: 20%;
 	text-align: center;
 	margin-left: 0.1em;
-	transition: background 0.2s;
+	transition: background 0.1s;
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0.3em;
+	margin: 0.5em;
+	box-sizing: border-box;
+	border: 0.5px solid white;
 }
 
-.skill-increase {
-	background: #349e34a8;
+.skill-increase, .skill-decrease {
+	background: #121918;
 }
 
-.skill-increase:hover {
-	background: #248d24a8;
-}
-
-.skill-decrease {
-	background: #a25252;
-}
-
-.skill-decrease:hover {
-	background: #9e4343;
+.skill-increase:hover, .skill-decrease:hover {
+	background: #273638;
 }
 
 .skill-current-lv {
