@@ -138,7 +138,7 @@ export let ChampionData = {
             ap: 35,
             bAd: 0,
             rname: 'AhriOrbofDeception',
-            note: "ingoing",
+            note: "return",
             skill: 1
           },
           {
