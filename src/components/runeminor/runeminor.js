@@ -13,43 +13,43 @@ const RuneMinor = ({ currentrunes, updateRuneStatus }) => {
 			<h2 className="rune-tree-header"> Minor </h2>
 			<div className="minor-runes-row">
 				<div className={`minor ${currentrunes.minor.node1 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node1')}>
-					<img className="minor-image" src={Minor1} />
+					<img className="minor-image" src={Minor1} alt="minior rune adaptive"/>
 					<p className="minor-name">Adaptive</p>
 				</div>
 				<div className={`minor ${currentrunes.minor.node2 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node2')}>
-					<img className="minor-image" src={Minor2} />
+					<img className="minor-image" src={Minor2} alt="minior rune attack speed"/>
 					<p className="minor-name">Attack Speed</p>
 				</div>
 				<div className={`minor ${currentrunes.minor.node3 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node3')}>
-					<img className="minor-image" src={Minor3} />
+					<img className="minor-image" src={Minor3} alt="minior rune ability haste"/>
 					<p className="minor-name">Ability Haste</p>
 				</div>
 			</div>
 			<div className="minor-runes-row">
 				<div className={`minor ${currentrunes.minor.node4 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node4')}>
-					<img className="minor-image" src={Minor1} />
+					<img className="minor-image" src={Minor1} alt="minior rune adaptive"/>
 					<p className="minor-name">Adaptive</p>
 				</div>
 				<div className={`minor ${currentrunes.minor.node5 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node5')}>
-					<img className="minor-image" src={Minor4} />
+					<img className="minor-image" src={Minor4} alt="minior rune armor"/>
 					<p className="minor-name">Armor</p>
 				</div>
 				<div className={`minor ${currentrunes.minor.node6 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node6')}>
-					<img className="minor-image" src={Minor5} />
+					<img className="minor-image" src={Minor5} alt="minior rune magic resist"/>
 					<p className="minor-name">Magic Resist</p>
 				</div>
 			</div>
 			<div className="minor-runes-row">
 				<div className={`minor ${currentrunes.minor.node7 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node7')}>
-					<img className="minor-image" src={Minor6} />
+					<img className="minor-image" src={Minor6} alt="minior rune scaling health"/>
 					<p className="minor-name">Health/Lv</p>
 				</div>
 				<div className={`minor ${currentrunes.minor.node8 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node8')}>
-					<img className="minor-image" src={Minor4} />
+					<img className="minor-image" src={Minor4} alt="minior rune armor"/>
 					<p className="minor-name">Armor</p>
 				</div>
 				<div className={`minor ${currentrunes.minor.node9 ? "rune-active" : "rune-inactive"}`} onClick={() => updateRuneStatus('minor', 'node9')}>
-					<img className="minor-image" src={Minor5} />
+					<img className="minor-image" src={Minor5} alt="minior rune magic resist"/>
 					<p className="minor-name">Magic Resist</p>
 				</div>
 			</div>
