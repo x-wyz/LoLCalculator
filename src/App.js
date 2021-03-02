@@ -15,6 +15,7 @@ class App extends Component {
 
     this.state = {
       championChanged: false,
+      showExport: false,
       mainAlly: {
         name: 'annie',
         lv: 1,
@@ -423,6 +424,13 @@ class App extends Component {
     this.updateSkillLevel = this.updateSkillLevel.bind(this);
     this.updateItem = this.updateItem.bind(this);
     this.levelup = this.levelup.bind(this);
+    this.showExport = this.showExport.bind(this);
+  }
+
+  showExport(){
+    this.setState({
+      showExport: !this.state.showExport
+    })
   }
 
   levelup(type, target){
@@ -754,6 +762,9 @@ class App extends Component {
           </div>
         </header>
         <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
+        <div className="export-data" onClick={this.showExport} >
+          EX
+        </div>
       </div>
     );
   }

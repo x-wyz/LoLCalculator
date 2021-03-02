@@ -3,6 +3,18 @@
   --shadow-basic: 6px 6px 4px -4px rgba(0, 0, 0, 0.4);
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #48514E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111A18;
+}
+
 .champion-select {
   display: flex;
   justify-content: center;
@@ -35,4 +47,31 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.export-data {
+  --export-width: 180px;
+  position: fixed;
+  background: #161D1D;
+  width: var(--export-width);
+  height: var(--export-width);
+  bottom: calc(-1 * var(--export-width)/3);
+  right: calc(-1 * var(--export-width)/3);
+  display: flex;
+  line-height: 140px;
+  text-indent: 50px;
+  font-size: 1.9em;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: orange;
+  cursor: pointer;
+  transition: all 0.15s;
+  -webkit-user-select: none;      
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.export-data:hover {
+  background: #263430;
 }
