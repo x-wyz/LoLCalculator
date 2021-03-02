@@ -765,6 +765,9 @@ class App extends Component {
         <div className="export-data" onClick={this.showExport} >
           EX
         </div>
+        <div className="saved-data" onClick={this.showExport} >
+          SD
+        </div>
       </div>
     );
   }

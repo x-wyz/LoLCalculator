@@ -49,8 +49,8 @@
   user-select: none;
 }
 
-.export-data {
-  --export-width: 180px;
+.export-data, .saved-data {
+  --export-width: 170px;
   position: fixed;
   background: #161D1D;
   width: var(--export-width);
@@ -58,20 +58,27 @@
   bottom: calc(-1 * var(--export-width)/3);
   right: calc(-1 * var(--export-width)/3);
   display: flex;
-  line-height: 140px;
-  text-indent: 50px;
+  line-height: 125px;
+  text-indent: 42px;
   font-size: 1.9em;
-  border-radius: 50%;
+  border-radius: 50px;
   border: 2px solid white;
   color: orange;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.10s;
   -webkit-user-select: none;      
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  z-index: 50;
 }
 
-.export-data:hover {
-  background: #263430;
+.export-data:hover, .saved-data:hover {
+  background: #2C3C3A;
+}
+
+.saved-data {
+  left: calc(-1 * var(--export-width)/3);
+  text-indent: 84px;
+  border: 2px solid white;
 }
