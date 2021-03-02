@@ -214,207 +214,207 @@ class App extends Component {
           mount1: false,
           mount2: false
         }
-    },
-      mainEnemy: {
-        name: 'annie',
-        lv: 1,
-        baseHp: 524,
-        hp: 524,
-        lvHp: 88,
-        armor: 19,
-        lvArmor: 4,
-        resist: 30,
-        lvResist: 0.5,
-        movement: 335,
-        mana: 418,
-        lvMana: 25,
-        attack: 50,
-        baseAttack: 50,
-        lvAttack: 2.63,
-        critDamage: 175,
-        critChance: 0,
-        omnivamp: 0,
-        abilityHaste: 0,
-        lethality: 0,
-        arpen: 0,
-        mpen: 0,
-        flatMPen: 0,
-        ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
-        abilities: [
-          {
-            lvScale: [0,0],
-            rname: "Annie_Passive",
-            note: "passive",
-            skill: 0
+      },
+        mainEnemy: {
+          name: 'annie',
+          lv: 1,
+          baseHp: 524,
+          hp: 524,
+          lvHp: 88,
+          armor: 19,
+          lvArmor: 4,
+          resist: 30,
+          lvResist: 0.5,
+          movement: 335,
+          mana: 418,
+          lvMana: 25,
+          attack: 50,
+          baseAttack: 50,
+          lvAttack: 2.63,
+          critDamage: 175,
+          critChance: 0,
+          omnivamp: 0,
+          abilityHaste: 0,
+          lethality: 0,
+          arpen: 0,
+          mpen: 0,
+          flatMPen: 0,
+          ap: 0,
+          abilitylv1: 0,
+          abilitylv2: 0,
+          abilitylv3: 0,
+          abilitylv4: 0,
+          abilities: [
+            {
+              lvScale: [0,0],
+              rname: "Annie_Passive",
+              note: "passive",
+              skill: 0
+            },
+            {
+              base: [80,115,150,185,220],
+              type: "damage",
+              damage: "magical",
+              ad: 0,
+              ap: 80,
+              bAd: 0,
+              rname: 'AnnieQ',
+              skill: 1
+            },
+            {
+              base: [70,115,160,205,250],
+              damage: 'magical',
+              type: 'damage',
+              ad: 0,
+              ap: 85,
+              bAd: 0,
+              rname: 'AnnieW',
+              skill: 2
+            },
+            {
+              base: [20,30,40,50,60],
+              damage: 'magical',
+              type: 'damage',
+              ad: 0,
+              ap: 20,
+              bAd: 0,
+              rname: 'AnnieE',
+              note: "per basic attack taken",
+              skill: 3
+            },
+            {
+              base: [150,275,400],
+              damage: 'magical',
+              type: 'damage',
+              ad: 0,
+              ap: 75,
+              bAd: 0,
+              rname: 'AnnieR',
+              note: "initial summon damage",
+              skill: 4
+            },
+            {
+              base: [5,7.5,10],
+              damage: 'magical',
+              type: 'damage',
+              ad: 0,
+              ap: 3,
+              bAd: 0,
+              rname: 'AnnieR',
+              note: "Tibbers DOT",
+              skill: 4
+            },
+            {
+              base: [50,75,100],
+              damage: 'magical',
+              type: 'damage',
+              ad: 0,
+              ap: 15,
+              bAd: 0,
+              rname: 'AnnieR',
+              note: "Tibbers basic attack",
+              skill: 4
+            }
+          ],
+          items: [{},{},{},{},{},{}],
+          image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
+           runes: {
+            precision: {
+              key1: false,
+              key2: false,
+              key3: false,
+              key4: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            domination: {
+              key1: false,
+              key2: false,
+              key3: false,
+              key4: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false,
+              node10: false
+            },
+            sorcery: {
+              key1: false,
+              key2: false,
+              key3: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            resolve: {
+              key1: false,
+              key2: false,
+              key3: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            inspiration: {
+              key1: false,
+              key2: false,
+              key3: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            minor: {
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            }
           },
-          {
-            base: [80,115,150,185,220],
-            type: "damage",
-            damage: "magical",
-            ad: 0,
-            ap: 80,
-            bAd: 0,
-            rname: 'AnnieQ',
-            skill: 1
-          },
-          {
-            base: [70,115,160,205,250],
-            damage: 'magical',
-            type: 'damage',
-            ad: 0,
-            ap: 85,
-            bAd: 0,
-            rname: 'AnnieW',
-            skill: 2
-          },
-          {
-            base: [20,30,40,50,60],
-            damage: 'magical',
-            type: 'damage',
-            ad: 0,
-            ap: 20,
-            bAd: 0,
-            rname: 'AnnieE',
-            note: "per basic attack taken",
-            skill: 3
-          },
-          {
-            base: [150,275,400],
-            damage: 'magical',
-            type: 'damage',
-            ad: 0,
-            ap: 75,
-            bAd: 0,
-            rname: 'AnnieR',
-            note: "initial summon damage",
-            skill: 4
-          },
-          {
-            base: [5,7.5,10],
-            damage: 'magical',
-            type: 'damage',
-            ad: 0,
-            ap: 3,
-            bAd: 0,
-            rname: 'AnnieR',
-            note: "Tibbers DOT",
-            skill: 4
-          },
-          {
-            base: [50,75,100],
-            damage: 'magical',
-            type: 'damage',
-            ad: 0,
-            ap: 15,
-            bAd: 0,
-            rname: 'AnnieR',
-            note: "Tibbers basic attack",
-            skill: 4
+          buffs: {
+            elixIron: false,
+            elixWrath: false,
+            elixSorc: false,
+            baron: false,
+            inf1: false,
+            inf2: false,
+            mount1: false,
+            mount2: false
           }
-        ],
-        items: [{},{},{},{},{},{}],
-        image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
-         runes: {
-          precision: {
-            key1: false,
-            key2: false,
-            key3: false,
-            key4: false,
-            node1: false,
-            node2: false,
-            node3: false,
-            node4: false,
-            node5: false,
-            node6: false,
-            node7: false,
-            node8: false,
-            node9: false
-          },
-          domination: {
-            key1: false,
-            key2: false,
-            key3: false,
-            key4: false,
-            node1: false,
-            node2: false,
-            node3: false,
-            node4: false,
-            node5: false,
-            node6: false,
-            node7: false,
-            node8: false,
-            node9: false,
-            node10: false
-          },
-          sorcery: {
-            key1: false,
-            key2: false,
-            key3: false,
-            node1: false,
-            node2: false,
-            node3: false,
-            node4: false,
-            node5: false,
-            node6: false,
-            node7: false,
-            node8: false,
-            node9: false
-          },
-          resolve: {
-            key1: false,
-            key2: false,
-            key3: false,
-            node1: false,
-            node2: false,
-            node3: false,
-            node4: false,
-            node5: false,
-            node6: false,
-            node7: false,
-            node8: false,
-            node9: false
-          },
-          inspiration: {
-            key1: false,
-            key2: false,
-            key3: false,
-            node1: false,
-            node2: false,
-            node3: false,
-            node4: false,
-            node5: false,
-            node6: false,
-            node7: false,
-            node8: false,
-            node9: false
-          },
-          minor: {
-            node1: false,
-            node2: false,
-            node3: false,
-            node4: false,
-            node5: false,
-            node6: false,
-            node7: false,
-            node8: false,
-            node9: false
-          }
-        },
-        buffs: {
-          elixIron: false,
-          elixWrath: false,
-          elixSorc: false,
-          baron: false,
-          inf1: false,
-          inf2: false,
-          mount1: false,
-          mount2: false
-        }
-    },
+      },
     }
 
     this.modifyRune = this.modifyRune.bind(this);
@@ -645,10 +645,28 @@ class App extends Component {
   updateItem(newItem, slot, target){
     const champion = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
     const previousItem = champion.items[slot];
+    let previousMythic = undefined;
+    champion.items.forEach(item => {
+      if (item.tier === "mythic"){
+        previousMythic = item;
+      }
+    })
+
+    if (previousMythic !== undefined) {
+      const oldMythicKeys = Object.keys(previousMythic.mythic.stats);
+      champion.items.forEach(item => {
+        if (item.tier === "legendary"){
+          oldMythicKeys.forEach(stat => {
+            let championStat = stat === "ad" ? "attack" : stat
+            champion[championStat] = champion[championStat] - previousMythic.mythic.stats[stat];
+          })
+        }
+      })
+    }
 
     try {
       if (newItem.tier === "shoes"){
-        champion.items.map((item, idx) => {
+        champion.items.forEach((item, idx) => {
           if (item.tier === "shoes") {
             if (slot === idx){
               return;
@@ -661,7 +679,7 @@ class App extends Component {
       }
 
       if (newItem.tier === "mythic"){
-        champion.items.map((item, idx) => {
+        champion.items.forEach((item, idx) => {
           if (item.tier === "mythic") {
             if (slot === idx){
               return;
@@ -679,20 +697,39 @@ class App extends Component {
 
     champion.items[slot] = newItem;
 
+    let currentMythic = undefined;
+    champion.items.forEach(item => {
+      if (item.tier === "mythic"){
+        currentMythic = item;
+      }
+    })
+
     const newItemKey = Object.keys(newItem.stats)
 
     if (previousItem.stats !== undefined) {
       const previousItemKey = Object.keys(previousItem.stats);
-      previousItemKey.map(stat => {
+      previousItemKey.forEach(stat => {
         let championStat = stat === "ad" ? "attack" : stat
-        champion[stat] = champion[stat] - previousItem.stats[stat];
+        champion[championStat] = champion[championStat] - previousItem.stats[stat];
       })
     }
 
-    newItemKey.map(stat => {
+    newItemKey.forEach(stat => {
       let championStat = stat === "ad" ? "attack" : stat
       champion[championStat] = champion[championStat] + newItem.stats[stat]
     })
+
+    if (currentMythic !== undefined) {
+      const currentMythicKeys = Object.keys(currentMythic.mythic.stats);
+      champion.items.forEach(item => {
+        if (item.tier === "legendary"){
+          currentMythicKeys.forEach(stat => {
+            let championStat = stat === "ad" ? "attack" : stat
+            champion[championStat] = champion[championStat] + currentMythic.mythic.stats[stat];
+          })
+        }
+      })
+    }
 
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champion
