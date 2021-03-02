@@ -90,8 +90,34 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	console.log(skill.ap)
 
+	let cooldown = 0;
+
+	if (skill.cd !== undefined) {
+		if (skill.cd[0].length === 5 || skill.cd[0].length === 3){
+			cooldown = skill.cd[0][skillLv];
+		}
+		else if (skill.cd[0].length === 1) {
+			cooldown = skill.cd[0][0];
+		}
+		else if (skill.cd[0].length === 2) {
+			cooldown = skill.cd[0][0];
+		}
+
+		if (skill.cd[2] === undefined || skill.cd[2] !== "static"){
+			cooldown = cooldown * (100/(100+ally.abilityHaste))
+		}
+	}
+
 	return (
 		<section className="skill-calculations-container">
+			<div className="skill-cooldown">
+				<h6 className="skill-cooldown-header">Cooldown</h6>
+				<p className="skill-cooldown-text">
+					{
+						cooldown.toFixed(1)
+					}
+				</p>
+			</div>
 			<div className="calc-skill-icon" style={
 				skill.skill > 0 ?
 				{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${skill.rname}.png)`}
