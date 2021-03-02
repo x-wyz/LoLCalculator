@@ -19,7 +19,6 @@ class CharacterSelect extends Component {
 	render(){
 		const championlistKeys = Object.keys(this.props.championlist);
 		const current = this.state.current;
-		console.log(current)
 		return (
 			<div className="character-select">
 				<input list="championlist" name="champion" className="champion-options" onChange={this.updateCurrent} />

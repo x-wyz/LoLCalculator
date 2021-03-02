@@ -637,19 +637,46 @@ class App extends Component {
       champion[`abilitylv${skill}`] = 4;
     }
 
-    console.log(skill)
-    console.log(champion[`abilitylv${skill}`])
-
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]:champion
     })
-
-    console.log(this.state)
   }
 
   updateItem(newItem, slot, target){
     const champion = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
     const previousItem = champion.items[slot];
+
+    try {
+      if (newItem.tier === "shoes"){
+        champion.items.map((item, idx) => {
+          if (item.tier === "shoes") {
+            if (slot === idx){
+              return;
+            }
+            else {
+              throw "Character cannot have more than one pair of shoes.";
+            }
+          }
+        })
+      }
+
+      if (newItem.tier === "mythic"){
+        champion.items.map((item, idx) => {
+          if (item.tier === "mythic") {
+            if (slot === idx){
+              return;
+            }
+            else {
+              throw "Character cannot have more than one mythic item.";
+            }
+          }
+        })
+      }
+    }
+    catch (err) {
+      return err;
+    }
+
     champion.items[slot] = newItem;
 
     const newItemKey = Object.keys(newItem.stats)

@@ -88,8 +88,6 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	const damagePercentage = damage / enemy.hp * 100;
 
-	console.log(skill.ap)
-
 	let cooldown = 0;
 
 	if (skill.cd !== undefined) {

@@ -59,9 +59,6 @@ const CalcItem = ({ ally, enemy, item }) => {
 
 	const damagePercentage = damage / enemy.hp * 100;
 
-	console.log(ally)
-	console.log((ally.hp - ally.baseHp - (ally.lvHp * (ally.lv - 1))) * (item.effect.bHp / 100))
-
 	return (
 		<section className="skill-calculations-container">
 			<div className="calc-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/${item.img}.png)`}}></div>
