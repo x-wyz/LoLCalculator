@@ -1,0 +1,33 @@
+.export-data-text {
+	background: white;
+	padding: 1em;
+	margin: 0.8em;
+}
+
+.save-modal-tabs h4 {
+	text-align: center;
+	width: 50%;
+	font-size: 1.6em;
+	padding: 0.5em;
+	cursor: pointer;
+}
+
+.save-modal-tabs {
+	display: flex;
+	margin: 0;
+	width: 100%;
+	color: white;
+	background: #1E1E1E;
+}
+
+.modal-content-save {
+	padding: 0;
+}
+
+.export-datum {
+	display: block;
+}
+
+.active-export-tab {
+	background: #4D4D4D;
+}

@@ -5,6 +5,8 @@ import ChampionCard from './components/championcard/championcard';
 import CalculationArea from './components/calculationarea/calculationarea';
 import CharacterSelect from './components/characterselect/characterselect';
 
+import SaveModal from './components/savemodal/savemodal';
+
 // Data
 
 import { ChampionData } from './data/champion';
@@ -739,36 +741,43 @@ class App extends Component {
       })
     }
 
+    console.log(newItem);
+
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champion
     })
   }
 
   render(){
-    const { mainAlly, mainEnemy } = this.state;
+    const { mainAlly, mainEnemy, showExport } = this.state;
 
     return (
-      <div className="App">
-        <div className="app-background"></div>
-        <h1 className="damage-calc-header">League of Legends Damage Calculator</h1>
-        <header className="champion-select">
-          <div className="allies">
-            <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainAlly")} />
-            <ChampionCard level={(type) => this.levelup(type, "mainAlly")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainAlly")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainAlly")} champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainAlly")} />
+      <React.Fragment>
+        {
+          showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} /> : null
+        }
+        <div className="App">
+          <div className="app-background"></div>
+          <h1 className="damage-calc-header">League of Legends Damage Calculator</h1>
+          <header className="champion-select">
+            <div className="allies">
+              <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainAlly")} />
+              <ChampionCard level={(type) => this.levelup(type, "mainAlly")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainAlly")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainAlly")} champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainAlly")} />
+            </div>
+            <div className="enemy">
+              <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainEnemy")} />
+              <ChampionCard level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
+            </div>
+          </header>
+          <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
+          <div className="export-data" onClick={this.showExport} >
+            EX
           </div>
-          <div className="enemy">
-            <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainEnemy")} />
-            <ChampionCard level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
+          <div className="saved-data" onClick={this.showExport} >
+            SD
           </div>
-        </header>
-        <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
-        <div className="export-data" onClick={this.showExport} >
-          EX
         </div>
-        <div className="saved-data" onClick={this.showExport} >
-          SD
-        </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

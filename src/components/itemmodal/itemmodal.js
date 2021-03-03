@@ -34,7 +34,7 @@ class ItemModal extends Component {
 							itemsArray.map(item => {
 								if (item[0].toLowerCase().includes(search)){
 									return (
-										<div className="search-item" onClick={() => {this.props.update(item[1]); this.props.exit()}}>
+										<div className="search-item" onClick={() => {item[1].name = item[0]; this.props.update(item[1]); this.props.exit()}}>
 											{item[0].split(/(?=[A-Z])/).map(part => {
 												return part[0].toUpperCase() + part.slice(1)
 											}).join(" ")}
