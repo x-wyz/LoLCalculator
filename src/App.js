@@ -18,6 +18,7 @@ class App extends Component {
     this.state = {
       championChanged: false,
       showExport: false,
+      showSidebar: false,
       mainAlly: {
         name: 'annie',
         lv: 1,
@@ -427,11 +428,19 @@ class App extends Component {
     this.updateItem = this.updateItem.bind(this);
     this.levelup = this.levelup.bind(this);
     this.showExport = this.showExport.bind(this);
+    this.showSidebar = this.showSidebar.bind(this);
   }
 
   showExport(){
     this.setState({
       showExport: !this.state.showExport
+    })
+  }
+
+  showSidebar(){
+    console.log(123)
+    this.setState({
+      showSidebar: !this.state.showSidebar
     })
   }
 
@@ -741,15 +750,13 @@ class App extends Component {
       })
     }
 
-    console.log(newItem);
-
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champion
     })
   }
 
   render(){
-    const { mainAlly, mainEnemy, showExport } = this.state;
+    const { mainAlly, mainEnemy, showExport, showSidebar } = this.state;
 
     return (
       <React.Fragment>
@@ -757,6 +764,9 @@ class App extends Component {
           showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} /> : null
         }
         <div className="App">
+          <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
+            <h2 className="sidebar-header">Saved List</h2>
+          </div>
           <div className="app-background"></div>
           <h1 className="damage-calc-header">League of Legends Damage Calculator</h1>
           <header className="champion-select">
@@ -773,8 +783,10 @@ class App extends Component {
           <div className="export-data" onClick={this.showExport} >
             EX
           </div>
-          <div className="saved-data" onClick={this.showExport} >
-            SD
+          <div className="saved-data" onClick={this.showSidebar} >
+            {
+              showSidebar === true ? "⬅" : "➡"
+            }
           </div>
         </div>
       </React.Fragment>

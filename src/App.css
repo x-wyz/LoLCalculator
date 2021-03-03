@@ -15,6 +15,10 @@
   background: #111A18;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .champion-select {
   display: flex;
   justify-content: center;
@@ -81,4 +85,28 @@
   left: calc(-1 * var(--export-width)/3);
   text-indent: 84px;
   border: 2px solid white;
+  z-index: 10000;
+}
+
+.sidebar {
+  position: fixed;
+  width: 400px;
+  height: 100vh;
+  background: #0C1415;
+  z-index: 1000;
+  top: 0;
+  left: -400px;
+  border-right: 5px solid #687268;
+  transition: 0.2s all;
+}
+
+.show-sidebar {
+  left: 0px;
+}
+
+.sidebar-header {
+  text-align: center;
+  padding-top: 1em;
+  color: #B58D4D;
+  -webkit-text-stroke: 0.2px #FFEABE;
 }
