@@ -29,10 +29,10 @@ class SavedChampion extends Component {
 				</div>
 				<div className={`champ-updater ${showpick === false ? "hide-champion-updater" : null}`}>
 					<div className="champ-update-wrapper">
-						<p className="champ-one">1</p>
+						<p className="champ-one" onClick={() => update(champ, 0)}>1</p>
 					</div>
 					<div className="champ-update-wrapper">
-						<p className="champ-two">2</p>
+						<p className="champ-two" onClick={() => update(champ, 1)}>2</p>
 					</div>
 				</div>
 			</div>

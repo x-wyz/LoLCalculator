@@ -783,7 +783,7 @@ class App extends Component {
           <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
             <h2 className="sidebar-header">Saved List</h2>
             {
-              savedList.map(saved => <SavedChampion title={saved[0]} name={saved[1]} champ={saved[2]} update={this.updateChampion}/>)
+              savedList.map(saved => <SavedChampion title={saved[0]} name={saved[1]} champ={saved[2]} update={this.setChampion}/>)
             }
           </div>
           <div className="app-background"></div>
