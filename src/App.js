@@ -6,6 +6,7 @@ import CalculationArea from './components/calculationarea/calculationarea';
 import CharacterSelect from './components/characterselect/characterselect';
 
 import SaveModal from './components/savemodal/savemodal';
+import SavedChampion from './components/savedchampion/savedchampion';
 
 // Data
 
@@ -19,6 +20,14 @@ class App extends Component {
       championChanged: false,
       showExport: false,
       showSidebar: false,
+      savedList: [["burst annie","annie", {}],
+      ["burst annie","annie", {}],
+      ["burst annie","annie", {}],
+      ["burst annie","annie", {}],
+      ["burst annie","annie", {}],
+      ["burst annie","annie", {}],
+      ["burst annie","annie", {}],
+      ["burst annie","annie", {}],],
       mainAlly: {
         name: 'annie',
         lv: 1,
@@ -429,6 +438,14 @@ class App extends Component {
     this.levelup = this.levelup.bind(this);
     this.showExport = this.showExport.bind(this);
     this.showSidebar = this.showSidebar.bind(this);
+
+    this.setChampion = this.setChampion.bind(this);
+  }
+
+  setChampion(champ, target){
+    this.setState({
+      [target === 0 ? "mainAlly" : "mainEnemy"]: champ
+    })
   }
 
   showExport(){
@@ -438,7 +455,6 @@ class App extends Component {
   }
 
   showSidebar(){
-    console.log(123)
     this.setState({
       showSidebar: !this.state.showSidebar
     })
@@ -756,7 +772,7 @@ class App extends Component {
   }
 
   render(){
-    const { mainAlly, mainEnemy, showExport, showSidebar } = this.state;
+    const { mainAlly, mainEnemy, showExport, showSidebar, savedList } = this.state;
 
     return (
       <React.Fragment>
@@ -766,6 +782,9 @@ class App extends Component {
         <div className="App">
           <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
             <h2 className="sidebar-header">Saved List</h2>
+            {
+              savedList.map(saved => <SavedChampion title={saved[0]} name={saved[1]} champ={saved[2]} update={this.updateChampion}/>)
+            }
           </div>
           <div className="app-background"></div>
           <h1 className="damage-calc-header">League of Legends Damage Calculator</h1>

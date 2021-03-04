@@ -1,0 +1,75 @@
+.saved-champion {
+	background: #0F1A19;
+	margin: 1em 2em 1em 0.4em;
+	color: white;
+	position: relative;
+	height: 65px;
+	width: 350px;
+	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.2);
+	transition: all 0.1s;
+}
+
+.saved-champion:hover {
+	background: #3D4F41;
+}
+
+.saved-title {
+	font-size: 1.4em;
+	color: #FAAC1C;
+	padding: 0.3em 0 0.3em 25px;
+}
+
+.saved-name {
+	font-size: 0.9em;
+	padding-left: 25px;
+	padding-bottom: 10px;
+}
+
+.champ-updater {
+	position: relative;
+	top: -65px;
+	height: 65px;
+	right: -350px;
+	display: flex;
+	z-index: -1;
+	transition: 0.4s all;
+}
+
+.champ-update-wrapper {
+	width: 50px;
+	height: 65px;
+	background: #0F1A19;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.champ-one, .champ-two {
+	background: #23312A;
+	width: 40px;
+	height: 55px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.1s all;
+	z-index: 1;
+}
+
+.champ-one:hover {
+	background: #366c3c;
+}
+
+.champ-two:hover {
+	background: #4f2b2b;
+}
+
+.hide-champion-updater {
+	right: -250px;
+	position: relative;
+	
+}
+
+.top-layer {
+	cursor: pointer;
+}
