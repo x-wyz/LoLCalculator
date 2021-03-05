@@ -23,7 +23,8 @@ class ChampionCard extends Component {
     super(props);
     this.state = {
       page: 0,
-      itemsModal: false
+      itemsModal: false,
+      title: ""
     }
 
     this.nextPage = this.nextPage.bind(this);
@@ -31,6 +32,26 @@ class ChampionCard extends Component {
     this.showModal = this.showModal.bind(this);
     this.exitModal = this.exitModal.bind(this);
     this.useModal = this.useModal.bind(this);
+
+    this.updateTitle = this.updateTitle.bind(this);
+    this.save = this.save.bind(this);
+  }
+
+  save(){
+    const { champion, save } = this.props;
+    const { title } = this.state;
+
+    save(title, champion.name, champion);
+
+    this.setState({
+      title: ""
+    })
+  }
+
+  updateTitle(event){
+    this.setState({
+      title: event.target.value
+    })
   }
 
   exitModal(){
@@ -44,7 +65,7 @@ class ChampionCard extends Component {
   nextPage(){
     const { page } = this.state;
 
-    if (page == 5){
+    if (page == 6){
       this.setState({
         page: 0
       })
@@ -61,7 +82,7 @@ class ChampionCard extends Component {
 
     if (page === 0){
       this.setState({
-        page: 5
+        page: 6
       })
     }
     else {
@@ -179,6 +200,18 @@ class ChampionCard extends Component {
     )
   }
 
+  page6(){
+    const { title, champion } = this.state;
+
+    return (
+      <div className="champ-save-container">
+        <h4 className="champ-save-header">Build title</h4>
+        <input className="champ-save-title" type="text" value={title} onChange={(e) => this.updateTitle(e)} />
+        <button className="champ-save-button" type="button" onClick={this.save}>Save</button>
+      </div>
+    )
+  }
+
   showModal(slot){
     return <ItemModal exit={this.exitModal} update={(item) => this.props.updateItem(item, slot)} />
   }
@@ -221,7 +254,11 @@ class ChampionCard extends Component {
             ?
             this.page4()
             :
+            page === 5
+            ? 
             this.page5()
+            :
+            this.page6()
           }
           <div className="previous-page" onClick={this.previousPage} >←&nbsp;&nbsp;&nbsp;</div>
           <div className="next-page" onClick={this.nextPage} >&nbsp;&nbsp;&nbsp;→</div>
