@@ -15,7 +15,7 @@
 	width: 11%;
 	margin: 0 5px;
 	padding: 0.5em;
-	background: rgba(2,2,2, 0.42);
+	background: rgba(2,2,2, 0.55);
 }
 
 .item-stat {
@@ -44,5 +44,23 @@
 }
 
 .item-stats-container {
-	overflow-y: hidden;
+	
+}
+
+/* item quality classes */
+
+.quality-mythic {
+	background: #510b0bab;
+}
+
+.quality-legendary {
+	background: #ffa50059;
+}
+
+.quality-advance {
+	background: #025f9585;
+}
+
+.quality-basic, .quality-shoes {
+	background: #65ae2294;
 }

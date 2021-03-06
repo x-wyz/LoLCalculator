@@ -239,7 +239,7 @@ export const ItemsData = {
 		img: 1031,
 		tier: "advance",
 		stats: {
-			armor: 40
+			ap: 40
 		}
 	},
 	crystallineBracer: {

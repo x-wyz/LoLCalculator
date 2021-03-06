@@ -21,7 +21,7 @@ const ChampionItemCard = ({ item, slot, showModal }) => {
 	}
 
 	return (
-		<section className="champion-item">
+		<section className={`champion-item quality-${item.tier}`}>
 			<div className="champion-item-icon" style={item.img === undefined ? {} : {backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/${item.img}.png)`}} onClick={showModal}>
 				<span className="item-slot-number">{slot}</span>
 			</div>

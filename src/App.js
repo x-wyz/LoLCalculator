@@ -438,6 +438,7 @@ class App extends Component {
 
   saveChampion(title, champ, data){
     const { savedList } = this.state;
+    title = title ? title : "undefined";
     savedList.push([title, champ, data]);
 
     this.setState({
@@ -658,7 +659,7 @@ class App extends Component {
   updateSkillLevel(skill, event, target){
     const champion = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
     champion[`abilitylv${skill}`] = event.target.value;
-    
+
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]:champion
     })
