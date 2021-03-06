@@ -655,17 +655,10 @@ class App extends Component {
     }
   }
 
-  updateSkillLevel(skill, inc, target){
+  updateSkillLevel(skill, event, target){
     const champion = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
-    champion[`abilitylv${skill}`] = inc === "add" ? champion[`abilitylv${skill}`] + 1 : champion[`abilitylv${skill}`] - 1;
-
-    if (champion[`abilitylv${skill}`] < 0){
-      champion[`abilitylv${skill}`] = 0;
-    }
-    else if (champion[`abilitylv${skill}`] > 4){
-      champion[`abilitylv${skill}`] = 4;
-    }
-
+    champion[`abilitylv${skill}`] = event.target.value;
+    
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]:champion
     })

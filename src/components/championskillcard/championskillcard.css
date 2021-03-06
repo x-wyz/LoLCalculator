@@ -6,9 +6,9 @@
 .champion-skill {
 	display: flex;
 	margin: 0.7em 0.6em;
-	justify-content: center;
+	justify-content: flex-start;
 	padding: 0 0.1em;
-	background: rgba(2,2,2, 0.42);
+	background: rgba(2,2,2, 0.55);
 }
 
 .champion-skill-icon {
@@ -22,35 +22,30 @@
 	flex-direction: column;
 }
 
-.skill-increase, .skill-decrease {
-	min-width: 40px;
+.champion-skill-key {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4em;
 	width: 20%;
 	text-align: center;
-	margin-left: 0.1em;
-	transition: background 0.1s;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0.5em;
-	box-sizing: border-box;
-	border: 0.5px solid white;
+	color: #afe3eb;
 }
 
-.skill-increase, .skill-decrease {
-	background: #121918;
+.champion-skill-select {
+	width: 50%;
+	min-width: 50px;
+	margin-left: 1em;
+	outline: 0;
+	text-indent: 50%;
+	background: #131918;
+	color: white;
 }
 
-.skill-increase:hover, .skill-decrease:hover {
-	background: #273638;
-}
-
-.skill-current-lv {
-	min-width: 38px;
+.skill-lv-option {
 	text-align: center;
-	background: rgba(2,2,2, 0.42);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: 0.1em;
+	background: #131918;
+	font-size: 1.2em;
+	position: relative;
+	left: 50%;
 }
