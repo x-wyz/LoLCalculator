@@ -104,6 +104,7 @@ body {
   left: -600px;
   border-right: 5px solid #687268;
   transition: 0.4s all;
+  overflow-y: auto;
 }
 
 .show-sidebar {
@@ -119,4 +120,8 @@ body {
 
 .saved-champ-container {
   z-index: -10;
+}
+
+.saved-list-container {
+  height: 90vh;
 }

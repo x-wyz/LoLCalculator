@@ -1,27 +1,34 @@
 .saved-champion {
-	background: #0F1A19;
-	margin: 1em 2em 1em 0.4em;
+	background: #263a38;
+	margin: 1em auto;
 	color: white;
 	position: relative;
 	height: 65px;
 	width: 350px;
 	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.2);
-	transition: all 0.1s;
+	transition: background 0.1s;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .saved-champion:hover {
-	background: #3D4F41;
+	background: #334c4a;
 }
 
 .saved-title {
-	font-size: 1.4em;
+	font-size: 1.1em;
 	color: #FAAC1C;
-	padding: 0.3em 0 0.3em 25px;
+	padding: 0.3em 0 0.3em 12px;
+	width: 82%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .saved-name {
-	font-size: 0.9em;
-	padding-left: 25px;
+	font-size: 0.7em;
+	padding-left: 12px;
 	padding-bottom: 10px;
 }
 
@@ -32,19 +39,18 @@
 	right: -350px;
 	display: flex;
 	z-index: -1;
-	transition: 0.4s all;
 }
 
 .champ-update-wrapper {
-	width: 50px;
+	width: 100%;
 	height: 65px;
 	background: #0F1A19;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 }
 
-.champ-one, .champ-two {
+.champ-one, .champ-two, .rtn {
 	background: #23312A;
 	width: 40px;
 	height: 55px;
@@ -52,8 +58,9 @@
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	transition: 0.1s all;
+	transition: 0.1s background;
 	z-index: 1;
+	padding: 0 2em;
 }
 
 .champ-one:hover {
@@ -64,6 +71,10 @@
 	background: #4f2b2b;
 }
 
+.rtn:hover {
+	background: #a65d12;
+}
+
 .hide-champion-updater {
 	right: -250px;
 	position: relative;
@@ -72,4 +83,23 @@
 
 .top-layer {
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.saved-champ-img {
+	width: 60px;
+	border-radius: 50%;
+	padding: 0.2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 2px;
+	left: 6px;
+}
+
+.saved-about-container {
+	position: relative;
+	top: 3px;
 }

@@ -768,11 +768,13 @@ class App extends Component {
           showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} /> : null
         }
         <div className="App">
-          <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
-            <h2 className="sidebar-header">Saved List</h2>
-            {
-              savedList.map(saved => <SavedChampion title={saved[0]} name={saved[1]} champ={saved[2]} update={this.setChampion}/>)
-            }
+          <div className="full-sidebar">
+            <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
+              <h2 className="sidebar-header">Saved List</h2>
+              {
+                savedList.map(saved => <SavedChampion title={saved[0]} name={saved[1]} champ={saved[2]} update={this.setChampion}/>)
+              }
+            </div>
           </div>
           <div className="app-background"></div>
           <h1 className="damage-calc-header">League of Legends Damage Calculator</h1>
