@@ -5,7 +5,7 @@
 	margin: 1em 0.1em;
 	text-align: center;
 	padding: 5px;
-	background: rgba(2,2,2, 0.42);
+	background: rgba(2,2,2, 0.55);
 }
 
 .stat-name {
@@ -13,6 +13,7 @@
 	margin-bottom: 0.3em;
 	font-size: 0.8em;
 	letter-spacing: 0.1em;
+	color: #afe3eb;
 }
 
 .stat-amount {

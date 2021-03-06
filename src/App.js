@@ -464,27 +464,17 @@ class App extends Component {
     })
   }
 
-  levelup(type, target){
+  levelup(lv, target){
     const champion = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
     
-    if (type === "levelup"){
-      if (champion.lv === 18) return;
-      champion.hp = champion.hp + champion.lvHp;
-      champion.armor = champion.armor + champion.lvArmor;
-      champion.resist = champion.resist + champion.lvResist;
-      champion.attack = champion.attack + champion.lvAttack;
-      champion.mana = champion.mana + champion.lvMana;
-      champion.lv = champion.lv + 1
-    }
-    else if (type === "leveldown"){
-      if (champion.lv === 1) return;
-      champion.hp = champion.hp - champion.lvHp;
-      champion.armor = champion.armor - champion.lvArmor;
-      champion.resist = champion.resist - champion.lvResist;
-      champion.attack = champion.attack - champion.lvAttack;
-      champion.mana = champion.mana - champion.lvMana;
-      champion.lv = champion.lv - 1
-    }
+    lv = lv > 18 ? 18 : lv < 1 ? 1 : lv
+
+    champion.hp = champion.hp + (lv * champion.lvHp) - (champion.lv * champion.lvHp);
+    champion.armor = champion.armor + (lv * champion.lvArmor) - (champion.lv * champion.lvArmor);
+    champion.resist = champion.resist + (lv * champion.lvResist) - (champion.lv * champion.lvResist);
+    champion.attack = champion.attack + (lv * champion.lvAttack) - (champion.lv * champion.lvAttack);
+    champion.mana = champion.mana + (lv * champion.lvMana) - (champion.lv * champion.lvMana);
+    champion.lv = lv
 
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"] : champion

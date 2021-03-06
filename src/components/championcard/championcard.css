@@ -226,7 +226,7 @@
 	font-size: 0.9em;
 	padding: 0.4em;
 	cursor: pointer;
-	transition: all 0.2s;
+	transition: background 0.2s;
 }
 
 .champ-save-button:hover {

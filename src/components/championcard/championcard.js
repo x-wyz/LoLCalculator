@@ -107,7 +107,7 @@ class ChampionCard extends Component {
                 <ChampionStatCard name="mana" amount={champion.mana} lvup={champion.lvMana} />
               </div>
               <div className="champion-stat-section">
-                <ChampionStatCard name="attack damage" amount={champion.attack} lvup={champion.lvAttack} />
+                <ChampionStatCard name="attack damage" amount={champion.attack.toFixed(1)} lvup={champion.lvAttack} />
                 <ChampionStatCard name="ability power" amount={champion.ap} />
               </div>
               <div className="champion-stat-section">
@@ -194,8 +194,8 @@ class ChampionCard extends Component {
     return (
       <div className="lv-controls">
         <p className="champion-current-lv">{champion.lv}</p>
-        <button className="champion-lv-control" onClick={() => this.props.level("levelup")}>Level up</button>
-        <button className="champion-lv-control" onClick={() => this.props.level("leveldown")}>Level down</button>
+        <button className="champion-lv-control" onClick={() => this.props.level(champion.lv + 1)}>Level up</button>
+        <button className="champion-lv-control" onClick={() => this.props.level(champion.lv - 1)}>Level down</button>
       </div>
     )
   }
