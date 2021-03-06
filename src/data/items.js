@@ -938,6 +938,10 @@ export const ItemsData = {
 		img: 3094,
 		tier: "legendary",
 		stats: {
+			attackspeed: 35,
+			critChance: 20
+		},
+		effect: {
 			type: "damage",
 			base: 120,
 			max: 120

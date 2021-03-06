@@ -2,7 +2,7 @@
 	width: 80%;
 	margin: 0.8em auto 2em auto;
 
-	--calculation-base-color: #1e1e1e;
+	--calculation-base-color: #131c1b;
 }
 
 .calculation-header {
@@ -34,7 +34,7 @@
 }
 
 .not-current-tab {
-	background: #5c5c5c;
+	background: #374544;
 }
 
 .calculation-heading {
