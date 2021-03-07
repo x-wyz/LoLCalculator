@@ -18,7 +18,7 @@ const CalcBasic = ({ ally, enemy }) => {
 	return (
 		<div className="calc-basic-container">
 			<div className="basic-calculations">
-				<div className="calc-basic-damage">
+				<div className="calc-basic-damage cb-norm">
 					<h4 className="calc-basic-header">Normal</h4>
 					<p className="calc-basic-content">{basicDamage} <span className="calc-basic-percentage">[ {((basicDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
 				</div>
@@ -28,7 +28,7 @@ const CalcBasic = ({ ally, enemy }) => {
 				</div>
 			</div>
 			<div className="basic-calculations">
-				<div className="calc-basic-damage">
+				<div className="calc-basic-damage cb-crit">
 					<h4 className="calc-basic-header">Crit</h4>
 					<p className="calc-basic-content">{basicCritical} <span className="calc-basic-percentage">[ {((basicCritical / enemy.hp) * 100).toFixed(1)}% ]</span></p>
 				</div>
@@ -38,7 +38,7 @@ const CalcBasic = ({ ally, enemy }) => {
 				</div>
 			</div>
 			<div className="basic-calculations">
-				<div className="calc-basic-damage">
+				<div className="calc-basic-damage cb-avg">
 					<h4 className="calc-basic-header">Average</h4>
 					<p className="calc-basic-content">{avgDamage.toFixed(0)} <span className="calc-basic-percentage">[ {((avgDamage / enemy.hp)*100).toFixed(1)}% ]</span></p>
 				</div>

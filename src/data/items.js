@@ -942,6 +942,7 @@ export const ItemsData = {
 			critChance: 20
 		},
 		effect: {
+			damage: "magical",
 			type: "damage",
 			base: 120,
 			max: 120
