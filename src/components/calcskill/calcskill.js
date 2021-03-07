@@ -1,8 +1,11 @@
 import React from 'react';
-import './calcskill.css'
+import './calcskill.css';
+
+import SI from '../../assets/si_crest.png';
 
 const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
+	skillLv -= 1;
 	let scaleLv = skill.lvScale !== undefined ? skill.lvScale[0] + ((skill.lvScale[1] - skill.lvScale[0]) / 17) * (ally.lv - 1) : 0
 
 	try {
@@ -108,39 +111,47 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	return (
 		<section className="skill-calculations-container">
-			<div className="skill-cooldown">
-				<h6 className="skill-cooldown-header">Cooldown</h6>
-				<p className="skill-cooldown-text">
-					{
-						cooldown.toFixed(1)
-					}
-				</p>
-			</div>
-			<div className="calc-skill-icon" style={
-				skill.skill > 0 ?
-				{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${skill.rname}.png)`}
+			{
+				skillLv === -1 ? (<div className="empty-skill-calc">
+					<img src={SI} className="skill-placeholder-img" />
+				</div>)
 				:
-				{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.4.1/img/passive/${skill.rname}.png)`}
-			}></div>
-			<div className="skill-calculations">
-				<div className="skill-information-container">
-					<p className="calculation-description">Total Damage</p>
-					<p className="calculation-results">{totalDamage.toFixed(0)}</p>
+				null
+			}
+			<div className="skill-calculation-body">
+				<div className="skill-cooldown">
+					<h6 className="skill-cooldown-header">CD</h6>
+					<p className="skill-cooldown-text">
+						{
+							Number.isNaN(cooldown.toFixed(1)) ? 0 : cooldown.toFixed(1)
+						}
+					</p>
 				</div>
-				<div className="skill-information-container">
-					<p className="calculation-description">Multiplier</p>
-					<p className="calculation-results">{multiplier.toFixed(2)}</p>
-				</div>
-				<div className="skill-information-container">
-					<p className="calculation-description">Damage</p>
-					<p className="calculation-results">{damage.toFixed(1)}</p>
-				</div>
-				<div className="skill-information-container">
-					<p className="calculation-description">Percentage</p>
-					<p className="calculation-results">{damagePercentage.toFixed(1)}%</p>
+				<div className="calc-skill-icon" style={
+					skill.skill > 0 ?
+					{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${skill.rname}.png)`}
+					:
+					{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.4.1/img/passive/${skill.rname}.png)`}
+				}></div>
+				<div className="skill-calculations">
+					<div className="skill-information-container">
+						<p className="calculation-description">Total Damage</p>
+						<p className="calculation-results">{Number.isNaN(totalDamage) ? 0 : totalDamage.toFixed(0)}</p>
+					</div>
+					<div className="skill-information-container">
+						<p className="calculation-description">Multiplier</p>
+						<p className="calculation-results">{Number.isNaN(multiplier) ? 0 : multiplier.toFixed(2)}</p>
+					</div>
+					<div className="skill-information-container">
+						<p className="calculation-description">Damage</p>
+						<p className="calculation-results">{Number.isNaN(damage) ? 0 : damage.toFixed(1)}</p>
+					</div>
+					<div className="skill-information-container">
+						<p className="calculation-description">Percentage</p>
+						<p className="calculation-results">{Number.isNaN(damagePercentage) ? 0 : damagePercentage.toFixed(1)}%</p>
+					</div>
 				</div>
 			</div>
-
 			{
 				skill.note !== undefined 
 				?
