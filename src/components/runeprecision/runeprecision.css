@@ -1,6 +1,6 @@
 .rune-tree-header {
 	text-align: center;
-	padding: 0.4em;
+	padding: 0.2em 0.2em 0.4em;
 }
 
 .rune-section {
@@ -27,7 +27,7 @@
 .keystone {
 	width: 25%;
 	cursor: pointer;
-	padding: 0.2em;
+	padding: 0.1em;
 }
 
 .keystone-image {
@@ -35,17 +35,13 @@
 	height: 60px;
 }
 
-.keystone-name {
-	font-size: 0.7em;
-}
-
 .minor-image {
-	width: 40px;
-	height: 40px;
+	width: 45px;
+	height: 45px;
 }
 
-.minor-name {
-	font-size: 0.7em;
+.minor-name, .keystone-name {
+	font-size: 0.6em;
 }
 
 .minor {
