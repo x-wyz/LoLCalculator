@@ -123,7 +123,7 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 					<h6 className="skill-cooldown-header">CD</h6>
 					<p className="skill-cooldown-text">
 						{
-							Number.isNaN(cooldown.toFixed(1)) ? 0 : cooldown.toFixed(1)
+							Number.isNaN(cooldown) ? 0 : cooldown.toFixed(1)
 						}
 					</p>
 				</div>
@@ -135,7 +135,7 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 				}></div>
 				<div className="skill-calculations">
 					<div className="skill-information-container">
-						<p className="calculation-description">Total Damage</p>
+						<p className="calculation-description">Pre-Mit</p>
 						<p className="calculation-results">{Number.isNaN(totalDamage) ? 0 : totalDamage.toFixed(0)}</p>
 					</div>
 					<div className="skill-information-container">

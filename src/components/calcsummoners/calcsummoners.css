@@ -9,7 +9,7 @@
 .summoner-spell-container {
 	display: flex;
 	background: var(--color-basic-calc);
-	padding: 1.2em;
+	padding: 0.7em;
 	color: white;
 	box-shadow: var(--shadow-basic);
 	align-items: center;
@@ -19,8 +19,8 @@
 
 .summoner-image {
 	margin-right: 0.4em;
-	width: 50px;
-	height: 50px;
+	width: 55px;
+	height: 55px;
 	display: flex;
 	-webkit-user-select: none;      
 	-moz-user-select: none;
@@ -35,10 +35,10 @@
 }
 
 .summoner-name {
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 .summoner-damage, .summoner-percentage {
-	font-size: 0.9em;
+	font-size: 0.8em;
 	margin-top: 0.2em;
 }

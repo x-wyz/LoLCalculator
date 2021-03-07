@@ -19,7 +19,7 @@ const calcsummoners = ({ally, enemy}) => {
 						}
 					</p>
 					<p className="summoner-percentage">
-						[{((70 + (20 * (lv - 1)))/enemyhp * 100).toFixed(1)}%]
+						[ {((70 + (20 * (lv - 1)))/enemyhp * 100).toFixed(1)}% ]
 					</p>
 				</div>
 			</div>
@@ -34,7 +34,7 @@ const calcsummoners = ({ally, enemy}) => {
 						}
 					</p>
 					<p className="summoner-percentage">
-						[{((90 + (15 * (lv - 1)))/allyhp * 100).toFixed(1)}%]
+						[ {((90 + (15 * (lv - 1)))/allyhp * 100).toFixed(1)}% ]
 					</p>
 				</div>
 			</div>
@@ -49,7 +49,7 @@ const calcsummoners = ({ally, enemy}) => {
 						}
 					</p>
 					<p className="summoner-percentage">
-						[{((115 + (20 * (lv - 1)))/allyhp * 100).toFixed(1)}%]
+						[ {((115 + (20 * (lv - 1)))/allyhp * 100).toFixed(1)}% ]
 					</p>
 				</div>
 			</div>
