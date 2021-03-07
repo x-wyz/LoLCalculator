@@ -193,9 +193,38 @@ class ChampionCard extends Component {
 
     return (
       <div className="lv-controls">
-        <p className="champion-current-lv">{champion.lv}</p>
-        <button className="champion-lv-control" onClick={() => this.props.level(champion.lv + 1)}>Level up</button>
-        <button className="champion-lv-control" onClick={() => this.props.level(champion.lv - 1)}>Level down</button>
+         <div className="lv-controls-left">
+          <div className="lv-controls-stats">
+            <p className="lv-controls-stat"></p>
+            <p className="lv-controls-stat lv-controls-stat-name">Level Value</p>
+            <p className="lv-controls-stat lv-controls-stat-name">Total Increase</p>
+          </div>
+          <div className="lv-controls-stats">
+            <p className="lv-controls-stat lv-controls-stat-name">Health</p>
+            <p className="lv-controls-stat">{champion.lvHp}</p>
+            <p className="lv-controls-stat">{champion.lvHp * (champion.lv - 1)}</p>
+          </div>
+          <div className="lv-controls-stats">
+            <p className="lv-controls-stat lv-controls-stat-name">Attack</p>
+            <p className="lv-controls-stat">{champion.lvAttack}</p>
+            <p className="lv-controls-stat">{(champion.lvAttack * (champion.lv - 1)).toFixed(1)}</p>
+          </div>
+          <div className="lv-controls-stats">
+            <p className="lv-controls-stat lv-controls-stat-name">Armor</p>
+            <p className="lv-controls-stat">{champion.lvArmor}</p>
+            <p className="lv-controls-stat">{champion.lvArmor * (champion.lv - 1)}</p>
+          </div>
+          <div className="lv-controls-stats">
+            <p className="lv-controls-stat lv-controls-stat-name">Resist</p>
+            <p className="lv-controls-stat">{champion.lvResist}</p>
+            <p className="lv-controls-stat">{champion.lvResist * (champion.lv - 1)}</p>
+          </div>
+         </div>
+         <div className="lv-controls-right">
+          <p className="champion-current-lv">{champion.lv}</p>
+            <button className="champion-lv-control" onClick={() => this.props.level(champion.lv + 1)}>Level up</button>
+            <button className="champion-lv-control" onClick={() => this.props.level(champion.lv - 1)}>Level down</button>
+         </div>
       </div>
     )
   }
