@@ -65,7 +65,7 @@ class ChampionCard extends Component {
   nextPage(){
     const { page } = this.state;
 
-    if (page == 6){
+    if (page === 6){
       this.setState({
         page: 0
       })
@@ -93,7 +93,7 @@ class ChampionCard extends Component {
   }
 
   page0(){
-    const { champion, className } = this.props;
+    const { champion } = this.props;
     let skillsCount = 0; 
 
     return (
@@ -120,15 +120,14 @@ class ChampionCard extends Component {
             <h6 className="champion-section-heading">Skills</h6>
             <div className="champion-section-content">
               {
-                champion.abilities.map((ability, idx) => {
-                  if (ability.skill === 0){
-                    return;
-                  }
-                  else {
-                    if (ability.skill > skillsCount) {
-                      skillsCount += 1;
-                      return <ChampionSkillCard update={this.props.skillUpdate} currentLv={champion[`abilitylv${skillsCount}`]} skillPosition={skillsCount} skill={ability} ultimate={skillsCount === 4 ? true : false} />;
-                    }
+                champion.abilities
+                .filter(ability => ability.skill !== 0)
+                .map((ability, idx) => {
+                  if (ability.skill > skillsCount) {
+                    skillsCount += 1;
+                    return <ChampionSkillCard update={this.props.skillUpdate} currentLv={champion[`abilitylv${skillsCount}`]} skillPosition={skillsCount} skill={ability} ultimate={skillsCount === 4 ? true : false} />;
+                  } else {
+                    return null;
                   }
                 })
               }
@@ -230,7 +229,7 @@ class ChampionCard extends Component {
   }
 
   page6(){
-    const { title, champion } = this.state;
+    const { title } = this.state;
 
     return (
       <div className="champ-save-container">

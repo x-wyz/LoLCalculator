@@ -29,7 +29,7 @@ class SavedChampion extends Component {
 					showpick === false ?
 					(
 						<div className="top-layer" onClick={this.update}>
-							<img src={`https://ddragon.leagueoflegends.com/cdn/11.5.1/img/champion/${name}.png`} className="saved-champ-img" />
+							<img src={`https://ddragon.leagueoflegends.com/cdn/11.5.1/img/champion/${name}.png`} className="saved-champ-img" alt="" />
 							<div className="saved-about-container">
 								<p className="saved-title">{title}</p>
 								<p className="saved-name">champion: {name}</p>

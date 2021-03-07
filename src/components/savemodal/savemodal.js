@@ -67,7 +67,7 @@ class SaveModal extends Component {
 				{
 					Data.map((info, idx) => {
 						if (idx > 5) {
-							return;
+							return null;
 						}
 						else {
 							return <span className="export-datum">{`${info[0]}:${info[1]},`}</span>

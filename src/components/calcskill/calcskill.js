@@ -113,7 +113,7 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 		<section className="skill-calculations-container">
 			{
 				skillLv === -1 ? (<div className="empty-skill-calc">
-					<img src={SI} className="skill-placeholder-img" />
+					<img src={SI} className="skill-placeholder-img" alt=""/>
 				</div>)
 				:
 				null

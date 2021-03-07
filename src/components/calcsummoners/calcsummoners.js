@@ -9,7 +9,7 @@ const calcsummoners = ({ally, enemy}) => {
 	return (
 		<div className="calc-summoners-container">
 			<div className="summoner-spell-container">
-				<img src='https://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/SummonerDot.png' className="summoner-image" />
+				<img src='https://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/SummonerDot.png' className="summoner-image" alt="summoner ignite" />
 				<div className="summoner-spell-information">
 					<h4 className="summoner-name">Ignite</h4>
 					<p className="summoner-damage">
@@ -24,7 +24,7 @@ const calcsummoners = ({ally, enemy}) => {
 				</div>
 			</div>
 			<div className="summoner-spell-container">
-				<img src='https://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/SummonerHeal.png' className="summoner-image" />
+				<img src='https://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/SummonerHeal.png' className="summoner-image" alt="summoner heal" />
 				<div className="summoner-spell-information">
 					<h4 className="summoner-name">Heal</h4>
 					<p className="summoner-damage">
@@ -39,7 +39,7 @@ const calcsummoners = ({ally, enemy}) => {
 				</div>
 			</div>
 			<div className="summoner-spell-container">
-				<img src='https://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/SummonerBarrier.png' className="summoner-image" />
+				<img src='https://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/SummonerBarrier.png' className="summoner-image" alt="summoner barrier" />
 				<div className="summoner-spell-information">
 					<h4 className="summoner-name">Barrier</h4>
 					<p className="summoner-damage">

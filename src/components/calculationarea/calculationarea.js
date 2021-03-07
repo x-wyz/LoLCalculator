@@ -55,32 +55,13 @@ class CalculationArea extends Component {
 						{
 							enemyTab === true
 							?
-							enemy.items.map((item) => {
-								if (item.img !== undefined){
-									try{
-										if (item.effect.type === "damage"){
-											return <CalcItem item={item} ally={enemy} enemy={ally}/>
-										}
-									}
-									catch {
-										return;
-									}
-								}
-							})
+							enemy.items
+							.filter(item => item.img !== undefined && item.effect.type === "damage")
+							.map((item) => <CalcItem item={item} ally={enemy} enemy={ally}/>)
 							:
-							ally.items.map((item) => {
-								if (item.img !== undefined){
-									try {
-										if (item.effect.type === "damage"){
-											return <CalcItem item={item} ally={ally} enemy={enemy} />
-										}
-									}
-									catch {
-										return;
-									}
-								}
-								
-							})
+							ally.items
+							.filter(item => item.img !== undefined && item.effect.type === "damage")
+							.map((item) => <CalcItem item={item} ally={enemy} enemy={ally}/>)
 						}
 					</div>
 					<div className="calculation-end"></div>

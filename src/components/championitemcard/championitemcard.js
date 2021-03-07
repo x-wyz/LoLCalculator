@@ -27,7 +27,8 @@ const ChampionItemCard = ({ item, slot, showModal }) => {
 			</div>
 			<div className="item-stats-container">
 				{
-					statsArray.map((stat, idx) => {
+					statsArray
+					.map((stat, idx) => {
 						if (idx <= 2){
 							return (
 								<div className="item-stat">
@@ -35,7 +36,7 @@ const ChampionItemCard = ({ item, slot, showModal }) => {
 									<p className="item-stat-type">{stat[1].slice(0,4)}</p>
 								</div>
 							)
-						}
+						} else {return null};
 					})
 				}
 			</div>

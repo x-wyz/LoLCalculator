@@ -544,7 +544,7 @@ class App extends Component {
       const championKeys = Object.keys(selectedChampion);
       const clonedChampion = {};
 
-      championKeys.map(key => {
+      championKeys.forEach(key => {
         clonedChampion[key] = selectedChampion[key]
       })
 
@@ -695,7 +695,7 @@ class App extends Component {
               return;
             }
             else {
-              throw "Character cannot have more than one pair of shoes.";
+              throw new Error("Character cannot have more than one pair of shoes.");
             }
           }
         })
@@ -708,7 +708,7 @@ class App extends Component {
               return;
             }
             else {
-              throw "Character cannot have more than one mythic item.";
+              throw new Error("Character cannot have more than one mythic item.");
             }
           }
         })

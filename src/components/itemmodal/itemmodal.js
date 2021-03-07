@@ -31,17 +31,14 @@ class ItemModal extends Component {
 					</div>
 					<div className="items-search-results">
 						{
-							itemsArray.map(item => {
-								if (item[0].toLowerCase().includes(search)){
-									return (
-										<div className="search-item" onClick={() => {item[1].name = item[0]; this.props.update(item[1]); this.props.exit()}}>
+							itemsArray
+							.filter(item => item[0].toLowerCase().includes(search.replaceAll(" ", "").toLowerCase()))
+							.map(item => (<div className="search-item" onClick={() => {item[1].name = item[0]; this.props.update(item[1]); this.props.exit()}}>
 											{item[0].split(/(?=[A-Z])/).map(part => {
 												return part[0].toUpperCase() + part.slice(1)
 											}).join(" ")}
-										</div>
-									)
-								}
-							})
+										</div>)
+							)
 						}
 					</div>
 				</div>

@@ -18,7 +18,6 @@ const CalcRunes = ({ ally, enemy }) => {
 	const { runes: allyrunes } = ally;
 	const ap = ally.ap;
 	const bonusAd = ally.attack - ally.baseAttack - ((ally.lv - 1) * ally.lvAttack);
-	const totalAd = ally.attack;
 
 	const adaptiveDef = ap > bonusAd ? enemy.resist : enemy.armor;
 	const adaptiveDamageType = ap > bonusAd ? "Magical" : "Physical";
@@ -30,7 +29,7 @@ const CalcRunes = ({ ally, enemy }) => {
 				?
 				(
 					<div className="rune-calc">
-						<img src={PresKey1} className="rune-calc-image" />
+						<img src={PresKey1} className="rune-calc-image" alt=""/>
 						<div className="rune-calc-information">
 							<p className="rune-calc-name">Press the Attack</p>
 							<p className="rune-calc-damage">
@@ -57,7 +56,7 @@ const CalcRunes = ({ ally, enemy }) => {
 				?
 				(
 					<div className="rune-calc">
-						<img src={DomKey1} className="rune-calc-image" />
+						<img src={DomKey1} className="rune-calc-image" alt=""/>
 						<div className="rune-calc-information">
 							<p className="rune-calc-name">Electrocute</p>
 							<p className="rune-calc-damage">
@@ -84,7 +83,7 @@ const CalcRunes = ({ ally, enemy }) => {
 				?
 				(
 					<div className="rune-calc">
-						<img src={DomKey2} className="rune-calc-image" />
+						<img src={DomKey2} className="rune-calc-image" alt=""/>
 						<div className="rune-calc-information">
 							<p className="rune-calc-name">Predator</p>
 							<p className="rune-calc-damage">
@@ -111,7 +110,7 @@ const CalcRunes = ({ ally, enemy }) => {
 				?
 				(
 					<div className="rune-calc">
-						<img src={DomNode1} className="rune-calc-image" />
+						<img src={DomNode1} className="rune-calc-image" alt=""/>
 						<div className="rune-calc-information">
 							<p className="rune-calc-name">Cheap Shot</p>
 							<p className="rune-calc-damage">
@@ -138,7 +137,7 @@ const CalcRunes = ({ ally, enemy }) => {
 				?
 				(
 					<div className="rune-calc">
-						<img src={SorcKey1} className="rune-calc-image" />
+						<img src={SorcKey1} className="rune-calc-image" alt=""/>
 						<div className="rune-calc-information">
 							<p className="rune-calc-name">Summon Aery</p>
 							<p className="rune-calc-damage">
@@ -165,7 +164,7 @@ const CalcRunes = ({ ally, enemy }) => {
 				?
 				(
 					<div className="rune-calc">
-						<img src={SorcKey2} className="rune-calc-image" />
+						<img src={SorcKey2} className="rune-calc-image" alt=""/>
 						<div className="rune-calc-information">
 							<p className="rune-calc-name">Arcane Comet</p>
 							<p className="rune-calc-damage">
@@ -188,11 +187,38 @@ const CalcRunes = ({ ally, enemy }) => {
 				null
 			}
 			{
+				allyrunes.sorcery.node7 === true
+				?
+				(
+					<div className="rune-calc">
+						<img src={SorcNode7} className="rune-calc-image" alt=""/>
+						<div className="rune-calc-information">
+							<p className="rune-calc-name">Scorch</p>
+							<p className="rune-calc-damage">
+								{
+									((15+(20/17 * (ally.lv - 1))) * (100/(100+enemy.resist)) ).toFixed(1)
+								}
+								&nbsp; Magical Damage
+							</p>
+							<p className="rune-calc-percentage">
+								[
+								{
+									((15+(20/17 * (ally.lv - 1))) / enemy.hp * 100).toFixed(1)
+								}
+								%]
+							</p>
+						</div>
+					</div>
+				)
+				: 
+				null
+			}
+			{
 				allyrunes.resolve.key2 === true
 				?
 				(
 					<div className="rune-calc">
-						<img src={ResKey2} className="rune-calc-image" />
+						<img src={ResKey2} className="rune-calc-image" alt="" />
 						<div className="rune-calc-information">
 							<p className="rune-calc-name">Aftershock</p>
 							<p className="rune-calc-damage">
