@@ -36,7 +36,7 @@ const CalcRunes = ({ ally, enemy }) => {
 								{
 									((40 + 8.235 * (ally.lv - 1)) * (100/(100 + adaptiveDef))).toFixed(1)
 								}
-								&nbsp; {adaptiveDamageType} Damage
+								&nbsp; <span className={`${adaptiveDamageType === "Magical" ? "magic" : "phys"}`}>{adaptiveDamageType}</span> Damage
 							</p>
 							<p className="rune-calc-percentage">
 								[
@@ -63,7 +63,7 @@ const CalcRunes = ({ ally, enemy }) => {
 								{
 									(((30 + 8.823 * (ally.lv - 1)) + (.4 * bonusAd) + (.25 * ap)) * (100/(100 + adaptiveDef))).toFixed(1)
 								}
-								&nbsp; {adaptiveDamageType} Damage
+								&nbsp; <span className={`${adaptiveDamageType === "Magical" ? "magic" : "phys"}`}>{adaptiveDamageType}</span> Damage
 							</p>
 							<p className="rune-calc-percentage">
 								[
@@ -90,7 +90,7 @@ const CalcRunes = ({ ally, enemy }) => {
 								{
 									(((40 + 4.705 * (ally.lv - 1)) + (.2 * bonusAd) + (.1 * ap)) * (100/(100 + adaptiveDef))).toFixed(1)
 								}
-								&nbsp; {adaptiveDamageType} Damage
+								&nbsp; <span className={`${adaptiveDamageType === "Magical" ? "magic" : "phys"}`}>{adaptiveDamageType}</span> Damage
 							</p>
 							<p className="rune-calc-percentage">
 								[
@@ -144,7 +144,7 @@ const CalcRunes = ({ ally, enemy }) => {
 								{
 									(((10 + 1.764 * (ally.lv - 1)) + (.15 * bonusAd) + (.10 * ap)) * (100/(100 + adaptiveDef))).toFixed(1)
 								}
-								&nbsp; {adaptiveDamageType} Damage
+								&nbsp; <span className={`${adaptiveDamageType === "Magical" ? "magic" : "phys"}`}>{adaptiveDamageType}</span> Damage
 							</p>
 							<p className="rune-calc-percentage">
 								[
@@ -171,7 +171,7 @@ const CalcRunes = ({ ally, enemy }) => {
 								{
 									(((30 + 4.117 * (ally.lv - 1)) + (.35 * bonusAd) + (.20 * ap)) * (100/(100 + adaptiveDef))).toFixed(1)
 								}
-								&nbsp; {adaptiveDamageType} Damage
+								&nbsp; <span className={`${adaptiveDamageType === "Magical" ? "magic" : "phys"}`}>{adaptiveDamageType}</span> Damage
 							</p>
 							<p className="rune-calc-percentage">
 								[
@@ -198,7 +198,7 @@ const CalcRunes = ({ ally, enemy }) => {
 								{
 									((15+(20/17 * (ally.lv - 1))) * (100/(100+enemy.resist)) ).toFixed(1)
 								}
-								&nbsp; Magical Damage
+								&nbsp; <span className="magic">Magical</span> Damage
 							</p>
 							<p className="rune-calc-percentage">
 								[
@@ -225,7 +225,7 @@ const CalcRunes = ({ ally, enemy }) => {
 								{
 									(((25 + 5.588 * (ally.lv - 1))) * (100/(100 + enemy.resist))).toFixed(1)
 								}
-								&nbsp; {adaptiveDamageType} Damage
+								&nbsp; <span className={`${adaptiveDamageType === "Magical" ? "magic" : "phys"}`}>{adaptiveDamageType}</span> Damage
 							</p>
 							<p className="rune-calc-percentage">
 								[
