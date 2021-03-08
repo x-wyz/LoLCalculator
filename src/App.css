@@ -91,7 +91,7 @@ body {
   left: calc(-1 * var(--export-width)/3);
   text-indent: 84px;
   border: 2px solid white;
-  z-index: 10000;
+  z-index: 10;
 }
 
 .sidebar {
@@ -99,7 +99,7 @@ body {
   width: 400px;
   height: 100vh;
   background: #0C1415;
-  z-index: 1000;
+  z-index: 9;
   top: 0;
   left: -600px;
   border-right: 5px solid #687268;

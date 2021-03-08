@@ -56,11 +56,13 @@ class CalculationArea extends Component {
 							enemyTab === true
 							?
 							enemy.items
-							.filter(item => item.img !== undefined && item.effect.type === "damage")
+							.filter(item => item.img !== undefined && item.effect !== undefined)
+							.filter(item => item.effect.type === "damage")
 							.map((item) => <CalcItem item={item} ally={enemy} enemy={ally}/>)
 							:
 							ally.items
-							.filter(item => item.img !== undefined && item.effect.type === "damage")
+							.filter(item => item.img !== undefined && item.effect !== undefined)
+							.filter(item => item.effect.type === "damage")
 							.map((item) => <CalcItem item={item} ally={enemy} enemy={ally}/>)
 						}
 					</div>

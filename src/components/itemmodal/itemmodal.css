@@ -2,7 +2,7 @@
 	position: fixed;
 	/* always top level */
 	z-index: 100;
-	background: #00000040;
+	background: #000000d6;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -14,11 +14,12 @@
 }
 
 .modal-content {
-	background: #4d4d4d;
+	background: #2c2c2c;
 	min-width: 300px;
 	width: 40%;
 	padding: 0.8em;
 	box-shadow: 3px 3px 2px -2px rgba(0, 0, 0, 0.8);
+	position: relative;
 }
 
 .items-search-results {
@@ -28,12 +29,70 @@
 	height: 300px;
 	overflow-y: auto;
 	margin-top: 1.0em;
+	position: relative;
+}
+
+.item-tier-filter, .item-stat-filter {
+	position: absolute;
+	top: 0;
+	width: 130px;
+	background: #4b4b4b;
+	color: #afafaf;
+	cursor: pointer;
+	user-select: none;
+}
+
+.item-tier-filter {
+	left: -130px;
+}
+
+.item-stat-filter {
+	right: -130px;
+}
+
+.active-filter {
+	background: #2c2c2c;
+}
+
+.active-stat-filter {
+	background: #2c2c2c;
+	color: white;
+}
+
+.stat-filter {
+	padding: 0.4em;
+}
+
+.tier-filter {
+	font-size: 1.2em;
+	padding: 0.6em;
+	text-align: right;
+}
+
+.mythic-filter.active-filter {
+	color: #e87171;
+}
+
+.leg-filter.active-filter {
+	color: orange;
+}
+
+.adv-filter.active-filter {
+	color: #8282f8;
+}
+
+.basic-filter.active-filter, .boots-filter.active-filter {
+	color: #6bc96b;
+}
+
+.general-filter.active-filter {
+	color: white;
 }
 
 .search-item {
-	background: #d7d7d7;
+	background: #f8f8f8;
 	padding: 0.4em;
-	width: 200px;
+	width: 240px;
 	margin: 0.1em;
 	cursor: pointer;
 	height: 60px;
@@ -63,6 +122,7 @@
 	display: block;
 	margin: 0 auto;
 	padding: 0.4em;
+	text-align: center;
 }
 
 .items-selector-title {
@@ -90,7 +150,7 @@
 }
 
 .modal-footer {
-	background: #4d4d4d;
+	background: #2c2c2c;
 	width: 40%;
 	min-width: 300px;
 	margin-top: 0.2em;
@@ -99,5 +159,26 @@
 @media only screen and (max-width: 1100px) {
 	.modal-content {
 		width: 60%;
+	}
+
+	.tier-filter {
+		text-align: left;
+	}
+
+	.item-tier-filter, .item-stat-filter {
+		width: 100px;
+	}
+
+	.item-tier-filter {
+		left: -100px;
+		font-size: 0.9em;
+	}
+
+	.tier-filter.leg-filter {
+		font-size: 1.05em;
+	}
+
+	.item-stat-filter {
+		right: -100px;
 	}
 }

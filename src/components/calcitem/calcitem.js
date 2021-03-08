@@ -64,7 +64,7 @@ const CalcItem = ({ ally, enemy, item }) => {
 			<div className="calc-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/${item.img}.png)`}}></div>
 			<div className="skill-calculations">
 				<div className="skill-information-container">
-					<p className="calculation-description">Total Damage</p>
+					<p className="calculation-description">Pre-Mit</p>
 					<p className="calculation-results">{totalDamage.toFixed(0)}</p>
 				</div>
 				<div className="skill-information-container">
