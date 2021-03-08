@@ -434,6 +434,38 @@ class App extends Component {
 
     this.setChampion = this.setChampion.bind(this);
     this.saveChampion = this.saveChampion.bind(this);
+
+    this.targetDummy = this.targetDummy.bind(this);
+    this.updateDummy = this.updateDummy.bind(this);
+  }
+
+  targetDummy(){
+    this.setState({
+      mainEnemy: {
+        name: "target",
+        hp: 1000,
+        armor: 0,
+        resist: 0
+      }
+    })
+  }
+
+  updateDummy(stat, val){
+    const { mainEnemy } = this.state;
+    val = parseInt(val.target.value);
+
+    if (stat === "hp") {
+      val = val > 10000 ? 10000 : val < 10 ? 10 : val;
+    }
+    else {
+      val = val > 2500 ? 2500 : val < 0 ? 0 : val;
+    }
+
+    mainEnemy[stat] = val;
+
+    this.setState({
+      mainEnemy: mainEnemy
+    })
   }
 
   saveChampion(title, champ, data){
@@ -784,11 +816,11 @@ class App extends Component {
               <ChampionCard save={this.saveChampion} level={(type) => this.levelup(type, "mainAlly")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainAlly")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainAlly")} champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainAlly")} />
             </div>
             <div className="enemy">
-              <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainEnemy")} />
-              <ChampionCard save={this.saveChampion} level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
+              <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainEnemy")} makeTarget={true} targetDummy={this.targetDummy} />
+              <ChampionCard updateDummy={this.updateDummy} save={this.saveChampion} level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
             </div>
           </header>
-          <CalculationArea ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
+          <CalculationArea dummy={this.state.mainEnemy.name === "target" ? true : false} ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
           <div className="export-data" onClick={this.showExport} >
             EX
           </div>

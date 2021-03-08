@@ -53,6 +53,10 @@
 	user-select: none;
 }
 
+.dummy-tab {
+	color: #6e6e6e;
+}
+
 .calculation-end {
 	padding-bottom: 2em;
 	background: var(--calculation-base-color);

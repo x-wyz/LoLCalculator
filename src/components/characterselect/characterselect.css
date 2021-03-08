@@ -14,7 +14,7 @@
 	letter-spacing: 0.05em;
 }
 
-.update-champ-btn {
+.update-champ-btn, .update-target-btn {
 	width: 10%;
 	min-width: 100px;
 	background: #325c61;
@@ -31,6 +31,11 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.update-target-btn {
+	width: 15%;
+	font-size: 0.7em;
 }
 
 option {

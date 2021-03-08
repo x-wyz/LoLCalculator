@@ -248,6 +248,29 @@ class ChampionCard extends Component {
     const { page, itemsModal } = this.state;
     const { champion, className } = this.props;
 
+    if (champion.name === "target") {
+      const { updateDummy } = this.props;
+      const { hp, armor, resist } = champion;
+
+      return (<div className="champion-card dummy-card">
+          <div className="target-dummy-container">
+            <h3 className="target-dummy-header">Target Dummy</h3>
+            <div className="dummy-stat-editor-container">
+              <p className="dummy-stat-description">Health</p>
+              <input type="number" min="10" max="5000" className="dummy-stat-editor" value={hp} onChange={(val) => updateDummy("hp", val)} />
+            </div>
+            <div className="dummy-stat-editor-container">
+              <p className="dummy-stat-description">Armor</p>
+              <input type="number" min="0" max="1500" className="dummy-stat-editor" value={armor} onChange={(val) => updateDummy("armor", val)} />
+            </div>
+            <div className="dummy-stat-editor-container">
+              <p className="dummy-stat-description">Magic Resist</p>
+              <input type="number" min="0" max="1500" className="dummy-stat-editor" value={resist} onChange={(val) => updateDummy("resist", val)} />
+            </div>
+          </div>
+        </div>)
+    }
+
     return (
       <React.Fragment>
         {

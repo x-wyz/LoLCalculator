@@ -24,10 +24,10 @@ class SaveModal extends Component {
 		const Data = [
 			["champion", champ.name],
 			["level", champ.lv],
-			["ability1", champ.abilitylv1 + 1 ],
-			["ability2", champ.abilitylv2 + 1],
-			["ability3", champ.abilitylv3 + 1],
-			["ability4", champ.abilitylv4 + 1],
+			["ability1", champ.abilitylv1],
+			["ability2", champ.abilitylv2],
+			["ability3", champ.abilitylv3],
+			["ability4", champ.abilitylv4],
 			[],
 			{
 

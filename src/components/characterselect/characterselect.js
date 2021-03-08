@@ -28,6 +28,9 @@ class CharacterSelect extends Component {
 					}
 				</datalist>
 				<button type="button" className="update-champ-btn" onClick={() => this.props.onChange(current)} >Update</button>
+				{
+					this.props.makeTarget === true ? <button type="button" className="update-target-btn" onClick={this.props.targetDummy} >Target Dummy</button> : null
+				}
 			</div>
 		)
 	}

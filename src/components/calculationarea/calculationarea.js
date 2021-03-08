@@ -23,15 +23,23 @@ class CalculationArea extends Component {
 		})
 	}
 
+	forceSwitch(){
+		this.setState({enemyTab: false})
+	}
+
 	render(){
-		const { ally, enemy } = this.props;
+		const { ally, enemy, dummy } = this.props;
 		const { enemyTab } = this.state;
+
+		if (enemyTab && dummy){
+			this.switchTab(false)
+		}
 
 		return (
 			<div className="calculation-area">
 				<header className="calculation-header">
 					<h3 onClick={() => this.switchTab(false)} className={`allied-tab ${enemyTab ? 'not-current-tab' : null}`}>Ally</h3>
-					<h3 onClick={() => this.switchTab(true)} className={`enemy-tab ${!enemyTab ? 'not-current-tab' : null}`}>Enemy</h3>
+					<h3 onClick={dummy === true? null : () => this.switchTab(true)} className={`enemy-tab ${!enemyTab ? 'not-current-tab' : null} ${dummy ? "dummy-tab" : null}`}>Enemy</h3>
 				</header>
 				<div className="calculation-body">
 					<h3 className="calculation-heading">Basic Attacks</h3>
@@ -39,6 +47,10 @@ class CalculationArea extends Component {
 					<h3 className="calculation-heading">Skills</h3>
 					<div className="calculation-skills">
 						{
+							dummy && enemyTab
+							? 
+							null
+							:
 							enemyTab === true
 							?
 							enemy.abilities.map((ability, idx) => <CalcSkill ally={enemy} enemy={ally} skill={ability} skillLv={enemy[`abilitylv${ability.skill}`]} />)
@@ -47,12 +59,28 @@ class CalculationArea extends Component {
 						}
 					</div>
 					<h3 className="calculation-heading">Runes</h3>
-					<CalcDamageRunes ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
+					{
+						dummy && enemyTab
+						? 
+						null
+						:
+						<CalcDamageRunes ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
+					}
 					<h3 className="calculation-heading">Summoners</h3>
-					<CalcSummoners ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
+					{
+						dummy && enemyTab
+						? 
+						null
+						:
+						<CalcSummoners ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
+					}
 					<h3 className="calculation-heading">Items</h3>
 					<div className="calculation-skills">
 						{
+							dummy && enemyTab 
+							? 
+							null
+							:
 							enemyTab === true
 							?
 							enemy.items
