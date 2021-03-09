@@ -254,7 +254,7 @@ class ChampionCard extends Component {
 
       return (<div className="champion-card dummy-card">
           <div className="target-dummy-container">
-            <h3 className="target-dummy-header">Target Dummy</h3>
+            <h3 className="target-dummy-header">Dragon Chow</h3>
             <div className="dummy-stat-editor-container">
               <p className="dummy-stat-description">Health</p>
               <input type="number" min="10" max="5000" className="dummy-stat-editor" value={hp} onChange={(val) => updateDummy("hp", val)} />

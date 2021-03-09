@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './savemodal.css';
 
+import SI from '../../assets/si_crest.png';
+
 class SaveModal extends Component {
 	constructor(props){
 		super(props);
@@ -18,6 +20,12 @@ class SaveModal extends Component {
 	}
 
 	extractData(champ){
+		if (champ.name === "target") {
+			return (<p className="target-dummy-save">
+				<img src={SI} className="target-dummy-save-placeholder" alt=""/>
+			</p>)
+		}
+
 		const runeKeys = Object.keys(champ.runes);
 		const buffKeys = Object.keys(champ.buffs);
 
@@ -94,7 +102,7 @@ class SaveModal extends Component {
 					}
 				</div>
 
-				<div className="export-data-text">
+				<div className={`export-data-text ${enemy.name === "target" ? "export-data-dummy" : null}`}>
 					{
 						this.extractData(enemy)
 					}

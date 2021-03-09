@@ -4,6 +4,10 @@
 	margin: 0.8em;
 }
 
+.export-data-dummy {
+	padding: 0;
+}
+
 .save-modal-tabs h4 {
 	text-align: center;
 	width: 50%;
@@ -30,4 +34,16 @@
 
 .active-export-tab {
 	background: #2C2C2C;
+}
+
+.target-dummy-save {
+	background: #161414;
+	padding: 3em 1em;
+	margin: 0;
+}
+
+.target-dummy-save-placeholder {
+	width: 95px;
+	display: block;
+	margin: 0 auto;
 }
