@@ -24,10 +24,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -116,10 +116,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -218,10 +218,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [29,170],
@@ -336,10 +336,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -435,10 +435,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -523,10 +523,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -613,10 +613,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -728,10 +728,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -817,10 +817,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             base: 150,
@@ -909,10 +909,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [40,40],
@@ -999,10 +999,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -1098,10 +1098,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [10,14, "emhp"],
@@ -1197,10 +1197,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [26,196],
@@ -1292,10 +1292,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -1383,10 +1383,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -1484,10 +1484,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -1590,10 +1590,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -1691,10 +1691,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -1792,10 +1792,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [3.5,7.5],
@@ -1881,10 +1881,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [20,250],
@@ -1980,10 +1980,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -2068,10 +2068,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -2154,10 +2154,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [30,140],
@@ -2253,10 +2253,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -2356,10 +2356,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -2444,10 +2444,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -2546,10 +2546,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -2635,10 +2635,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -2744,10 +2744,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [15,200],
@@ -2848,10 +2848,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [5.5,22.5],
@@ -2938,10 +2938,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3026,10 +3026,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3113,10 +3113,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3210,10 +3210,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3297,10 +3297,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [15,66],
@@ -3386,10 +3386,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3483,10 +3483,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3580,10 +3580,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3668,10 +3668,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3755,10 +3755,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3870,10 +3870,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -3956,10 +3956,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4042,10 +4042,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4130,10 +4130,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4216,10 +4216,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4324,10 +4324,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4410,10 +4410,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4509,10 +4509,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [68,240],
@@ -4609,10 +4609,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4707,10 +4707,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4804,10 +4804,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [14,116],
@@ -4891,10 +4891,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -4990,10 +4990,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -5091,10 +5091,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [125,550],
@@ -5180,10 +5180,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -5302,10 +5302,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -5388,10 +5388,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [25,144],
@@ -5474,10 +5474,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -5562,10 +5562,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [120,520],
@@ -5648,10 +5648,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -5733,10 +5733,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [15,117],
@@ -5819,10 +5819,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [20,190],
@@ -5906,10 +5906,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -5993,10 +5993,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6094,10 +6094,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6181,10 +6181,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6267,10 +6267,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6354,10 +6354,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6453,10 +6453,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6539,10 +6539,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6625,10 +6625,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6713,10 +6713,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [8,110],
@@ -6801,10 +6801,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6887,10 +6887,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -6975,10 +6975,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -7063,10 +7063,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -7147,10 +7147,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [10,50],
@@ -7229,10 +7229,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -7317,10 +7317,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -7416,10 +7416,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [20,180],
@@ -7505,10 +7505,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -7592,10 +7592,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [15,83],
@@ -7682,10 +7682,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [10,95],
@@ -7768,10 +7768,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -7852,10 +7852,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [10,10],
@@ -7940,10 +7940,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [8,16],
@@ -8027,10 +8027,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8126,10 +8126,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8249,10 +8249,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8337,10 +8337,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [25,110],
@@ -8426,10 +8426,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8517,10 +8517,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8602,10 +8602,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8702,10 +8702,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8786,10 +8786,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -8872,10 +8872,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [5,90],
@@ -8962,10 +8962,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [20,35],
@@ -9050,10 +9050,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -9153,10 +9153,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -9265,10 +9265,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -9351,10 +9351,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -9438,10 +9438,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -9523,10 +9523,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -9622,10 +9622,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [20,240],
@@ -9709,10 +9709,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -9793,10 +9793,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [20,105],
@@ -9904,10 +9904,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10004,10 +10004,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10101,10 +10101,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10189,10 +10189,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10275,10 +10275,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [75,245],
@@ -10374,10 +10374,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [25,93],
@@ -10462,10 +10462,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10559,10 +10559,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10644,10 +10644,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10729,10 +10729,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10817,10 +10817,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -10901,10 +10901,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11007,10 +11007,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [1,5],
@@ -11105,10 +11105,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11192,10 +11192,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11278,10 +11278,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11376,10 +11376,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11462,10 +11462,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11547,10 +11547,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [33,169],
@@ -11646,10 +11646,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11733,10 +11733,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11819,10 +11819,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -11939,10 +11939,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12028,10 +12028,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [11,60],
@@ -12118,10 +12118,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [12,46],
@@ -12207,10 +12207,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12295,10 +12295,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12381,10 +12381,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12467,10 +12467,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12566,10 +12566,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12651,10 +12651,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12762,10 +12762,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12874,10 +12874,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -12960,10 +12960,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -13049,10 +13049,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -13135,10 +13135,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [20,60],
@@ -13224,10 +13224,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -13308,10 +13308,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [16,130],
@@ -13398,10 +13398,10 @@ export let ChampionData = {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],

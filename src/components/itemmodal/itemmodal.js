@@ -106,7 +106,6 @@ class ItemModal extends Component {
 									const itemKeys = Object.keys(item[1].stats);
 									let hasStat = false;
 									itemKeys.forEach(stat => {
-										console.log(stat === statFilter)
 										if (stat === statFilter) {
 											hasStat = true;
 										}

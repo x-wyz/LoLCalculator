@@ -7,15 +7,36 @@ class SaveModal extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			page: 0
+			page: 0,
+			importText: ""
 		}
 
 		this.setPage = this.setPage.bind(this);
+		this.updateImport = this.updateImport.bind(this);
+		this.importData = this.importData.bind(this);
+	}
+
+	importData(type){
+		const { importText } = this.state;
+		const { importData } = this.props;
+
+		if (type === 1) {
+			importData(importText, 1);
+		} else {
+			importData(importText, 2);
+		}
+
 	}
 
 	setPage(n){
 		this.setState({
 			page: n
+		})
+	}
+
+	updateImport(event){
+		this.setState({
+			importText: event.target.value
 		})
 	}
 
@@ -82,11 +103,11 @@ class SaveModal extends Component {
 						}
 					})
 				}
-				<span className="export-datum">{`items:${Data[6]},`}</span>
+				<span className="export-datum">{`items:[${Data[6].join(" - ")}],`}</span>
 				{
-					runeTrees.map((tree) => <span className="export-datum">{`${tree}:${Data[7][tree]}`}</span>)
+					runeTrees.map((tree) => <span className="export-datum">{`${tree}:[${Data[7][tree].join(" - ")}],`}</span>)
 				}
-				<span className="export-datum">{`buffs:${Data[8]},`}</span>
+				<span className="export-datum">{`buffs:[${Data[8].join(" - ")}],`}</span>
 			</p>
 		);
 	}
@@ -111,6 +132,20 @@ class SaveModal extends Component {
 		)
 	}
 
+	importPage(){
+		const {importText} = this.state;
+
+		return (<div className="import-contents">
+			<textarea value={importText} className="import-text" onChange={this.updateImport} />
+			<p className="import-note">**Give your imports a name by adding (name: -replace this text-,)</p>
+			<p className="import-note">**When importing multiple champions separate each entry with an ampersand(&) in front of champion ie. (&champion: annie,)</p>
+			<div className="import-button-container">
+				<button className="import-button" type="button" onClick={() => this.importData(1)}>Import Single</button>
+				<button className="import-button" type="button" onClick={() => this.importData(2)}>Import Multi</button>
+			</div>
+		</div>)
+	}
+
 	render(){
 		const {close} = this.props;
 		const {page} = this.state;
@@ -124,7 +159,7 @@ class SaveModal extends Component {
 					</div>
 					<div className="save-modal-body">
 						{
-							page === 0 ? this.exportPage() : null
+							page === 0 ? this.exportPage() : this.importPage()
 						}
 					</div>
 				</div>

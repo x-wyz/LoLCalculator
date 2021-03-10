@@ -11,6 +11,7 @@ import SavedChampion from './components/savedchampion/savedchampion';
 // Data
 
 import { ChampionData } from './data/champion';
+import { ItemsData } from './data/items';
 
 class App extends Component {
   constructor(props){
@@ -46,10 +47,10 @@ class App extends Component {
         mpen: 0,
         flatMPen: 0,
         ap: 0,
-        abilitylv1: 0,
-        abilitylv2: 0,
-        abilitylv3: 0,
-        abilitylv4: 0,
+        ability1: 0,
+        ability2: 0,
+        ability3: 0,
+        ability4: 0,
         abilities: [
           {
             lvScale: [0,0],
@@ -246,10 +247,10 @@ class App extends Component {
           mpen: 0,
           flatMPen: 0,
           ap: 0,
-          abilitylv1: 0,
-          abilitylv2: 0,
-          abilitylv3: 0,
-          abilitylv4: 0,
+          ability1: 0,
+          ability2: 0,
+          ability3: 0,
+          ability4: 0,
           abilities: [
             {
               lvScale: [0,0],
@@ -437,6 +438,8 @@ class App extends Component {
 
     this.targetDummy = this.targetDummy.bind(this);
     this.updateDummy = this.updateDummy.bind(this);
+
+    this.parseImport = this.parseImport.bind(this);
   }
 
   targetDummy(){
@@ -466,6 +469,175 @@ class App extends Component {
     this.setState({
       mainEnemy: mainEnemy
     })
+  }
+
+  parseImport(txt, type){
+    if (type === 1){
+      try {
+        let breakdown = txt.replace(/\s/g, "").split(",");
+        let title = "";
+        breakdown = breakdown
+        .filter(n => n.split(":").length === 2)
+        .map(val => val.split(":"))
+        .map(arr => {
+          if (arr[1][0] === "[") {
+            return [arr[0], arr[1].replace(/[[\]+]/g,"").split("-")];
+          } else {
+            title = arr[0] === "name" ? arr[1] : title;
+            arr[0] = arr[0] === "name" ? "title" : arr[0] === "level" ? "lv" : arr[0];
+            return arr;
+          }
+        })
+
+        const championName = breakdown.filter(isChar => isChar[0] === "champion")[0][1];
+        const champion = ChampionData[championName];
+        const newChampion = {};
+
+        const championKeys = Object.keys(champion);
+        championKeys.forEach(key => {
+          newChampion[key] = champion[key]
+        })
+
+        newChampion.runes = {
+            precision: {
+              key1: false,
+              key2: false,
+              key3: false,
+              key4: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            domination: {
+              key1: false,
+              key2: false,
+              key3: false,
+              key4: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false,
+              node10: false
+            },
+            sorcery: {
+              key1: false,
+              key2: false,
+              key3: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            resolve: {
+              key1: false,
+              key2: false,
+              key3: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            inspiration: {
+              key1: false,
+              key2: false,
+              key3: false,
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            },
+            minor: {
+              node1: false,
+              node2: false,
+              node3: false,
+              node4: false,
+              node5: false,
+              node6: false,
+              node7: false,
+              node8: false,
+              node9: false
+            }
+        }
+
+        newChampion.buffs = {
+          elixIron: false,
+          elixWrath: false,
+          elixSorc: false,
+          baron: false,
+          inf1: false,
+          inf2: false,
+          mount1: false,
+          mount2: false
+        };
+
+        breakdown.forEach(data => {
+          if (data[0] in newChampion && data[0] !== "items") {
+            data[1] = isNaN(data[1]) ? data[1] : parseInt(data[1])
+            newChampion[data[0]] = data[1]
+          }
+          else if (data[0] === "items") {
+            data[1].forEach((itemName, idx) => {
+              let item = ItemsData[itemName] !== undefined ? ItemsData[itemName] : {};
+              newChampion.items[idx] = item;
+            })
+          }
+          else if (data[0] in newChampion.runes) {
+            data[1].forEach(node => {
+              newChampion.runes[data[0]][node] = true;
+            })
+          }
+          else if (data[0] === "buffs") {
+            data[1].forEach(buff => {
+              newChampion.buffs[buff] = true;
+            })
+          }
+        })
+
+        newChampion.lv = newChampion.lv > 18 ? 18 : newChampion.lv < 1 ? 1 : newChampion.lv;
+        newChampion.attack = newChampion.attack + (newChampion.lvAttack * newChampion.lv - 1);
+        newChampion.armor = newChampion.armor + (newChampion.lvArmor * newChampion.lv - 1);
+        newChampion.resist = newChampion.resist + (newChampion.lvResist * newChampion.lv - 1);
+        newChampion.hp = newChampion.hp + (newChampion.lvHp * newChampion.lv - 1);
+
+        console.log(newChampion)
+        this.saveChampion(title, newChampion.name, newChampion);
+      }
+      catch(e){
+        console.log(e);
+      }
+    }
+    else if (type === 2){
+      console.log(txt)
+    }
+    else {
+      return;
+    }
   }
 
   saveChampion(title, champ, data){
@@ -690,7 +862,7 @@ class App extends Component {
 
   updateSkillLevel(skill, event, target){
     const champion = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
-    champion[`abilitylv${skill}`] = event.target.value;
+    champion[`ability${skill}`] = event.target.value;
 
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]:champion
@@ -797,7 +969,7 @@ class App extends Component {
     return (
       <React.Fragment>
         {
-          showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} /> : null
+          showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} importData={this.parseImport} /> : null
         }
         <div className="App">
           <div className="full-sidebar">

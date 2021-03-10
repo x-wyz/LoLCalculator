@@ -47,3 +47,42 @@
 	display: block;
 	margin: 0 auto;
 }
+
+.import-text {
+	display: block;
+	margin: 1em auto 0.3em;
+	padding: 1em;
+	width: 80%;
+	height: 200px;
+	resize: none;
+	outline: 0;
+}
+
+.import-note {
+	width: 80%;
+	color: white;
+	font-size: 0.6em;
+	text-align: left;
+	margin-left: 10%;
+}
+
+.import-button-container {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.import-button {
+	padding: 0.6em 1.2em;
+	margin: 0.6em;
+	border: 0;
+	border-radius: 20px;
+	transition: 0.15s background, 0.15s color;
+	outline: none;
+}
+
+.import-button:hover {
+	background: orange;
+	border: 0;
+	color: white;
+}
