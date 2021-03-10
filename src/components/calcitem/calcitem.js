@@ -48,7 +48,7 @@ const CalcItem = ({ ally, enemy, item }) => {
 	}
 
 	if (item.effect.ap !== 0 && item.effect.ap !== undefined){
-		scalebAr = ally.ap * (item.effect.ap / 100);
+		scaleAp = ally.ap * (item.effect.ap / 100);
 	}
 
 	const totalDamage = base + scalebAr + scalebHp + scaleAd + scalebAd + scaleEMHP + scaleBonusAd + scaleAp;
@@ -59,13 +59,15 @@ const CalcItem = ({ ally, enemy, item }) => {
 
 	const damagePercentage = damage / enemy.hp * 100;
 
+	console.log(ally)
+
 	return (
 		<section className="skill-calculations-container">
 			<div className="calc-skill-icon" style={{backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/11.1.1/img/item/${item.img}.png)`}}></div>
 			<div className="skill-calculations">
 				<div className="skill-information-container">
 					<p className="calculation-description">Pre-Mit</p>
-					<p className="calculation-results">{totalDamage.toFixed(0)}</p>
+					<p className="calculation-results">{totalDamage.toFixed(1)}</p>
 				</div>
 				<div className="skill-information-container">
 					<p className="calculation-description">Multiplier</p>

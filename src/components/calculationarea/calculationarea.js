@@ -91,7 +91,7 @@ class CalculationArea extends Component {
 							ally.items
 							.filter(item => item.img !== undefined && item.effect !== undefined)
 							.filter(item => item.effect.type === "damage")
-							.map((item) => <CalcItem item={item} ally={enemy} enemy={ally}/>)
+							.map((item) => <CalcItem item={item} ally={ally} enemy={enemy}/>)
 						}
 					</div>
 					<div className="calculation-end"></div>
