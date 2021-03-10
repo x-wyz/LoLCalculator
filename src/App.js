@@ -491,6 +491,7 @@ class App extends Component {
 
         const championName = breakdown.filter(isChar => isChar[0] === "champion")[0][1];
         const champion = ChampionData[championName];
+        champion.items = [{}, {}, {}, {}, {}, {}];
         const newChampion = {};
 
         const championKeys = Object.keys(champion);
@@ -597,13 +598,14 @@ class App extends Component {
         };
 
         breakdown.forEach(data => {
-          if (data[0] in newChampion && data[0] !== "items") {
+          if (data[0] in newChampion && data[0] !== "items" && data[0] !== "buffs") {
             data[1] = isNaN(data[1]) ? data[1] : parseInt(data[1])
             newChampion[data[0]] = data[1]
           }
           else if (data[0] === "items") {
             data[1].forEach((itemName, idx) => {
               let item = ItemsData[itemName] !== undefined ? ItemsData[itemName] : {};
+              item.name = itemName;
               newChampion.items[idx] = item;
             })
           }
@@ -614,17 +616,39 @@ class App extends Component {
           }
           else if (data[0] === "buffs") {
             data[1].forEach(buff => {
+              console.log(buff)
               newChampion.buffs[buff] = true;
             })
           }
         })
 
-        newChampion.lv = newChampion.lv > 18 ? 18 : newChampion.lv < 1 ? 1 : newChampion.lv;
-        newChampion.attack = newChampion.attack + (newChampion.lvAttack * newChampion.lv - 1);
-        newChampion.armor = newChampion.armor + (newChampion.lvArmor * newChampion.lv - 1);
-        newChampion.resist = newChampion.resist + (newChampion.lvResist * newChampion.lv - 1);
-        newChampion.hp = newChampion.hp + (newChampion.lvHp * newChampion.lv - 1);
+        newChampion.lv = newChampion.lv >= 18 ? 18 : newChampion.lv <= 1 ? 1 : newChampion.lv;
+        newChampion.attack = newChampion.attack + (newChampion.lvAttack * (newChampion.lv - 1));
+        newChampion.armor = newChampion.armor + (newChampion.lvArmor * (newChampion.lv - 1));
+        newChampion.resist = newChampion.resist + (newChampion.lvResist * (newChampion.lv - 1));
+        newChampion.hp = newChampion.hp + (newChampion.lvHp * (newChampion.lv - 1));
+        newChampion.mana = newChampion.mana + (newChampion.lvMana * (newChampion.lv - 1));
 
+        newChampion.items.forEach(item => {
+          if (item.stats !== undefined){
+            let statKeys = Object.keys(item.stats)
+            statKeys.forEach(stat => {
+              let rewordedStat = stat === "ad" ? "attack" : stat;
+              newChampion[rewordedStat] += item.stats[stat];
+            })
+          }
+          if (item.tier === "mythic") {
+            let mythicKeys = Object.keys(item.mythic.stats);
+            newChampion.items.forEach(isLegendItem => {
+              if (isLegendItem.tier === "legendary") {
+                mythicKeys.forEach(stat => {
+                  let rewordedStat = stat === "ad" ? "attack" : stat;
+                  newChampion[rewordedStat] += item.mythic.stats[stat];
+                })
+              }
+            })
+          }
+        })
         console.log(newChampion)
         this.saveChampion(title, newChampion.name, newChampion);
       }
@@ -850,9 +874,10 @@ class App extends Component {
           }
       }
 
+      clonedChampion.items = [{}, {}, {}, {}, {}, {}];
+
       this.setState({
-        [target === "mainAlly" ? "mainAlly": "mainEnemy"]: clonedChampion,
-        championChanged: true
+        [target === "mainAlly" ? "mainAlly": "mainEnemy"]: clonedChampion
       })
     }
     catch {
@@ -965,7 +990,6 @@ class App extends Component {
 
   render(){
     const { mainAlly, mainEnemy, showExport, showSidebar, savedList } = this.state;
-
     return (
       <React.Fragment>
         {

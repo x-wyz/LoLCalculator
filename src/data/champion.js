@@ -88,7 +88,6 @@ export let ChampionData = {
             cast: 0.25
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg',
     },
     ahri: {
@@ -190,7 +189,6 @@ export let ChampionData = {
             cd: [[130,105,80], "single"]
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg',
     },
     akali: {
@@ -308,7 +306,6 @@ export let ChampionData = {
             cast: 0.25
           },
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg',
     },
     alistar: {
@@ -407,7 +404,6 @@ export let ChampionData = {
             cast: 0.25
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg',
     },
     amumu: {
@@ -495,7 +491,6 @@ export let ChampionData = {
             cast: 0.25
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg',
     },
     anivia: {
@@ -585,7 +580,6 @@ export let ChampionData = {
             cast: 0.25
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Anivia_0.jpg',
     },
     annie: {
@@ -700,7 +694,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
     },
     ashe: {
@@ -789,7 +782,6 @@ export let ChampionData = {
             cast: 0.25
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg',
     },
     azir: {
@@ -881,7 +873,6 @@ export let ChampionData = {
             cast: 0.5
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Azir_0.jpg',
     },
     bard: {
@@ -971,7 +962,6 @@ export let ChampionData = {
             cd: [[110,95,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Bard_0.jpg',
     },
     blitzcrank: {
@@ -1070,7 +1060,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg',
     },
     brand: {
@@ -1169,7 +1158,6 @@ export let ChampionData = {
             cast: 0.25
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg',
     },
     braum: {
@@ -1264,7 +1252,6 @@ export let ChampionData = {
             cast: 0.5
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg',
     },
     caitlyn: {
@@ -1355,7 +1342,6 @@ export let ChampionData = {
             cd: [[90,75,60], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg',
     },
     camille: {
@@ -1456,7 +1442,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg',
     },
     cassiopeia: {
@@ -1562,7 +1547,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Cassiopeia_0.jpg',
     },
     chogath: {
@@ -1663,7 +1647,6 @@ export let ChampionData = {
             cd: [[80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Chogath_0.jpg',
     },
     corki: {
@@ -1764,7 +1747,6 @@ export let ChampionData = {
             cast: 0.175
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Corki_0.jpg',
     },
     darius: {
@@ -1853,7 +1835,6 @@ export let ChampionData = {
             cd: [[120,100,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg',
     },
     diana: {
@@ -1952,7 +1933,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Diana_0.jpg',
     },
     mundo: {
@@ -2040,7 +2020,6 @@ export let ChampionData = {
             cd: [[110,100,90], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_0.jpg',
     },
     draven: {
@@ -2126,7 +2105,6 @@ export let ChampionData = {
             cd: [[100,90,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg',
     },
     ekko: {
@@ -2225,7 +2203,6 @@ export let ChampionData = {
             cd: [[110,80,50], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_0.jpg',
     },
     evelynn: {
@@ -2328,7 +2305,6 @@ export let ChampionData = {
             cd: [[140,110,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg',
     },
     ezreal: {
@@ -2416,7 +2392,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg',
     },
     fiddlesticks: {
@@ -2518,7 +2493,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiddlesticks_0.jpg',
     },
     fiora: {
@@ -2607,7 +2581,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg',
     },
     fizz: {
@@ -2716,7 +2689,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fizz_0.jpg',
     },
     galio: {
@@ -2820,7 +2792,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Galio_0.jpg',
     },
     gangplank: {
@@ -2910,7 +2881,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gangplank_0.jpg',
     },
     garen: {
@@ -2998,7 +2968,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg',
     },
     gragas: {
@@ -3085,7 +3054,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg',
     },
     graves: {
@@ -3182,7 +3150,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg',
     },
     hecarim: {
@@ -3269,7 +3236,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg',
     },
     irelia: {
@@ -3358,7 +3324,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg',
     },
     ivern: {
@@ -3455,7 +3420,6 @@ export let ChampionData = {
             cd: [[0], "dot", [0.7]],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg',
     },
     janna: {
@@ -3552,7 +3516,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_0.jpg',
     },
     jarvan: {
@@ -3640,7 +3603,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/JarvanIV_0.jpg',
     },
     jax: {
@@ -3727,7 +3689,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jax_0.jpg',
     },
     jayce: {
@@ -3842,7 +3803,6 @@ export let ChampionData = {
             cd: [[6], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jayce_0.jpg',
     },
     jhin: {
@@ -3928,7 +3888,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_0.jpg',
     },
     jinx: {
@@ -4014,7 +3973,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg',
     },
     kaisa: {
@@ -4102,7 +4060,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg',
     },
     kalista: {
@@ -4188,7 +4145,6 @@ export let ChampionData = {
             cd: [[150,120,90], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kalista_0.jpg',
     },
     karma: {
@@ -4296,7 +4252,6 @@ export let ChampionData = {
             skill: 4
           },
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg',
     },
     karthus: {
@@ -4382,7 +4337,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karthus_0.jpg',
     },
     kassadin: {
@@ -4481,7 +4435,6 @@ export let ChampionData = {
             skill: 4
           },
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kassadin_0.jpg',
     },
     katarina: {
@@ -4581,7 +4534,6 @@ export let ChampionData = {
             note: "magical damage portion | per dagger"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg',
     },
     kayle: {
@@ -4679,7 +4631,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_0.jpg',
     },
     kennen: {
@@ -4776,7 +4727,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg',
     },
     khazix: {
@@ -4863,7 +4813,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Khazix_0.jpg',
     },
     kindred: {
@@ -4962,7 +4911,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg',
     },
     kled: {
@@ -5063,7 +5011,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kled_0.jpg',
     },
     kogmaw: {
@@ -5152,7 +5099,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KogMaw_0.jpg',
     },
     leblanc: {
@@ -5274,7 +5220,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg',
     },
     leesin: {
@@ -5360,7 +5305,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leesin_0.jpg',
     },
     leona: {
@@ -5446,7 +5390,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg',
     },
     lillia: {
@@ -5534,7 +5477,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lillia_0.jpg',
     },
     lissandra: {
@@ -5620,7 +5562,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg',
     },
     lucian: {
@@ -5705,7 +5646,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucian_0.jpg',
     },
     lulu: {
@@ -5791,7 +5731,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg',
     },
     lux: {
@@ -5878,7 +5817,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg',
     },
     malphite: {
@@ -5965,7 +5903,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg',
     },
     malzahar: {
@@ -6066,7 +6003,6 @@ export let ChampionData = {
             note: "null zone, per tick, 0.5s intervals"
           },
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg',
     },
     maokai: {
@@ -6153,7 +6089,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg',
     },
     masterYi: {
@@ -6239,7 +6174,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MasterYi_0.jpg',
     },
     missFortune: {
@@ -6326,7 +6260,6 @@ export let ChampionData = {
             note: "per wave | can critical strike for 1.2x damage | 12/14/16 waves"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_0.jpg',
     },
     mordekaiser: {
@@ -6425,7 +6358,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg',
     },
     morgana: {
@@ -6511,7 +6443,6 @@ export let ChampionData = {
             note: "deals 2.0x damage if target is stunned by this ability"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg',
     },
     nami: {
@@ -6597,7 +6528,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg',
     },
     nasus: {
@@ -6685,7 +6615,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg',
     },
     nautilus: {
@@ -6773,7 +6702,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nautilus_0.jpg',
     },
     neeko: {
@@ -6859,7 +6787,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg',
     },
     nocturne: {
@@ -6947,7 +6874,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nocturne_0.jpg',
     },
     nunu: {
@@ -7035,7 +6961,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg',
     },
     olaf: {
@@ -7119,7 +7044,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Olaf_0.jpg',
     },
     orianna: {
@@ -7201,7 +7125,6 @@ export let ChampionData = {
             cd: [[110,95,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg',
     },
     ornn: {
@@ -7289,7 +7212,6 @@ export let ChampionData = {
             cd: [[140,120,100], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg',
     },
     pantheon: {
@@ -7388,7 +7310,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg',
     },
     poppy: {
@@ -7477,7 +7398,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Poppy_0.jpg',
     },
     pyke: {
@@ -7564,7 +7484,6 @@ export let ChampionData = {
             cd: [[120,100,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg',
     },
     qiyana: {
@@ -7654,7 +7573,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg',
     },
     quinn: {
@@ -7740,7 +7658,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg',
     },
     rakan: {
@@ -7824,7 +7741,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_0.jpg',
     },
     rammus: {
@@ -7912,7 +7828,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg',
     },
     rell: {
@@ -7999,7 +7914,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rell_0.jpg',
     },
     renekton: {
@@ -8098,7 +8012,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renekton_0.jpg',
     },
     rengar: {
@@ -8221,7 +8134,6 @@ export let ChampionData = {
             cd: [[110,90,70], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg',
     },
     riven: {
@@ -8309,7 +8221,6 @@ export let ChampionData = {
             note: "min damage, does not calculate bonus ad riven gets from this ability"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg',
     },
     rumble: {
@@ -8398,7 +8309,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rumble_0.jpg',
     },
     ryze: {
@@ -8489,7 +8399,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg',
     },
     samira: {
@@ -8574,7 +8483,6 @@ export let ChampionData = {
             note: "per shot | does not calculate crit 1.75-2.10x damage | 0.2s per shot"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Samira_0.jpg',
     },
     sejuani: {
@@ -8674,7 +8582,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sejuani_0.jpg',
     },
     senna: {
@@ -8758,7 +8665,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Senna_0.jpg',
     },
     seraphine: {
@@ -8844,7 +8750,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg',
     },
     sett: {
@@ -8934,7 +8839,6 @@ export let ChampionData = {
             cd: [[120,100,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg',
     },
     shaco: {
@@ -9022,7 +8926,6 @@ export let ChampionData = {
             skill: 4
         }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg',
     },
     shen: {
@@ -9125,7 +9028,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shen_0.jpg',
     },
     shyvana: {
@@ -9237,7 +9139,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg',
     },
     singed: {
@@ -9323,7 +9224,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Singed_0.jpg',
     },
     sion: {
@@ -9410,7 +9310,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg',
     },
     sivir: {
@@ -9495,7 +9394,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sivir_0.jpg',
     },
     skarner: {
@@ -9594,7 +9492,6 @@ export let ChampionData = {
             note: "this damage is added on top of the previous skill"
           },
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Skarner_0.jpg',
     },
     sona: {
@@ -9681,7 +9578,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sona_0.jpg',
     },
     soraka: {
@@ -9765,7 +9661,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Soraka_0.jpg',
     },
     swain: {
@@ -9876,7 +9771,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Swain_0.jpg',
     },
     sylas: {
@@ -9976,7 +9870,6 @@ export let ChampionData = {
             cd: [[0], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sylas_0.jpg',
     },
     syndra: {
@@ -10073,7 +9966,6 @@ export let ChampionData = {
             cd: [[120,100,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg',
     },
     tahmKench: {
@@ -10161,7 +10053,6 @@ export let ChampionData = {
             cd: [[140,130,120], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TahmKench_0.jpg',
     },
     taliyah: {
@@ -10247,7 +10138,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taliyah_0.jpg',
     },
     talon: {
@@ -10346,7 +10236,6 @@ export let ChampionData = {
             cd: [[100,80,60], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Talon_0.jpg',
     },
     taric: {
@@ -10434,7 +10323,6 @@ export let ChampionData = {
             cd: [[180,150,120], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taric_0.jpg',
     }, 
     teemo: {
@@ -10531,7 +10419,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg',
     },
     thresh: {
@@ -10616,7 +10503,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg',
     },
     tristana: {
@@ -10701,7 +10587,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tristana_0.jpg',
     },
     trundle: {
@@ -10789,7 +10674,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Trundle_0.jpg',
     },
     tryndamere: {
@@ -10873,7 +10757,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg',
     },
     twistedFate: {
@@ -10979,7 +10862,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg',
     },
     twitch: {
@@ -11077,7 +10959,6 @@ export let ChampionData = {
             cd: [[90], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Twitch_0.jpg',
     },
     udyr: {
@@ -11164,7 +11045,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Udyr_0.jpg',
     },
     urgot: {
@@ -11250,7 +11130,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Urgot_0.jpg',
     },
     varus: {
@@ -11348,7 +11227,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Varus_0.jpg',
     },
     vayne: {
@@ -11434,7 +11312,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg',
     },
     veigar: {
@@ -11519,7 +11396,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Veigar_0.jpg',
     },
     velkoz: {
@@ -11618,7 +11494,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Velkoz_0.jpg',
     },
     vi: {
@@ -11705,7 +11580,6 @@ export let ChampionData = {
             cd: [[120,100,80], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg',
     },
     viego: {
@@ -11791,7 +11665,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viego_0.jpg',
     },
     viktor: {
@@ -11911,7 +11784,6 @@ export let ChampionData = {
             skill: 4
           },
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viktor_0.jpg',
     },
     vladmimir: {
@@ -12000,7 +11872,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vladimir_0.jpg',
     },
     volibear: {
@@ -12090,7 +11961,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Volibear_0.jpg',
     },
     warwick: {
@@ -12179,7 +12049,6 @@ export let ChampionData = {
             note: "this ability triggers on hit effects 3 times (uncalculated)"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg',
     },
     wukong: {
@@ -12267,7 +12136,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MonkeyKing_0.jpg',
     },
     xayah: {
@@ -12353,7 +12221,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xayah_0.jpg',
     },
     xerath: {
@@ -12439,7 +12306,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg',
     },
     xinZhao: {
@@ -12538,7 +12404,6 @@ export let ChampionData = {
             note: "deals current hp damage calculated as max hp damage (15%)"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/XinZhao_0.jpg',
     },
     yasuo: {
@@ -12623,7 +12488,6 @@ export let ChampionData = {
             cd: [[80,55,30], "single"],
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg',
     },
     yone: {
@@ -12734,7 +12598,6 @@ export let ChampionData = {
             note: "magical portion"
           },
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg',
     },
     yorick: {
@@ -12846,7 +12709,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yorick_0.jpg',
     },
     yuumi: {
@@ -12932,7 +12794,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg',
     },
     zac: {
@@ -13021,7 +12882,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg',
     },
     zed: {
@@ -13107,7 +12967,6 @@ export let ChampionData = {
             note: "base damage, this ability deals an additional 36/40/55% of the damage zed dealt to the target while they were marked after the mark expires"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg',
     },
     ziggs: {
@@ -13196,7 +13055,6 @@ export let ChampionData = {
             note: "deals 1.5x damage to enemies in the center of the explosion"
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ziggs_0.jpg',
     },
     zilean: {
@@ -13280,7 +13138,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zilean_0.jpg',
     },
     zoe: {
@@ -13370,7 +13227,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg',
     },
     zyra: {
@@ -13478,7 +13334,6 @@ export let ChampionData = {
             skill: 4
           }
         ],
-        items: [{},{},{},{},{},{}],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zyra_0.jpg',
     },
 }
