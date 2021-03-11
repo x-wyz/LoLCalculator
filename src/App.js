@@ -44,6 +44,8 @@ class App extends Component {
     this.parseImport = this.parseImport.bind(this);
 
     this.setup = this.setup.bind(this);
+
+    this.applyBuffs = this.applyBuffs.bind(this);
   }
 
   setup(){
@@ -597,6 +599,58 @@ class App extends Component {
     })
   }
 
+  applyBuffs(ally, enemy){
+    const allyBuffs = [];
+    const enemyBuffs = [];
+
+    ally.items.forEach(item => {
+      if (item.attack !== undefined) {
+        if (item.attack.type === "buff" && allyBuffs.filter(x => x.name === item.attack.name && x.type === "buff").length === 0) {
+          allyBuffs.push({...item.attack})
+        }
+      }
+
+      if (item.debuff !== undefined) {
+        if (item.debuff.type === "debuff" && enemyBuffs.filter(x => x.name === item.debuff.name && x.type === "debuff").length === 0)  {
+          enemyBuffs.push({...item.debuff})
+        }
+      }
+
+      if (item.buff !== undefined) {
+        if (item.buff.type === "buff" && allyBuffs.filter(x => x.name === item.buff.name && x.type === "buff").length === 0) {
+          allyBuffs.push({...item.buff})
+        }
+      }
+    })
+
+    enemy.items.forEach(item => {
+      if (item.attack !== undefined) {
+        if (item.attack.type === "buff" && enemyBuffs.filter(x => x.name === item.attack.name && x.type === "buff").length === 0) {
+          enemyBuffs.push({...item.attack})
+        }
+      }
+
+      if (item.debuff !== undefined) {
+        if (item.debuff.type === "debuff" && allyBuffs.filter(x => x.name === item.debuff.name && x.type === "debuff").length === 0)  {
+          allyBuffs.push({...item.debuff})
+        }
+      }
+
+      if (item.buff !== undefined) {
+        if (item.buff.type === "buff" && enemyBuffs.filter(x => x.name === item.buff.name && x.type === "buff").length === 0) {
+          enemyBuffs.push({...item.buff})
+        }
+      }
+    })
+
+    ally.buffs = allyBuffs;
+    enemy.buffs = enemyBuffs;
+
+    console.log(enemyBuffs)
+    return [ally, enemy];
+
+  }
+
   render(){
     const { mainAlly, mainEnemy, showExport, showSidebar, savedList } = this.state;
 
@@ -604,6 +658,10 @@ class App extends Component {
       this.setup();
       return <div>Please wait...</div>
     }
+
+    const modifiedChampions = this.applyBuffs( mainAlly, mainEnemy );
+
+    console.log(modifiedChampions)
 
     return (
       <React.Fragment>
