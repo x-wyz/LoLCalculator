@@ -71,12 +71,28 @@ export const ItemsData = {
 			attackspeed: 12
 		}
 	},
-	darkSeal: {
+	darkSealZero: {
 		img: 1082,
 		tier: 'basic',
 		stats: {
 			hp: 40,
 			ap: 15
+		}
+	},
+	darkSealHalf: {
+		img: 1082,
+		tier: 'basic',
+		stats: {
+			hp: 40,
+			ap: 40
+		}
+	},
+	darkSealMax: {
+		img: 1082,
+		tier: 'basic',
+		stats: {
+			hp: 40,
+			ap: 65
 		}
 	},
 	longSword: {
@@ -153,17 +169,25 @@ export const ItemsData = {
 			mana: 250
 		}
 	},
-	tearOfTheGoddess: {
+	tearOfTheGoddessZero: {
 		img: 3070,
 		tier: "basic",
 		stats: {
 			mana: 240
 		},
-		effect: {
-			type: 'stats',
-			stats: {
-				mana: 360
-			}
+	},
+	tearOfTheGoddessHalf: {
+		img: 3070,
+		tier: "basic",
+		stats: {
+			mana: 420
+		}
+	},
+	tearOfTheGoddessMax: {
+		img: 3070,
+		tier: "basic",
+		stats: {
+			mana: 600
 		}
 	},
 	aegisOfTheLegion: {
@@ -311,8 +335,10 @@ export const ItemsData = {
 			ad: 20,
 			resist: 35
 		},
-		effect: {
-			passive: "lifeline1"
+		defense: {
+			type: "shield",
+			base: 110,
+			max: 280
 		}
 	},
 	hextechAlternator: {
@@ -375,7 +401,8 @@ export const ItemsData = {
 		tier: "advance",
 		stats: {
 			ap: 20,
-			hp: 150
+			hp: 150,
+			omnivamp: 5
 		}
 	},
 	lostChapter: {
@@ -429,6 +456,11 @@ export const ItemsData = {
 		tier: "advance",
 		stats: {
 			attackspeed: 25
+		},
+		attack: {
+			type: "buff",
+			name: "wrath",
+			item: "rageknife"
 		}
 	},
 	recurveBow: {
@@ -442,6 +474,11 @@ export const ItemsData = {
 			damage: 15,
 			max: 0,
 			current: 0
+		},
+		attack: {
+			type: "buff",
+			name: "recurve",
+			item: "recurve bow"
 		}
 	},
 	runesteelSpaulder: {
@@ -452,18 +489,28 @@ export const ItemsData = {
 			ad: 6
 		}
 	},
-	seekersArmguard: {
+	seekersArmguardZero: {
 		img: 3191,
 		tier: "advance",
 		stats: {
 			ap: 20,
 			armor: 15
-		},
-		effect: {
-			type: 'stats',
-			stats: {
-				armor: 30
-			}
+		}
+	},
+	seekersArmguardHalf: {
+		img: 3191,
+		tier: "advance",
+		stats: {
+			ap: 20,
+			armor: 30
+		}
+	},
+	seekersArmguardMax: {
+		img: 3191,
+		tier: "advance",
+		stats: {
+			ap: 20,
+			armor: 45
 		}
 	},
 	serratedDirk: {
@@ -484,6 +531,9 @@ export const ItemsData = {
 			base: 0,
 			max: 0,
 			baseAd: 100
+		},
+		uncalculated: {
+			note: "Damage from sheen is not included in basic attack calculations."
 		}
 	},
 	spectresCowl: {
@@ -517,7 +567,7 @@ export const ItemsData = {
 			lifesteal: 10
 		}
 	},
-	verdantBarrier: {
+	verdantBarrierZero: {
 		img: 4632,
 		tier: "advance",
 		stats: {
@@ -525,11 +575,32 @@ export const ItemsData = {
 			resist: 25
 		}
 	},
+	verdantBarrierHalf: {
+		img: 4632,
+		tier: "advance",
+		stats: {
+			ap: 25,
+			resist: 32.5
+		}
+	},
+	verdantBarrierMax: {
+		img: 4632,
+		tier: "advance",
+		stats: {
+			ap: 25,
+			resist: 40
+		}
+	},
 	wardensMail: {
 		img: 3082,
 		tier: "advance",
 		stats: {
 			armor: 40
+		},
+		debuff: {
+			type: "debuff",
+			name: "rocksolid",
+			item: "warden's mail"
 		}
 	},
 	watchfulWardstone: {
@@ -560,21 +631,35 @@ export const ItemsData = {
 		stats: {
 			resist: 60,
 			hp: 350
+		},
+		uncalculated: {
+			note: "This champion has an abyssal mask that increases damage they take by 10% when this champion immobilize them."
 		}
 	},
-	archangelsStaff: {
+	archangelsStaffZero: {
 		img: 3003,
 		tier: "legendary",
 		stats: {
 			ap: 65,
 			mana: 500
 		},
-		effect: {
-			type: 'stats',
-			stats: {
-				mana: 360,
-				unique: "3 mana"
-			}
+		buff: {
+			type: "buff",
+			name: "archangel",
+			item: "archangel's staff"
+		}
+	},
+	archangelsStaffHalf: {
+		img: 3003,
+		tier: "legendary",
+		stats: {
+			ap: 65,
+			mana: 680
+		},
+		buff: {
+			type: "buff",
+			name: "archangel",
+			item: "archangel's staff"
 		}
 	},
 	ardentCenser: {
@@ -600,6 +685,9 @@ export const ItemsData = {
 			abilityHaste: 25,
 			ad: 40,
 			hp: 300
+		},
+		uncalculated: {
+			note: "This champion has a black cleaver currently does not take into account the armor reduction this item provides."
 		}
 	},
 	blackMistScythe: {
@@ -618,8 +706,10 @@ export const ItemsData = {
 			attackspeed: 25,
 			lifesteal: 12
 		},
-		effect: {
-			basic: "ruinedking"
+		attack: {
+			type: "buff",
+			name: "ruinedking",
+			item: "blade of the ruined king"
 		}
 	},
 	bloodthirster: {
@@ -663,6 +753,11 @@ export const ItemsData = {
 			ap: 75,
 			abilityHaste: 30,
 			hp: 200
+		},
+		buff: {
+			type: "buff",
+			name: "spelldance",
+			item: "cosmic drive"
 		}
 	},
 	deadMansPlate: {
@@ -671,6 +766,15 @@ export const ItemsData = {
 		stats: {
 			armor: 40,
 			hp: 475
+		},
+		effect: {
+			type: "damage",
+			damage: "magical",
+			base: 100,
+			max: 100
+		},
+		uncalculated: {
+			note: "Dead Man's Plate damage is always treated as if the user has 100 stacks."
 		}
 	},
 	deathsDance: {
@@ -680,14 +784,34 @@ export const ItemsData = {
 			armor: 40,
 			abilityHaste: 15,
 			ad: 50
+		},
+		uncalculated: {
+			note: "Currently does not take into account the bleed and damage reduction this item provides."
 		}
 	},
-	demonicEmbrace: {
+	demonicEmbraceZero: {
 		img: 4637,
 		tier: "legendary",
 		stats: {
 			ap: 70,
 			hp: 350
+		},
+		effect: {
+			damage: "magical",
+			type: "damage",
+			base: 0,
+			max: 0,
+			eMHP: 4.8
+		}
+	},
+	demonicEmbraceOne: {
+		img: 4637,
+		tier: "legendary",
+		stats: {
+			ap: 70,
+			hp: 350,
+			armor: 10,
+			resist: 10
 		},
 		effect: {
 			damage: "magical",
@@ -721,20 +845,33 @@ export const ItemsData = {
 			max: 0,
 			baseAd: 100,
 			bAd: 40
+		},
+		uncalculated: {
+			note: "Damage from sheen is not included in basic attack calculations."
 		}
 	},
-	forceOfNature: {
+	forceOfNatureZero: {
 		img: 4401,
 		tier: "legendary",
 		stats: {
 			hp: 350,
 			resist: 60
-		},
-		effect: {
-			type: "stats",
-			stats: {
-				resist: 20
-			}
+		}
+	},
+	forceOfNatureHalf: {
+		img: 4401,
+		tier: "legendary",
+		stats: {
+			hp: 350,
+			resist: 70
+		}
+	},
+	forceOfNatureMax: {
+		img: 4401,
+		tier: "legendary",
+		stats: {
+			hp: 350,
+			resist: 80
 		}
 	},
 	frozenHeart: {
@@ -744,6 +881,11 @@ export const ItemsData = {
 			abilityHaste: 20,
 			armor: 80,
 			mana: 400
+		},
+		debuff: {
+			type: "debuff",
+			name: "rocksolid",
+			item: "frozen heart"
 		}
 	},
 	gargoyleStoneplate: {
@@ -753,6 +895,12 @@ export const ItemsData = {
 			armor: 60,
 			resist: 60,
 			abilityHaste: 26
+		},
+		defense: {
+			type: "shield",
+			base: 100,
+			max: 100,
+			bhp: 100
 		}
 	},
 	guardianAngel: {
@@ -770,8 +918,10 @@ export const ItemsData = {
 			attackspeed: 40,
 			critChance: 20
 		},
-		effect: {
-			basic: "rageblade"
+		attack: {
+			type: "buff",
+			name: "wrath2",
+			item: "guinsoo's rageblade"
 		}
 	},
 	horizonFocus: {
@@ -780,8 +930,8 @@ export const ItemsData = {
 		stats: {
 			ap: 100
 		},
-		effect: {
-			conditional: "hypershot"
+		uncalculated: {
+			note: "This champion has horizon focus damage dealt to target is increased by 10% if target is hit by a non-target ability at a distance greater than 700 units or are immobilize by this champion."
 		}
 	},
 	infinityEdge: {
@@ -791,8 +941,10 @@ export const ItemsData = {
 			ad: 70,
 			critChance: 20
 		},
-		effect: {
-			basic: "infinityEdge"
+		attack: {
+			type: "buff",
+			name: "infinity",
+			item: "infinity edge"
 		}
 	},
 	knightsVow: {
@@ -801,9 +953,6 @@ export const ItemsData = {
 		stats: {
 			abilityHaste: 10,
 			hp: 400
-		},
-		effect: {
-			conditional: "sacrifice"
 		}
 	},
 	lichBane: {
@@ -819,6 +968,9 @@ export const ItemsData = {
 			max: 0,
 			baseAd: 150,
 			ap: 40
+		},
+		uncalculated: {
+			note: "Damage from sheen is not included in basic attack calculations."
 		}
 	},
 	lordDominiksRegards: {
@@ -829,8 +981,10 @@ export const ItemsData = {
 			ad: 35,
 			critChance: 20
 		},
-		effect: {
-			conditional: "giantSlayer"
+		buff: {
+			item: "lord dominik's regards",
+			name: "giantslayer",
+			type: "buff"
 		}
 	},
 	mawOfMalmortius: {
@@ -886,8 +1040,10 @@ export const ItemsData = {
 			attackspeed: 50,
 			ap: 100
 		},
-		effect: {
-			basic: "nashors"
+		attack: {
+			type: "buff",
+			name: "nashors",
+			item: "nashors tooth"
 		}
 	},
 	navoriQuickblades: {
@@ -921,8 +1077,10 @@ export const ItemsData = {
 		stats: {
 			ap: 120
 		},
-		effect: {
-			boost: "deathcap"
+		buff: {
+			item: "rabadon's deathcap",
+			type: "buff",
+			name: "deathcap"
 		}
 	},
 	randuinsOmen: {
@@ -932,6 +1090,11 @@ export const ItemsData = {
 			abilityHaste: 10,
 			armor: 80,
 			hp: 250
+		},
+		debuff: {
+			type: "debuff",
+			name: "rocksolid",
+			item: "randuinsOmen"
 		}
 	},
 	rapidFirecannon: {
@@ -946,6 +1109,9 @@ export const ItemsData = {
 			type: "damage",
 			base: 120,
 			max: 120
+		},
+		uncalculated: {
+			note: "Basic calculation does not include damage provided by this item."
 		}
 	},
 	ravenousHydra: {
@@ -963,6 +1129,13 @@ export const ItemsData = {
 		stats: {
 			abilityHaste: 15,
 			hp: 200
+		},
+		effect: {
+			type: "damage",
+			base: 0,
+			max: 0,
+			eMHP: 10,
+			damage: "true"
 		}
 	},
 	runaansHurricane: {
@@ -981,12 +1154,21 @@ export const ItemsData = {
 			hp: 350
 		}
 	},
-	sanguineBlade: {
+	sanguineBladeOff: {
 		img: 3181,
 		tier: "legendary",
 		stats: {
 			ad: 50,
 			lethality: 10
+		}
+	},
+	sanguineBladeOn: {
+		img: 3181,
+		tier: "legendary",
+		stats: {
+			ad: 50,
+			lethality: 18,
+			attackspeed: 37
 		}
 	},
 	serpentsFang: {
@@ -1054,7 +1236,13 @@ export const ItemsData = {
 			ad: 40,
 			attackspeed: 15,
 			critChance: 20
-		}
+		},
+		effect: {
+			damage: "magical",
+			type: "damage",
+			base: 120,
+			max: 120
+		},
 	},
 	theCollector: {
 		img: 6676,
@@ -1063,6 +1251,11 @@ export const ItemsData = {
 			ad: 55,
 			critChance: 20,
 			lethality: 12
+		},
+		buff: {
+			type: "buff",
+			name: "collect",
+			item: "the collector"
 		}
 	},
 	thornmail: {
@@ -1071,6 +1264,13 @@ export const ItemsData = {
 		stats: {
 			armor: 60,
 			hp: 350
+		},
+		effect: {
+			type:"damage",
+			damage: "magical",
+			base: 10,
+			max: 10,
+			bAr: 10
 		}
 	},
 	titanicHydra: {
@@ -1080,8 +1280,13 @@ export const ItemsData = {
 			ad: 30,
 			hp: 500
 		},
-		effect: {
-			boost: 'titanic'
+		attack: {
+			type: "buff",
+			name: "titanic",
+			item: "titanic hydra"
+		},
+		uncalculated: {
+			note: "Titanic treats champions as if they were melee. You should not build this item on ranged champions."
 		}
 	},
 	umbralGlaive: {
@@ -1125,7 +1330,15 @@ export const ItemsData = {
 			resist: 50
 		},
 		effect: {
-			basic: "witsEnd"
+			type: "damage",
+			damage: "magical",
+			base: 15,
+			max: 80
+		},
+		attack: {
+			type: "buff",
+			name: "fray",
+			item: "wit's end"
 		}
 	},
 	youmuusGhostblade: {
@@ -1634,12 +1847,20 @@ export const ItemsData = {
 				attackspeed: 10
 			}
 		},
+		attack: {
+			type: "buff",
+			name: "trinity",
+			item: "trinity force"
+		},
 		effect: {
 			damage: "physical",
 			type: "damage",
 			base: 0,
 			max: 0,
 			baseAd: 200
+		},
+		uncalculated: {
+			note: "Base attack damage buff included in basic attack calculations. Item damage calc based on 0 stacks."
 		}
 	},
 	turboChemtank: {
