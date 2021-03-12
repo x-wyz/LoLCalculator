@@ -83,6 +83,7 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 	const skillDamage = skill.type === "damage" ? skill.base[skillLv] : 0;
 	const totalDamage = scaleLv + skillDamage + scaleAp + scaleAd + scaleBAD + scaleEMHP + scaleEMHPs + scaleMHP;
 
+	// If this formula is incorrect also change the one in calc basic
 	const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
 	const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
 	const multiplier = skill.damage === "physical" ? (100 / (100 + eArmor)) : skill.damage === "magical" ? (100 / (100 + eResist)) : skill.damage === "true" ? 1 : 0;

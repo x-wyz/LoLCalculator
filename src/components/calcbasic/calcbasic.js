@@ -4,69 +4,154 @@ import './calcbasic.css';
 
 const CalcBasic = ({ ally, enemy }) => {
 
-	let basicDamage = ally.attack * 100/(100+enemy.armor);
-	basicDamage = basicDamage.toFixed(0);
+	let ap = ally.ap;
 
-	let basicCritical = basicDamage * (ally.critDamage / 100);
-	basicCritical = basicCritical.toFixed(0)
-
-	let critChance = ally.critChance < 0 ? 0 : ally.critChance > 100 ? 100 : ally.critChance;
-
-	let avgDamage = parseInt(basicDamage) +((basicCritical - basicDamage)/100) * critChance;
-	let average = Math.ceil(enemy.hp / avgDamage);
+	// If this formula is incorrect also change the one in calc skill
+	const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
+	const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
+	let enemyArmorMultiplier = 100/(100+eArmor);
+	let enemyResistMultiplier = 100/(100+eResist);
 
 	// potential on-hit effects
-
-	let onHit = {
-		wrath: false,
-		recurve: false,
-		ruinedking: false,
-		wrath2: false,
-		infinity: false,
-		nashors: false,
-		titanic: false,
-		fray: false,
-		rocksolid: false,
-	}
+	const items = [];
+	let infinity = false;
+	let ruinedking = false;
+	let rocksolid = 0;
+	let recurve = 0;
+	let nashors = 0;
+	let fray = 0;
+	let titanic = 0;
+	let wrath = 0;
 
 	if (ally.itemEffects !== undefined) {
 		ally.itemEffects.forEach(buff => {
-			onHit[buff.name] = true;
+			switch(buff.name){
+				case "infinity":
+					infinity = ally.critChance >= 60 ? true : false;
+					items.push(buff.item);
+					break;
+				case "deathcap":
+					ap *= 1.3;
+					break;
+				case "recurve":
+					recurve = 15 * enemyArmorMultiplier
+					items.push(buff.item);
+					break;
+				case "nashors":
+					nashors = ((15 + .2 * ap) * enemyResistMultiplier);
+					items.push(buff.item);
+					break;
+				case "fray":
+					fray = ((15 + 65 / 17 * (ally.lv - 1)) * enemyResistMultiplier)
+					items.push(buff.item);
+					break;
+				case "rocksolid":
+					rocksolid = (5 * (enemy.hp / 1000)).toFixed(0);
+					items.push(buff.item);
+					break;
+				case "ruinedking":
+					ruinedking = true;
+					items.push(buff.item);
+					break;
+				case "titanic":
+					titanic = (5 + (ally.hp * 0.015)) * enemyArmorMultiplier;
+					items.push(buff.item);
+					break;
+				case "wrath":
+					wrath = 1;
+					items.push(buff.item);
+					break;
+				case "wrath2":
+					wrath = 2;
+					items.push(buff.item);
+					break;
+				default:
+					break;
+			}
 		})
 	}
-	
-	console.log(onHit)
+
+	let critDamage = infinity === true ? ally.critDamage + 35 : ally.critDamage;
+
+	let basicDamage = ally.attack * enemyArmorMultiplier;
+	let basicCritical = basicDamage * (critDamage / 100);
+
+	let critChance = ally.critChance < 0 ? 0 : ally.critChance > 100 ? 100 : ally.critChance;
+
+	let avgDamage = parseInt(basicDamage) + ((basicCritical - basicDamage)/100) * critChance;
+
+	let normalDamage = ((basicDamage + recurve + titanic + fray + nashors) - rocksolid).toFixed(0);
+	let criticalDamage = ((basicCritical + recurve + titanic + fray + nashors) - rocksolid).toFixed(0);
+	let averageDamage = critChance === 0 ? normalDamage : ((avgDamage + recurve + titanic + fray + nashors) - rocksolid).toFixed(0);
+
+	let normalCount = 0;
+	let criticalCount = 0;
+	let averageCount = 0;
+
+	for (let enemyLife = enemy.hp; enemyLife > 0; ){
+		if (ruinedking) {
+			normalCount++;
+			enemyLife -= (parseInt(normalDamage) + ((enemyLife * .1) * enemyArmorMultiplier))
+		}
+		else {
+			normalCount++;
+			enemyLife -= normalDamage;
+		}
+	}
+
+	for (let enemyLife = enemy.hp; enemyLife > 0; ){
+		if (ruinedking) {
+			criticalCount++;
+			enemyLife -= (parseInt(criticalDamage) + ((enemyLife * .1) * enemyArmorMultiplier))
+		}
+		else {
+			criticalCount++;
+			enemyLife -= criticalDamage;
+		}
+	}
+
+	for (let enemyLife = enemy.hp; enemyLife > 0; ){
+		if (ruinedking) {
+			averageCount++;
+			console.log(typeof averageDamage)
+			enemyLife -= (parseInt(averageDamage) + ((enemyLife * .1) * enemyArmorMultiplier))
+		}
+		else {
+			averageCount++;
+			enemyLife -= averageDamage;
+		}
+	}
 
 	return (
 		<div className="calc-basic-container">
 			<div className="basic-calculations">
 				<div className="calc-basic-damage cb-norm">
 					<h4 className="calc-basic-header">Normal</h4>
-					<p className="calc-basic-content">{basicDamage} <span className="calc-basic-percentage">[ {((basicDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
+					<p className="calc-basic-content">{normalDamage} <span className="calc-basic-percentage">[ {((normalDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
 				</div>
 				<div className="calc-basic-damage calc-basic-count">
 					<h4 className="calc-basic-header">Count</h4>
-					<p className="calc-basic-content">{Math.ceil(enemy.hp / basicDamage)}</p>
+					<p className="calc-basic-content">{normalCount}</p>
 				</div>
 			</div>
 			<div className="basic-calculations">
 				<div className="calc-basic-damage cb-crit">
 					<h4 className="calc-basic-header">Crit</h4>
-					<p className="calc-basic-content">{basicCritical} <span className="calc-basic-percentage">[ {((basicCritical / enemy.hp) * 100).toFixed(1)}% ]</span></p>
+					<p className="calc-basic-content">{criticalDamage} <span className="calc-basic-percentage">[ {((criticalDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
 				</div>
 				<div className="calc-basic-damage calc-basic-count">
 					<h4 className="calc-basic-header">Count</h4>
-					<p className="calc-basic-content">{Math.ceil(enemy.hp / basicCritical)}</p>
+					<p className="calc-basic-content">{criticalCount}</p>
 				</div>
 			</div>
 			<div className="basic-calculations">
 				<div className="calc-basic-damage cb-avg">
 					<h4 className="calc-basic-header">Average</h4>
-					<p className="calc-basic-content">{avgDamage.toFixed(0)} <span className="calc-basic-percentage">[ {((avgDamage / enemy.hp)*100).toFixed(1)}% ]</span></p>
+					<p className="calc-basic-content">{averageDamage} <span className="calc-basic-percentage">[ {((averageDamage / enemy.hp)*100).toFixed(1)}% ]</span></p>
 				</div>
 				<div className="calc-basic-damage calc-basic-count">
 					<h4 className="calc-basic-header">Count</h4>
-					<p className="calc-basic-content">{average}</p>
+					<p className="calc-basic-content">{averageCount}</p>
 				</div>
 			</div>
 		</div>

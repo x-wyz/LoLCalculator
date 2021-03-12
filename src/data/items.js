@@ -735,6 +735,9 @@ export const ItemsData = {
 			type: "buff",
 			name: "ruinedking",
 			item: "blade of the ruined king"
+		},
+		uncalculated: {
+			note: "Blade of the ruined king currently treats all champions as if they were melee."
 		}
 	},
 	bloodthirster: {
