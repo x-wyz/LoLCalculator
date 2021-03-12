@@ -21,6 +21,7 @@ class App extends Component {
       championChanged: false,
       showExport: false,
       showSidebar: false,
+      modified: false,
       savedList: [],
       mainAlly: {},
       mainEnemy: {}
@@ -49,18 +50,19 @@ class App extends Component {
   }
 
   setup(){
-    this.updateChampion("annie", "mainAlly")
-    this.updateChampion("ahri", "mainEnemy")
+    this.updateChampion("annie", "mainAlly");
+    this.updateChampion("ahri", "mainEnemy");
   }
 
   targetDummy(){
     this.setState({
       mainEnemy: {
         name: "target",
-        hp: 1000,
+        hp: 400,
         armor: 0,
         resist: 0
-      }
+      },
+      modified: true
     })
   }
 
@@ -69,10 +71,10 @@ class App extends Component {
     val = parseInt(val.target.value);
 
     if (stat === "hp") {
-      val = val > 10000 ? 10000 : val < 10 ? 10 : val;
+      val = val > 8000 ? 8000 : val < 10 ? 10 : val;
     }
     else {
-      val = val > 2500 ? 2500 : val < 0 ? 0 : val;
+      val = val > 1000 ? 1000 : val < 0 ? 0 : val;
     }
 
     mainEnemy[stat] = val;
@@ -288,7 +290,8 @@ class App extends Component {
 
   setChampion(champ, target){
     this.setState({
-      [target === 0 ? "mainAlly" : "mainEnemy"]: champ
+      [target === 0 ? "mainAlly" : "mainEnemy"]: champ,
+      modified: true
     })
   }
 
@@ -488,7 +491,8 @@ class App extends Component {
       clonedChampion.items = [{}, {}, {}, {}, {}, {}];
 
       this.setState({
-        [target === "mainAlly" ? "mainAlly": "mainEnemy"]: clonedChampion
+        [target === "mainAlly" ? "mainAlly": "mainEnemy"]: clonedChampion,
+        modified: true
       })
     }
     catch {
@@ -595,11 +599,18 @@ class App extends Component {
     }
 
     this.setState({
-      [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champion
+      [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champion,
+      modified: true
     })
   }
 
-  applyBuffs(ally, enemy){
+  applyBuffs(){
+    const { mainAlly:ally, mainEnemy:enemy, modified } = this.state;
+
+    if (modified === false){
+      return undefined;
+    }
+
     const allyBuffs = [];
     const enemyBuffs = [];
 
@@ -623,45 +634,52 @@ class App extends Component {
       }
     })
 
-    enemy.items.forEach(item => {
-      if (item.attack !== undefined) {
-        if (item.attack.type === "buff" && enemyBuffs.filter(x => x.name === item.attack.name && x.type === "buff").length === 0) {
-          enemyBuffs.push({...item.attack})
+    if (enemy.name !== "target") {
+      enemy.items.forEach(item => {
+        if (item.attack !== undefined) {
+          if (item.attack.type === "buff" && enemyBuffs.filter(x => x.name === item.attack.name && x.type === "buff").length === 0) {
+            enemyBuffs.push({...item.attack})
+          }
         }
-      }
 
-      if (item.debuff !== undefined) {
-        if (item.debuff.type === "debuff" && allyBuffs.filter(x => x.name === item.debuff.name && x.type === "debuff").length === 0)  {
-          allyBuffs.push({...item.debuff})
+        if (item.debuff !== undefined) {
+          if (item.debuff.type === "debuff" && allyBuffs.filter(x => x.name === item.debuff.name && x.type === "debuff").length === 0)  {
+            allyBuffs.push({...item.debuff})
+          }
         }
-      }
 
-      if (item.buff !== undefined) {
-        if (item.buff.type === "buff" && enemyBuffs.filter(x => x.name === item.buff.name && x.type === "buff").length === 0) {
-          enemyBuffs.push({...item.buff})
+        if (item.buff !== undefined) {
+          if (item.buff.type === "buff" && enemyBuffs.filter(x => x.name === item.buff.name && x.type === "buff").length === 0) {
+            enemyBuffs.push({...item.buff})
+          }
         }
-      }
+      })
+    }
+
+    ally.itemEffects = allyBuffs;
+    enemy.itemEffects = enemyBuffs;
+
+    this.setState({
+      mainEnemy: enemy,
+      mainAlly: ally,
+      modified: false
     })
+  }
 
-    ally.buffs = allyBuffs;
-    enemy.buffs = enemyBuffs;
+  componentDidMount(){
+    this.setup();
+  }
 
-    console.log(enemyBuffs)
-    return [ally, enemy];
-
+  componentDidUpdate(){
+    this.applyBuffs();
   }
 
   render(){
     const { mainAlly, mainEnemy, showExport, showSidebar, savedList } = this.state;
 
     if ( mainEnemy.name === undefined || mainAlly.name === undefined) {
-      this.setup();
       return <div>Please wait...</div>
     }
-
-    const modifiedChampions = this.applyBuffs( mainAlly, mainEnemy );
-
-    console.log(modifiedChampions)
 
     return (
       <React.Fragment>

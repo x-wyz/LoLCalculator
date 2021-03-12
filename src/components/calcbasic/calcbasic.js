@@ -15,6 +15,28 @@ const CalcBasic = ({ ally, enemy }) => {
 	let avgDamage = parseInt(basicDamage) +((basicCritical - basicDamage)/100) * critChance;
 	let average = Math.ceil(enemy.hp / avgDamage);
 
+	// potential on-hit effects
+
+	let onHit = {
+		wrath: false,
+		recurve: false,
+		ruinedking: false,
+		wrath2: false,
+		infinity: false,
+		nashors: false,
+		titanic: false,
+		fray: false,
+		rocksolid: false,
+	}
+
+	if (ally.itemEffects !== undefined) {
+		ally.itemEffects.forEach(buff => {
+			onHit[buff.name] = true;
+		})
+	}
+	
+	console.log(onHit)
+
 	return (
 		<div className="calc-basic-container">
 			<div className="basic-calculations">

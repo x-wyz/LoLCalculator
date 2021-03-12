@@ -208,7 +208,7 @@ export const ItemsData = {
 	},
 	bamisCinder: {
 		img: 6660,
-		tier: "advance",
+		tier: "mythic",
 		stats: {
 			hp: 300
 		},
@@ -219,6 +219,11 @@ export const ItemsData = {
 			max: 12,
 
 			bHp: 1
+		},
+		mythic: {
+			stats: {
+				
+			}
 		}
 	},
 	bandleglassMirror: {
@@ -356,7 +361,7 @@ export const ItemsData = {
 	},
 	ironspikeWhip: {
 		img: 6029,
-		tier: "advance",
+		tier: "mythic",
 		stats: {
 			ad: 30
 		},
@@ -366,6 +371,11 @@ export const ItemsData = {
 			base: 0,
 			max: 0,
 			tAd: 75
+		},
+		mythic: {
+			stats: {
+				
+			}
 		}
 	},
 	kindleGem: {
@@ -398,20 +408,30 @@ export const ItemsData = {
 	},
 	leechingLeer: {
 		img: 4635,
-		tier: "advance",
+		tier: "mythic",
 		stats: {
 			ap: 20,
 			hp: 150,
 			omnivamp: 5
+		},
+		mythic: {
+			stats: {
+				
+			}
 		}
 	},
 	lostChapter: {
 		img: 3802,
-		tier: "advance",
+		tier: "mythic",
 		stats: {
 			mana: 300,
 			ap: 40,
 			abilityHaste: 10
+		},
+		mythic: {
+			stats: {
+				
+			}
 		}
 	},
 	negatronCloak: {
@@ -423,10 +443,15 @@ export const ItemsData = {
 	},
 	noonquiver: {
 		img: 6670,
-		tier: "advance",
+		tier: "mythic",
 		stats: {
 			ad: 30,
 			attackspeed: 15
+		},
+		mythic: {
+			stats: {
+				
+			}
 		}
 	},
 	oblivionOrb: {
@@ -941,7 +966,7 @@ export const ItemsData = {
 			ad: 70,
 			critChance: 20
 		},
-		attack: {
+		buff: {
 			type: "buff",
 			name: "infinity",
 			item: "infinity edge"
@@ -1322,7 +1347,7 @@ export const ItemsData = {
 		}
 	},
 	witsEnd: {
-		img: 3075,
+		img: 3091,
 		tier: "legendary",
 		stats: {
 			ad: 30,
