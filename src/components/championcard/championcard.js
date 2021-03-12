@@ -108,7 +108,17 @@ class ChampionCard extends Component {
               </div>
               <div className="champion-stat-section">
                 <ChampionStatCard name="attack damage" amount={champion.attack.toFixed(1)} lvup={champion.lvAttack} />
-                <ChampionStatCard name="ability power" amount={champion.ap} />
+                {
+                  champion.itemEffects !== undefined
+                  ?
+                  (champion.itemEffects.filter(effect => effect.name === "deathcap").length === 0
+                  ?
+                  <ChampionStatCard name="ability power" amount={champion.ap} />
+                  :
+                  <ChampionStatCard name="ability power" amount={champion.ap * 1.3} />)
+                  :
+                  <ChampionStatCard name="ability power" amount={champion.ap} />
+                }
               </div>
               <div className="champion-stat-section">
                 <ChampionStatCard name="armor" amount={champion.armor} lvup={champion.lvArmor} />

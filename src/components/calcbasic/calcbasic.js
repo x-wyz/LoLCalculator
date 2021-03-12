@@ -82,7 +82,7 @@ const CalcBasic = ({ ally, enemy }) => {
 
 	let normalDamage = ((basicDamage + recurve + titanic + fray + nashors) - rocksolid).toFixed(0);
 	let criticalDamage = ((basicCritical + recurve + titanic + fray + nashors) - rocksolid).toFixed(0);
-	let averageDamage = critChance === 0 ? normalDamage : ((avgDamage + recurve + titanic + fray + nashors) - rocksolid).toFixed(0);
+	let averageDamage = critChance === 0 ? normalDamage : critChance === 100 ? criticalDamage : ((avgDamage + recurve + titanic + fray + nashors) - rocksolid).toFixed(0);
 
 	let normalCount = 0;
 	let criticalCount = 0;

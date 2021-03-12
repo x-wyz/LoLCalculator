@@ -27,11 +27,25 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	let scaleEMHPs = 0;
 
+	let ap = ally.ap;
+
+	if (ally.itemEffects !== undefined) {
+		ally.itemEffects.forEach(buff => {
+			switch(buff.name){
+				case "deathcap":
+					ap *= 1.3;
+					break;
+				default:
+					break;
+			}
+		})
+	}
+
 	if (skill.ap !== 0 && skill.ap !== undefined){
 		if (Array.isArray(skill.ap)) {
-			scaleAp = ally.ap * (skill.ap[skillLv] / 100);
+			scaleAp = ap * (skill.ap[skillLv] / 100);
 		} else {
-			scaleAp = ally.ap * (skill.ap / 100);
+			scaleAp = ap * (skill.ap / 100);
 		}
 	}
 
@@ -69,7 +83,7 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	if (skill.emhpScale !== 0 && skill.emhpScale !== undefined){
 		if (skill.emhpScale[2] === "ap") {
-			const times = ally.ap / skill.emhpScale[1];
+			const times = ap / skill.emhpScale[1];
 			const multiplier = skill.emhpScale[0] * times;
 			scaleEMHPs = enemy.hp * (multiplier / 100);
 		}
