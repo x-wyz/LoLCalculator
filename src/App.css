@@ -25,6 +25,10 @@ body {
   font-family: montserrat;
 }
 
+.hidden {
+  display: none;
+}
+
 .champion-select {
   display: flex;
   justify-content: center;

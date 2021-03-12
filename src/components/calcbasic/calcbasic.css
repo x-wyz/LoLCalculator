@@ -22,10 +22,43 @@
 .basic-calculations {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	width: 200px;
 	margin: 2em 1.2em;
+}
 
+.stat-breakdown {
+	justify-content: flex-start;
+}
+
+.breakdown-container {
+	display: flex;
+}
+
+.basic-stat-breakdown {
+	margin-top: 0.8em;
+}
+
+.breakdown-description {
+	display: flex;
+	width: 60%;
+	color: #b6f5ff;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 0.7em;
+}
+
+.breakdown-value {
+	display: flex;
+	align-items: center;
+	font-size: 0.8em;
+	margin-left: 0.8em;
+	width: 40%;
+	color: white;
+}
+
+.breakdown-container {
+	margin: 0.15em;
 }
 
 .calc-basic-content {
@@ -45,6 +78,17 @@
 	align-items: center;
 	justify-content: center;
 	margin-left: 0.4em;
+}
+
+.basic-calc-item-effect-list {
+	background: #373E3D;
+	width: 60%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 0.7em;
+	font-size: 1em;
+	padding: 0.8em 0.4em;
+	color: #b6f5ff;
 }
 
 @media only screen and (max-width: 1100px) {

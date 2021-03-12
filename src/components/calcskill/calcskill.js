@@ -138,7 +138,7 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 					<h6 className="skill-cooldown-header">CD</h6>
 					<p className="skill-cooldown-text">
 						{
-							Number.isNaN(cooldown) ? 0 : cooldown.toFixed(1)
+							Number.isNaN(cooldown) || cooldown === 0 || skillLv === -1 ? "---" : cooldown.toFixed(1)
 						}
 					</p>
 				</div>

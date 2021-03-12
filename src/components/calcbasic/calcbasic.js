@@ -18,17 +18,21 @@ const CalcBasic = ({ ally, enemy }) => {
 	let ruinedking = false;
 	let rocksolid = 0;
 	let recurve = 0;
-	let nashors = 0;
+	let nashors = false;
 	let fray = 0;
 	let titanic = 0;
 	let wrath = 0;
+
+	let wrathDamage = 0;
 
 	if (ally.itemEffects !== undefined) {
 		ally.itemEffects.forEach(buff => {
 			switch(buff.name){
 				case "infinity":
 					infinity = ally.critChance >= 60 ? true : false;
-					items.push(buff.item);
+					if (infinity) {
+						items.push(buff.item);
+					}
 					break;
 				case "deathcap":
 					ap *= 1.3;
@@ -38,7 +42,7 @@ const CalcBasic = ({ ally, enemy }) => {
 					items.push(buff.item);
 					break;
 				case "nashors":
-					nashors = ((15 + .2 * ap) * enemyResistMultiplier);
+					nashors = true;
 					items.push(buff.item);
 					break;
 				case "fray":
@@ -69,6 +73,11 @@ const CalcBasic = ({ ally, enemy }) => {
 					break;
 			}
 		})
+	}
+
+	if (nashors === true) {
+		// to ensure deathcap gets applied before nashors calc
+		nashors = ((15 + .2 * ap) * enemyResistMultiplier)
 	}
 
 	let critDamage = infinity === true ? ally.critDamage + 35 : ally.critDamage;
@@ -123,38 +132,158 @@ const CalcBasic = ({ ally, enemy }) => {
 	}
 
 	return (
-		<div className="calc-basic-container">
-			<div className="basic-calculations">
-				<div className="calc-basic-damage cb-norm">
-					<h4 className="calc-basic-header">Normal</h4>
-					<p className="calc-basic-content">{normalDamage} <span className="calc-basic-percentage">[ {((normalDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
+		<React.Fragment>
+			<div className="calc-basic-container">
+				<div className="basic-calculations">
+					<div className="calc-basic-damage cb-norm">
+						<h4 className="calc-basic-header">Normal</h4>
+						<p className="calc-basic-content">{normalDamage} <span className="calc-basic-percentage">[ {((normalDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
+					</div>
+					<div className="calc-basic-damage calc-basic-count">
+						<h4 className="calc-basic-header">Count</h4>
+						<p className="calc-basic-content">{normalCount}</p>
+					</div>
 				</div>
-				<div className="calc-basic-damage calc-basic-count">
-					<h4 className="calc-basic-header">Count</h4>
-					<p className="calc-basic-content">{normalCount}</p>
+				<div className="basic-calculations">
+					<div className="calc-basic-damage cb-crit">
+						<h4 className="calc-basic-header">Crit</h4>
+						<p className="calc-basic-content">{criticalDamage} <span className="calc-basic-percentage">[ {((criticalDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
+					</div>
+					<div className="calc-basic-damage calc-basic-count">
+						<h4 className="calc-basic-header">Count</h4>
+						<p className="calc-basic-content">{criticalCount}</p>
+					</div>
+				</div>
+				<div className="basic-calculations">
+					<div className="calc-basic-damage cb-avg">
+						<h4 className="calc-basic-header">Average</h4>
+						<p className="calc-basic-content">{averageDamage} <span className="calc-basic-percentage">[ {((averageDamage / enemy.hp)*100).toFixed(1)}% ]</span></p>
+					</div>
+					<div className="calc-basic-damage calc-basic-count">
+						<h4 className="calc-basic-header">Count</h4>
+						<p className="calc-basic-content">{averageCount}</p>
+					</div>
+				</div>
+				<div className="basic-calculations stat-breakdown">
+					<div className="calc-basic-damage cb-avg">
+						<h4 className="calc-basic-header">Breakdown</h4>
+						<div className="basic-stat-breakdown">
+							{
+								ruinedking === true
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">BOTRK</p>
+									<p className="breakdown-value">10%</p>
+								</div>
+								:
+								null
+							}
+							{
+								wrath === 1
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">Rageknife</p>
+									<p className="breakdown-value">{wrathDamage}</p>
+								</div>
+								:
+								null
+							}
+							{
+								wrath === 1
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">Rageblade</p>
+									<p className="breakdown-value">{wrathDamage}</p>
+								</div>
+								:
+								null
+							}
+							{
+								recurve > 0
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">Recurve Bow</p>
+									<p className="breakdown-value">{recurve.toFixed(1)}</p>
+								</div>
+								:
+								null
+							}
+							{
+								nashors > 0
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">Nashors</p>
+									<p className="breakdown-value">{nashors.toFixed(1)}</p>
+								</div>
+								:
+								null
+							}
+							{
+								fray > 0
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">Wit's End</p>
+									<p className="breakdown-value">{fray.toFixed(1)}</p>
+								</div>
+								:
+								null
+							}
+							{
+								titanic > 0
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">Titanic</p>
+									<p className="breakdown-value">{recurve.toFixed(1)}</p>
+								</div>
+								:
+								null
+							}
+							{
+								rocksolid > 0
+								?
+								<div className="breakdown-container">
+									<p className="breakdown-description">Rocksolid</p>
+									<p className="breakdown-value breakdown-value-negative">{rocksolid.toFixed(1)}</p>
+								</div>
+								:
+								null
+							}
+						</div>
+						<div className="basic-stat-breakdown">
+							<div className="breakdown-container">
+								<p className="breakdown-description">Base</p>
+								<p className="breakdown-value">{basicDamage.toFixed(0)}</p>
+							</div>
+							<div className="breakdown-container">
+								<p className="breakdown-description">Crit Chance</p>
+								<p className="breakdown-value">{critChance}</p>
+							</div>
+							<div className="breakdown-container">
+								<p className="breakdown-description">Crit Damage</p>
+								<p className="breakdown-value">{critDamage}</p>
+							</div>
+							<div className="breakdown-container">
+								<p className="breakdown-description">Armor</p>
+								<p className="breakdown-value">x{enemyArmorMultiplier.toFixed(2)}</p>
+							</div>
+							<div className="breakdown-container">
+								<p className="breakdown-description">Magic Resist</p>
+								<p className="breakdown-value">x{enemyResistMultiplier.toFixed(2)}</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div className="basic-calculations">
-				<div className="calc-basic-damage cb-crit">
-					<h4 className="calc-basic-header">Crit</h4>
-					<p className="calc-basic-content">{criticalDamage} <span className="calc-basic-percentage">[ {((criticalDamage / enemy.hp) * 100).toFixed(1)}% ]</span></p>
-				</div>
-				<div className="calc-basic-damage calc-basic-count">
-					<h4 className="calc-basic-header">Count</h4>
-					<p className="calc-basic-content">{criticalCount}</p>
-				</div>
+			<div className={`${items.length > 0 ? null : "hidden"} basic-calc-item-effect-list`}>
+				{
+				items.length > 0
+				?
+				`Currently applying item effect from ${items.join(", ")}.`
+				:
+				null
+				}
 			</div>
-			<div className="basic-calculations">
-				<div className="calc-basic-damage cb-avg">
-					<h4 className="calc-basic-header">Average</h4>
-					<p className="calc-basic-content">{averageDamage} <span className="calc-basic-percentage">[ {((averageDamage / enemy.hp)*100).toFixed(1)}% ]</span></p>
-				</div>
-				<div className="calc-basic-damage calc-basic-count">
-					<h4 className="calc-basic-header">Count</h4>
-					<p className="calc-basic-content">{averageCount}</p>
-				</div>
-			</div>
-		</div>
+		</React.Fragment>
 	)
 }
 
