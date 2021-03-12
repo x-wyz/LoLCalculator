@@ -658,7 +658,7 @@ export const ItemsData = {
 			hp: 350
 		},
 		uncalculated: {
-			note: "This champion has an abyssal mask that increases damage they take by 10% when this champion immobilize them."
+			note: "When this champion immobilizes a champion the immobilized champion takes 10% extra damage."
 		}
 	},
 	archangelsStaffZero: {
@@ -737,7 +737,7 @@ export const ItemsData = {
 			item: "blade of the ruined king"
 		},
 		uncalculated: {
-			note: "Blade of the ruined king currently treats all champions as if they were melee."
+			note: "Blade of the ruined king currently treats all champions as if they were melee. No 3 hit effect."
 		}
 	},
 	bloodthirster: {

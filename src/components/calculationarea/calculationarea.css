@@ -72,6 +72,15 @@
 	width: 60%;
 }
 
+.uncalculated-item-info {
+	background: #23312f;
+	padding: 0.5em;
+	color: #b6f5ff;
+	margin-top: 0.9em;
+	text-align: center;
+	font-size: 0.9em;
+}
+
 @media only screen and (max-width: 960px) {
 	.calculation-area {
 		width: 100%;

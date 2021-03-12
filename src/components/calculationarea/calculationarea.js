@@ -93,6 +93,23 @@ class CalculationArea extends Component {
 							.filter(item => item.effect.type === "damage")
 							.map((item) => <CalcItem item={item} ally={ally} enemy={enemy}/>)
 						}
+						<div className="uncalculated-item-info-container">
+							{
+								dummy && enemyTab
+								?
+								null
+								:
+								enemyTab === true
+								?
+								enemy.items
+								.filter(item => item.img !== undefined && item.uncalculated !== undefined)
+								.map(item => <p className="uncalculated-item-info">{item.uncalculated.note}</p>)
+								:
+								ally.items
+								.filter(item => item.img !== undefined && item.uncalculated !== undefined)
+								.map(item => <p className="uncalculated-item-info">{item.uncalculated.note}</p>)
+							}
+						</div>
 					</div>
 					<div className="calculation-end"></div>
 				</div>
