@@ -6521,6 +6521,7 @@ export let ChampionData = {
         lvAttack: 3.3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -6534,9 +6535,11 @@ export let ChampionData = {
         ability4: 0,
         abilities: [
           {
-            lvScale: [0,0],
+            lvScale: [5,65],
             rname: "Maokai_Passive",
             note: "Passive",
+            type: "heal",
+            emhp: [6,13],
             skill: 0
           },
           {
@@ -6591,6 +6594,7 @@ export let ChampionData = {
     },
     masterYi: {
         name: 'masterYi',
+        wuju: false,
         lv: 1,
         baseHp: 599,
         hp: 599,
@@ -6607,6 +6611,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -6656,6 +6661,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 35,
             rname: "WujuStyle",
+            buff: "wuju",
             cd: [[18,17,16,15,14], "single"],
             note: "bonus damage, does not include damage from basic attack",
             skill: 3
@@ -6692,6 +6698,7 @@ export let ChampionData = {
         lvAttack: 2.7,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -6717,6 +6724,7 @@ export let ChampionData = {
             ad: 100,
             ap: 35,
             bAd: 0,
+            onhit: true,
             rname: 'MissFortuneRicochetShot',
             cd: [[7,6,5,4,3], "single"],
             skill: 1,
@@ -6742,7 +6750,7 @@ export let ChampionData = {
             skill: 3,
             bAd: 0,
             rname: "MissFortuneScattershot",
-            note: "per tick | 0.25s intervals",
+            note: "per tick, 0.25s intervals",
             cd: [[18,16,14,12,10], "single"],
           },
           {
@@ -6762,6 +6770,8 @@ export let ChampionData = {
     },
     mordekaiser: {
         name: 'mordekaiser',
+        deathgrasp: false,
+        deathrealm: false,
         lv: 1,
         baseHp: 575,
         hp: 575,
@@ -6778,6 +6788,7 @@ export let ChampionData = {
         lvAttack: 4,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -6821,13 +6832,14 @@ export let ChampionData = {
             note: "unisolated damage | damage increase by 30/35/40/45/50% for isolated targets"
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [0,0,0,0,0],
+            type: 'shield',
             ad: 0,
             ap: 0,
             bAd: 0,
+            mhp: 30,
             rname: 'MordekaiserW',
+            note: "max shield",
             cd: [[14,13,12,11,10], "single"],
             skill: 2,
           },
@@ -6839,6 +6851,7 @@ export let ChampionData = {
             ap: 60,
             bAd: 0,
             rname: "MordekaiserE",
+            buff: "deathgrasp",
             cd: [[22,19,16,13,10], "single"],
             note: "does not calculate magic pen",
             skill: 3
@@ -6851,6 +6864,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'MordekaiserR',
+            buff: "deathrealm",
             cd: [[140,120,100], "single"],
             note: "enhances mordekaiser's stats | not calculated",
             skill: 4
@@ -6876,6 +6890,7 @@ export let ChampionData = {
         lvAttack: 3.5,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -6918,12 +6933,12 @@ export let ChampionData = {
             note: "minimum damage per tick, 0.5s intervals, 1.7% increase per 1% enemy missing hp max damage 2.7x"
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [80,135,190,245,300],
+            type: 'shield',
             ad: 0,
-            ap: 0,
+            ap: 70,
             bAd: 0,
+            note: "magical shield",
             rname: "MorganaE",
             skill: 3,
             cd: [[26,24,22,20,18], "single"],
@@ -6961,6 +6976,7 @@ export let ChampionData = {
         lvAttack: 3.1,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -6989,6 +7005,30 @@ export let ChampionData = {
             rname: 'NamiQ',
             cd: [[12,11,10,9,8], "single"],
             skill: 1
+          },
+          {
+            base: [70,110,150,190,230],
+            damage: 'magical',
+            type: 'damage',
+            ad: 0,
+            ap: 50,
+            bAd: 0,
+            rname: 'NamiW',
+            note: "first damage",
+            cd: [[10], "single"],
+            skill: 2,
+          },
+          {
+            base: [60,85,110,135,160],
+            damage: 'magical',
+            type: 'heal',
+            ad: 0,
+            ap: 30,
+            bAd: 0,
+            rname: 'NamiW',
+            note: "first heal",
+            cd: [[10], "single"],
+            skill: 2,
           },
           {
             base: [70,110,150,190,230],
@@ -7030,6 +7070,9 @@ export let ChampionData = {
     },
     nasus: {
         name: 'nasus',
+        siphon: false,
+        spiritfire: false,
+        godmode: false,
         lv: 1,
         baseHp: 561,
         hp: 561,
@@ -7046,6 +7089,7 @@ export let ChampionData = {
         lvAttack: 3.5,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7072,6 +7116,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'NasusQ',
+            buff: "siphon",
             skill: 1,
             cd: [[7.5,6.5,5.5,4.5,3.5], "single"],
             note: "bonus damage, does not include damage from stacks or basic attack | stacks damage = stacks * multiplier"
@@ -7096,7 +7141,8 @@ export let ChampionData = {
             bAd: 0,
             cd: [[12], "single"],
             rname: "NasusE",
-            note: "cast damage | tick damage is 0.2x cast damage",
+            buff: "spiritfire",
+            note: "cast damage, tick damage is 0.2x cast damage",
             skill: 3
           },
           {
@@ -7110,6 +7156,7 @@ export let ChampionData = {
             emhpScale: [1,100,"ap"],
             rname: 'NasusR',
             cd: [[120], "single"],
+            buff: "godmode",
             skill: 4
           }
         ],
@@ -7133,6 +7180,7 @@ export let ChampionData = {
         lvAttack: 3.3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7172,6 +7220,18 @@ export let ChampionData = {
             bAd: 0,
             rname: 'NautilusPiercingGaze',
             note: "over 2 seconds",
+            cd: [[12], "single"],
+            skill: 2
+          },
+          {
+            base: [45,55,65,75,85],
+            type: 'shield',
+            ad: 0,
+            ap: 0,
+            bAd: 0,
+            mhp: [9,10,11,12,13],
+            note: "shield",
+            rname: 'NautilusPiercingGaze',
             cd: [[12], "single"],
             skill: 2
           },
@@ -7220,6 +7280,7 @@ export let ChampionData = {
         lvAttack: 2.5,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7289,6 +7350,7 @@ export let ChampionData = {
     },
     nocturne: {
         name: 'nocturne',
+        dusktrail: false,
         lv: 1,
         baseHp: 585,
         hp: 585,
@@ -7305,6 +7367,7 @@ export let ChampionData = {
         lvAttack: 3.1,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7332,6 +7395,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 75,
+            buff: "dusktrail",
             rname: 'NocturneDuskbringer',
             cd: [[8], "single"],
             skill: 1,
@@ -7392,6 +7456,7 @@ export let ChampionData = {
         lvAttack: 3.3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7463,6 +7528,7 @@ export let ChampionData = {
     },
     olaf: {
         name: 'olaf',
+        berserker: false,
         lv: 1,
         baseHp: 575,
         hp: 575,
@@ -7479,6 +7545,7 @@ export let ChampionData = {
         lvAttack: 3.5,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7538,6 +7605,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'OlafRagnarok',
+            buff: "berserker",
             cd: [[100,90,80], "single"],
             skill: 4
           }
@@ -7546,6 +7614,7 @@ export let ChampionData = {
     },
     orianna: {
         name: 'orianna',
+        protect: false,
         lv: 1,
         baseHp: 530,
         hp: 530,
@@ -7562,6 +7631,7 @@ export let ChampionData = {
         lvAttack: 2.6,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7613,6 +7683,16 @@ export let ChampionData = {
             cd: [[9], "single"],
           },
           {
+            base: [60,100,140,180,220],
+            type: 'shield',
+            ad: 0,
+            ap: 50,
+            buff: "protect",
+            bAd: 0,
+            rname: "OrianaRedactCommand",
+            cd: [[9], "single"],
+          },
+          {
             base: [200,275,350],
             damage: 'magical',
             type: 'damage',
@@ -7643,6 +7723,7 @@ export let ChampionData = {
         lvAttack: 3.5,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7730,6 +7811,7 @@ export let ChampionData = {
         lvAttack: 3.3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7812,6 +7894,7 @@ export let ChampionData = {
     },
     poppy: {
         name: 'poppy',
+        steadfast: false,
         lv: 1,
         baseHp: 540,
         hp: 540,
@@ -7828,6 +7911,7 @@ export let ChampionData = {
         lvAttack: 4,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7844,6 +7928,15 @@ export let ChampionData = {
             lvScale: [20,180],
             rname: "Poppy_Passive",
             note: "Passive",
+            damage: "magical",
+            skill: 0
+          },
+          {
+            lvScale: [0,0],
+            emhp: [15,20],
+            rname: "Poppy_Passive",
+            type: "shield",
+            note: "Shield, slight inaccuracy",
             damage: "magical",
             skill: 0
           },
@@ -7867,6 +7960,7 @@ export let ChampionData = {
             ad: 0,
             ap: 70,
             bAd: 0,
+            buff: "steadfast",
             rname: 'PoppyW',
             cd: [[24,22,20,18,16], "single"],
             skill: 2
@@ -7900,6 +7994,7 @@ export let ChampionData = {
     },
     pyke: {
         name: 'pyke',
+        drowned: false,
         lv: 1,
         baseHp: 600,
         hp: 600,
@@ -7916,6 +8011,7 @@ export let ChampionData = {
         lvAttack: 2,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -7932,6 +8028,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "PykePassive",
             note: "Passive",
+            buff: "drowned",
             skill: 0
           },
           {
@@ -8002,6 +8099,7 @@ export let ChampionData = {
         lvAttack: 3.1,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8091,6 +8189,7 @@ export let ChampionData = {
         lvAttack: 2.4,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8176,6 +8275,7 @@ export let ChampionData = {
         lvAttack: 3.5,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8189,9 +8289,11 @@ export let ChampionData = {
         ability4: 0,
         abilities: [
           {
-            lvScale: [0,0],
+            lvScale: [33,254],
             rname: "Rakan_P",
+            ap: 90,
             note: "Passive",
+            type: "shield",
             skill: 0
           },
           {
@@ -8202,6 +8304,19 @@ export let ChampionData = {
             ap: 60,
             bAd: 0,
             rname: 'RakanQ',
+            cd: [[12,11,10,9,8], "single"],
+            skill: 1
+          },
+          {
+            lvScale: [18,120],
+            base: [0,0,0,0,0],
+            type: "damage",
+            damage: "magical",
+            ad: 0,
+            ap: 70,
+            bAd: 0,
+            rname: 'RakanQ',
+            note: "heal",
             cd: [[12,11,10,9,8], "single"],
             skill: 1
           },
@@ -8217,13 +8332,13 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [40,65,90,115,140],
+            type: 'shield',
             ad: 0,
-            ap: 0,
+            ap: 80,
             bAd: 0,
             rname: "RakanE",
+            note: "this ability can be recasted",
             cd: [[20,18,16,14,12], "single"],
             skill: 3
           },
@@ -8243,6 +8358,7 @@ export let ChampionData = {
     },
     rammus: {
         name: 'rammus',
+        defensecurl: false,
         lv: 1,
         baseHp: 564,
         hp: 564,
@@ -8259,6 +8375,7 @@ export let ChampionData = {
         lvAttack: 3.5,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8297,6 +8414,7 @@ export let ChampionData = {
             ad: 0,
             ap: 0,
             bAd: 0,
+            buff: "defensecurl",
             rname: 'DefensiveBallCurl',
             cd: [[6], "single"],
             note: "Deals 1.5x passive damage to enemies who basic attack rammus",
@@ -8330,6 +8448,7 @@ export let ChampionData = {
     },
     rell: {
         name: 'rell',
+        moldbreaker: false,
         lv: 1,
         baseHp: 540,
         hp: 540,
@@ -8346,6 +8465,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8363,6 +8483,7 @@ export let ChampionData = {
             rname: "RellP.DarkSupport",
             note: "Passive",
             damage: "magical",
+            buff: "moldbreaker",
             skill: 0
           },
           {
@@ -8416,6 +8537,7 @@ export let ChampionData = {
     },
     renekton: {
         name: 'renekton',
+        ascended: false,
         lv: 1,
         baseHp: 575,
         hp: 575,
@@ -8432,6 +8554,7 @@ export let ChampionData = {
         lvAttack: 3.75,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8507,6 +8630,7 @@ export let ChampionData = {
             rname: 'RenektonReignOfTheTyrant',
             cd: [[120], "dot", [0.5]],
             note: "per tick, 0.5s interval",
+            buff: "ascended",
             skill: 4
           }
         ],
@@ -8514,6 +8638,7 @@ export let ChampionData = {
     },
     rengar: {
         name: 'rengar',
+        trophies: false,
         lv: 1,
         baseHp: 585,
         hp: 585,
@@ -8530,6 +8655,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8546,6 +8672,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "Rengar_P",
             note: "Passive",
+            buff: "trophies",
             skill: 0
           },
           {
@@ -8636,6 +8763,7 @@ export let ChampionData = {
     },
     riven: {
         name: 'riven',
+        reforge: false,
         lv: 1,
         baseHp: 560,
         hp: 560,
@@ -8652,6 +8780,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8696,12 +8825,11 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [95,125,155,185,215],
+            type: 'shield',
             ad: 0,
             ap: 0,
-            bAd: 0,
+            bAd: 100,
             rname: "RivenFeint",
             cd: [[10,9,8,7,6], "single"],
             skill: 3
@@ -8714,6 +8842,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 60,
             cd: [[120,90,60], "single"],
+            buff: "reforge",
             rname: 'RivenFengShuiEngine',
             skill: 4,
             note: "min damage, does not calculate bonus ad riven gets from this ability"
@@ -8739,6 +8868,7 @@ export let ChampionData = {
         lvAttack: 3.2,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8772,13 +8902,13 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [60,95,130,165,200],
+            type: 'shield',
             ad: 0,
-            ap: 0,
+            ap: 50,
             bAd: 0,
             rname: 'RumbleShield',
+            note: "shield, enhanced applies 1.5x shield",
             cd: [[6], "single"],
             skill: 2
           },
@@ -8811,6 +8941,7 @@ export let ChampionData = {
     },
     ryze: {
         name: 'ryze',
+        arcane: true,
         lv: 1,
         baseHp: 575,
         hp: 575,
@@ -8827,6 +8958,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8843,6 +8975,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "Ryze_P",
             note: "Passive",
+            buff: "arcane",
             skill: 0
           },
           {
@@ -8917,6 +9050,7 @@ export let ChampionData = {
         lvAttack: 2.3,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -8985,6 +9119,7 @@ export let ChampionData = {
     },
     sejuani: {
         name: 'sejuani',
+        frostarmor: false,
         lv: 1,
         baseHp: 560,
         hp: 560,
@@ -9018,6 +9153,7 @@ export let ChampionData = {
             rname: "Sejuani_passive",
             note: "Passive",
             damage: "magical",
+            buff: "frostarmor",
             emhp: 10,
             skill: 0
           },
@@ -9084,6 +9220,7 @@ export let ChampionData = {
     },
     senna: {
         name: 'senna',
+        absolation: false,
         lv: 1,
         baseHp: 520,
         hp: 520,
@@ -9116,6 +9253,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "Senna_Passive.Senna",
             note: "Passive",
+            buff: "absolation",
             skill: 0
           },
           {
@@ -9183,6 +9321,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9268,6 +9407,7 @@ export let ChampionData = {
         lvAttack: 4,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9297,7 +9437,7 @@ export let ChampionData = {
             bAd: 0,
             emhp: 1,
             rname: 'SettQ',
-            note: "bonus damage | TODO",
+            note: "bonus damage",
             cd: [[9,8,7,6,5], "single"],
             skill: 1
           },
@@ -9309,7 +9449,6 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'SettW',
-            note: "TODO",
             skill: 2,
             cd: [[18,16.5,15,13.5,12], "single"],
           },
@@ -9357,6 +9496,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9373,7 +9513,7 @@ export let ChampionData = {
             lvScale: [20,35],
             damage: "physical",
             rname: "Jester_CarefulStrikes",
-            note: "Passive",
+            note: "Passive, zero crit",
             bAd: 15,
             skill: 0
           },
@@ -9444,6 +9584,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9457,7 +9598,9 @@ export let ChampionData = {
         ability4: 0,
         abilities: [
           {
-            lvScale: [0,0],
+            lvScale: [60,111],
+            type: "shield",
+            bhp: 14,
             rname: "Shen_Passive",
             note: "Passive",
             skill: 0
@@ -9530,6 +9673,8 @@ export let ChampionData = {
     },
     shyvana: {
         name: 'shyvana',
+        dragon: false,
+        dragondescent: false,
         lv: 1,
         baseHp: 595,
         hp: 595,
@@ -9546,6 +9691,7 @@ export let ChampionData = {
         lvAttack: 3.4,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9562,6 +9708,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "ShyvanaReinforcedScales",
             note: "Passive",
+            buff: "dragon",
             skill: 0
           },
           {
@@ -9633,6 +9780,7 @@ export let ChampionData = {
             ad: 0,
             ap: 100,
             bAd: 0,
+            buff: "dragondescent",
             rname: 'ShyvanaTransformCast',
             skill: 4
           }
@@ -9641,6 +9789,7 @@ export let ChampionData = {
     },
     singed: {
         name: 'singed',
+        insanity: false,
         lv: 1,
         baseHp: 580,
         hp: 580,
@@ -9718,6 +9867,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'InsanityPotion',
+            buff: "insanity",
             cd: [[120,110,100], "single"],
             skill: 4
           }
@@ -9726,6 +9876,7 @@ export let ChampionData = {
     },
     sion: {
         name: 'sion',
+        healthboost: false,
         lv: 1,
         baseHp: 545,
         hp: 545,
@@ -9742,6 +9893,7 @@ export let ChampionData = {
         lvAttack: 4,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9758,6 +9910,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "Sion_Passive1",
             note: "Passive",
+            buff: "healthboost",
             skill: 0
           },
           {
@@ -9783,6 +9936,17 @@ export let ChampionData = {
             rname: 'SionW',
             skill: 2,
             cd: [[15,14,13,12,11], "single"],
+          },
+          {
+            base: [50,75,100,125,150],
+            type: 'damage',
+            ad: 0,
+            ap: 40,
+            bAd: 0,
+            mhp: [8,9,10,11,12],
+            note: "shield",
+            rname: 'SionW',
+            skill: 2,
           },
           {
             base: [65,100,135,170,205],
@@ -9828,6 +9992,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9912,6 +10077,7 @@ export let ChampionData = {
         lvAttack: 4.5,
         critDamage: 175,
         critChance: 0,
+        range: "melee",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -9944,12 +10110,13 @@ export let ChampionData = {
             note: "enhanced | if not enhanced deals 0.5x damage if skarner has no ap"
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [0,0,0,0,0],
+            type: 'shield',
             ad: 0,
-            ap: 0,
+            ap: 80,
             bAd: 0,
+            mhp: [10,11,12,13,14],
+            note: "shield",
             rname: 'SkarnerExoskeleton',
             cd: [[13,12.5,12,11.5,11], "single"],
             skill: 2
@@ -10010,6 +10177,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -10040,15 +10208,26 @@ export let ChampionData = {
             rname: 'SonaQ',
             cd: [[8,7.2,6.6,6,4.8], "single"],
             skill: 1,
-            note: "includes bonus damage from auto | does not include damage from basic attack"
+            note: "includes bonus damage from auto, does not include damage from basic attack"
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [30,50,70,90,110],
+            type: 'heal',
             ad: 0,
-            ap: 0,
+            ap: 20,
             bAd: 0,
+            rname: 'SonaW',
+            note: "heal",
+            cd: [[10,9,8,7,6], "single"],
+            skill: 2
+          },
+          {
+            base: [25,50,75,100,125],
+            type: 'shield',
+            ad: 0,
+            ap: 30,
+            bAd: 0,
+            note: "shield",
             rname: 'SonaW',
             cd: [[10,9,8,7,6], "single"],
             skill: 2
@@ -10096,6 +10275,7 @@ export let ChampionData = {
         lvAttack: 3,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
@@ -10126,13 +10306,13 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [100,135,170,205,240],
+            type: 'heal',
             ad: 0,
-            ap: 0,
+            ap: 70,
             bAd: 0,
             rname: 'SorakaW',
+            note: "heal - cannot heal self",
             skill: 2,
             cd: [[6,5,4,3,2], "single"],
           },
@@ -10148,13 +10328,13 @@ export let ChampionData = {
             skill: 3
           },
           {
-            base: [0],
-            damage: 'none',
-            type: 'utility',
+            base: [150,250,350],
+            type: 'heal',
             ad: 0,
-            ap: 0,
+            ap: 55,
             bAd: 0,
             rname: 'SorakaR',
+            note: "heal, restores 1.5x on champions <40% health",
             cd: [[160,145,130], "single"],
             skill: 4
           }
@@ -10179,6 +10359,7 @@ export let ChampionData = {
         lvAttack: 2.7,
         critDamage: 175,
         critChance: 0,
+        range: "ranged",
         omnivamp: 0,
         abilityHaste: 0,
         lethality: 0,
