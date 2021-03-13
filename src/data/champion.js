@@ -846,7 +846,7 @@ export let ChampionData = {
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg',
     },
-    aurelionSol: {
+    aurelionsol: {
         name: 'aurelionSol',
         lv: 1,
         baseHp: 575,
@@ -2141,8 +2141,8 @@ export let ChampionData = {
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Diana_0.jpg',
     },
-    mundo: {
-        name: 'mundo',
+    drmundo: {
+        name: 'drMundo',
         masochism: false,
         lv: 1,
         baseHp: 583,
@@ -6592,7 +6592,7 @@ export let ChampionData = {
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg',
     },
-    masterYi: {
+    masteryi: {
         name: 'masterYi',
         wuju: false,
         lv: 1,
@@ -11485,7 +11485,7 @@ export let ChampionData = {
         ],
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg',
     },
-    twistedFate: {
+    twistedfate: {
         name: 'twistedFate',
         lv: 1,
         baseHp: 534,
@@ -13280,6 +13280,7 @@ export let ChampionData = {
             ad: 100,
             ap: 0,
             bAd: 0,
+            onhit: true,
             rname: 'YasuoQ1Wrapper',
             cd: [[0], "single"],
             note: "can crit for 1.4/1.78(IE)x damage",
@@ -13367,6 +13368,7 @@ export let ChampionData = {
             ad: 100,
             ap: 0,
             bAd: 0,
+            onhit: true,
             rname: 'YoneQ',
             cd: [[0], "single"],
             note: "this ability can crit for 1.4/1.78(IE)x damage",

@@ -28,6 +28,10 @@
 .skill-placeholder-img {
 	width: 120px;
 	color: white;
+	-webkit-user-select: none;       
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	user-select: none; 
 }
 
 .calc-skill-icon {
