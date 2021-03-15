@@ -172,6 +172,7 @@ const duplicateChampion = (championData) => {
 }
 
 const getBaseStats = (champ,lv, stat) => {
+
   const capitalizedstat = stat.charAt(0).toUpperCase() + stat.slice(1);
   return ChampionData[champ][stat] + (ChampionData[champ][`lv${capitalizedstat}`] * lv);
 }
@@ -181,17 +182,14 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
   const dupeEnemyChampion = duplicateChampion(enemyChampionData);
   const dupedChampionArray = [dupeAllyChampion, dupeEnemyChampion];
 
-  for (let buff in dupeAllyChampion.buffs) {
-    if (dupeAllyChampion.buffs[buff] === true){
-      switch(buff){
-
-      }
-    }
-  }
-
   // Apply buff from potions / baron
   dupedChampionArray.forEach(champ => {
     if (champ.name === "target") return;
+    // set multipliers to be used before returning
+    champ.adMultiplier = 1;
+    champ.apMultiplier = 1;
+    champ.armorMultiplier = 1;
+    champ.resistMultiplier = 1;
     for (let buff in champ.buffs) {
       if (champ.buffs[buff] === true){
         switch(buff){
@@ -207,6 +205,22 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
           case "baron":
             champ.attack += 19;
             champ.ap += 32;
+            break;
+          case "inf1":
+            champ.adMultiplier += 0.04;
+            champ.apMultiplier += 0.04;
+            break;
+          case "inf2":
+            champ.adMultiplier += 0.08;
+            champ.apMultiplier += 0.08;
+            break;
+          case "mount1":
+            champ.adMultiplier += 0.06;
+            champ.apMultiplier += 0.06;
+            break;
+          case "mount2":
+            champ.adMultiplier += 0.12;
+            champ.apMultiplier += 0.12;
             break;
           default: 
             break;
@@ -250,6 +264,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
 
   // Champion specific buffs
   dupedChampionArray.forEach((champ, idx) => {
+    champ.onAttack = [];
     if (champ.name === "aatrox"){
       if (champ.worldEnder === true){
         let abilityLv = champ.ability4 - 1;
@@ -389,8 +404,8 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     }
     else if (champ.name === "poppy"){
       if (champ.steadfast === true){
-        champ.armor = champ.armor * 1.1;
-        champ.resist = champ.resist * 1.1;
+        champ.armor *= 1.1;
+        champ.resist *= 1.1;
       }
     }
     else if (champ.name === "pyke"){
@@ -588,8 +603,86 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     }
   })
 
-  return dupedChampionArray;
+  dupedChampionArray.forEach((champ, idx) => {
+    let enemy = idx === 0 ? 1 : 0
+    champ.itemEffects.forEach(effect => {
+      switch(effect.name){
+        case "ruinedking":
+          champ.onAttack.push(["BOTRK", `${champ.range === "melee" ? "melee" : "ranged"}`]);
+          break;
+        case "fray":
+          champ.onAttack.push(["WITS", (15 + 65 / 17 * (champ.lv - 1)), "magical"])
+          break;
+        case "nashors":
+          // will push later to ensure ap from deathcap is calculated
+          champ.hasNashors = true;
+          break;
+        case "recurve":
+          champ.onAttack.push(["RECURVE", 15,"physical"])
+          break;
+        case "titanic":
+          champ.onAttack.push(["TITANIC", 5 + (champ.hp * 0.015), "physical"])
+          break;
+        case "wrath":
+          champ.onAttack.push(["RAGEKNIFE", (champ.critChance >= 100 ? 175 : champ.critChance * 1.75), "physical"])
+          champ.critChance = 0;
+          break;
+        case "wrath2":
+          champ.onAttack.push(["RAGEBLADE", (champ.critChance >= 100 ? 200 : champ.critChance * 2), "physical"])
+          champ.critChance = 0;
+          break;
+        case "deathcap":
+          champ.apMultiplier += 0.35;
+          break;
+        case "infinity":
+          champ.infinity = champ.critChance >= 60;
+          break;
+        case "rocksolid":
+          champ.onAttack.push(["ROCKSOLID", (5 * (dupedChampionArray[enemy].hp / 1000)).toFixed(0), "physical"]);
+          break;
+        default:
+          break;
+      }
+    })
+  })
 
+  // champ final stats
+  dupedChampionArray.forEach((champ) => {
+    champ.attack *= champ.adMultiplier;
+    champ.ap *= champ.apMultiplier;
+    champ.armor *= champ.armorMultiplier;
+    champ.resist *= champ.resistMultiplier;
+  })
+
+  return dupedChampionArray;
+}
+
+const calcOnHitItems = () => {
+
+}
+
+export const calculateBasic = (ally, enemy) => {
+  const damageValues = {
+    normal: 0,
+    normalPercentage: 0,
+    normalCount: 0,
+    crit: 0,
+    critPercentage: 0,
+    critCount: 0,
+    average: 0,
+    averagePercentage: 0,
+    averageCount: 0,
+    armorMultiplier: 0,
+    resistMultiplier: 0,
+    items: []
+  }
+
+  const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
+  const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
+  let enemyArmorMultiplier = 100/(100+eArmor);
+  let enemyResistMultiplier = 100/(100+eResist);
+
+  return damageValues;
 }
 
 export const calculateSkill = (ally, enemy, skill, skillLv) => {

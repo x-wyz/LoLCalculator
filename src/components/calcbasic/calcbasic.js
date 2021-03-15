@@ -23,6 +23,8 @@ const CalcBasic = ({ ally, enemy }) => {
 	let titanic = 0;
 	let wrath = 0;
 
+	console.log(enemy.resist)
+
 	let wrathDamage = 0;
 
 	if (ally.itemEffects !== undefined) {
