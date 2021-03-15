@@ -248,6 +248,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     })
   })
 
+  // Champion specific buffs
   dupedChampionArray.forEach((champ, idx) => {
     if (champ.name === "aatrox"){
       if (champ.worldEnder === true){
@@ -589,4 +590,82 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
 
   return dupedChampionArray;
 
+}
+
+export const calculateSkill = (ally, enemy, skill, skillLv) => {
+  skillLv -= 1;
+
+  let bonusAd = ally.attack - ally.baseAttack - (ally.lvAttack * (ally.lv - 1))
+  let ap = ally.ap;
+
+  // Return object, contains all values
+  const skillValues = {
+    damageType: skill.damage,
+    note: skill.note,
+    damageValues: {},
+    type: skill.type,
+    cooldown: 0
+  };
+
+  skillValues["damageValues"]["level"] = skill.lvScale !== undefined ? skill.lvScale[0] + ((skill.lvScale[1] - skill.lvScale[0]) / 17) * (ally.lv - 1) : 0;
+  skillValues["damageValues"]["ap"] = (skill.ap !== 0 && skill.ap !== undefined) ? (Array.isArray(skill.ap) ? ap * (skill.ap[skillLv] / 100) : ap * (skill.ap / 100)) : 0;
+  skillValues["damageValues"]["ad"] = (skill.ad !== 0 && skill.ad !== undefined) ? (Array.isArray(skill.ad) ? ally.ad * (skill.ad[skillLv] / 100) : ally.ad * (skill.ad / 100)) : 0;
+  skillValues["damageValues"]["bonus ad"] = (skill.bAd !== 0 && skill.bAd !== undefined) ? (Array.isArray(skill.bAd) ? bonusAd * (skill.bAd[skillLv] / 100) : bonusAd * (skill.bAd / 100)) : 0;
+  skillValues["damageValues"]["max hp"] = (skill.mhp !== 0 && skill.mhp !== undefined) ? (Array.isArray(skill.mhp) ? ally.hp * (skill.mhp[skillLv] / 100) : ally.hp * (skill.mhp / 100)) : 0;
+  skillValues["damageValues"]["enemy max hp"] = (skill.emhp !== 0 && skill.emhp !== undefined) ? (Array.isArray(skill.emhp) ? enemy.hp * (skill.emhp[skillLv] / 100) : enemy.hp * (skill.emhp / 100)) : 0;
+
+  if (skill.emhpScale !== 0 && skill.emhpScale !== undefined){
+    if (skill.emhpScale[2] === "ap") {
+      const times = ap / skill.emhpScale[1];
+      const multiplier = skill.emhpScale[0] * times;
+      skillValues["damageValues"]["enemy max hp"] += enemy.hp * (multiplier / 100);
+    }
+    else if (skill.emhpScale[2] === "bAd") {
+      const times = bonusAd / skill.emhpScale[1];
+      const multiplier = skill.emhpScale[0] * times;
+      skillValues["damageValues"]["enemy max hp"] += enemy.hp * (multiplier / 100);
+    }
+  }
+
+  if (skill.cd !== undefined) {
+    if (skill.cd[0].length === 5 || skill.cd[0].length === 3){
+      skillValues["cooldown"] = skill.cd[0][skillLv];
+    }
+    else if (skill.cd[0].length === 1) {
+      skillValues["cooldown"] = skill.cd[0][0];
+    }
+    else if (skill.cd[0].length === 2) {
+      skillValues["cooldown"] = skill.cd[0][0];
+    }
+
+    if (skill.cd[2] === undefined || skill.cd[2] !== "static"){
+      skillValues["cooldown"] = skillValues["cooldown"] * (100/(100+ally.abilityHaste))
+    }
+  }
+
+  const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
+  const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
+  skillValues.multiplier = skill.damage === "physical" ? (100 / (100 + eArmor)) : skill.damage === "magical" ? (100 / (100 + eResist)) : skill.damage === "true" ? 1 : 0;
+
+  let totalDamage = 0;
+  skillValues["damageValues"]["base"] = (skill.type === "damage" || skill.type === "shield" || skill.type === "heal") && typeof skill.base[skillLv] === "number" ? skill.base[skillLv] : 0;
+
+  for (let damage in skillValues["damageValues"]){
+    if (skillValues["damageValues"][damage] > 0){
+      totalDamage += skillValues["damageValues"][damage]
+    }
+  }
+
+  skillValues["totalDamage"] = totalDamage;
+  
+  if (skill.type === "damage"){
+    skillValues["finalDamage"] = totalDamage * skillValues.multiplier;
+    skillValues["percentage"] = skillValues["finalDamage"] / enemy.hp * 100;
+  }
+  else if (skill.type === "heal" || skill.type === "shield"){
+    skillValues["finalDamage"] = totalDamage;
+    skillValues["percentage"] = skillValues["finalDamage"] / ally.hp * 100;
+  }
+
+  return skillValues;
 }

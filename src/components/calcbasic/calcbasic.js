@@ -23,8 +23,6 @@ const CalcBasic = ({ ally, enemy }) => {
 	let titanic = 0;
 	let wrath = 0;
 
-	console.log(enemy.resist)
-
 	let wrathDamage = 0;
 
 	if (ally.itemEffects !== undefined) {
@@ -100,9 +98,6 @@ const CalcBasic = ({ ally, enemy }) => {
 	let averageCount = 0;
 
 	let blade = ally.range === "melee" ? 0.1 : 0.06;
-
-	console.log(ally.armor)
-	console.log(enemy.armor)
 
 	for (let enemyLife = enemy.hp; enemyLife > 0; ){
 		if (ruinedking) {

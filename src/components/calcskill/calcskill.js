@@ -3,6 +3,8 @@ import './calcskill.css';
 
 import SI from '../../assets/si_crest.png';
 
+import { calculateSkill } from '../../data/functions';
+
 const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	skillLv -= 1;
@@ -14,6 +16,9 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 		}
 	}
 	catch{}
+
+	const testCalculate = calculateSkill(ally, enemy, skill, skillLv);
+	console.log(testCalculate)
 
 	// New
 
