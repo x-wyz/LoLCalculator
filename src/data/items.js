@@ -735,9 +735,6 @@ export const ItemsData = {
 			type: "buff",
 			name: "ruinedking",
 			item: "blade of the ruined king"
-		},
-		uncalculated: {
-			note: "Blade of the ruined king currently treats all champions as if they were melee. No 3 hit effect."
 		}
 	},
 	bloodthirster: {
@@ -1139,7 +1136,7 @@ export const ItemsData = {
 			max: 120
 		},
 		uncalculated: {
-			note: "Basic calculation does not include damage provided by this item."
+			note: "Basic calculation does not include damage provided by rapid fire cannon."
 		}
 	},
 	ravenousHydra: {

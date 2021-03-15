@@ -23,6 +23,8 @@ const CalcBasic = ({ ally, enemy }) => {
 	let titanic = 0;
 	let wrath = 0;
 
+	console.log(enemy.resist)
+
 	let wrathDamage = 0;
 
 	if (ally.itemEffects !== undefined) {
@@ -97,10 +99,15 @@ const CalcBasic = ({ ally, enemy }) => {
 	let criticalCount = 0;
 	let averageCount = 0;
 
+	let blade = ally.range === "melee" ? 0.1 : 0.06;
+
+	console.log(ally.armor)
+	console.log(enemy.armor)
+
 	for (let enemyLife = enemy.hp; enemyLife > 0; ){
 		if (ruinedking) {
 			normalCount++;
-			enemyLife -= (parseInt(normalDamage) + ((enemyLife * .1) * enemyArmorMultiplier))
+			enemyLife -= (parseInt(normalDamage) + ((enemyLife * blade) * enemyArmorMultiplier))
 		}
 		else {
 			normalCount++;
@@ -111,7 +118,7 @@ const CalcBasic = ({ ally, enemy }) => {
 	for (let enemyLife = enemy.hp; enemyLife > 0; ){
 		if (ruinedking) {
 			criticalCount++;
-			enemyLife -= (parseInt(criticalDamage) + ((enemyLife * .1) * enemyArmorMultiplier))
+			enemyLife -= (parseInt(criticalDamage) + ((enemyLife * blade) * enemyArmorMultiplier))
 		}
 		else {
 			criticalCount++;
@@ -123,7 +130,7 @@ const CalcBasic = ({ ally, enemy }) => {
 		if (ruinedking) {
 			averageCount++;
 			console.log(typeof averageDamage)
-			enemyLife -= (parseInt(averageDamage) + ((enemyLife * .1) * enemyArmorMultiplier))
+			enemyLife -= (parseInt(averageDamage) + ((enemyLife * blade) * enemyArmorMultiplier))
 		}
 		else {
 			averageCount++;
@@ -173,7 +180,7 @@ const CalcBasic = ({ ally, enemy }) => {
 								?
 								<div className="breakdown-container">
 									<p className="breakdown-description">BOTRK</p>
-									<p className="breakdown-value">10%</p>
+									<p className="breakdown-value">{blade*100}%</p>
 								</div>
 								:
 								null
@@ -243,7 +250,7 @@ const CalcBasic = ({ ally, enemy }) => {
 								?
 								<div className="breakdown-container">
 									<p className="breakdown-description">Rocksolid</p>
-									<p className="breakdown-value breakdown-value-negative">{rocksolid.toFixed(1)}</p>
+									<p className="breakdown-value breakdown-value-negative">-{rocksolid}</p>
 								</div>
 								:
 								null

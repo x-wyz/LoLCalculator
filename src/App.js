@@ -12,7 +12,7 @@ import SavedChampion from './components/savedchampion/savedchampion';
 
 import { ChampionData } from './data/champion';
 import { ItemsData } from './data/items';
-import { cloneChampion } from './data/functions';
+import { cloneChampion, applyBuffs } from './data/functions';
 
 class App extends Component {
   constructor(props){
@@ -25,7 +25,9 @@ class App extends Component {
       modified: false,
       savedList: [],
       mainAlly: {},
-      mainEnemy: {}
+      mainEnemy: {},
+      buffedAlly: {},
+      buffedEnemy: {}
     }
 
     this.modifyRune = this.modifyRune.bind(this);
@@ -216,7 +218,8 @@ class App extends Component {
     champion.lv = lv
 
     this.setState({
-      [target === "mainAlly" ? "mainAlly" : "mainEnemy"] : champion
+      [target === "mainAlly" ? "mainAlly" : "mainEnemy"] : champion,
+      modified: true
     })
   }
 
@@ -272,7 +275,8 @@ class App extends Component {
     }
 
     this.setState({
-      [target === "mainAlly" ? "mainAlly" : "mainEnemy"] : champion
+      [target === "mainAlly" ? "mainAlly" : "mainEnemy"] : champion,
+      modified: true
     })
   }
 
@@ -281,6 +285,7 @@ class App extends Component {
 
     this.setState({
       [target === "mainAlly" ? "mainAlly": "mainEnemy"]: clonedChampion,
+      [target === "mainAlly" ? "buffedAlly" : "buffedEnemy"]: clonedChampion,
       modified: true
     })
   }
@@ -290,7 +295,8 @@ class App extends Component {
     champion[`ability${skill}`] = event.target.value;
 
     this.setState({
-      [target === "mainAlly" ? "mainAlly" : "mainEnemy"]:champion
+      [target === "mainAlly" ? "mainAlly" : "mainEnemy"]:champion,
+      modified: true
     })
   }
 
@@ -396,57 +402,11 @@ class App extends Component {
       return undefined;
     }
 
-    const allyBuffs = [];
-    const enemyBuffs = [];
-
-    ally.items.forEach(item => {
-      if (item.attack !== undefined) {
-        if (item.attack.type === "buff" && allyBuffs.filter(x => x.name === item.attack.name && x.type === "buff").length === 0) {
-          allyBuffs.push({...item.attack})
-        }
-      }
-
-      if (item.debuff !== undefined) {
-        if (item.debuff.type === "debuff" && enemyBuffs.filter(x => x.name === item.debuff.name && x.type === "debuff").length === 0)  {
-          enemyBuffs.push({...item.debuff})
-        }
-      }
-
-      if (item.buff !== undefined) {
-        if (item.buff.type === "buff" && allyBuffs.filter(x => x.name === item.buff.name && x.type === "buff").length === 0) {
-          allyBuffs.push({...item.buff})
-        }
-      }
-    })
-
-    if (enemy.name !== "target") {
-      enemy.items.forEach(item => {
-        if (item.attack !== undefined) {
-          if (item.attack.type === "buff" && enemyBuffs.filter(x => x.name === item.attack.name && x.type === "buff").length === 0) {
-            enemyBuffs.push({...item.attack})
-          }
-        }
-
-        if (item.debuff !== undefined) {
-          if (item.debuff.type === "debuff" && allyBuffs.filter(x => x.name === item.debuff.name && x.type === "debuff").length === 0)  {
-            allyBuffs.push({...item.debuff})
-          }
-        }
-
-        if (item.buff !== undefined) {
-          if (item.buff.type === "buff" && enemyBuffs.filter(x => x.name === item.buff.name && x.type === "buff").length === 0) {
-            enemyBuffs.push({...item.buff})
-          }
-        }
-      })
-    }
-
-    ally.itemEffects = allyBuffs;
-    enemy.itemEffects = enemyBuffs;
+    const buffedChampions = applyBuffs(ally, enemy);
 
     this.setState({
-      mainEnemy: enemy,
-      mainAlly: ally,
+      buffedAlly: buffedChampions[0],
+      buffedEnemy: buffedChampions[1],
       modified: false
     })
   }
@@ -460,7 +420,7 @@ class App extends Component {
   }
 
   render(){
-    const { mainAlly, mainEnemy, showExport, showSidebar, savedList } = this.state;
+    const { mainAlly, mainEnemy, showExport, showSidebar, savedList, buffedAlly, buffedEnemy } = this.state;
 
     if ( mainEnemy.name === undefined || mainAlly.name === undefined) {
       return <div>Please wait...</div>
@@ -492,7 +452,7 @@ class App extends Component {
               <ChampionCard updateDummy={this.updateDummy} save={this.saveChampion} level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
             </div>
           </header>
-          <CalculationArea dummy={this.state.mainEnemy.name === "target" ? true : false} ally={this.state.mainAlly} enemy={this.state.mainEnemy} update={true} />
+          <CalculationArea dummy={this.state.mainEnemy.name === "target" ? true : false} ally={buffedAlly} enemy={buffedEnemy} update={true} />
           <div className="export-data" onClick={this.showExport} >
             EX
           </div>

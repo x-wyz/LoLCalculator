@@ -1,7 +1,7 @@
 export let ChampionData = {
 	aatrox: {
         name: 'aatrox',
-        worldEnder: false,
+        worldEnder: true,
         lv: 1,
         baseHp: 580,
         hp: 580,
@@ -1342,6 +1342,7 @@ export let ChampionData = {
     braum: {
         name: 'braum',
         standBehindMe: false,
+        unbreakable: false,
         lv: 1,
         baseHp: 540,
         hp: 540,
@@ -1418,6 +1419,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'BraumE',
+            buff: "unbreakable",
             skill: 3,
             cd: [[18,16,14,12,10], "single"],
           },
@@ -1941,7 +1943,7 @@ export let ChampionData = {
     },
     darius: {
         name: 'darius',
-        apprehend: false,
+        apprehend: true,
         lv: 1,
         baseHp: 582,
         hp: 582,
@@ -3135,7 +3137,7 @@ export let ChampionData = {
     },
     garen: {
         name: 'garen',
-        courage: false,
+        courage: true,
         lv: 1,
         baseHp: 620,
         hp: 620,
@@ -3188,6 +3190,11 @@ export let ChampionData = {
             base: [70,95,120,145,170],
             type: 'shield',
             buff: "courage",
+            bufftype: {
+                type: "stack",
+                max: 120,
+                min: 0
+            },
             ad: 0,
             ap: 0,
             bAd: 0,
@@ -5270,7 +5277,7 @@ export let ChampionData = {
     },
     kindred: {
         name: 'kindred',
-        kindred: false,
+        kindred: 0,
         lv: 1,
         baseHp: 540,
         hp: 540,
@@ -7994,7 +8001,7 @@ export let ChampionData = {
     },
     pyke: {
         name: 'pyke',
-        drowned: false,
+        drowned: true,
         lv: 1,
         baseHp: 600,
         hp: 600,
@@ -9220,7 +9227,7 @@ export let ChampionData = {
     },
     senna: {
         name: 'senna',
-        absolation: false,
+        absolation: 0,
         lv: 1,
         baseHp: 520,
         hp: 520,
@@ -9673,7 +9680,7 @@ export let ChampionData = {
     },
     shyvana: {
         name: 'shyvana',
-        dragon: false,
+        dragon: 0,
         dragondescent: false,
         lv: 1,
         baseHp: 595,
@@ -11127,7 +11134,7 @@ export let ChampionData = {
     },
     thresh: {
         name: 'thresh',
-        souls:false,
+        souls:0,
         lv: 1,
         baseHp: 561,
         hp: 561,
@@ -12079,7 +12086,7 @@ export let ChampionData = {
     },
     veigar: {
         name: 'veigar',
-        evil: false,
+        evil: 0,
         lv: 1,
         baseHp: 505,
         hp: 505,

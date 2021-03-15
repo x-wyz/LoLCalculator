@@ -96,6 +96,9 @@ class ChampionCard extends Component {
     const { champion } = this.props;
     let skillsCount = 0; 
 
+    // checks if champion has a deathcap
+    const deathCap = champion.items.filter(item => item.img === 3089).length >= 1 ? true : false;
+
     return (
       <section>
         <div className="champion-data-container">
@@ -109,13 +112,9 @@ class ChampionCard extends Component {
               <div className="champion-stat-section">
                 <ChampionStatCard name="attack damage" amount={champion.attack.toFixed(1)} lvup={champion.lvAttack} />
                 {
-                  champion.itemEffects !== undefined
+                  deathCap
                   ?
-                  (champion.itemEffects.filter(effect => effect.name === "deathcap").length === 0
-                  ?
-                  <ChampionStatCard name="ability power" amount={champion.ap} />
-                  :
-                  <ChampionStatCard name="ability power" amount={champion.ap * 1.3} />)
+                  <ChampionStatCard name="ability power" amount={champion.ap * 1.3} />
                   :
                   <ChampionStatCard name="ability power" amount={champion.ap} />
                 }
