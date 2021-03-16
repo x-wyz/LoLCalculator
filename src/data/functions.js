@@ -265,6 +265,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
   // Champion specific buffs
   dupedChampionArray.forEach((champ, idx) => {
     champ.onAttack = [];
+    let enemyChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
     if (champ.name === "aatrox"){
       if (champ.worldEnder === true){
         let abilityLv = champ.ability4 - 1;
@@ -275,6 +276,14 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
       if (champ.unbreakableWill === true){
         let abilityLv = champ.ability4 - 1;
         champ.dmgReductionPercentage = abilityLv >= 0 ? [55,65,75][abilityLv] : champ.dmgReductionPercentage;
+      }
+    }
+    else if (champ.name === "amumu"){
+      if (champ.tantrum){
+        let abilityLv = champ.ability3 - 1;
+        let armorScale = (champ.armor - getBaseStats("amumu", champ.lv, "armor")) * 0.03;
+        let resistScale = (champ.armor - getBaseStats("amumu", champ.lv, "resist")) * 0.03;
+        champ.physReductionFlat = abilityLv >= 0 ? [2,4,6,8,10][abilityLv] + resistScale + armorScale : champ.physReductionFlat;
       }
     }
     else if (champ.name === "braum"){
@@ -295,6 +304,23 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
       if (champ.apprehend === true) {
         let abilityLv = champ.ability3 - 1;
         champ.arpen = abilityLv >= 0 ? [15,20,25,30,35][abilityLv] + champ.arpen : champ.arpen;
+      }
+    }
+    else if (champ.name === "drmundo"){
+      if (champ.masochism === true){
+        let abilityLv = champ.ability3 - 1;
+        champ.attack += abilityLv >= 0 ? [40,55,70,85,100][abilityLv] : 0
+      }
+    }
+    else if (champ.name === "evelynn"){
+      if (champ.allure === true){
+        let abilityLv = champ.ability2 - 1;
+        enemyChamp.resist *= abilityLv >= 0 ? [.75,.725,.7,.675,.65][abilityLv] : 1;
+      }
+    }
+    else if (champ.name === "fizz"){
+      if (champ.nimble === true){
+        champ.dmgReductionFlat = 4 + (champ.ap * 0.01)
       }
     }
     else if (champ.name === "galio"){
@@ -319,11 +345,18 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
         champ.dmgReductionPercentage = abilityLv >= 0 ? [10,12,14,16,18][abilityLv] + apScale : champ.dmgReductionPercentage;
       }
     }
+    else if (champ.name === "graves"){
+      if (champ.trueGrit !== false && typeof champ.trueGrit === "number"){
+        let abilityLv = champ.ability3 - 1;
+        let perStack = [6,9,12,15,18][abilityLv];
+        champ.armor += abilityLv >= 0 ? perStack * champ.trueGrit : champ.armor;
+      }
+    }
     else if (champ.name === "jarvan"){
       if (champ.dragonstrike === true){
         let abilityLv = champ.ability1 - 1;
-        let editingChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
-        editingChamp.armor = abilityLv >= 0 ? editingChamp.armor * [.9,.86,.82,.78,.74][abilityLv] : editingChamp.armor;
+
+        enemyChamp.armor *= abilityLv >= 0 ? [.9,.86,.82,.78,.74][abilityLv] : 1;
       }
     }
     else if (champ.name === "kassadin"){
@@ -369,9 +402,9 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
         let abilityLv = champ.ability1 - 1;
         if (abilityLv >= 0){
           let multiplier = [.8,.78,.76,.74,.72][abilityLv];
-          let editingChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
-          editingChamp.armor *= multiplier;
-          editingChamp.resist *= multiplier;
+  
+          enemyChamp.armor *= multiplier;
+          enemyChamp.resist *= multiplier;
         }
       }
     }
@@ -383,6 +416,29 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
       else if (champ.solidrock === true){
         let abilityLv = champ.ability2 - 1;
         champ.armor = abilityLv >= 0 ? champ.armor * [1.1,1.15,1.2,1.25,1.3][abilityLv] : champ.armor
+      }
+    }
+    else if (champ.name === "mordekaiser"){
+      if (champ.deathgrasp){
+        let abilityLv = champ.ability3 - 1;
+        champ.mpen += abilityLv >= 0 ? [5,7.5,10,12.5,15][abilityLv] : 0;
+      }
+
+      if (champ.deathrealm === true){
+        let lostAd = 0.1 * enemyChamp.attack;
+        let lostAp = 0.1 * enemyChamp.ap;
+        let lostArmor = 0.1 * enemyChamp.armor;
+        let lostResist = 0.1 * enemyChamp.resist;
+
+        enemyChamp.armor -= lostArmor;
+        enemyChamp.resist -= lostResist;
+        enemyChamp.ap -= lostAp;
+        enemyChamp.attack -= lostAd;
+
+        champ.armor += lostArmor;
+        champ.resist += lostResist;
+        champ.ap += lostAp;
+        champ.attack += lostAd;
       }
     }
     else if (champ.name === "nocturne") {
@@ -400,6 +456,12 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
           champ.armor += bonusResists;
           champ.resist += bonusResists;
         }
+      }
+    }
+    else if (champ.name === "olaf"){
+      if (champ.berserker === true){
+        let abilityLv = champ.ability4 - 1;
+        champ.attack += abilityLv >= 0 ? [15,20,25][abilityLv] + (champ.attack * 0.3) : 0
       }
     }
     else if (champ.name === "poppy"){
@@ -435,8 +497,8 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     else if (champ.name === "nasus"){
       if (champ.spiritfire === true){
         let abilityLv = champ.ability3 - 1;
-        let editingChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
-        editingChamp.armor = abilityLv >= 0 ? editingChamp.armor * [0.75,0.7,0.65,0.6,0.55][abilityLv] : editingChamp.armor;
+
+        enemyChamp.armor = abilityLv >= 0 ? enemyChamp.armor * [0.75,0.7,0.65,0.6,0.55][abilityLv] : enemyChamp.armor;
       }
 
       if (champ.godmode === true){
@@ -532,25 +594,24 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
       }
     }
     else if (champ.name === "trundle"){
-      let editingChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
       if (champ.chomp === true){
         let abilityLv = champ.ability1 - 1;
         
         if (abilityLv >= 0){
           let attakincrease = [20,25,30,35,40][abilityLv];
           champ.attack += attakincrease
-          editingChamp.attack -= attakincrease / 2;
+          enemyChamp.attack -= attakincrease / 2;
         }
       }
 
       if (champ.trollking === true){
         let abilityLv = champ.ability4 - 1;
         if (abilityLv >= 0){
-          let armorLoss = editingChamp.armor * 0.4;
-          let resistLoss = editingChamp.resist * 0.4;
+          let armorLoss = enemyChamp.armor * 0.4;
+          let resistLoss = enemyChamp.resist * 0.4;
 
-          editingChamp.armor -= armorLoss;
-          editingChamp.resist -= resistLoss;
+          enemyChamp.armor -= armorLoss;
+          enemyChamp.resist -= resistLoss;
 
           champ.armor += armorLoss;
           champ.resist += resistLoss;
@@ -575,14 +636,24 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     }
     else if (champ.name === "vi"){
       if (champ.dented === true){
-        let editingChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
-        editingChamp.armor *= 0.8;
+        enemyChamp.armor *= 0.8;
       }
     }
     else if (champ.name === "volibear"){
       if (champ.thunderbear === true){
         let abilityLv = champ.ability4 - 1;
         champ.hp += abilityLv >= 0 ? [200,400,600][abilityLv] : 0
+      }
+    }
+    else if (champ.name === "wukong"){
+      if (champ.stone !== false && typeof champ.stone === "number"){
+        let bonusArmor = 5 + (4 / 17 * (champ.lv - 1));
+        champ.armor += bonusArmor * (champ.stone + 1)
+      }
+
+      if (champ.crushing === true){
+        let abilityLv = champ.ability1 - 1;
+        enemyChamp.armor *= abilityLv >= 0 ? [.9,.85,.8,.75,.7][abilityLv] : 1
       }
     }
     else if (champ.name === "yasuo"){
@@ -652,12 +723,15 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     champ.ap *= champ.apMultiplier;
     champ.armor *= champ.armorMultiplier;
     champ.resist *= champ.resistMultiplier;
+    if (champ.wanderer === true || champ.hunter === true){
+
+    }
   })
 
   return dupedChampionArray;
 }
 
-const calcOnHitItems = () => {
+const calcOnAttack = () => {
 
 }
 

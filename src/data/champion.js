@@ -3234,7 +3234,6 @@ export let ChampionData = {
     },
     gnar: {
         name: 'gnar',
-        courage: false,
         lv: 1,
         baseHp: 510,
         hp: 510,
@@ -3452,7 +3451,7 @@ export let ChampionData = {
     },
     graves: {
         name: 'graves',
-        trueGrit: false,
+        trueGrit: 0,
         lv: 1,
         baseHp: 555,
         hp: 555,
@@ -7622,6 +7621,7 @@ export let ChampionData = {
     orianna: {
         name: 'orianna',
         protect: false,
+        cog: false,
         lv: 1,
         baseHp: 530,
         hp: 530,
@@ -7657,6 +7657,7 @@ export let ChampionData = {
             rname: "OriannaPassive",
             note: "Passive | 0 stacks | max 2 stacks | each stack increase damage by 0.2x",
             damage: "magical",
+            buff: "cog",
             skill: 0
           },
           {
@@ -8455,7 +8456,6 @@ export let ChampionData = {
     },
     rell: {
         name: 'rell',
-        moldbreaker: false,
         lv: 1,
         baseHp: 540,
         hp: 540,
@@ -8490,7 +8490,6 @@ export let ChampionData = {
             rname: "RellP.DarkSupport",
             note: "Passive",
             damage: "magical",
-            buff: "moldbreaker",
             skill: 0
           },
           {
@@ -12881,7 +12880,8 @@ export let ChampionData = {
     },
     wukong: {
         name: 'wukong',
-        stone: true,
+        stone: 0,
+        crushing: false,
         lv: 1,
         baseHp: 540,
         hp: 540,
@@ -12928,6 +12928,7 @@ export let ChampionData = {
             rname: 'MonkeyKingDoubleAttack',
             cd: [[9,8.5,8,7.5,7], "single"],
             skill: 1,
+            buff: "crushing",
             note: "bonus damage, does not include damage from basic attack"
           },
           {
@@ -13747,7 +13748,6 @@ export let ChampionData = {
     },
     zed: {
         name: 'zed',
-        shadow: false,
         lv: 1,
         baseHp: 584,
         hp: 584,
@@ -13804,7 +13804,6 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'ZedW',
-            buff: "shadow",
             skill: 2,
             cd: [[20,18.5,17,15.5,14], "single"],
           },
