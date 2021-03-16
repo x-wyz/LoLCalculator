@@ -18,7 +18,10 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 	catch{}
 
 	const testCalculate = calculateSkill(ally, enemy, skill, skillLv);
-	console.log(testCalculate)
+	if (skill.skill === 1){
+			console.log(testCalculate)	
+	}
+
 
 	// New
 

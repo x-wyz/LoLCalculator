@@ -674,6 +674,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     }
   })
 
+  // on attack items
   dupedChampionArray.forEach((champ, idx) => {
     let enemy = idx === 0 ? 1 : 0
     champ.itemEffects.forEach(effect => {
@@ -731,9 +732,54 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
   return dupedChampionArray;
 }
 
-const calcOnAttack = () => {
+const calculateDamage = (totalDamage, damageType, ally, enemy) => {
+  let damage = totalDamage;
+  if (typeof enemy.dmgReductionFlat === "number"){
+    // fizz is currently the only champion able to obtain this stat
+    damage -= enemy.dmgReductionFlat;
+  }
 
+  if (damageType === "physical"){
+    const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
+    let enemyArmorMultiplier = 100/(100+eArmor);
+    damage *= enemyArmorMultiplier;
+    if (typeof enemy.dmgReductionPercentage === "number"){
+      damage = damage * ((100 - enemy.dmgReductionPercentage) / 100)
+    }
+
+    if (typeof enemy.physReductPercentage === "number"){
+      damage = damage * ((100 - enemy.physReductPercentage) / 100)
+    }
+
+    if (typeof enemy.physReductionFlat === "number"){
+      // so far the only character with this stat is amumu and his is calculated post mitigation which is why this is here.
+      damage -= enemy.physReductionFlat;
+    }
+
+    return damage;
+  }
+  else if (damageType === "magical"){
+    const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
+    let enemyResistMultiplier = 100/(100+eResist);
+    let damage = totalDamage * enemyResistMultiplier;
+    if (typeof enemy.dmgReductionPercentage === "number"){
+      damage = damage * ((100 - enemy.dmgReductionPercentage) / 100)
+    }
+
+    if (typeof enemy.magicReductPercentage === "number"){
+      damage = damage * ((100 - enemy.magicReductPercentage) / 100)
+    }
+
+    return damage;
+  }
+  else if (damageType === "true"){
+    return totalDamage;
+  }
+  else {
+    return 0
+  }
 }
+
 
 export const calculateBasic = (ally, enemy) => {
   const damageValues = {
@@ -760,8 +806,6 @@ export const calculateBasic = (ally, enemy) => {
 }
 
 export const calculateSkill = (ally, enemy, skill, skillLv) => {
-  skillLv -= 1;
-
   let bonusAd = ally.attack - ally.baseAttack - (ally.lvAttack * (ally.lv - 1))
   let ap = ally.ap;
 
@@ -810,23 +854,13 @@ export const calculateSkill = (ally, enemy, skill, skillLv) => {
     }
   }
 
-  const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
-  const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
-  skillValues.multiplier = skill.damage === "physical" ? (100 / (100 + eArmor)) : skill.damage === "magical" ? (100 / (100 + eResist)) : skill.damage === "true" ? 1 : 0;
-
-  let totalDamage = 0;
   skillValues["damageValues"]["base"] = (skill.type === "damage" || skill.type === "shield" || skill.type === "heal") && typeof skill.base[skillLv] === "number" ? skill.base[skillLv] : 0;
-
-  for (let damage in skillValues["damageValues"]){
-    if (skillValues["damageValues"][damage] > 0){
-      totalDamage += skillValues["damageValues"][damage]
-    }
-  }
+  let totalDamage = skillValues["damageValues"]["base"] + skillValues["damageValues"]["level"] + skillValues["damageValues"]["ap"] + skillValues["damageValues"]["ad"] + skillValues["damageValues"]["bonus ad"] + skillValues["damageValues"]["max hp"] + skillValues["damageValues"]["enemy max hp"];
 
   skillValues["totalDamage"] = totalDamage;
   
   if (skill.type === "damage"){
-    skillValues["finalDamage"] = totalDamage * skillValues.multiplier;
+    skillValues["finalDamage"] = calculateDamage(totalDamage, skill.damage, ally, enemy);
     skillValues["percentage"] = skillValues["finalDamage"] / enemy.hp * 100;
   }
   else if (skill.type === "heal" || skill.type === "shield"){
