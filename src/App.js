@@ -62,8 +62,6 @@ class App extends Component {
       mainEnemy: {
         name: "target",
         hp: 400,
-        armor: 0,
-        resist: 0
       },
       modified: true
     })
@@ -83,7 +81,7 @@ class App extends Component {
     mainEnemy[stat] = val;
 
     this.setState({
-      mainEnemy: mainEnemy
+      mainEnemy: mainEnemy,
     })
   }
 

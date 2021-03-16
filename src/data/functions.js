@@ -153,6 +153,8 @@ const duplicateRunes = (runes) => {
 }
 
 const duplicateChampion = (championData) => {
+  if (championData.name === "target") {return championData};
+
   const dupe = {};
   for (let key in championData) {
     if (typeof championData[key] === "string" || typeof championData[key] === "number" || typeof championData[key] === "boolean") {
@@ -172,9 +174,8 @@ const duplicateChampion = (championData) => {
 }
 
 const getBaseStats = (champ,lv, stat) => {
-
   const capitalizedstat = stat.charAt(0).toUpperCase() + stat.slice(1);
-  return ChampionData[champ][stat] + (ChampionData[champ][`lv${capitalizedstat}`] * lv);
+  return ChampionData[champ][stat] + (ChampionData[champ][`lv${capitalizedstat}`] * (lv-1));
 }
 
 export const applyBuffs = (allyChampionData, enemyChampionData) => {
@@ -263,6 +264,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
   })
 
   // Champion specific buffs
+  // At this point I was more confortable with using if else statement if there is a performance issue switch is apparently slightly faster.
   dupedChampionArray.forEach((champ, idx) => {
     champ.onAttack = [];
     let enemyChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
@@ -710,7 +712,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
           champ.infinity = champ.critChance >= 60;
           break;
         case "rocksolid":
-          champ.onAttack.push(["ROCKSOLID", (5 * (dupedChampionArray[enemy].hp / 1000)).toFixed(0), "physical"]);
+          champ.onAttack.push(["ROCKSOLID", (5 * (dupedChampionArray[enemy].hp / 1000)).toFixed(0), "true"]);
           break;
         default:
           break;
@@ -725,7 +727,56 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     champ.armor *= champ.armorMultiplier;
     champ.resist *= champ.resistMultiplier;
     if (champ.wanderer === true || champ.hunter === true){
+      champ.critDamage += (35 * 0.9);
+    }
+    else if (champ.infinity){
+      champ.critDamage += 35;
+    }
 
+    if (champ.hasNashors){
+      champ.onAttack.push(["NASHOR", (15 + (champ.ap * 0.2)), "magical"])
+    }
+
+    let abilityScale = 0;
+    let apScale = 0;
+    let bonusAd = 0;
+    let adScale = 0;
+
+    // champion specific on attack
+    switch(true){
+      case ((champ.name === "masteryi") && (champ.wuju === true) && (champ.ability3 > 0)):
+        abilityScale = [20,30,40,50,60][champ.ability3 - 1];
+        bonusAd = champ.attack - getBaseStats("masteryi", champ.lv, "attack");
+        champ.onAttack.push(["WUJU", (abilityScale + bonusAd * 0.35),"true"]);
+        break;
+      case ((champ.name === "teemo") && (champ.poison === true) && (champ.ability3 > 0)):
+        abilityScale = [10,20,30,40,50][champ.ability3 - 1];
+        apScale = champ.ap * 0.3;
+        champ.onAttack.push(["POISON", (abilityScale + apScale),"magical"]);
+        break;
+      case ((champ.name === "varus") && (champ.blighted === true) && (champ.ability2 > 0)):
+        abilityScale = [7,8,9,10,11][champ.ability3 - 1];
+        apScale = champ.ap * 0.25;
+        champ.onAttack.push(["BLIGHT", (abilityScale + apScale),"magical"]);
+        break;
+      case ((champ.name === "warwick") && (champ.hungry === true)):
+        abilityScale = 10 + (2 * champ.lv);
+        adScale = (champ.attack - getBaseStats("masteryi", champ.lv, "attack")) * 0.15;
+        apScale = champ.ap * 0.1;
+        champ.onAttack.push(["WARWICK", (abilityScale + apScale + adScale),"magical"]);
+        break;
+      case ((champ.name === "irelia") && (champ.ionianFervor === true)):
+        abilityScale = 12 + (3 * champ.lv);
+        adScale = (champ.attack - getBaseStats("masteryi", champ.lv, "attack"))*0.25;
+        champ.onAttack.push(["FERVOR", (abilityScale + adScale),"magical"]);
+        break;
+      case ((champ.name === "orianna") && (champ.cog === true)):
+        abilityScale = 10 + (8 * (Math.floor(champ.lv / 3)));
+        apScale = champ.ap * 0.15;
+        champ.onAttack.push(["COGWORK", (abilityScale + apScale),"magical"]);
+        break;
+      default:
+        break;
     }
   })
 
@@ -780,6 +831,26 @@ const calculateDamage = (totalDamage, damageType, ally, enemy) => {
   }
 }
 
+const calculateOnAttack = (ally, enemy) => {
+  let totalDamage = 0;
+  let blade = false;
+  if (ally.onAttack !== undefined && Array.isArray(ally.onAttack)){
+    ally.onAttack.forEach(attack => {
+      switch (attack[0]) {
+        case "ROCKSOLID":
+          totalDamage -= attack[1];
+          break;
+        case "BOTRK":
+          blade = true;
+          break;
+        default:
+          totalDamage += calculateDamage(attack[1], attack[2], ally, enemy);
+          break;
+      }
+    })
+  }
+  return [totalDamage, blade];
+}
 
 export const calculateBasic = (ally, enemy) => {
   const damageValues = {
@@ -853,8 +924,12 @@ export const calculateSkill = (ally, enemy, skill, skillLv) => {
       skillValues["cooldown"] = skillValues["cooldown"] * (100/(100+ally.abilityHaste))
     }
   }
+  
+  if (skill.base !== undefined) {
+    skillValues["damageValues"]["base"] = (skill.type === "damage" || skill.type === "shield" || skill.type === "heal") && typeof skill.base[skillLv] === "number" ? skill.base[skillLv] : 0;
+  }
 
-  skillValues["damageValues"]["base"] = (skill.type === "damage" || skill.type === "shield" || skill.type === "heal") && typeof skill.base[skillLv] === "number" ? skill.base[skillLv] : 0;
+
   let totalDamage = skillValues["damageValues"]["base"] + skillValues["damageValues"]["level"] + skillValues["damageValues"]["ap"] + skillValues["damageValues"]["ad"] + skillValues["damageValues"]["bonus ad"] + skillValues["damageValues"]["max hp"] + skillValues["damageValues"]["enemy max hp"];
 
   skillValues["totalDamage"] = totalDamage;

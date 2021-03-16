@@ -23,8 +23,6 @@ const CalcBasic = ({ ally, enemy }) => {
 	let titanic = 0;
 	let wrath = 0;
 
-	console.log(enemy.resist)
-
 	let wrathDamage = 0;
 
 	if (ally.itemEffects !== undefined) {
@@ -126,7 +124,6 @@ const CalcBasic = ({ ally, enemy }) => {
 	for (let enemyLife = enemy.hp; enemyLife > 0; ){
 		if (ruinedking) {
 			averageCount++;
-			console.log(typeof averageDamage)
 			enemyLife -= (parseInt(averageDamage) + ((enemyLife * blade) * enemyArmorMultiplier))
 		}
 		else {

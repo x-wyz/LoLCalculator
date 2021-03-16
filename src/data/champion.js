@@ -6599,7 +6599,7 @@ export let ChampionData = {
         image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg',
     },
     masteryi: {
-        name: 'masterYi',
+        name: 'masteryi',
         wuju: false,
         lv: 1,
         baseHp: 599,
@@ -7944,7 +7944,7 @@ export let ChampionData = {
             emhp: [15,20],
             rname: "Poppy_Passive",
             type: "shield",
-            note: "Shield, slight inaccuracy",
+            note: "Shield",
             damage: "magical",
             skill: 0
           },
