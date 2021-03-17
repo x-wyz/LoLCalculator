@@ -931,6 +931,21 @@ export const calculateSkill = (ally, enemy, skill, skillLv) => {
     cooldown: 0
   };
 
+  switch(skill.damage){
+    case "physical":
+      skillValues.multiplier = 100/(100+(enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18))));
+      break;
+    case "magical":
+      skillValues.multiplier = 100/(100+(enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen));
+      break;
+    case "true":
+      skillValues.multiplier = 1;
+      break;
+    default:
+      skillValues.multiplier = 0;
+      break;
+  }
+
   skillValues["damageValues"]["level"] = skill.lvScale !== undefined ? skill.lvScale[0] + ((skill.lvScale[1] - skill.lvScale[0]) / 17) * (ally.lv - 1) : 0;
   skillValues["damageValues"]["ap"] = (skill.ap !== 0 && skill.ap !== undefined) ? (Array.isArray(skill.ap) ? ap * (skill.ap[skillLv] / 100) : ap * (skill.ap / 100)) : 0;
   skillValues["damageValues"]["ad"] = (skill.ad !== 0 && skill.ad !== undefined) ? (Array.isArray(skill.ad) ? ally.ad * (skill.ad[skillLv] / 100) : ally.ad * (skill.ad / 100)) : 0;
@@ -970,19 +985,27 @@ export const calculateSkill = (ally, enemy, skill, skillLv) => {
   if (skill.base !== undefined) {
     skillValues["damageValues"]["base"] = (skill.type === "damage" || skill.type === "shield" || skill.type === "heal") && typeof skill.base[skillLv] === "number" ? skill.base[skillLv] : 0;
   }
+  else {
+    skillValues["damageValues"]["base"] = 0;
+  }
 
 
   let totalDamage = skillValues["damageValues"]["base"] + skillValues["damageValues"]["level"] + skillValues["damageValues"]["ap"] + skillValues["damageValues"]["ad"] + skillValues["damageValues"]["bonus ad"] + skillValues["damageValues"]["max hp"] + skillValues["damageValues"]["enemy max hp"];
 
+  console.log(skillValues["damageValues"]["level"] + skillValues["damageValues"]["ap"] + skillValues["damageValues"]["ad"] + skillValues["damageValues"]["bonus ad"] + skillValues["damageValues"]["max hp"] + skillValues["damageValues"]["enemy max hp"])
   skillValues["totalDamage"] = totalDamage;
   
-  if (skill.type === "damage"){
+  if (skill.type === "damage" || skill.damage !== undefined){
     skillValues["finalDamage"] = calculateDamage(totalDamage, skill.damage, ally, enemy);
     skillValues["percentage"] = skillValues["finalDamage"] / enemy.hp * 100;
   }
   else if (skill.type === "heal" || skill.type === "shield"){
     skillValues["finalDamage"] = totalDamage;
     skillValues["percentage"] = skillValues["finalDamage"] / ally.hp * 100;
+  }
+  else {
+    skillValues["finalDamage"] = 0;
+    skillValues["percentage"] = 0;
   }
 
   return skillValues;

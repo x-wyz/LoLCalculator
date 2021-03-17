@@ -7668,6 +7668,7 @@ export let ChampionData = {
             ap: 50,
             bAd: 0,
             rname: 'OrianaIzunaCommand',
+            skill: 1,
             cd: [[6,5.25,4.5,3.75,3], "single"],
           },
           {
@@ -7678,6 +7679,7 @@ export let ChampionData = {
             ap: 70,
             bAd: 0,
             rname: 'OrianaDissonanceCommand',
+            skill: 2,
             cd: [[7], "single"],
           },
           {
@@ -7687,6 +7689,7 @@ export let ChampionData = {
             ad: 0,
             ap: 30,
             bAd: 0,
+            skill: 3,
             rname: "OrianaRedactCommand",
             cd: [[9], "single"],
           },
@@ -7697,6 +7700,8 @@ export let ChampionData = {
             ap: 50,
             buff: "protect",
             bAd: 0,
+            skill: 3,
+            note: "shield",
             rname: "OrianaRedactCommand",
             cd: [[9], "single"],
           },
@@ -7707,6 +7712,7 @@ export let ChampionData = {
             ad: 0,
             ap: 80,
             bAd: 0,
+            skill: 4,
             rname: 'OrianaDetonateCommand',
             cd: [[110,95,80], "single"],
           }
@@ -7941,11 +7947,10 @@ export let ChampionData = {
           },
           {
             lvScale: [0,0],
-            emhp: [15,20],
+            mhp: [15,20],
             rname: "Poppy_Passive",
             type: "shield",
             note: "Shield",
-            damage: "magical",
             skill: 0
           },
           {
