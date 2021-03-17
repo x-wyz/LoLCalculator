@@ -726,7 +726,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     champ.ap *= champ.apMultiplier;
     champ.armor *= champ.armorMultiplier;
     champ.resist *= champ.resistMultiplier;
-    if (champ.wanderer === true || champ.hunter === true){
+    if ((champ.wanderer === true || champ.hunter === true) && champ.infinity){
       champ.critDamage += (35 * 0.9);
     }
     else if (champ.infinity){
@@ -784,6 +784,12 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
 }
 
 const calculateDamage = (totalDamage, damageType, ally, enemy) => {
+  // is probably more efficient to implement this directly into the functions that need it but until the app is too slow will leave this here.
+  // as some functions will need to call this multiple times so recalculating the enemy res etc... would be kind of wasted
+  // a solution could be to have this calculate all the resistences and just return an object holding those values but theres almost no
+  // difference between that and just implementing directly using the enemy object. it would be cleaner though
+
+  // the only function that currently calls this multiple times is the calculatebasic function.
   let damage = totalDamage;
   if (typeof enemy.dmgReductionFlat === "number"){
     // fizz is currently the only champion able to obtain this stat
@@ -812,7 +818,7 @@ const calculateDamage = (totalDamage, damageType, ally, enemy) => {
   else if (damageType === "magical"){
     const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
     let enemyResistMultiplier = 100/(100+eResist);
-    let damage = totalDamage * enemyResistMultiplier;
+    damage *= enemyResistMultiplier;
     if (typeof enemy.dmgReductionPercentage === "number"){
       damage = damage * ((100 - enemy.dmgReductionPercentage) / 100)
     }
@@ -854,6 +860,7 @@ const calculateOnAttack = (ally, enemy) => {
 
 export const calculateBasic = (ally, enemy) => {
   const damageValues = {
+    basic: 0,
     normal: 0,
     normalPercentage: 0,
     normalCount: 0,
@@ -869,9 +876,44 @@ export const calculateBasic = (ally, enemy) => {
   }
 
   const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
+  damageValues.armorMultiplier = 100/(100+eArmor);
+
   const eResist = enemy.resist * (1 - (ally.mpen / 100)) - ally.flatMPen;
-  let enemyArmorMultiplier = 100/(100+eArmor);
-  let enemyResistMultiplier = 100/(100+eResist);
+  damageValues.resistMultiplier = 100/(100+eResist);
+
+  let [totalOnAttackDamage, ruinedking] = calculateOnAttack(ally, enemy);
+  ruinedking = ruinedking === false ? 0 : ally.range === "melee" ? 0.1 : 0.06;
+
+  damageValues.basic = ally.ad;
+  damageValues.normal = calculateDamage(ally.ad, "physical", ally, enemy) + totalOnAttackDamage;
+  damageValues.crit = calculateDamage(ally.ad * (ally.critDamage / 100), "physical", ally, enemy) + totalOnAttackDamage;
+
+  let averageDamage = parseInt(damageValues.normal) + ((damageValues.crit - damageValues.normal)/100) * ally.critChance;
+  damageValues.average = calculateDamage(averageDamage, "physical", ally, enemy) + totalOnAttackDamage;
+
+  damageValues.normalPercentage = (damageValues.normal / enemy.hp) * 100
+  damageValues.critPercentage = (damageValues.crit / enemy.hp) * 100
+  damageValues.average = (damageValues.average / enemy.hp) * 100
+
+  for (let x = enemy.hp; x > 0;){
+    damageValues.normalCount += 1;
+    let ruinedkingdamage = x * ruinedking;
+    x -= (x * ruinedking) + damageValues.normal + ruinedkingdamage;
+  }
+
+  for (let y = enemy.hp; y > 0;){
+    damageValues.critCount += 1;
+    let ruinedkingdamage = y * ruinedking;
+    y -= (y * ruinedking) + damageValues.crit + ruinedkingdamage;
+  }
+
+  for (let z = enemy.hp; z > 0;){
+    damageValues.averageCount += 1;
+    let ruinedkingdamage = z * ruinedking;
+    z -= (z * ruinedking) + damageValues.average + ruinedkingdamage;
+  }
+
+  damageValues.items = ally.onAttack();
 
   return damageValues;
 }
