@@ -682,27 +682,27 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     champ.itemEffects.forEach(effect => {
       switch(effect.name){
         case "ruinedking":
-          champ.onAttack.push(["BOTRK", `${champ.range === "melee" ? "melee" : "ranged"}`]);
+          champ.onAttack.push(["BOTRK", `${champ.range === "melee" ? "melee" : "ranged"}`, "blade of the ruined king"]);
           break;
         case "fray":
-          champ.onAttack.push(["WITS", (15 + 65 / 17 * (champ.lv - 1)), "magical"])
+          champ.onAttack.push(["WITS", (15 + 65 / 17 * (champ.lv - 1)), "magical", "wit's end"])
           break;
         case "nashors":
           // will push later to ensure ap from deathcap is calculated
           champ.hasNashors = true;
           break;
         case "recurve":
-          champ.onAttack.push(["RECURVE", 15,"physical"])
+          champ.onAttack.push(["RECURVE", 15,"physical", "recurve bow"])
           break;
         case "titanic":
-          champ.onAttack.push(["TITANIC", 5 + (champ.hp * 0.015), "physical"])
+          champ.onAttack.push(["TITANIC", 5 + (champ.hp * 0.015), "physical", "titanic hydra"])
           break;
         case "wrath":
-          champ.onAttack.push(["RAGEKNIFE", (champ.critChance >= 100 ? 175 : champ.critChance * 1.75), "physical"])
+          champ.onAttack.push(["RAGEKNIFE", (champ.critChance >= 100 ? 175 : champ.critChance * 1.75), "physical", "rageknife"])
           champ.critChance = 0;
           break;
         case "wrath2":
-          champ.onAttack.push(["RAGEBLADE", (champ.critChance >= 100 ? 200 : champ.critChance * 2), "physical"])
+          champ.onAttack.push(["RAGEBLADE", (champ.critChance >= 100 ? 200 : champ.critChance * 2), "physical", "rageblade"])
           champ.critChance = 0;
           break;
         case "deathcap":
@@ -712,7 +712,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
           champ.infinity = champ.critChance >= 60;
           break;
         case "rocksolid":
-          champ.onAttack.push(["ROCKSOLID", (5 * (dupedChampionArray[enemy].hp / 1000)).toFixed(0), "true"]);
+          champ.onAttack.push(["ROCKSOLID", (5 * (dupedChampionArray[enemy].hp / 1000)).toFixed(0), "true", "rocksolid"]);
           break;
         default:
           break;
@@ -734,7 +734,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     }
 
     if (champ.hasNashors){
-      champ.onAttack.push(["NASHOR", (15 + (champ.ap * 0.2)), "magical"])
+      champ.onAttack.push(["NASHOR", (15 + (champ.ap * 0.2)), "magical", "nashor's tooth"])
     }
 
     let abilityScale = 0;
@@ -747,33 +747,33 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
       case ((champ.name === "masteryi") && (champ.wuju === true) && (champ.ability3 > 0)):
         abilityScale = [20,30,40,50,60][champ.ability3 - 1];
         bonusAd = champ.attack - getBaseStats("masteryi", champ.lv, "attack");
-        champ.onAttack.push(["WUJU", (abilityScale + bonusAd * 0.35),"true"]);
+        champ.onAttack.push(["WUJU", (abilityScale + bonusAd * 0.35),"true", "wuju style"]);
         break;
       case ((champ.name === "teemo") && (champ.poison === true) && (champ.ability3 > 0)):
         abilityScale = [10,20,30,40,50][champ.ability3 - 1];
         apScale = champ.ap * 0.3;
-        champ.onAttack.push(["POISON", (abilityScale + apScale),"magical"]);
+        champ.onAttack.push(["POISON", (abilityScale + apScale),"magical", "poison dart"]);
         break;
       case ((champ.name === "varus") && (champ.blighted === true) && (champ.ability2 > 0)):
         abilityScale = [7,8,9,10,11][champ.ability3 - 1];
         apScale = champ.ap * 0.25;
-        champ.onAttack.push(["BLIGHT", (abilityScale + apScale),"magical"]);
+        champ.onAttack.push(["BLIGHT", (abilityScale + apScale),"magical", "blighted arrow"]);
         break;
       case ((champ.name === "warwick") && (champ.hungry === true)):
         abilityScale = 10 + (2 * champ.lv);
         adScale = (champ.attack - getBaseStats("masteryi", champ.lv, "attack")) * 0.15;
         apScale = champ.ap * 0.1;
-        champ.onAttack.push(["WARWICK", (abilityScale + apScale + adScale),"magical"]);
+        champ.onAttack.push(["WARWICK", (abilityScale + apScale + adScale),"magical", "warwick passive"]);
         break;
       case ((champ.name === "irelia") && (champ.ionianFervor === true)):
         abilityScale = 12 + (3 * champ.lv);
         adScale = (champ.attack - getBaseStats("masteryi", champ.lv, "attack"))*0.25;
-        champ.onAttack.push(["FERVOR", (abilityScale + adScale),"magical"]);
+        champ.onAttack.push(["FERVOR", (abilityScale + adScale),"magical", "ionian fervor"]);
         break;
       case ((champ.name === "orianna") && (champ.cog === true)):
         abilityScale = 10 + (8 * (Math.floor(champ.lv / 3)));
         apScale = champ.ap * 0.15;
-        champ.onAttack.push(["COGWORK", (abilityScale + apScale),"magical"]);
+        champ.onAttack.push(["COGWORK", (abilityScale + apScale),"magical", "cogs"]);
         break;
       default:
         break;
@@ -884,36 +884,45 @@ export const calculateBasic = (ally, enemy) => {
   let [totalOnAttackDamage, ruinedking] = calculateOnAttack(ally, enemy);
   ruinedking = ruinedking === false ? 0 : ally.range === "melee" ? 0.1 : 0.06;
 
-  damageValues.basic = ally.ad;
-  damageValues.normal = calculateDamage(ally.ad, "physical", ally, enemy) + totalOnAttackDamage;
-  damageValues.crit = calculateDamage(ally.ad * (ally.critDamage / 100), "physical", ally, enemy) + totalOnAttackDamage;
+  damageValues.basic = ally.attack;
+  damageValues.normal = calculateDamage(ally.attack, "physical", ally, enemy) + totalOnAttackDamage;
+  damageValues.crit = calculateDamage(ally.attack * (ally.critDamage / 100), "physical", ally, enemy) + totalOnAttackDamage;
+  
+  if (ally.critChance === 0){
+    damageValues.average = damageValues.normal;
+  }
+  else if (ally.critChance === 100){
+    damageValues.average = damageValues.crit;
+  }
+  else {
+    let averageDamage = parseInt(damageValues.basic) + ((damageValues.crit - damageValues.normal)/100) * ally.critChance;
+    damageValues.average = calculateDamage(averageDamage, "physical", ally, enemy) + totalOnAttackDamage;
+  }
 
-  let averageDamage = parseInt(damageValues.normal) + ((damageValues.crit - damageValues.normal)/100) * ally.critChance;
-  damageValues.average = calculateDamage(averageDamage, "physical", ally, enemy) + totalOnAttackDamage;
 
   damageValues.normalPercentage = (damageValues.normal / enemy.hp) * 100
   damageValues.critPercentage = (damageValues.crit / enemy.hp) * 100
-  damageValues.average = (damageValues.average / enemy.hp) * 100
+  damageValues.averagePercentage = (damageValues.average / enemy.hp) * 100
 
   for (let x = enemy.hp; x > 0;){
     damageValues.normalCount += 1;
-    let ruinedkingdamage = x * ruinedking;
-    x -= (x * ruinedking) + damageValues.normal + ruinedkingdamage;
+    let ruinedkingdamage = ruinedking !== 0 ? calculateDamage(x * ruinedking, "physical", ally, enemy) : 0;
+    x -= damageValues.normal + ruinedkingdamage;
   }
 
   for (let y = enemy.hp; y > 0;){
     damageValues.critCount += 1;
     let ruinedkingdamage = y * ruinedking;
-    y -= (y * ruinedking) + damageValues.crit + ruinedkingdamage;
+    y -= damageValues.crit + ruinedkingdamage;
   }
 
   for (let z = enemy.hp; z > 0;){
     damageValues.averageCount += 1;
     let ruinedkingdamage = z * ruinedking;
-    z -= (z * ruinedking) + damageValues.average + ruinedkingdamage;
+    z -= damageValues.average + ruinedkingdamage;
   }
 
-  damageValues.items = ally.onAttack();
+  damageValues.items = ally.onAttack;
 
   return damageValues;
 }
@@ -992,7 +1001,6 @@ export const calculateSkill = (ally, enemy, skill, skillLv) => {
 
   let totalDamage = skillValues["damageValues"]["base"] + skillValues["damageValues"]["level"] + skillValues["damageValues"]["ap"] + skillValues["damageValues"]["ad"] + skillValues["damageValues"]["bonus ad"] + skillValues["damageValues"]["max hp"] + skillValues["damageValues"]["enemy max hp"];
 
-  console.log(skillValues["damageValues"]["level"] + skillValues["damageValues"]["ap"] + skillValues["damageValues"]["ad"] + skillValues["damageValues"]["bonus ad"] + skillValues["damageValues"]["max hp"] + skillValues["damageValues"]["enemy max hp"])
   skillValues["totalDamage"] = totalDamage;
   
   if (skill.type === "damage" || skill.damage !== undefined){

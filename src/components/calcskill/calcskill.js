@@ -11,9 +11,6 @@ const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
 
 	const skillresults = calculateSkill(ally, enemy, skill, skillLv);
 
-	console.log(skill)
-	console.log(skillresults)
-
 	return (
 		<section className="skill-calculations-container">
 			{
