@@ -1,6 +1,8 @@
 import {ChampionData} from './champion';
 import {ItemsData} from './items';
 
+import {duplicate} from './general';
+
 const runes = {
     precision: {
       key1: false,
@@ -102,29 +104,11 @@ const buffs = {
 export const cloneChampion = (championName) => {
   if (ChampionData[championName] !== undefined){
     const champion = ChampionData[championName];
-    const clonedChampion = {};
+    const clonedChampion = duplicate(champion);
 
-    clonedChampion.runes = {};
-    clonedChampion.buffs = {};
+    clonedChampion.runes = duplicate(runes);
+    clonedChampion.buffs = duplicate(buffs);
     clonedChampion.items = [{},{},{},{},{},{}];
-
-    // clones all keys from champion to cloned champion there is an abilities array but it's only holding static objects
-    for (let key in champion){
-      clonedChampion[key] = champion[key]
-    }
-
-    for (let runepage in runes) {
-      clonedChampion.runes[runepage] = {};
-      for (let node in runes[runepage]) {
-        // default values for all rune nodes - false
-        clonedChampion.runes[runepage][node] = runes[runepage][node];
-      }
-    }
-
-    for (let buff in buffs){
-      // default values for all buffs - false
-      clonedChampion.buffs[buff] = buffs[buff];
-    }
 
     return clonedChampion;
   }
@@ -133,43 +117,9 @@ export const cloneChampion = (championName) => {
   }
 }
 
-const duplicateBuffs = (buffs) => {
-  let dupe = {};
-  for (let buff in buffs){
-    dupe[buff] = buffs[buff];
-  }
-  return dupe;
-}
-
-const duplicateRunes = (runes) => {
-  let dupe = {};
-  for (let page in runes){
-    dupe[page] = {};
-    for (let node in runes[page]){
-      dupe[page][node] = runes[page][node];
-    }
-  }
-  return dupe;
-}
-
-const duplicateChampion = (championData) => {
+export const duplicateChampion = (championData) => {
   if (championData.name === "target") {return championData};
-
-  const dupe = {};
-  for (let key in championData) {
-    if (typeof championData[key] === "string" || typeof championData[key] === "number" || typeof championData[key] === "boolean") {
-      dupe[key] = championData[key]
-    }
-    else if (key === "abilities" || key === "itemEffects" || key === "items"){
-      dupe[key] = championData[key]
-    }
-    else if (key === "runes") {
-      dupe.runes = duplicateRunes(championData[key]);
-    }
-    else if (key === "buffs") {
-      dupe.buffs = duplicateBuffs(championData[key]);
-    }
-  }
+  const dupe = duplicate(championData);
   return dupe;
 }
 
@@ -957,11 +907,11 @@ export const calculateSkill = (ally, enemy, skill, skillLv) => {
 
   skillValues["damageValues"]["level"] = skill.lvScale !== undefined ? skill.lvScale[0] + ((skill.lvScale[1] - skill.lvScale[0]) / 17) * (ally.lv - 1) : 0;
   skillValues["damageValues"]["ap"] = (skill.ap !== 0 && skill.ap !== undefined) ? (Array.isArray(skill.ap) ? ap * (skill.ap[skillLv] / 100) : ap * (skill.ap / 100)) : 0;
-  skillValues["damageValues"]["ad"] = (skill.ad !== 0 && skill.ad !== undefined) ? (Array.isArray(skill.ad) ? ally.ad * (skill.ad[skillLv] / 100) : ally.ad * (skill.ad / 100)) : 0;
+  skillValues["damageValues"]["ad"] = (skill.ad !== 0 && skill.ad !== undefined) ? (Array.isArray(skill.ad) ? ally.attack * (skill.ad[skillLv] / 100) : ally.attack * (skill.ad / 100)) : 0;
   skillValues["damageValues"]["bonus ad"] = (skill.bAd !== 0 && skill.bAd !== undefined) ? (Array.isArray(skill.bAd) ? bonusAd * (skill.bAd[skillLv] / 100) : bonusAd * (skill.bAd / 100)) : 0;
   skillValues["damageValues"]["max hp"] = (skill.mhp !== 0 && skill.mhp !== undefined) ? (Array.isArray(skill.mhp) ? ally.hp * (skill.mhp[skillLv] / 100) : ally.hp * (skill.mhp / 100)) : 0;
   skillValues["damageValues"]["enemy max hp"] = (skill.emhp !== 0 && skill.emhp !== undefined) ? (Array.isArray(skill.emhp) ? enemy.hp * (skill.emhp[skillLv] / 100) : enemy.hp * (skill.emhp / 100)) : 0;
-
+  
   if (skill.emhpScale !== 0 && skill.emhpScale !== undefined){
     if (skill.emhpScale[2] === "ap") {
       const times = ap / skill.emhpScale[1];

@@ -104,3 +104,7 @@
 .edit-discard:hover {
 	background: #f88c8c;
 }
+
+.edit-discard {
+	margin-top: 1em;
+}

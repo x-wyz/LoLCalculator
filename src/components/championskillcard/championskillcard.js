@@ -16,11 +16,8 @@ const ChampionSkillCard = ({ update, currentLv, skillPosition, skill, ultimate})
 						if (ultimate === true && level > 3){
 							return null;
 						}
-						else if (level === currentLv) {
-							return <option selected="selected" className="skill-lv-option" value={level}>{level}</option>
-						}
 						else {
-							return <option className="skill-lv-option" value={level}>{level}</option>
+							return <option selected={level === currentLv ? true : false} className="skill-lv-option" value={level}>{level}</option>
 						}
 					})
 				}

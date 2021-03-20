@@ -12,9 +12,7 @@ import SavedChampion from './components/savedchampion/savedchampion';
 
 import { ChampionData } from './data/champion';
 import { ItemsData } from './data/items';
-import { cloneChampion, applyBuffs } from './data/functions';
-
-import SkillEditor from './components/skilleditor/skilleditor';
+import { cloneChampion, applyBuffs, duplicateChampion } from './data/functions';
 
 class App extends Component {
   constructor(props){
@@ -52,6 +50,30 @@ class App extends Component {
     this.setup = this.setup.bind(this);
 
     this.applyBuffs = this.applyBuffs.bind(this);
+
+    this.modifyAbility = this.modifyAbility.bind(this);
+    this.applySelfBuff = this.applySelfBuff.bind(this);
+  }
+
+  modifyAbility(skill, idx, target){
+    console.log(skill)
+  }
+
+  applySelfBuff(buff, target, value){
+    let champ = {};
+    if (target === "mainAlly"){
+      champ = duplicateChampion(this.state.mainAlly);
+    }
+    else {
+      champ = duplicateChampion(this.state.mainEnemy);
+    }
+
+    champ[buff] = !champ[buff];
+
+    this.setState({
+      [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champ,
+      modified: true
+    })
   }
 
   setup(){
@@ -431,7 +453,6 @@ class App extends Component {
         {
           showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} importData={this.parseImport} /> : null
         }
-        <SkillEditor skill={mainAlly.abilities[1]} />
         <div className="App">
           <div className="full-sidebar">
             <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
@@ -453,7 +474,7 @@ class App extends Component {
               <ChampionCard updateDummy={this.updateDummy} save={this.saveChampion} level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
             </div>
           </header>
-          <CalculationArea dummy={this.state.mainEnemy.name === "target" ? true : false} ally={buffedAlly} enemy={buffedEnemy} update={true} />
+          <CalculationArea buff={this.applySelfBuff} updateSkill={this.modifyAbility} dummy={this.state.mainEnemy.name === "target" ? true : false} ally={buffedAlly} enemy={buffedEnemy} update={true} />
           <div className="export-data" onClick={this.showExport} >
             EX
           </div>

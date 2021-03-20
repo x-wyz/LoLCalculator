@@ -95,3 +95,15 @@
 .skill-cooldown-text {
 	font-size: 1.5em;
 }
+
+.skill-has-buff {
+	cursor: pointer;
+}
+
+.skill-has-inactive-buff {
+	background: #39392e;
+}
+
+.skill-has-active-buff {
+	background: #4f7d1a;
+}

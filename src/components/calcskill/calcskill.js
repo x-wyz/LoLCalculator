@@ -4,15 +4,15 @@ import './calcskill.css';
 import SI from '../../assets/si_crest.png';
 
 import { calculateSkill } from '../../data/functions';
+import SkillEditor from "../skilleditor/skilleditor";
 
-const CalcSkill = ({ ally, enemy, skill, skillLv }) => {
+const CalcSkill = ({ ally, enemy, skill, skillLv, buff }) => {
 
 	skillLv -= 1;
-
 	const skillresults = calculateSkill(ally, enemy, skill, skillLv);
 
 	return (
-		<section className="skill-calculations-container">
+		<section className={`skill-calculations-container ${skill.buff !== undefined ? `${ally[skill.buff] !== false ? "skill-has-active-buff" : "skill-has-inactive-buff"} skill-has-buff`: null} skill-calculation-body`} onClick={skill.buff !== undefined ? () => buff(skill.buff) : null}>
 			{
 				skillLv === -1 ? (<div className="empty-skill-calc">
 					<img src={SI} className="skill-placeholder-img" alt=""/>
