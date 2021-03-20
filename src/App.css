@@ -129,3 +129,30 @@ body {
 .saved-list-container {
   height: 90vh;
 }
+
+.legal-footer {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  background: #131c1b;
+  color: #79ffe7;
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+  font-size: 0.9em;
+  box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.6);
+}
+
+.product-name {
+  font-style: italic;
+}
+
+@media only screen and (max-width: 600px){
+  .export-data, .saved-data{
+    display:none;
+  }
+
+  .legal-footer {
+    width: 100%;
+    font-size: 0.7em;
+  }
+}

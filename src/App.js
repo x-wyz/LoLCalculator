@@ -67,10 +67,6 @@ class App extends Component {
 
     champ.abilities[idx] = skill; 
 
-    console.log(skill)
-    console.log(idx)
-    console.log(target)
-
     this.setState({
       [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champ,
       modified: true
@@ -493,6 +489,9 @@ class App extends Component {
             </div>
           </header>
           <CalculationArea buff={this.applySelfBuff} updateSkill={this.modifyAbility} dummy={this.state.mainEnemy.name === "target" ? true : false} ally={buffedAlly} enemy={buffedEnemy} update={true} />
+          <div className="legal-footer">
+            <span className="product-name">League of Legends Damage Calculator</span> isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+          </div>
           <div className="export-data" onClick={this.showExport} >
             EX
           </div>
