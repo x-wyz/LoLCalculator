@@ -6,7 +6,6 @@ import './calcbasic.css';
 const CalcBasic = ({ ally, enemy }) => {
 
 	const basicvalues = calculateBasic(ally, enemy);
-	console.log(basicvalues)
 	// potential on-hit effects
 	const items = [];
 

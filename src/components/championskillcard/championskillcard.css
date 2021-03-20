@@ -38,8 +38,9 @@
 	margin-left: 1em;
 	outline: 0;
 	text-indent: 50%;
-	background: #131918;
+	background: transparent;
 	color: white;
+	border: 0;
 }
 
 .skill-lv-option {

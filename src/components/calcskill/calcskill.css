@@ -105,5 +105,36 @@
 }
 
 .skill-has-active-buff {
-	background: #4f7d1a;
+	background: #3b640c;
+}
+
+.skill-modifier {
+	width: 0;
+	height: 0;
+	top: 0;
+	right: 0;
+	position: absolute;
+	cursor: pointer;
+}
+
+.skill-modifier:before {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 0;
+    height: 0;
+    border: 20px solid #b3b3b3;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    content: "";
+}
+
+.skill-modifier:after {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    content: "✎";
+    color: black;
+    font-size: 15px;
 }

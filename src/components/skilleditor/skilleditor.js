@@ -52,7 +52,7 @@ class SkillEditor extends Component {
 	}
 
 	pushNewAbility(){
-		const { damage, ad, bAd, ap, note, mhp, ar, res, lvScale, emhp, cooldown, emhpScaleBAD, emhpScaleAp } = this.state;
+		const { damage, ad, bAd, ap, note, mhp, ar, res, lvScale, emhp, cooldown, emhpScaleBAD, emhpScaleAp, base } = this.state;
 		const newAbility = duplicate(this.props.skill);
 		newAbility.damage = damage;
 		newAbility.ad = this.parseValue(ad);
@@ -67,8 +67,10 @@ class SkillEditor extends Component {
 		newAbility.cd[0] = this.parseValue(cooldown);
 		newAbility.emhpScale = parseFloat(emhpScaleAp) > 0 ? [this.parseValue(emhpScaleAp), 100, "ap"] : newAbility.emhpScale;
 		newAbility.emhpScale = parseFloat(emhpScaleBAD) > 0 ? [this.parseValue(emhpScaleBAD), 100, "bAd"] : newAbility.emhpScale;
+		newAbility.base = this.parseValue(base);
 
-		this.props.update(newAbility, this.props.skillCard, this.props.target)
+		this.props.apply(newAbility);
+		this.props.exit();
 	}
 
 	render(){
@@ -165,7 +167,7 @@ class SkillEditor extends Component {
 						<div className="editor-column">
 							<h4 className="editor-column-header">Actions</h4>
 							<button type="button" className="editor-button edit-save" onClick={this.pushNewAbility}>Save</button>
-							<button type="button" className="editor-button edit-discard">Discard</button>
+							<button type="button" className="editor-button edit-discard" onClick={this.props.exit}>Discard</button>
 						</div>
 					</div>
 					<div className="editor-errors">

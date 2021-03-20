@@ -56,7 +56,25 @@ class App extends Component {
   }
 
   modifyAbility(skill, idx, target){
+    let champ = {};
+    
+    if (target === "mainAlly"){
+      champ = this.state.mainAlly
+    }
+    else {
+      champ = this.state.mainEnemy
+    }
+
+    champ.abilities[idx] = skill; 
+
     console.log(skill)
+    console.log(idx)
+    console.log(target)
+
+    this.setState({
+      [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champ,
+      modified: true
+    })
   }
 
   applySelfBuff(buff, target, value){

@@ -4,6 +4,7 @@
 	position: fixed;
 	background: rgb(22,22,22, 0.93);
 	top: 0;
+	left: 0;
 	z-index: 51;
 	display: flex;
 	justify-content: center;

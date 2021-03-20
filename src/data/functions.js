@@ -1,6 +1,4 @@
 import {ChampionData} from './champion';
-import {ItemsData} from './items';
-
 import {duplicate} from './general';
 
 const runes = {

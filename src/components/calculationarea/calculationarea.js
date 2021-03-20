@@ -53,9 +53,9 @@ class CalculationArea extends Component {
 							:
 							enemyTab === true
 							?
-							enemy.abilities.map((ability, idx) => <CalcSkill buff={(buff, val) => this.props.buff(buff, "mainEnemy", val)} ally={enemy} enemy={ally} skill={ability} skillLv={enemy[`ability${ability.skill}`]} />)
+							enemy.abilities.map((ability, idx) => <CalcSkill updateSkill={(skill) => this.props.updateSkill(skill, idx, "mainEnemy")} buff={(buff, val) => this.props.buff(buff, "mainEnemy", val)} ally={enemy} enemy={ally} skill={ability} skillLv={enemy[`ability${ability.skill}`]} />)
 							:
-							ally.abilities.map((ability, idx) => <CalcSkill buff={(buff, val) => this.props.buff(buff, "mainAlly", val)} ally={ally} enemy={enemy} skill={ability} skillLv={ally[`ability${ability.skill}`]} />)
+							ally.abilities.map((ability, idx) => <CalcSkill updateSkill={(skill) => this.props.updateSkill(skill, idx, "mainAlly")} buff={(buff, val) => this.props.buff(buff, "mainAlly", val)} ally={ally} enemy={enemy} skill={ability} skillLv={ally[`ability${ability.skill}`]} />)
 						}
 					</div>
 					<h3 className="calculation-heading">Runes</h3>
