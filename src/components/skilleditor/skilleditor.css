@@ -1,0 +1,106 @@
+.skilleditor-bg {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background: rgb(22,22,22, 0.93);
+	top: 0;
+	z-index: 51;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+}
+
+.skilleditor {
+	background: #1c1c1c;
+	min-height: 400px;
+	width: 60%;
+	min-width: 500px;
+	border: 5px solid white;
+	box-sizing: border-box;
+}
+
+.skill-editor-header {
+	color: white;
+	font-size: 1.6em;
+	padding: 0.3em;
+}
+
+.edit-value-static {
+	color: #45df8a;
+}
+
+.editor {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.editor-column {
+	margin-left: 0.4em;
+	margin-right: 0.4em;
+	padding: 1em;
+	padding-bottom: 2em;
+	width: 200px;
+	background: #141212cf;
+}
+
+.editor-button {
+	display: block;
+	width: 100%;
+	min-width: 100px;
+	margin-top: 1.5em;
+	background: white;
+	border: 1px solid white;
+	border-radius: 5px;
+	transition: 0.2s background;
+	outline: 0;
+	padding: 0.2em;
+}
+
+.editor-value {
+	margin-top: 0.3em;
+}
+
+.edit-description {
+	color: #d8f6f6;
+	font-size: 0.8em;
+}
+
+.editor-column-header {
+	color: #ffa500;
+}
+
+.edit-value {
+	--edit-value-bg-color: white;
+	outline: 0;
+	border: 0;
+	border-bottom: 2px solid var(--edit-value-bg-color);
+	background: var(--edit-value-bg-color);
+}
+
+.edit-value:focus {
+	border-bottom-color: #ffa500;
+}
+
+.edit-value-long-value {
+	resize: none;
+	outline: none;
+}
+
+.editor-select-options {
+	font-size: 1em;
+	background: white;
+}
+
+.editor-selector {
+	outline: none;
+}
+
+.edit-save:hover {
+	background: #90e88b;
+}
+
+.edit-discard:hover {
+	background: #f88c8c;
+}

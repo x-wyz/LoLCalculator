@@ -14,6 +14,8 @@ import { ChampionData } from './data/champion';
 import { ItemsData } from './data/items';
 import { cloneChampion, applyBuffs } from './data/functions';
 
+import SkillEditor from './components/skilleditor/skilleditor';
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -429,6 +431,7 @@ class App extends Component {
         {
           showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} importData={this.parseImport} /> : null
         }
+        <SkillEditor skill={mainAlly.abilities[1]} />
         <div className="App">
           <div className="full-sidebar">
             <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
