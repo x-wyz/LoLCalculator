@@ -86,3 +86,15 @@
 	border: 0;
 	color: white;
 }
+
+.export-description-container {
+	margin: 0.7em auto 0.7em;
+}
+
+.export-description {
+	width: 95%;
+	margin: 0 auto;
+	color: #cfefff;
+	font-size: 0.7em;
+	padding: 0.4em;
+}

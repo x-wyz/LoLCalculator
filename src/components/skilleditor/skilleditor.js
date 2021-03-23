@@ -64,7 +64,12 @@ class SkillEditor extends Component {
 		newAbility.res = this.parseValue(res);
 		newAbility.lvScale = this.parseValue(lvScale);
 		newAbility.emhp = this.parseValue(emhp);
-		newAbility.cd[0] = this.parseValue(cooldown);
+		try {
+			newAbility.cd[0] = this.parseValue(cooldown);
+			newAbility.cd[0] = Array.isArray(newAbility.cd[0]) ? newAbility.cd[0] : [newAbility.cd[0]];
+		}
+		catch(err){}
+		
 		newAbility.emhpScale = parseFloat(emhpScaleAp) > 0 ? [this.parseValue(emhpScaleAp), 100, "ap"] : newAbility.emhpScale;
 		newAbility.emhpScale = parseFloat(emhpScaleBAD) > 0 ? [this.parseValue(emhpScaleBAD), 100, "bAd"] : newAbility.emhpScale;
 		newAbility.base = this.parseValue(base);

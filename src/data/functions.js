@@ -164,12 +164,12 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
             champ.apMultiplier += 0.08;
             break;
           case "mount1":
-            champ.adMultiplier += 0.06;
-            champ.apMultiplier += 0.06;
+            champ.armorMultiplier += 0.06;
+            champ.resistMultiplier += 0.06;
             break;
           case "mount2":
-            champ.adMultiplier += 0.12;
-            champ.apMultiplier += 0.12;
+            champ.armorMultiplier += 0.12;
+            champ.resistMultiplier += 0.12;
             break;
           default: 
             break;
@@ -212,7 +212,6 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
   })
 
   // Champion specific buffs
-  // At this point I was more confortable with using if else statement if there is a performance issue switch is apparently slightly faster.
   dupedChampionArray.forEach((champ, idx) => {
     champ.onAttack = [];
     let enemyChamp = idx === 0 ? dupedChampionArray[1] : dupedChampionArray[0];
@@ -435,7 +434,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     else if (champ.name === "rengar"){
       if (champ.trophies !== false && typeof champ.trophies === "number"){
         let bonusAd = champ.attack - getBaseStats("rengar", champ.lv, "attack");
-        champ.attack += champ.trophies >= 1 ? bonusAd * [1.01,1.04,1.09,1.16,1.25][champ.trophies - 1] : 0;
+        champ.attack += champ.trophies >= 1 ? bonusAd * [1,1.01,1.04,1.09,1.16,1.25][champ.trophies] : 0;
       }
     }
     else if (champ.name === "renekton"){
@@ -822,6 +821,9 @@ export const calculateBasic = (ally, enemy) => {
     resistMultiplier: 0,
     items: []
   }
+
+  enemy.armor = enemy.armor ? enemy.armor : 0;
+  enemy.resist = enemy.resist ? enemy.resist : 0;
 
   const eArmor = enemy.armor * (1 - (ally.arpen / 100)) - (ally.lethality * (0.6 + 0.4 * ally.lv / 18));
   damageValues.armorMultiplier = 100/(100+eArmor);

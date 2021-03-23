@@ -3189,7 +3189,6 @@ export let ChampionData = {
           {
             base: [70,95,120,145,170],
             type: 'shield',
-            buff: "courage",
             bufftype: {
                 type: "stack",
                 max: 120,
@@ -5310,8 +5309,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "Kindred_Passive",
             note: "Passive",
-            skill: 0,
-            buff: "kindred"
+            skill: 0
           },
           {
             base: [60,80,100,120,140],
@@ -7122,7 +7120,6 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'NasusQ',
-            buff: "siphon",
             skill: 1,
             cd: [[7.5,6.5,5.5,4.5,3.5], "single"],
             note: "bonus damage, does not include damage from stacks or basic attack | stacks damage = stacks * multiplier"
@@ -8683,7 +8680,6 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "Rengar_P",
             note: "Passive",
-            buff: "trophies",
             skill: 0
           },
           {
@@ -9264,7 +9260,6 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "Senna_Passive.Senna",
             note: "Passive",
-            buff: "absolation",
             skill: 0
           },
           {

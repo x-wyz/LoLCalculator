@@ -93,7 +93,7 @@ class ChampionCard extends Component {
   }
 
   page0(){
-    const { champion } = this.props;
+    const { champion, updatedChamp } = this.props;
     let skillsCount = 0; 
 
     // checks if champion has a deathcap
@@ -106,17 +106,17 @@ class ChampionCard extends Component {
             <h6 className="champion-section-heading">Stats</h6>
             <div className="champion-section-content">
               <div className="champion-stat-section">
-                <ChampionStatCard name="health" amount={champion.hp} lvup={champion.lvHp} />
-                <ChampionStatCard name="mana" amount={champion.mana} lvup={champion.lvMana} />
+                <ChampionStatCard name="health" amount={updatedChamp.hp} lvup={updatedChamp.lvHp} />
+                <ChampionStatCard name="mana" amount={updatedChamp.mana} lvup={updatedChamp.lvMana} />
               </div>
               <div className="champion-stat-section">
-                <ChampionStatCard name="attack damage" amount={champion.attack.toFixed(1)} lvup={champion.lvAttack} />
+                <ChampionStatCard name="attack damage" amount={updatedChamp.attack.toFixed(1)} lvup={updatedChamp.lvAttack} />
                 {
                   deathCap
                   ?
-                  <ChampionStatCard name="ability power" amount={champion.ap * 1.3} />
+                  <ChampionStatCard name="ability power" amount={updatedChamp.ap * 1.3} />
                   :
-                  <ChampionStatCard name="ability power" amount={champion.ap} />
+                  <ChampionStatCard name="ability power" amount={updatedChamp.ap} />
                 }
               </div>
               <div className="champion-stat-section">

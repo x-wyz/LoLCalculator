@@ -92,23 +92,23 @@ class SaveModal extends Component {
 		const runeTrees = Object.keys(Data[7]);
 
 		return (
-			<p className="champion-export-data">
-				{
-					Data.map((info, idx) => {
-						if (idx > 5) {
-							return null;
-						}
-						else {
-							return <span className="export-datum">{`${info[0]}:${info[1]},`}</span>
-						}
-					})
-				}
-				<span className="export-datum">{`items:[${Data[6].join(" - ")}],`}</span>
-				{
-					runeTrees.map((tree) => <span className="export-datum">{`${tree}:[${Data[7][tree].join(" - ")}],`}</span>)
-				}
-				<span className="export-datum">{`buffs:[${Data[8].join(" - ")}],`}</span>
-			</p>
+		<p className="champion-export-data">
+			{
+				Data.map((info, idx) => {
+					if (idx > 5) {
+						return null;
+					}
+					else {
+						return <span className="export-datum">{`${info[0]}:${info[1]},`}</span>
+					}
+				})
+			}
+			<span className="export-datum">{`items:[${Data[6].join(" - ")}],`}</span>
+			{
+				runeTrees.map((tree) => <span className="export-datum">{`${tree}:[${Data[7][tree].join(" - ")}],`}</span>)
+			}
+			<span className="export-datum">{`buffs:[${Data[8].join(" - ")}],`}</span>
+		</p>
 		);
 	}
 
@@ -117,6 +117,10 @@ class SaveModal extends Component {
 
 		return (
 			<div className="export-contents">
+				<div className="export-description-container">
+					<p className="export-description">Only exports the base version, any modifications made outside the character card(the thing holding the champion splash art) will not be saved when importing.</p>
+					<p className="export-description">Will be lost: modified abilities, champion specific buffs settings</p>
+				</div>
 				<div className="export-data-text">
 					{
 						this.extractData(ally)
