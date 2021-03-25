@@ -1626,7 +1626,7 @@ export let ChampionData = {
             echp: [4,6,8],
             rname: 'CamilleR',
             cd: [[140,115,90], "single"],
-            note: "bonus damage per hit",
+            note: "bonus damage per hit, plus 4/6/8 current hp damage",
             skill: 4
           }
         ],
@@ -2190,7 +2190,7 @@ export let ChampionData = {
             bAd: 0,
             echp: [20,22.5,25,27.5,30],
             rname: 'InfectedCleaverMissileCast',
-            note: "if damage is less than 80/130/180/230/280 deals this damage instead",
+            note: "if damage is less than 80/130/180/230/280 deals the flat damage instead",
             skill: 1,
             cd: [[4], "single"],
           },
@@ -3964,7 +3964,7 @@ export let ChampionData = {
             lvScale: [0,0],
             rname: "JarvanIV_MartialCadence",
             note: "passive | deals 20 total damage if damage this would deal is less than 20",
-            damage: "physical",
+            damage: "physical, +6% current hp damage",
             echp: 6,
             skill: 0,
             cd: [[6], "single", "static"],
@@ -5332,7 +5332,7 @@ export let ChampionData = {
             echp: 1.5,
             rname: 'KindredW',
             skill: 2,
-            note: "0 stacks",
+            note: "0 stacks, +1.5% current hp damage",
             cd: [[18,17,16,15,14], "single"],
           },
           {
@@ -5345,7 +5345,7 @@ export let ChampionData = {
             echp: 1,
             rname: 'KindredW',
             skill: 2,
-            note: "w bonus damage per stack"
+            note: "w bonus damage per stack, 1% current hp damage per stack"
           },
           {
             base: [80,100,120,140,160],
@@ -13617,6 +13617,7 @@ export let ChampionData = {
             bAd: 0,
             cd: [[13.5,12,10.5,9,7.5,6], "single"],
             echp: [2,3.2,4.4,5.6,6.8,8],
+            note: "2%+1.2%(x skilllevel) enemy current hp damage"
             rname: 'YuumiQ',
             skill: 1
           },
