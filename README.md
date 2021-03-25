@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# League of Legends Damage Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## FAQ(JK nobody asked but still wanted to put this here to clarify somethings)
 
-## Available Scripts
+### Q: Why am I able to select multiple keystones and minor nodes on the same row?
+#### A: Because the target audience is player's that play league and it allows for easier comparison. Also the rune pages are one of the few features left from the very first iteration of the app that I have not touched due to laziness and such. (Will update this to be more strict when/if there is a major runes overhaul or a big update to the game resulting me needing to change multiple parts to remain accurate)
 
-In the project directory, you can run:
+### Q: X champion/item/etc is missing/not up to date.
+#### A: Coming soon... unless I don't know it exsists then probably not.
 
-### `npm start`
+### Q: It looks weird.
+#### A: My screen is a bit desaturated. The background image is the league in game loading screen and I just took the colors from that image and made it darker/lighter. If you're talking about the layout/design etc I'm not a designer. Feedback appreciated.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Q: Is this completed?
+#### A: It is fully functioning. It's not the final version but I only plan to add more features whenever there is a large update in league, it will be updated every 2 weeks or so to keep up to date with the most recent patch.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Q: What rank are you?
+#### A: Iron 5 trying to get to Iron 4 by the end of s11. 
 
-### `npm test`
+### Q: Dragon buffs stacks up to 4 times.
+#### A: Yes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Q: Why does the dragon buff only go up to 2 in the damage calc?
+#### A: Yes.
 
-### `npm run build`
+### Q: The damage for X is Y in game but shows Z in the damage calc.
+#### A: Most likely an oversight on my part. There are more champions than there are pokemon in the kanto dex, I did not go over each one to verify the results of the calculations, I dont even own half the champions. The abilities of the champions I have checked seems correct, check ability notes if any to see what that damage number is for.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Most of the inaccurate skills are missing their current/missing hp damage portion, other than the solution of just adding those 2 to the damage calc they will have a description of what they're missing and the number that is shown is the "min" damage the skill would do. (Q: Why not add a slider A: la.. currently working on other things.)
