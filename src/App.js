@@ -30,29 +30,52 @@ class App extends Component {
       buffedEnemy: {}
     }
 
+    // Champion card
     this.modifyRune = this.modifyRune.bind(this);
     this.modifyBuff = this.modifyBuff.bind(this);
     this.updateChampion = this.updateChampion.bind(this);
     this.updateSkillLevel = this.updateSkillLevel.bind(this);
     this.updateItem = this.updateItem.bind(this);
     this.levelup = this.levelup.bind(this);
+
+    // Modal
     this.showExport = this.showExport.bind(this);
     this.showSidebar = this.showSidebar.bind(this);
 
+    // Save list
     this.setChampion = this.setChampion.bind(this);
     this.saveChampion = this.saveChampion.bind(this);
 
+    // Target dummy
     this.targetDummy = this.targetDummy.bind(this);
     this.updateDummy = this.updateDummy.bind(this);
 
+    // Import
     this.parseImport = this.parseImport.bind(this);
 
+    // Update
     this.setup = this.setup.bind(this);
-
     this.applyBuffs = this.applyBuffs.bind(this);
 
+    // Editor
     this.modifyAbility = this.modifyAbility.bind(this);
+
+    // CalcArea
     this.applySelfBuff = this.applySelfBuff.bind(this);
+    this.setRuneValue = this.setRuneValue.bind(this);
+  }
+
+  setRuneValue(ev, tree, node, target){
+    let champ = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
+    champ.runes[tree][node] = parseFloat(ev.target.value);
+
+    console.log(champ)
+
+    this.setState({
+      [target === "mainAlly" ? "mainAlly" : "mainEnemy"]: champ,
+      modified: true
+    })
+
   }
 
   modifyAbility(skill, idx, target){
@@ -263,12 +286,12 @@ class App extends Component {
     if (target === "mainAlly"){
       const { mainAlly } = this.state;
       mainAlly.runes[type][rune] = !mainAlly.runes[type][rune];
-      this.setState({mainAlly})
+      this.setState({mainAlly, modified: true})
     }
     else if (target === "mainEnemy"){
       const { mainEnemy } = this.state;
       mainEnemy.runes[type][rune] = !mainEnemy.runes[type][rune];
-      this.setState({mainEnemy})
+      this.setState({mainEnemy, modified: true})
     }
     else {
       return;
@@ -488,7 +511,7 @@ class App extends Component {
               <ChampionCard updatedChamp={buffedEnemy} updateDummy={this.updateDummy} save={this.saveChampion} level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
             </div>
           </header>
-          <CalculationArea buff={this.applySelfBuff} updateSkill={this.modifyAbility} dummy={this.state.mainEnemy.name === "target" ? true : false} ally={buffedAlly} enemy={buffedEnemy} update={true} />
+          <CalculationArea setRuneValue={this.setRuneValue} buff={this.applySelfBuff} updateSkill={this.modifyAbility} dummy={this.state.mainEnemy.name === "target" ? true : false} ally={buffedAlly} enemy={buffedEnemy} update={true} />
           <div className="legal-footer">
             <span className="product-name">League of Legends Damage Calculator</span> isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
           </div>

@@ -119,7 +119,7 @@ class SaveModal extends Component {
 			<div className="export-contents">
 				<div className="export-description-container">
 					<p className="export-description">Only exports the base version, any modifications made outside the character card(the thing holding the champion splash art) will not be saved when importing.</p>
-					<p className="export-description">Will be lost: modified abilities, champion specific buffs settings</p>
+					<p className="export-description">Will be lost: modified abilities, champion specific buffs settings, rune stacks</p>
 				</div>
 				<div className="export-data-text">
 					{

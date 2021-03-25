@@ -64,7 +64,7 @@ class CalculationArea extends Component {
 						? 
 						null
 						:
-						<CalcDamageRunes ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
+						<CalcDamageRunes setRuneValue={(ev, tree, node) => this.props.setRuneValue(ev,tree,node, `${enemyTab ? "mainEnemy" : "mainAlly"}`)} ally={enemyTab ? enemy : ally} enemy={enemyTab ? ally : enemy} />
 					}
 					<h3 className="calculation-heading">Summoners</h3>
 					{

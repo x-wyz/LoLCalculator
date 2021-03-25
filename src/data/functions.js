@@ -178,6 +178,48 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     }
   })
 
+  dupedChampionArray.forEach((champ, idx) => {
+    let adaptive = (champ.attack - getBaseStats(champ.name, champ.lv, "attack")) < champ.ap ? "ap" : "attack";
+
+    switch(true){
+      case (typeof champ.runes.domination.node4 === "number"):
+        // First 3 are basically the same rune actual game wont allow this calc does though.
+        champ.runes.domination.node4 = champ.runes.domination.node4 > 10 ? 10 : champ.runes.domination.node4 < 0 ? 0 : champ.runes.domination.node4;
+        champ[adaptive] += adaptive === "attack" ? 1.2 * champ.runes.domination.node4 : 2 * champ.runes.domination.node4;
+        champ[adaptive] += adaptive === "attack" && champ.runes.domination.node4 >= 10 ? 6 : adaptive === "ap" && champ.runes.domination.node4 >= 10 ? 10 : 0;
+        /* falls through */
+      case (typeof champ.runes.domination.node5 === "number"):
+      champ.runes.domination.node5 = champ.runes.domination.node5 > 10 ? 10 : champ.runes.domination.node5 < 0 ? 0 : champ.runes.domination.node5;
+        champ[adaptive] += adaptive === "attack" ? 1.2 * champ.runes.domination.node5 : 2 * champ.runes.domination.node5;
+        champ[adaptive] += adaptive === "attack" && champ.runes.domination.node5 >= 10 ? 6 : adaptive === "ap" && champ.runes.domination.node5 >= 10 ? 10 : 0;
+        /* falls through */
+      case (typeof champ.runes.domination.node6 === "number"):
+        champ.runes.domination.node6 = champ.runes.domination.node6 > 10 ? 10 : champ.runes.domination.node6 < 0 ? 0 : champ.runes.domination.node6;
+        champ[adaptive] += adaptive === "attack" ? 1.2 * champ.runes.domination.node6 : 2 * champ.runes.domination.node6;
+        champ[adaptive] += adaptive === "attack" && champ.runes.domination.node6 >= 10 ? 6 : adaptive === "ap" && champ.runes.domination.node6 >= 10 ? 10 : 0;
+        /* falls through */
+      case (champ.runes.sorcery.node4 === true):
+        champ.abilityHaste += champ.lv >= 5 ? 5 : 0
+        champ.abilityHaste += champ.lv >= 8 ? 5 : 0
+        /* falls through */
+      case (typeof champ.runes.sorcery.node9 === "number"):
+        champ.runes.sorcery.node9 = champ.runes.sorcery.node9 > 6 ? 6 : champ.runes.sorcery.node9 < 0 ? 0 : champ.runes.sorcery.node9;
+        champ[adaptive] += adaptive === "attack" ? 4.8 * champ.runes.sorcery.node9 *  (champ.runes.sorcery.node9-1) / 2 : 8 * champ.runes.sorcery.node9 *  (champ.runes.sorcery.node9-1) / 2;
+        /* falls through */
+      case (champ.runes.resolve.node4 === true):
+        champ.armor += 9;
+        champ.resist += 9;
+        champ.armorMultiplier += 0.05;
+        champ.resistMultiplier += 0.05;
+        /* falls through */
+      case (typeof champ.runes.resolve.node7 === "number"):
+        champ.hp += (champ.runes.resolve.node7 / 8) * 3
+        break;
+      default:
+        break
+    }
+  })
+
   // initialize item effects array for next foreach loop
   dupedChampionArray[0].itemEffects = [];
   dupedChampionArray[1].itemEffects = [];

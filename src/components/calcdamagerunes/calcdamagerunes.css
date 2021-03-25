@@ -50,3 +50,36 @@
 .magic {
 	color: #2993ee;
 }
+
+.rune-calc-stacks {
+	text-align: center;
+	width: 60%;
+	margin: 0 auto;
+	outline: 0;
+	padding: 0.3em;
+	margin: 0.3em auto;
+	background: #909090;
+	border-radius: 20px;
+	border: 0;
+	color: white;
+}
+
+.rune-calc-stack .rune-calc-name, .rune-calc-utility .rune-calc-name {
+	text-align: center;
+}
+
+.rcalc-damage {
+	background: #492929;
+}
+
+.rcalc-utility {
+	background: #234723;
+}
+
+.rcalc-stack {
+	background: #26262e;
+}
+
+.rune-calc-stacks::placeholder {
+	color: #ffddc9;
+}
