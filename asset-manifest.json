@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/LoLCalculator/static/css/main.729efb38.chunk.css",
+    "main.css": "/LoLCalculator/static/css/main.21866ea9.chunk.css",
     "main.js": "/LoLCalculator/static/js/main.54beaadf.chunk.js",
     "main.js.map": "/LoLCalculator/static/js/main.54beaadf.chunk.js.map",
     "runtime-main.js": "/LoLCalculator/static/js/runtime-main.67c02dc3.js",
@@ -8,7 +8,7 @@
     "static/js/2.09c04eb8.chunk.js": "/LoLCalculator/static/js/2.09c04eb8.chunk.js",
     "static/js/2.09c04eb8.chunk.js.map": "/LoLCalculator/static/js/2.09c04eb8.chunk.js.map",
     "index.html": "/LoLCalculator/index.html",
-    "static/css/main.729efb38.chunk.css.map": "/LoLCalculator/static/css/main.729efb38.chunk.css.map",
+    "static/css/main.21866ea9.chunk.css.map": "/LoLCalculator/static/css/main.21866ea9.chunk.css.map",
     "static/js/2.09c04eb8.chunk.js.LICENSE.txt": "/LoLCalculator/static/js/2.09c04eb8.chunk.js.LICENSE.txt",
     "static/media/App.css": "/LoLCalculator/static/media/bg.2cc271c7.png",
     "static/media/dom1.4cbb96a0.png": "/LoLCalculator/static/media/dom1.4cbb96a0.png",
@@ -79,7 +79,7 @@
   "entrypoints": [
     "static/js/runtime-main.67c02dc3.js",
     "static/js/2.09c04eb8.chunk.js",
-    "static/css/main.729efb38.chunk.css",
+    "static/css/main.21866ea9.chunk.css",
     "static/js/main.54beaadf.chunk.js"
   ]
 }
