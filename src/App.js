@@ -487,8 +487,42 @@ class App extends Component {
     
     return (
       <React.Fragment>
+        {
+          showExport ? <SaveModal ally={mainAlly} enemy={mainEnemy} close={this.showExport} importData={this.parseImport} /> : null
+        }
         <div className="App">
-          Hello world
+          <div className="full-sidebar">
+            <div className={`sidebar ${showSidebar === true ? "show-sidebar" : "hide-sidebar"}`}>
+              <h2 className="sidebar-header">Saved List</h2>
+              {
+                savedList.map(saved => <SavedChampion title={saved[0]} name={saved[1]} champ={saved[2]} update={this.setChampion}/>)
+              }
+            </div>
+          </div>
+          <div className="app-background"></div>
+          <h1 className="damage-calc-header">League of Legends Damage Calculator</h1>
+          <header className="champion-select">
+            <div className="allies">
+              <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainAlly")} />
+              <ChampionCard updatedChamp={buffedAlly} save={this.saveChampion} level={(type) => this.levelup(type, "mainAlly")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainAlly")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainAlly")} champion={mainAlly} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainAlly")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainAlly")} />
+            </div>
+            <div className="enemy">
+              <CharacterSelect championlist={ChampionData} onChange={(champion) => this.updateChampion(champion, "mainEnemy")} makeTarget={true} targetDummy={this.targetDummy} />
+              <ChampionCard updatedChamp={buffedEnemy} updateDummy={this.updateDummy} save={this.saveChampion} level={(type) => this.levelup(type, "mainEnemy")} updateItem={(newItem, slot) => this.updateItem(newItem, slot, "mainEnemy")} skillUpdate={(skill, inc) => this.updateSkillLevel(skill, inc, "mainEnemy")} champion={mainEnemy} modifyRune={(type, rune) => this.modifyRune(type, rune, "mainEnemy")} modifyBuff={(name, type) => this.modifyBuff(name, type, "mainEnemy")} />
+            </div>
+          </header>
+          <CalculationArea setRuneValue={this.setRuneValue} buff={this.applySelfBuff} updateSkill={this.modifyAbility} dummy={this.state.mainEnemy.name === "target" ? true : false} ally={buffedAlly} enemy={buffedEnemy} update={true} />
+          <div className="legal-footer">
+            <span className="product-name">League of Legends Damage Calculator</span> isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+          </div>
+          <div className="export-data" onClick={this.showExport} >
+            EX
+          </div>
+          <div className="saved-data" onClick={this.showSidebar} >
+            {
+              showSidebar === true ? "⬅" : "➡"
+            }
+          </div>
         </div>
       </React.Fragment>
     );
