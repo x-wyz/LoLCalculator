@@ -67,7 +67,7 @@ class App extends Component {
 
   setRuneValue(ev, tree, node, target){
     let champ = target === "mainAlly" ? this.state.mainAlly : this.state.mainEnemy;
-    champ.runes[tree][node] = parseFloat(ev.target.value);
+    champ.runes[tree][node] = isNaN(parseFloat(ev.target.value)) ? 0 : parseFloat(ev.target.value);
 
     console.log(champ)
 
