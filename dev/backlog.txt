@@ -1,0 +1,4 @@
+SOON:
+missing champions - aphelios(????), heimer, illaoi,elise, nid, rek, kayn
+basic attack specific - ashe, aphe, jhin, corki, graves
+stacks - nasus, kind, senna, reng, garen, thresh

@@ -1,0 +1,14 @@
+Maybe S12(after redesign):
+
+dragons - inf, cloud, mount -> max 4
+baron - time scale
+missing hp scaling / current hp scaling
+base stats editor
+display utility stats - attack speed, movement, lethality, magic pen etc...
+	- (currently calculates lethality and mpen just is not displayed anywhere)
+ability resource values
+fix resource for resourceless characters
+stricken rune building
+basic - attack rate/attack time
+support character
+ability damage timeline
