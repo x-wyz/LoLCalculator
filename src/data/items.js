@@ -789,7 +789,7 @@ export const ItemsData = {
 		tier: "legendary",
 		stats: {
 			armor: 40,
-			hp: 475
+			hp: 300
 		},
 		effect: {
 			type: "damage",
@@ -805,9 +805,9 @@ export const ItemsData = {
 		img: 6333,
 		tier: "legendary",
 		stats: {
-			armor: 40,
+			armor: 45,
 			abilityHaste: 15,
-			ad: 50
+			ad: 55
 		},
 		uncalculated: {
 			note: "Currently does not take into account the bleed and damage reduction this item provides."

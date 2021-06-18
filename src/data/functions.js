@@ -396,7 +396,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
       if (champ.spittle === true){
         let abilityLv = champ.ability1 - 1;
         if (abilityLv >= 0){
-          let multiplier = [.8,.78,.76,.74,.72][abilityLv];
+          let multiplier = [.75,.73,.71,.69,.67][abilityLv];
   
           enemyChamp.armor *= multiplier;
           enemyChamp.resist *= multiplier;

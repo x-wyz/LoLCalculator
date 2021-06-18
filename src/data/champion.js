@@ -2040,7 +2040,7 @@ export let ChampionData = {
         hp: 570,
         lvHp: 95,
         armor: 31,
-        lvArmor: 3.6,
+        lvArmor: 3.1,
         resist: 32,
         lvResist: 1.25,
         movement: 345,
@@ -3425,7 +3425,7 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [80,130,180,230,280],
+            base: [80,125,170,215,260],
             damage: 'magical',
             type: 'damage',
             ad: 0,
@@ -3554,8 +3554,8 @@ export let ChampionData = {
         baseHp: 580,
         hp: 580,
         lvHp: 90,
-        armor: 35,
-        lvArmor: 4,
+        armor: 32,
+        lvArmor: 4.25,
         resist: 32,
         lvResist: 1.25,
         movement: 345,
@@ -3610,7 +3610,7 @@ export let ChampionData = {
             skill: 2
           },
           {
-            base: [35,65,95,125,155],
+            base: [30,50,70,90,110],
             damage: 'physical',
             type: 'damage',
             ad: 0,
@@ -5604,7 +5604,7 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [55,80,105,130,155],
+            base: [65,90,115,140,165],
             type: "magical",
             damage: "damage",
             ad: 0,
@@ -6190,7 +6190,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: 'LuluW',
-            cd: [[16,15,14,13,12], "single"],
+            cd: [[15,14,13,12,11], "single"],
             skill: 2
           },
           {
@@ -11202,7 +11202,7 @@ export let ChampionData = {
             bAd: 0,
             rname: "ThreshE",
             note: "active",
-            cd: [[9], "single"],
+            cd: [[11,10.5,10,9.5,9], "single"],
             skill: 3
           },
           {
@@ -12628,7 +12628,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'VladimirQ',
             note: "enhanced deals 1.85x damage",
-            cd: [[9,8,7,6,5], "single"],
+            cd: [[9,7.9,6.8,5.7,4.6], "single"],
             skill: 1
           },
           {
@@ -13097,18 +13097,18 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [80,120,160,200,240],
+            base: [70,110,150,190,230],
             type: "damage",
             damage: "magical",
             ad: 0,
-            ap: 75,
+            ap: 85,
             bAd: 0,
             rname: 'XerathArcanopulseChargeUp',
             cd: [[9,8,7,6,5], "single"],
             skill: 1
           },
           {
-            base: [60,90,120,150,180],
+            base: [60,95,130,165,200],
             damage: 'magical',
             type: 'damage',
             ad: 0,
@@ -13712,14 +13712,14 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [25,40,55,70,85],
+            base: [35,50,65,80,95],
             damage: 'magical',
             type: 'damage',
             ad: 0,
             ap: 0,
             bAd: 0,
             emhp: [4,5,6,7,8],
-            emhpScale: [2,100,"ap"],
+            emhpScale: [4,100,"ap"],
             cd: [[5], "single"],
             rname: 'ZacW',
             skill: 2
