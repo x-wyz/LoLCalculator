@@ -734,7 +734,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
     // champion specific on attack
     switch(true){
       case ((champ.name === "masteryi") && (champ.wuju === true) && (champ.ability3 > 0)):
-        abilityScale = [20,30,40,50,60][champ.ability3 - 1];
+        abilityScale = [30,40,50,60,70][champ.ability3 - 1];
         bonusAd = champ.attack - getBaseStats("masteryi", champ.lv, "attack");
         champ.onAttack.push(["WUJU", (abilityScale + bonusAd * 0.35),"true", "wuju style"]);
         break;

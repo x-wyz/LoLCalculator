@@ -246,14 +246,13 @@ export const ItemsData = {
 		img: 3076,
 		tier: "advance",
 		stats: {
-			armor: 35
+			armor: 30
 		},
 		effect: {
 			damage: "magical",
 			type: "damage",
 			base: 3,
-			max: 3,
-			bAr: 10
+			max: 3
 		}
 	},
 	caulfieldsWarhammer: {
@@ -655,7 +654,7 @@ export const ItemsData = {
 		tier: "legendary",
 		stats: {
 			resist: 60,
-			hp: 350
+			hp: 400
 		},
 		uncalculated: {
 			note: "When this champion immobilizes a champion the immobilized champion takes 10% extra damage."
@@ -1455,7 +1454,7 @@ export const ItemsData = {
 			type: "damage",
 			base: 0,
 			max: 0,
-			eMHP: 10
+			eMHP: 12
 		},
 		mythic: {
 			stats: {
