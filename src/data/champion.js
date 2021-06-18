@@ -13620,7 +13620,7 @@ export let ChampionData = {
             bAd: 0,
             cd: [[13.5,12,10.5,9,7.5,6], "single"],
             echp: [2,3.2,4.4,5.6,6.8,8],
-            note: "enhanced | 2%+1.2%(x skilllevel) enemy current hp damage"
+            note: "enhanced | 2%+1.2%(x skilllevel) enemy current hp damage",
             rname: 'YuumiQ',
             skill: 1
           },

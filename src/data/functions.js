@@ -122,8 +122,11 @@ export const duplicateChampion = (championData) => {
 }
 
 const getBaseStats = (champ,lv, stat) => {
-  const capitalizedstat = stat.charAt(0).toUpperCase() + stat.slice(1);
-  return ChampionData[champ][stat] + (ChampionData[champ][`lv${capitalizedstat}`] * (lv-1));
+  if (champ.name in ChampionData){
+    const capitalizedstat = stat.charAt(0).toUpperCase() + stat.slice(1);
+    return ChampionData[champ][stat] + (ChampionData[champ][`lv${capitalizedstat}`] * (lv-1));
+  }
+  
 }
 
 export const applyBuffs = (allyChampionData, enemyChampionData) => {
@@ -179,6 +182,7 @@ export const applyBuffs = (allyChampionData, enemyChampionData) => {
   })
 
   dupedChampionArray.forEach((champ, idx) => {
+    if (champ.name === "target") return;
     let adaptive = (champ.attack - getBaseStats(champ.name, champ.lv, "attack")) < champ.ap ? "ap" : "attack";
 
     switch(true){
