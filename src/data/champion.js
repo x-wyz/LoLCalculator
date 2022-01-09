@@ -2069,7 +2069,7 @@ export let ChampionData = {
             rname: "Diana_Passive_LunarBlade",
             note: "passive",
             skill: 0,
-            ap: 40,
+            ap: 50,
             damage: "magical"
           },
           {
@@ -3095,7 +3095,7 @@ export let ChampionData = {
             bAd: 0,
             rname: 'GangplankQWrapper',
             note: "non crit, can crit for 1.75/2.10x damage",
-            cd: [[5], "single"],
+            cd: [[4.5], "single"],
             skill: 1
           },
           {
@@ -4452,7 +4452,7 @@ export let ChampionData = {
             damage: "physical",
             ad: 0,
             ap: 25,
-            bAd: 40,
+            bAd: 50,
             cd: [[10,9,8,7,6], "single"],
             rname: 'KaisaQ',
             skill: 1,
@@ -4843,7 +4843,7 @@ export let ChampionData = {
             skill: 1
           },
           {
-            base: [70,95,120,145,170],
+            base: [50,75,100,125,150],
             damage: 'magical',
             type: 'damage',
             ad: 0,
@@ -6269,14 +6269,14 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [80,125,170,215,260],
+            base: [80,120,160,200,240],
             type: "damage",
             damage: "magical",
             ad: 0,
             ap: 60,
             bAd: 0,
             rname: 'LuxLightBinding',
-            cd: [[11,10.5,10,9.5,9], "single"],
+            cd: [[11], "single"],
             skill: 1
           },
           {
@@ -8043,7 +8043,7 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [85,135,185,235,285],
+            base: [100,150,200,250,300],
             type: "damage",
             damage: "physical",
             ad: 0,
@@ -10175,7 +10175,7 @@ export let ChampionData = {
         hp: 480,
         lvHp: 77,
         armor: 28,
-        lvArmor: 3.3,
+        lvArmor: 3,
         resist: 30,
         lvResist: 0.5,
         movement: 325,
@@ -10249,7 +10249,7 @@ export let ChampionData = {
             ap: 0,
             bAd: 0,
             rname: "SonaE",
-            cd: [[12,10.8,9,7.2,6], "single"],
+            cd: [[14], "single"],
             skill: 3
           },
           {
