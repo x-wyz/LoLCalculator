@@ -1,7 +1,7 @@
 export let ChampionData = {
 	aatrox: {
         name: 'aatrox',
-        worldEnder: true,
+        worldEnder: false,
         lv: 1,
         baseHp: 580,
         hp: 580,
@@ -252,10 +252,10 @@ export let ChampionData = {
         ability4: 0,
         abilities: [
           {
-            lvScale: [29,170],
+            lvScale: [35,182],
             rname: "Akali_P",
             bAd: 60,
-            ap: 40,
+            ap: 50,
             damage: "magical",
             note: "passive",
             skill: 0
@@ -285,11 +285,11 @@ export let ChampionData = {
             cast: 0.25
           },
           {
-            base: [50,85,120,155,190],
+            base: [30 , 56.25 , 82.5 , 108.75 , 135],
             damage: 'magical',
             type: 'damage',
-            ad: 35,
-            ap: 50,
+            ad: 25.5,
+            ap: 36,
             bAd: 0,
             note: "initial cast",
             rname: 'AkaliE',
@@ -298,11 +298,11 @@ export let ChampionData = {
             cd: [[16,14.5,13,11.5,10], "single"]
           },
           {
-            base: [50,85,120,155,190],
+            base: [70 , 131.25 , 192.5 , 253.75 , 315],
             damage: 'magical',
             type: 'damage',
-            ad: 35,
-            ap: 50,
+            ad: 59.5,
+            ap: 84,
             bAd: 0,
             rname: 'AkaliE',
             skill: 3,
@@ -310,11 +310,11 @@ export let ChampionData = {
             cd: [[0], "single"]
           },
           {
-            base: [125,225,325],
-            damage: 'physical',
+            base: [80,220,360],
+            damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 0,
+            ap: 30,
             bAd: 50,
             rname: 'AkaliR',
             note: "First cast",
@@ -322,7 +322,7 @@ export let ChampionData = {
             cd: [[100,80,60], "single"],
           },
           {
-            base: [75,145,215],
+            base: [60,130,200],
             damage: 'magical',
             type: 'damage',
             ad: 0,
@@ -376,7 +376,7 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [60,105,150,195,240],
+            base: [60,100,140,180,220],
             type: "damage",
             damage: "magical",
             ad: 0,
@@ -411,7 +411,7 @@ export let ChampionData = {
             cd: [[12,11.5,11,10.5,10], "single"],
           },
           {
-            lvScale: [35,290],
+            lvScale: [20,275],
             base: [0,0,0,0,0],
             damage: 'magical',
             type: 'damage',
@@ -479,11 +479,11 @@ export let ChampionData = {
             skill: 0
           },
           {
-            base: [80,130,180,230,280],
+            base: [70 , 95 , 120 , 145 , 170],
             type: "damage",
             damage: "magical",
             ad: 0,
-            ap: 70,
+            ap: 85,
             bAd: 0,
             rname: 'BandageToss',
             skill: 1,
@@ -502,7 +502,7 @@ export let ChampionData = {
             cd: [[1], "toggle", "static"],
           },
           {
-            base: [75,95,115,135,155],
+            base: [75,100, 125, 150, 175],
             damage: 'magical',
             type: 'damage',
             ad: 0,
@@ -607,7 +607,7 @@ export let ChampionData = {
             damage: 'magical',
             type: 'damage',
             ad: 0,
-            ap: 50,
+            ap: 60,
             bAd: 0,
             rname: 'Frostbite',
             note: "deals 2.0x damage if target was hit by anivia's max sized ultimate or flash frost",
